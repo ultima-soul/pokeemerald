@@ -1,5 +1,10 @@
 PetalburgWoods_MapScripts:: @ 822DFD6
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgWoods_OnTransition
 	.byte 0
+
+PetalburgWoods_OnTransition:
+	call Common_EventScript_SetupRivalGender
+	end
 
 PetalburgWoods_EventScript_22DFD7:: @ 822DFD7
 	lockall
@@ -26,15 +31,61 @@ PetalburgWoods_EventScript_22DFD7:: @ 822DFD7
 	applymovement 3, PetalburgWoods_Movement_22E20E
 	waitmovement 0
 	msgbox PetalburgWoods_Text_22E4A5, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_8, PetalburgWoods_Text_22E542
+	closemessage
+	call PetalburgWoods_EventScript_Rival_Wait_0
+	applymovement 3, Common_Movement_WalkInPlaceDown 
+	msgbox PetalburgWoods_Text_Grunt_Another_Kid, MSGBOX_DEFAULT
+	call PetalburgWoods_EventScript_ChooseMultiBattleParty
+	trainerbattle 10, TRAINER_GRUNT_8, 0, NULL PetalburgWoods_Text_22E542
+	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
+	setvar VAR_0x8005, 2 | 4 @ Player and AI vs. opponent and custom party chosen
+	special DoSpecialTrainerBattle
+	waitstate
+	special LoadPlayerParty
 	applymovement 3, PetalburgWoods_Movement_22E1F9
 	waitmovement 0
 	call PetalburgWoods_EventScript_22E138
 	applymovement EVENT_OBJ_ID_PLAYER, PetalburgWoods_Movement_22E1E0
+	applymovement 14, PetalburgWoods_Movement_Rival_Make_Path_0
 	applymovement 4, PetalburgWoods_Movement_22E1C2
 	waitmovement 0
-	goto PetalburgWoods_EventScript_22E1A7
+	call PetalburgWoods_EventScript_22E1A7
+	applymovement 14, Common_Movement_FaceDown
+	waitmovement 0
+	goto PetalburgWoods_EventScript_Rival_Leave
 	end
+
+PetalburgWoods_EventScript_Rival_Wait_0::
+	addobject 14
+	setobjectxy 14, 18, 26
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgWoods_EventScript_May_Wait_0
+	compare VAR_RESULT, FEMALE
+	goto_if_eq PetalburgWoods_EventScript_Brendan_Wait_0
+	end
+
+PetalburgWoods_EventScript_May_Wait_0::
+	call PetalburgWoods_EventScript_May_Party_Select
+	setvar VAR_0x8007, TRAINER_BACK_PIC_MAY
+	msgbox PetalburgWoods_Text_Wait_May, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_0
+	waitmovement 0
+	msgbox PetalburgWoods_Text_Battle_May, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PetalburgWoods_EventScript_Brendan_Wait_0::
+	call PetalburgWoods_EventScript_Brendan_Party_Select
+	setvar VAR_0x8007, TRAINER_BACK_PIC_BRENDAN
+	msgbox PetalburgWoods_Text_Wait_Brendan, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_0
+	waitmovement 0
+	msgbox PetalburgWoods_Text_Battle_Brendan, MSGBOX_DEFAULT
+	closemessage
+	return
 
 PetalburgWoods_EventScript_22E079:: @ 822E079
 	lockall
@@ -62,15 +113,61 @@ PetalburgWoods_EventScript_22E079:: @ 822E079
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceUp
 	waitmovement 0
 	msgbox PetalburgWoods_Text_22E4A5, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_GRUNT_8, PetalburgWoods_Text_22E542
+	closemessage
+	call PetalburgWoods_EventScript_Rival_Wait_1
+	applymovement 3, Common_Movement_WalkInPlaceDown 
+	msgbox PetalburgWoods_Text_Grunt_Another_Kid, MSGBOX_DEFAULT
+	call PetalburgWoods_EventScript_ChooseMultiBattleParty
+	trainerbattle 10, TRAINER_GRUNT_8, 0, NULL PetalburgWoods_Text_22E542
+	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
+	setvar VAR_0x8005, 2 | 4 @ Player and AI vs. opponent and custom party chosen
+	special DoSpecialTrainerBattle
+	waitstate
+	special LoadPlayerParty
 	applymovement 3, PetalburgWoods_Movement_22E1F9
 	waitmovement 0
 	call PetalburgWoods_EventScript_22E138
 	applymovement EVENT_OBJ_ID_PLAYER, PetalburgWoods_Movement_22E1E0
+	applymovement 14, PetalburgWoods_Movement_Rival_Make_Path_1
 	applymovement 4, PetalburgWoods_Movement_22E1D7
 	waitmovement 0
-	goto PetalburgWoods_EventScript_22E1A7
+	call PetalburgWoods_EventScript_22E1A7
+	applymovement 14, Common_Movement_FaceDown
+	waitmovement 0
+	goto PetalburgWoods_EventScript_Rival_Leave
 	end
+
+PetalburgWoods_EventScript_Rival_Wait_1::
+	addobject 14
+	setobjectxy 14, 18, 26
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgWoods_EventScript_May_Wait_1
+	compare VAR_RESULT, FEMALE
+	goto_if_eq PetalburgWoods_EventScript_Brendan_Wait_1
+	end
+	
+PetalburgWoods_EventScript_May_Wait_1::
+	call PetalburgWoods_EventScript_May_Party_Select
+	setvar VAR_0x8007, TRAINER_BACK_PIC_MAY
+	msgbox PetalburgWoods_Text_Wait_May, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_1
+	waitmovement 0
+	msgbox PetalburgWoods_Text_Battle_May, MSGBOX_DEFAULT
+	closemessage
+	return
+
+PetalburgWoods_EventScript_Brendan_Wait_1::
+	call PetalburgWoods_EventScript_Brendan_Party_Select
+	setvar VAR_0x8007, TRAINER_BACK_PIC_BRENDAN
+	msgbox PetalburgWoods_Text_Wait_Brendan, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_1
+	waitmovement 0
+	msgbox PetalburgWoods_Text_Battle_Brendan, MSGBOX_DEFAULT
+	closemessage
+	return
 
 PetalburgWoods_EventScript_22E124:: @ 822E124
 	applymovement 4, PetalburgWoods_Movement_22E1B1
@@ -86,6 +183,7 @@ PetalburgWoods_EventScript_22E138:: @ 822E138
 	waitmovement 0
 	removeobject 3
 	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceDown
+	applymovement 14, Common_Movement_WalkInPlaceDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_22E63D, MSGBOX_DEFAULT
 	giveitem_std ITEM_GREAT_BALL
@@ -110,8 +208,131 @@ PetalburgWoods_EventScript_22E18B:: @ 822E18B
 PetalburgWoods_EventScript_22E1A7:: @ 822E1A7
 	removeobject 4
 	setvar VAR_PETALBURG_WOODS_STATE, 1
+	return
+
+PetalburgWoods_EventScript_May_Party_Select:
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_May_Party_Select_Treecko
+	case 1, PetalburgWoods_EventScript_May_Party_Select_Torchic
+	case 2, PetalburgWoods_EventScript_May_Party_Select_Mudkip
+	end
+
+PetalburgWoods_EventScript_May_Party_Select_Treecko:
+	setvar VAR_0x8006, TRAINER_MAY_14
+	return
+
+PetalburgWoods_EventScript_May_Party_Select_Torchic:
+	setvar VAR_0x8006, TRAINER_MAY_15
+	return
+
+PetalburgWoods_EventScript_May_Party_Select_Mudkip:
+	setvar VAR_0x8006, TRAINER_MAY_10
+	return
+	
+PetalburgWoods_EventScript_Brendan_Party_Select:
+	switch VAR_STARTER_MON
+	case 0, PetalburgWoods_EventScript_Brendan_Party_Select_Treecko
+	case 1, PetalburgWoods_EventScript_Brendan_Party_Select_Torchic
+	case 2, PetalburgWoods_EventScript_Brendan_Party_Select_Mudkip
+	end
+
+PetalburgWoods_EventScript_Brendan_Party_Select_Treecko:
+	setvar VAR_0x8006, TRAINER_BRENDAN_10
+	return
+
+PetalburgWoods_EventScript_Brendan_Party_Select_Torchic:
+	setvar VAR_0x8006, TRAINER_BRENDAN_12
+	return
+
+PetalburgWoods_EventScript_Brendan_Party_Select_Mudkip:
+	setvar VAR_0x8006, TRAINER_BRENDAN_11
+	return
+
+PetalburgWoods_EventScript_ChooseMultiBattleParty:
+	special SavePlayerParty
+	fadescreen 1
+    special ChooseHalfPartyForBattle
+    waitstate
+    special ReducePlayerPartyToSelectedMons
+	return
+
+PetalburgWoods_EventScript_Rival_Leave::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq PetalburgWoods_EventScript_May_Leave
+	compare VAR_RESULT, FEMALE
+	goto_if_eq PetalburgWoods_EventScript_Brendan_Leave
+	end
+	
+PetalburgWoods_EventScript_May_Leave::
+	msgbox PetalburgWoods_Text_Leave_May, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_Leave
+	waitmovement 0
+	removeobject 14
 	releaseall
 	end
+
+PetalburgWoods_EventScript_Brendan_Leave::
+	msgbox PetalburgWoods_Text_Leave_Brendan, MSGBOX_DEFAULT
+	closemessage
+	applymovement 14, PetalburgWoods_Movement_Rival_Leave
+	waitmovement 0
+	removeobject 14
+	releaseall
+	end
+
+PetalburgWoods_Movement_Rival_0:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PetalburgWoods_Movement_Rival_Make_Path_0:
+	walk_fast_up
+	walk_fast_left
+	walk_in_place_fastest_right
+	walk_in_place_fastest_up
+	step_end
+
+PetalburgWoods_Movement_Rival_1:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+PetalburgWoods_Movement_Rival_Make_Path_1:
+	walk_fast_up
+	walk_fast_right
+	walk_in_place_fastest_left
+	walk_in_place_fastest_up
+	step_end
+
+PetalburgWoods_Movement_Rival_Leave:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
 
 PetalburgWoods_Movement_22E1B1: @ 822E1B1
 	face_up
@@ -350,6 +571,28 @@ PetalburgWoods_Text_22E4A5: @ 822E4A5
 	.string "gets any mercy, not even a kid!\p"
 	.string "Come on and battle me!$"
 
+PetalburgWoods_Text_Grunt_Another_Kid:
+	.string "Here comes another brat!\p"
+	.string "Isn't teaming up against me unfair?\p"
+	.string "Just kidding!\p"
+	.string "I won't lose even if it's two against\n"
+	.string "one!$"
+	
+PetalburgWoods_Text_Wait_May:
+	.string "MAY: Wait!$"
+
+PetalburgWoods_Text_Battle_May:
+	.string "MAY: {PLAYER}{KUN}, we've got to stop him!\p"
+	.string "Let's combine our forces together!$"
+
+PetalburgWoods_Text_Wait_Brendan:
+	.string "BRENDAN: Wait!$"
+
+PetalburgWoods_Text_Battle_Brendan:
+	.string "BRENDAN: {PLAYER}{KUN}, we've got to stop\n"
+	.string "him!\p"
+	.string "Let's combine our forces together!$"
+
 PetalburgWoods_Text_22E542: @ 822E542
 	.string "You're kidding me! You're tough!$"
 
@@ -366,9 +609,9 @@ PetalburgWoods_Text_22E563: @ 822E563
 PetalburgWoods_Text_22E63D: @ 822E63D
 	.string "Whew…\n"
 	.string "That was awfully close!\p"
-	.string "Thanks to you, he didn't rob me of\n"
+	.string "Thanks to you kids, he didn't rob me of\n"
 	.string "these important papers.\p"
-	.string "I know, I'll give you a GREAT BALL as\n"
+	.string "I know, I'll give you some GREAT BALLS as\n"
 	.string "my thanks!$"
 
 PetalburgWoods_Text_22E6C7: @ 822E6C7
@@ -383,6 +626,16 @@ PetalburgWoods_Text_22E712: @ 822E712
 PetalburgWoods_Text_22E741: @ 822E741
 	.string "You're loaded with items.\n"
 	.string "I can't give you this GREAT BALL.$"
+	
+PetalburgWoods_Text_Leave_May:
+	.string "MAY: Phew! I'm glad we were able to drive\n"
+	.string "off the thug!\p"
+	.string "I'd better get going now. Bye!$"
+
+PetalburgWoods_Text_Leave_Brendan:
+	.string "BRENDAN: Phew! I'm glad we were able to\n"
+	.string "drive off the thug!\p"
+	.string "I'd better get going now. Bye!$"
 
 PetalburgWoods_Text_22E77D: @ 822E77D
 	.string "I caught a whole bunch of POKéMON!\p"
