@@ -63,16 +63,16 @@ $(TILESETGFXDIR)/secondary/petalburg/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 159
 
 $(TILESETGFXDIR)/secondary/rustboro/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 498
+	$(GFX) $< $@ -num_tiles 160
 
 $(TILESETGFXDIR)/secondary/dewford/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 503
 
 $(TILESETGFXDIR)/secondary/slateport/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 504
+	$(GFX) $< $@ -num_tiles 256
 
 $(TILESETGFXDIR)/secondary/mauville/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 503
+	$(GFX) $< $@ -num_tiles 256
 
 $(TILESETGFXDIR)/secondary/lavaridge/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 450

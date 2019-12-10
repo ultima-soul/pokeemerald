@@ -4409,8 +4409,7 @@ extern const u8 gFireRedMenuElements_Gfx[];
 // item menu graphics
 extern const u32 gBagScreen_Gfx[];
 extern const u32 gBagScreen_GfxTileMap[];
-extern const u32 gBagScreenFemale_Pal[];
-extern const u32 gBagScreenMale_Pal[];
+extern const u32 gBagScreen_Pal[];
 extern const u8 gBagMenuHMIcon_Gfx[];
 
 // item menu icons graphics
@@ -4418,6 +4417,25 @@ extern const u32 gBagMaleTiles[];
 extern const u32 gBagFemaleTiles[];
 extern const u32 gBagPalette[];
 extern const u32 gBerryCheckCircle_Gfx[];
+
+//summary screen icons
+extern const u32 gSummaryMonIconsInfo1_Gfx[];
+extern const u32 gSummaryMonIconsInfo2_Gfx[];
+extern const u32 gSummaryMonTrainerMemo_Gfx[];
+extern const u32 gSummaryMonIconStats1_Gfx[];
+extern const u32 gSummaryMonIconStats2_Gfx[];
+extern const u32 gSummaryMonIconAbility_Gfx[];
+extern const u32 gSummaryMonIconMoves_Gfx[];
+extern const u32 gLaserGrid1_Gfx[];
+extern const u32 gLaserGrid2_Gfx[];
+extern const u32 gLaserGrid3_Gfx[];
+extern const u32 gLaserGrid4_Gfx[];
+extern const u32 gLaserGrid5_Gfx[];
+extern const u32 gLaserGrid6_Gfx[];
+extern const u32 gLaserGrid7_Gfx[];
+extern const u32 gLaserGrid8_Gfx[];
+extern const u32 gLaserGrid_Pal[];
+extern const u32 gSummaryIcons_Pal[];
 
 //intro graphics
 extern const u32 gIntro1SparkleGfx[];
