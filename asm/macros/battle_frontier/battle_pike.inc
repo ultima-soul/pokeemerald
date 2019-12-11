@@ -87,8 +87,8 @@
 	.endm
 
 	@
-	.macro pike_fadescreen
-	setvar VAR_0x8004, BATTLE_PIKE_FUNC_STATUS_SCREEN_FADE
+	.macro pike_flashscreen
+	setvar VAR_0x8004, BATTLE_PIKE_FUNC_STATUS_SCREEN_FLASH
 	special CallBattlePikeFunction
 	.endm
 

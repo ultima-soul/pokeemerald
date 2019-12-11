@@ -3,11 +3,16 @@ Route131_MapScripts:: @ 81F7404
 	.byte 0
 
 Route131_OnTransition: @ 81F740A
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetWeather15
+	compare VAR_SOOTOPOLIS_CITY_STATE, 4
+	call_if_ge Route131_EventScript_CheckSetAbnormalWeather
+	call Route131_EventScript_SetLayout
 	end
 
-Route131_EventScript_1F741F:: @ 81F741F
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetWeather15
+Route131_EventScript_SetLayout:: @ 81F741B
+	return
+
+Route131_EventScript_CheckSetAbnormalWeather:: @ 81F741F
+	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
 	return
 
 Route131_EventScript_Richard:: @ 81F7429

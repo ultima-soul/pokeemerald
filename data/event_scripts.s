@@ -450,7 +450,7 @@ gStdScripts_End:: @ 81DC2CC
 	.include "data/maps/TradeCenter/scripts.inc"
 	.include "data/maps/RecordCorner/scripts.inc"
 	.include "data/maps/BattleColosseum4P/scripts.inc"
-	.include "data/maps/LinkContestRoom1/scripts.inc"
+	.include "data/maps/ContestHall/scripts.inc"
 	.include "data/maps/InsideOfTruck/scripts.inc"
 	.include "data/maps/SSTidalCorridor/scripts.inc"
 	.include "data/maps/SSTidalLowerDeck/scripts.inc"

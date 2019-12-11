@@ -5,7 +5,6 @@ Route105_MapScripts:: @ 81EE1DB
 	.byte 0
 
 Route105_OnLoad: @ 81EE1EB
-	call_if_unset FLAG_REGI_DOORS_OPENED, Route105_CloseRegiEntrance
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_NORTH
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute105North
 	compare VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_ROUTE_105_SOUTH

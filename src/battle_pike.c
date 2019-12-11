@@ -495,7 +495,7 @@ static void (* const sBattlePikeFunctions[])(void) =
     [BATTLE_PIKE_FUNC_GET_ROOM_STATUS_MON]     = GetRoomInflictedStatusMon,
     [BATTLE_PIKE_FUNC_HEAL_ONE_TWO_MONS]       = HealOneOrTwoMons,
     [BATTLE_PIKE_FUNC_BUFFER_NPC_MSG]          = BufferNPCMessage,
-    [BATTLE_PIKE_FUNC_STATUS_SCREEN_FADE]      = StatusInflictionScreenFade,
+    [BATTLE_PIKE_FUNC_STATUS_SCREEN_FLASH]      = StatusInflictionScreenFade,
     [BATTLE_PIKE_FUNC_IS_IN]                   = GetInBattlePike,
     [BATTLE_PIKE_FUNC_SET_HINT_ROOM]           = SetHintedRoom,
     [BATTLE_PIKE_FUNC_GET_HINT_ROOM_ID]        = GetHintedRoomIndex,
@@ -579,7 +579,7 @@ static void SetupRoomEventObjects(void)
         break;
     case PIKE_ROOM_STATUS:
         objGfx1 = EVENT_OBJ_GFX_GENTLEMAN;
-        if (sStatusMon == PIKE_STATUS_DUSCLOPS)
+        if (sStatusMon == PIKE_STATUSMON_DUSCLOPS)
             objGfx2 = EVENT_OBJ_GFX_DUSCLOPS;
         else
             objGfx2 = EVENT_OBJ_GFX_KIRLIA;
@@ -946,19 +946,19 @@ static bool8 TryInflictRandomStatus(void)
     switch (sStatusFlags)
     {
     case STATUS1_FREEZE:
-        sStatusMon = PIKE_STATUS_DUSCLOPS;
+        sStatusMon = PIKE_STATUSMON_DUSCLOPS;
         break;
     case STATUS1_BURN:
         if (Random() % 2 != 0)
-            sStatusMon = PIKE_STATUS_DUSCLOPS;
+            sStatusMon = PIKE_STATUSMON_DUSCLOPS;
         else
-            sStatusMon = PIKE_STATUS_KIRLIA;
+            sStatusMon = PIKE_STATUSMON_KIRLIA;
         break;
     case STATUS1_PARALYSIS:
     case STATUS1_SLEEP:
     case STATUS1_TOXIC_POISON:
     default:
-        sStatusMon = PIKE_STATUS_KIRLIA;
+        sStatusMon = PIKE_STATUSMON_KIRLIA;
         break;
     }
 
