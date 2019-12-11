@@ -12,11 +12,6 @@ Route105_OnLoad: @ 81EE1EB
 	call_if_eq AbnormalWeather_EventScript_PlaceTilesRoute105South
 	end
 
-Route105_CloseRegiEntrance:: @ 81EE20B
-	setmetatile 9, 19, METATILE_General_RockWall_RockBase, 1
-	setmetatile 9, 20, METATILE_General_RockWall_SandBase, 1
-	return
-
 Route105_OnTransition: @ 81EE21E
 	compare VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	call_if_eq AbnormalWeather_EventScript_HideMapNamePopup

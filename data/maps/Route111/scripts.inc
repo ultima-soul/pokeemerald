@@ -1,55 +1,10 @@
 Route111_MapScripts:: @ 81F0CA7
-	map_script MAP_SCRIPT_ON_LOAD, Route111_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, Route111_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, Route111_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route111_OnFrame
 	.byte 0
 
-Route111_OnLoad: @ 81F0CBC
-	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
-	compare VAR_MIRAGE_TOWER_STATE, 1
-	call_if_eq Route111_EventScript_ShowTemporaryMirageTower
-	end
-
-Route111_EventScript_CloseDesertRuins:: @ 81F0CD1
-	setmetatile 29, 86, METATILE_General_RockWall_RockBase, 1
-	setmetatile 29, 87, METATILE_General_RockWall_SandBase, 1
-	return
-
-@ Show Mirage Tower just prior to disintegration. Mirage Tower is otherwise handled by the map layout
-Route111_EventScript_ShowTemporaryMirageTower:: @ 81F0CE4
-	setmetatile 18, 53, METATILE_Mauville_MirageTower_Tile0, 0
-	setmetatile 19, 53, METATILE_Mauville_MirageTower_Tile1, 0
-	setmetatile 20, 53, METATILE_Mauville_MirageTower_Tile2, 0
-	setmetatile 18, 54, METATILE_Mauville_MirageTower_Tile3, 0
-	setmetatile 19, 54, METATILE_Mauville_MirageTower_Tile4, 0
-	setmetatile 20, 54, METATILE_Mauville_MirageTower_Tile5, 0
-	setmetatile 18, 55, METATILE_Mauville_MirageTower_Tile6, 0
-	setmetatile 19, 55, METATILE_Mauville_MirageTower_Tile7, 0
-	setmetatile 20, 55, METATILE_Mauville_MirageTower_Tile8, 0
-	setmetatile 18, 56, METATILE_Mauville_MirageTower_Tile9, 0
-	setmetatile 19, 56, METATILE_Mauville_MirageTower_TileA, 0
-	setmetatile 20, 56, METATILE_Mauville_MirageTower_TileB, 0
-	setmetatile 18, 57, METATILE_Mauville_MirageTower_TileC, 0
-	setmetatile 19, 57, METATILE_Mauville_MirageTower_TileD, 0
-	setmetatile 20, 57, METATILE_Mauville_MirageTower_TileE, 0
-	setmetatile 18, 58, METATILE_Mauville_MirageTower_TileF, 0
-	setmetatile 19, 58, METATILE_Mauville_MirageTower_Tile10, 0
-	setmetatile 20, 58, METATILE_Mauville_MirageTower_Tile11, 0
-	return
-
 Route111_OnTransition: @ 81F0D87
-	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
-	special SetMirageTowerVisibility
-	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
-	compare VAR_MIRAGE_TOWER_STATE, 1
-	call_if_eq Route111_EventScript_SetFallingPlayerGfx
-	compare VAR_MIRAGE_TOWER_STATE, 2
-	call_if_eq Route111_EventScript_SetMirageTowerGone
-	call Route111_EventScript_CheckSetSandstorm
-	call GabbyAndTy_EventScript_UpdateLocation
-	checktrainerflag TRAINER_VICKY
-	goto_if_lt Route111_EventScript_SetWinstratesNotDefeated
 	end
 
 Route111_EventScript_SetFallingPlayerGfx:: @ 81F0DC2
