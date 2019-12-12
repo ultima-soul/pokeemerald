@@ -840,4 +840,4 @@ gTileset_general_fall::
 	.4byte gTilesetPalettes_general_fall
 	.4byte gMetatiles_general_fall
 	.4byte gMetatileAttributes_general_fall
-	.4byte NULL
+	.4byte InitTilesetAnim_General_Fall

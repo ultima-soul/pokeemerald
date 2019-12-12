@@ -33,6 +33,15 @@ PetalburgCity_OnFrame: @ 81DC31C
 	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
 	.2byte 0
 
+Receiive_Beta_Starter:: @ 827004D
+	msgbox Beta_Starter_kit_message MSGBOX_DEFAULT
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_RECEIVED_POKENAV
+	setvar VAR_TEMP_1, SPECIES_CASTFORM
+	givemon SPECIES_BLAZIKEN, 50, ITEM_CHARCOAL
+	end
+	
 PetalburgCity_EventScript_WallyTutorial:: @ 81DC32E
 	lockall
 	special SavePlayerParty
@@ -774,3 +783,7 @@ PetalburgCity_Text_ImLookingForTalentedTrainers: @ 81DCC09
 	.string "I'm roaming the land in search of\n"
 	.string "talented TRAINERS.\p"
 	.string "I'm sorry to have taken your time.$"
+
+Beta_Starter_kit_message:
+	.string "Here's a starting kit for the beta.$"
+	

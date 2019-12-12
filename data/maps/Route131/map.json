@@ -5,7 +5,13 @@
     "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
     "bg_events": [
     ],
-    "connections": null,
+    "connections": [
+        {
+            "direction": "up",
+            "map": "MAP_SLATEPORT_CITY",
+            "offset": -7
+        }
+    ],
     "coord_events": [
     ],
     "id": "MAP_ROUTE131",
@@ -19,6 +25,41 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ROUTE130",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 8,
+            "y": 27
+        },
+        {
+            "dest_map": "MAP_ROUTE130",
+            "dest_warp_id": 1,
+            "elevation": 0,
+            "x": 9,
+            "y": 27
+        },
+        {
+            "dest_map": "MAP_ROUTE130",
+            "dest_warp_id": 2,
+            "elevation": 0,
+            "x": 10,
+            "y": 27
+        },
+        {
+            "dest_map": "MAP_ROUTE130",
+            "dest_warp_id": 3,
+            "elevation": 0,
+            "x": 11,
+            "y": 27
+        },
+        {
+            "dest_map": "MAP_ROUTE130",
+            "dest_warp_id": 4,
+            "elevation": 0,
+            "x": 12,
+            "y": 27
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }
