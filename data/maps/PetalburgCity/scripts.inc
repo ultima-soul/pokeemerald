@@ -35,11 +35,14 @@ PetalburgCity_OnFrame: @ 81DC31C
 
 Receiive_Beta_Starter:: @ 827004D
 	msgbox Beta_Starter_kit_message MSGBOX_DEFAULT
+	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_SYS_POKEDEX_GET
 	setflag FLAG_RECEIVED_POKENAV
-	setvar VAR_TEMP_1, SPECIES_CASTFORM
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	setvar VAR_TEMP_1, SPECIES_BLAZIKEN
 	givemon SPECIES_BLAZIKEN, 50, ITEM_CHARCOAL
+	closemessage
 	end
 	
 PetalburgCity_EventScript_WallyTutorial:: @ 81DC32E
@@ -785,5 +788,6 @@ PetalburgCity_Text_ImLookingForTalentedTrainers: @ 81DCC09
 	.string "I'm sorry to have taken your time.$"
 
 Beta_Starter_kit_message:
-	.string "Here's a starting kit for the beta.$"
+	.string "Take a starting kit for the beta.\p"
+	.string "$"
 	

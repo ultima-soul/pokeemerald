@@ -2097,31 +2097,31 @@ static void BlitBitmapToPartyWindow_LeftColumn(u8 windowId, u8 x, u8 y, u8 width
 {
     if (width == 0 && height == 0)
     {
-        width = 10;
-        height = 7;
+        width = 14;
+        height = 5;
     }
     if (isEgg == FALSE)
-        BlitBitmapToPartyWindow(windowId, sMainSlotTileNums, 10, x, y, width, height);
+        BlitBitmapToPartyWindow(windowId, sMainSlotTileNums, 14, x, y, width, height);
     else
-        BlitBitmapToPartyWindow(windowId, sMainSlotTileNums_Egg, 10, x, y, width, height);
+        BlitBitmapToPartyWindow(windowId, sMainSlotTileNums_Egg, 14, x, y, width, height);
 }
 
 static void BlitBitmapToPartyWindow_RightColumn(u8 windowId, u8 x, u8 y, u8 width, u8 height, u8 isEgg)
 {
     if (width == 0 && height == 0)
     {
-        width = 18;
-        height = 3;
+        width = 14;
+        height = 5;
     }
     if (isEgg == FALSE)
-        BlitBitmapToPartyWindow(windowId, sOtherSlotsTileNums, 18, x, y, width, height);
+        BlitBitmapToPartyWindow(windowId, sOtherSlotsTileNums, 14, x, y, width, height);
     else
-        BlitBitmapToPartyWindow(windowId, sOtherSlotsTileNums_Egg, 18, x, y, width, height);
+        BlitBitmapToPartyWindow(windowId, sOtherSlotsTileNums_Egg, 14, x, y, width, height);
 }
 
 static void DrawEmptySlot(u8 windowId)
 {
-    BlitBitmapToPartyWindow(windowId, sEmptySlotTileNums, 18, 0, 0, 18, 3);
+    BlitBitmapToPartyWindow(windowId, sEmptySlotTileNums, 14, 0, 0, 14, 5);
 }
 
 #define LOAD_PARTY_BOX_PAL(paletteIds, paletteOffsets)                                    \

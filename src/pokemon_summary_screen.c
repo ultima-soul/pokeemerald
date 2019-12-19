@@ -289,7 +289,7 @@ static void SetContestMoveTypeIcons(void);
 static void SetNewMoveTypeIcon(void);
 static void sub_81C4568(u8 a, u8 b);
 static u8 CreatePokemonSprite(struct Pokemon *a, s16 *b);
-static u8 sub_81C47B4(struct Pokemon *unused);
+static u8 createMonPortrait_SummaryScreen(struct Pokemon *unused);
 static void SpriteCB_Pokemon(struct Sprite *);
 static void StopPokemonAnimations(void);
 static void CreateMonMarkingsSprite(struct Pokemon *mon);
@@ -1455,7 +1455,7 @@ static u8 ShowSplitIcon(u8 split)
     if (GetSpriteTileStartByTag(SPLIT_ICONS_TAG) == 0xFFFF)
         LoadSpriteSheet(&sSpriteSheet_SplitIcons);
     if (sMonSummaryScreen->splitIconSpriteId == 0xFF)
-        sMonSummaryScreen->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 48, 129, 0);
+        sMonSummaryScreen->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 216, 65, 0);
     else if (gSprites[sMonSummaryScreen->splitIconSpriteId].invisible)
         gSprites[sMonSummaryScreen->splitIconSpriteId].invisible = FALSE;
 
@@ -4453,7 +4453,7 @@ static u8 CreatePokemonSprite(struct Pokemon *mon, s16 *a1)
     switch (*a1)
     {
         default:
-            return sub_81C47B4(mon);
+            return createMonPortrait_SummaryScreen(mon);
         case 0:
             if (gMain.inBattle)
             {
@@ -4518,7 +4518,7 @@ static void PlayMonCry(void)
     }
 }
 
-static u8 sub_81C47B4(struct Pokemon *unused)
+static u8 createMonPortrait_SummaryScreen(struct Pokemon *unused)
 {
     struct PokeSummary *summary = &sMonSummaryScreen->summary;
     u8 spriteId = CreateSprite(&gMultiuseSpriteTemplate, 204, 68, 8);
@@ -4530,16 +4530,6 @@ static u8 sub_81C47B4(struct Pokemon *unused)
     sprite->data[2] = 0;
     gSprites[spriteId].callback = SpriteCB_Pokemon;
     sprite->oam.priority = 0;
-
-    if (!IsMonSpriteNotFlipped(summary->species2))
-    {
-        sprite->hFlip = TRUE;
-    }
-    else
-    {
-        sprite->hFlip = FALSE;
-    }
-
     return spriteId;
 }
 

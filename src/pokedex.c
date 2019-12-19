@@ -29,6 +29,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/species.h"
+#include "src/data/pokemon/base_stats.h"
 
 // EWRAM
 static EWRAM_DATA struct PokedexView *sPokedexView = NULL;
@@ -645,6 +646,46 @@ static const struct SpriteTemplate sSeenOwnTextSpriteTemplate =
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = sub_80BE44C,
+};
+
+static const struct OamData sOamData_AbilitySprite =
+{
+    .y = 0,
+    .affineMode = 0,
+    .objMode = 0,
+    .mosaic = 0,
+    .bpp = 0,
+    .shape = SPRITE_SHAPE(64x64),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(64x64),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct CompressedSpriteSheet sAbilitySpriteSheet =
+{
+    .data = gSummaryMonIconAbility_Gfx,
+    .size = 0x800,
+    .tag = 30009
+};
+static const struct CompressedSpritePalette sAbilitySpritePalette =
+{
+    .data = gSummaryIcons_Pal,
+    .tag = 30009
+};
+
+static const struct SpriteTemplate sAbilitySpriteTemplate =
+{
+    .tileTag = 30009,
+    .paletteTag = 30009,
+    .oam = &sOamData_AbilitySprite,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
 };
 
 static const struct SpriteTemplate gUnknown_0855D20C =
@@ -1812,6 +1853,9 @@ bool8 sub_80BC514(u8 a)
             gReservedSpritePaletteCount = 8;
             LoadCompressedSpriteSheet(&sInterfaceSpriteSheet[0]);
             LoadSpritePalettes(sInterfaceSpritePalette);
+            
+            LoadCompressedSpriteSheet(&sAbilitySpriteSheet);
+            LoadCompressedSpritePalette(&sAbilitySpritePalette);
             CreateInterfaceSprites(a);
             gMain.state++;
             break;
@@ -2053,6 +2097,24 @@ static void PrintMonDexNumAndName(u8 windowId, u8 fontId, const u8* str, u8 left
     AddTextPrinterParameterized4(windowId, fontId, left * 8, (top * 8) + 1, 0, 0, color, -1, str);
 }
 
+static const u8 sStatsAttack[] = _("ATK {SPECIAL_F7 0x00}");
+static const u8 sStatsDefense[] = _("DEF {SPECIAL_F7 0x01}");
+
+static void CreateBaseStatList (u8 direction, u16 num)
+{
+    u8 str[3];
+
+    const u8 *baseAttackString
+    
+    ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), gBaseStats[num].attack, STR_CONV_MODE_RIGHT_ALIGN, 3);
+
+    DynamicPlaceholderTextUtil_Reset();
+    DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, baseAttackString);
+    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar1, sStatsAttack);
+
+    PrintInfoPageText(str, 100, 100);
+}
+
 static void CreateMonListEntry(u8 direction, u16 b, u16 c)
 {
     s16 _b;
@@ -2218,6 +2280,7 @@ static void CreateInitialPokemonSprites(u16 selectedMon, u16 b)
     }
 
     CreateMonListEntry(0, selectedMon, b);
+    CreateBaseStatList(0, selectedMon);
     SetGpuReg(REG_OFFSET_BG2VOFS, sPokedexView->initialVOffset);
 
     sPokedexView->unk630 = 0;
@@ -2317,6 +2380,7 @@ u16 sub_80BD69C(u16 selectedMon, u16 b)
         selectedMon = sub_80C0E0C(1, selectedMon, 0, sPokedexView->pokemonListCount - 1);
         CreateNewPokemonSprite(1, selectedMon);
         CreateMonListEntry(1, selectedMon, b);
+        CreateBaseStatList(1, selectedMon)
         PlaySE(SE_Z_SCROLL);
     }
     else if ((gMain.heldKeys & DPAD_DOWN) && (selectedMon < sPokedexView->pokemonListCount - 1))
@@ -2325,6 +2389,7 @@ u16 sub_80BD69C(u16 selectedMon, u16 b)
         selectedMon = sub_80C0E0C(0, selectedMon, 0, sPokedexView->pokemonListCount - 1);
         CreateNewPokemonSprite(2, selectedMon);
         CreateMonListEntry(2, selectedMon, b);
+        CreateBaseStatList(2, selectedMon)
         PlaySE(SE_Z_SCROLL);
     }
     else if ((gMain.newKeys & DPAD_LEFT) && (selectedMon > 0))
@@ -2491,7 +2556,9 @@ static void CreateInterfaceSprites(u8 a)
     {
         u32 _a;
         
-        //InitWindows(gPokedex_BaseStats);
+        //InitWindows(gPokedex_BaseStats);'
+        //Create Ability Icon
+        CreateSprite(&sAbilitySpriteTemplate, 64, 99, 0);
         //BST Tags
         AddTextPrinterParameterized4(9, 1, 0, 8, 0, 0, 0, -1, gText_DexHP);
 
