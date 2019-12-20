@@ -29,7 +29,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/species.h"
-#include "src/data/pokemon/base_stats.h"
 
 // EWRAM
 static EWRAM_DATA struct PokedexView *sPokedexView = NULL;
@@ -797,6 +796,15 @@ static const struct WindowTemplate sPokemonList_WindowTemplate[] =
         .height = 32,
         .paletteNum = 0,
         .baseBlock = 1,
+    },
+    {
+        .bg = 1,
+        .tilemapLeft = 3,
+        .tilemapTop = 12,
+        .width = 10,
+        .height = 5,
+        .paletteNum = 3,
+        .baseBlock = 321,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -2102,17 +2110,28 @@ static const u8 sStatsDefense[] = _("DEF {SPECIAL_F7 0x01}");
 
 static void CreateBaseStatList (u8 direction, u16 num)
 {
-    u8 str[3];
+    u8 str[0x10];
+    u8 color[3];
+    u16 dexNum;
 
-    const u8 *baseAttackString
+    color[0] = 9;
+    color[1] = 15;
+    color[2] = 3;
+
+    if (sPokedexView->dexMode == DEX_MODE_HOENN)
+        dexNum = HoennPokedexNumToSpecies(num + 1);
+    else
+        dexNum = NationalPokedexNumToSpecies(num + 1);
     
-    ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), gBaseStats[num].attack, STR_CONV_MODE_RIGHT_ALIGN, 3);
 
-    DynamicPlaceholderTextUtil_Reset();
-    DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, baseAttackString);
-    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar1, sStatsAttack);
+    FillWindowPixelBuffer(1, PIXEL_FILL(9));
+    
+    ConvertIntToDecimalStringN(StringCopy(str, sStatsAttack), gBaseStats[dexNum].baseAttack, STR_CONV_MODE_RIGHT_ALIGN, 3);
 
-    PrintInfoPageText(str, 100, 100);
+    AddTextPrinterParameterized4(1, 7, 2, 12, 0, 0, color, -1, str);
+    
+    PutWindowTilemap(1);
+    CopyWindowToVram(1, 3);
 }
 
 static void CreateMonListEntry(u8 direction, u16 b, u16 c)
@@ -2380,7 +2399,7 @@ u16 sub_80BD69C(u16 selectedMon, u16 b)
         selectedMon = sub_80C0E0C(1, selectedMon, 0, sPokedexView->pokemonListCount - 1);
         CreateNewPokemonSprite(1, selectedMon);
         CreateMonListEntry(1, selectedMon, b);
-        CreateBaseStatList(1, selectedMon)
+        CreateBaseStatList(1, selectedMon);
         PlaySE(SE_Z_SCROLL);
     }
     else if ((gMain.heldKeys & DPAD_DOWN) && (selectedMon < sPokedexView->pokemonListCount - 1))
@@ -2389,7 +2408,7 @@ u16 sub_80BD69C(u16 selectedMon, u16 b)
         selectedMon = sub_80C0E0C(0, selectedMon, 0, sPokedexView->pokemonListCount - 1);
         CreateNewPokemonSprite(2, selectedMon);
         CreateMonListEntry(2, selectedMon, b);
-        CreateBaseStatList(2, selectedMon)
+        CreateBaseStatList(2, selectedMon);
         PlaySE(SE_Z_SCROLL);
     }
     else if ((gMain.newKeys & DPAD_LEFT) && (selectedMon > 0))
