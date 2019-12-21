@@ -396,7 +396,7 @@ static const struct WindowTemplate sCancelButtonWindowTemplate =
     .tilemapTop = 17,
     .width = 6,
     .height = 2,
-    .paletteNum = 3,
+    .paletteNum = 1,
     .baseBlock = 0x207,
 };
 
@@ -407,7 +407,7 @@ static const struct WindowTemplate sMultiCancelButtonWindowTemplate =
     .tilemapTop = 18,
     .width = 6,
     .height = 2,
-    .paletteNum = 3,
+    .paletteNum = 1,
     .baseBlock = 0x207,
 };
 
@@ -418,7 +418,7 @@ static const struct WindowTemplate sConfirmButtonWindowTemplate =
     .tilemapTop = 16,
     .width = 6,
     .height = 2,
-    .paletteNum = 3,
+    .paletteNum = 1,
     .baseBlock = 0x1D3,
 };
 

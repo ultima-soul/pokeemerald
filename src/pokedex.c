@@ -799,12 +799,21 @@ static const struct WindowTemplate sPokemonList_WindowTemplate[] =
     },
     {
         .bg = 1,
+        .tilemapLeft = 0,
+        .tilemapTop = 2,
+        .width = 5,
+        .height = 8,
+        .paletteNum = 3,
+        .baseBlock = 321,
+    },
+    {
+        .bg = 1,
         .tilemapLeft = 3,
         .tilemapTop = 12,
         .width = 10,
         .height = 5,
         .paletteNum = 3,
-        .baseBlock = 321,
+        .baseBlock = 401,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -2105,18 +2114,36 @@ static void PrintMonDexNumAndName(u8 windowId, u8 fontId, const u8* str, u8 left
     AddTextPrinterParameterized4(windowId, fontId, left * 8, (top * 8) + 1, 0, 0, color, -1, str);
 }
 
-static const u8 sStatsAttack[] = _("ATK {SPECIAL_F7 0x00}");
-static const u8 sStatsDefense[] = _("DEF {SPECIAL_F7 0x01}");
+static const u8 sStatsHP[] =      _("HP");
+static const u8 sStatsAttack[] =  _("ATK");
+static const u8 sStatsDefense[] = _("DEF");
+static const u8 sStatsSpAtk[] =   _("SpA");
+static const u8 sStatsSpDef[] =   _("SpD");
+static const u8 sStatsSpeed[] =   _("SPE");
+
+static const u8 sStatsHPValue[] =   _("{SPECIAL_F7 0x00}");
+static const u8 sStatsAttackValue[] =   _("{SPECIAL_F7 0x00}");
+static const u8 sStatsDefenseValue[] =   _("{SPECIAL_F7 0x00}");
+static const u8 sStatsSpAtkValue[] =   _("{SPECIAL_F7 0x00}");
+static const u8 sStatsSpDefValue[] =   _("{SPECIAL_F7 0x00}");
+static const u8 sStatsSpeedValue[] =   _("{SPECIAL_F7 0x00}");
+
+static const u8 sStatsNoValue[] =   _("---");
 
 static void CreateBaseStatList (u8 direction, u16 num)
 {
-    u8 str[0x10];
+    u8 str0[0x10];
+    u8 str1[0x10];
+    u8 str2[0x10];
+    u8 str3[0x10];
+    u8 str4[0x10];
+    u8 str5[0x10];
     u8 color[3];
     u16 dexNum;
 
-    color[0] = 9;
+    color[0] = 0;
     color[1] = 15;
-    color[2] = 3;
+    color[2] = 4;
 
     if (sPokedexView->dexMode == DEX_MODE_HOENN)
         dexNum = HoennPokedexNumToSpecies(num + 1);
@@ -2124,12 +2151,40 @@ static void CreateBaseStatList (u8 direction, u16 num)
         dexNum = NationalPokedexNumToSpecies(num + 1);
     
 
-    FillWindowPixelBuffer(1, PIXEL_FILL(9));
+    FillWindowPixelBuffer(1, PIXEL_FILL(0));
     
-    ConvertIntToDecimalStringN(StringCopy(str, sStatsAttack), gBaseStats[dexNum].baseAttack, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    AddTextPrinterParameterized4(1, 8, 1, 0, 0, 0, color, -1, sStatsHP);
+    AddTextPrinterParameterized4(1, 8, 1, 10, 0, 0, color, -1, sStatsAttack);
+    AddTextPrinterParameterized4(1, 8, 1, 20, 0, 0, color, -1, sStatsDefense);
+    AddTextPrinterParameterized4(1, 8, 1, 30, 0, 0, color, -1, sStatsSpAtk);
+    AddTextPrinterParameterized4(1, 8, 1, 40, 0, 0, color, -1, sStatsSpDef);
+    AddTextPrinterParameterized4(1, 8, 1, 50, 0, 0, color, -1, sStatsSpeed);
 
-    AddTextPrinterParameterized4(1, 7, 2, 12, 0, 0, color, -1, str);
-    
+    ConvertIntToDecimalStringN(StringCopy(str0, sStatsHPValue), gBaseStats[dexNum].baseHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(StringCopy(str1, sStatsAttackValue), gBaseStats[dexNum].baseAttack, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(StringCopy(str2, sStatsDefenseValue), gBaseStats[dexNum].baseDefense, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(StringCopy(str3, sStatsSpAtkValue), gBaseStats[dexNum].baseSpAttack, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(StringCopy(str4, sStatsSpDefValue), gBaseStats[dexNum].baseSpDefense, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(StringCopy(str5, sStatsSpeedValue), gBaseStats[dexNum].baseSpeed, STR_CONV_MODE_RIGHT_ALIGN, 3);
+
+    if (sPokedexView->pokedexList[num].owned)
+    {
+        AddTextPrinterParameterized4(1, 8, 19, 0, 0, 0, color, -1, str0);
+        AddTextPrinterParameterized4(1, 8, 19, 10, 0, 0, color, -1, str1);
+        AddTextPrinterParameterized4(1, 8, 19, 20, 0, 0, color, -1, str2);
+        AddTextPrinterParameterized4(1, 8, 19, 30, 0, 0, color, -1, str3);
+        AddTextPrinterParameterized4(1, 8, 19, 40, 0, 0, color, -1, str4);
+        AddTextPrinterParameterized4(1, 8, 19, 50, 0, 0, color, -1, str5);
+    }
+    else
+    {
+        AddTextPrinterParameterized4(1, 8, 25, 0, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(1, 8, 25, 10, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(1, 8, 25, 20, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(1, 8, 25, 30, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(1, 8, 25, 40, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(1, 8, 25, 50, 0, 0, color, -1, sStatsNoValue);
+    }
     PutWindowTilemap(1);
     CopyWindowToVram(1, 3);
 }
