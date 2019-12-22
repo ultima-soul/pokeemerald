@@ -685,9 +685,9 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_SKILLS_STATS_LEFT] = {
         .bg = 0,
-        .tilemapLeft = 4,
+        .tilemapLeft = 8,
         .tilemapTop = 2,
-        .width = 10,
+        .width = 7,
         .height = 8,
         .paletteNum = 1,
         .baseBlock = 562,
@@ -703,9 +703,9 @@ static const struct WindowTemplate sPageSkillsTemplate[] =
     },
     [PSS_DATA_WINDOW_EXP] = {
         .bg = 0,
-        .tilemapLeft = 6,
+        .tilemapLeft = 8,
         .tilemapTop = 12,
-        .width = 8,
+        .width = 7,
         .height = 2,
         .paletteNum = 1,
         .baseBlock = 670,
@@ -736,7 +736,7 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
         .tilemapLeft = 15,
         .tilemapTop = 12,
         .width = 20,
-        .height = 4,
+        .height = 8,
         .paletteNum = 1,
         .baseBlock = 654,
     },
@@ -2291,6 +2291,7 @@ static void sub_81C0E48(u8 taskId)
     if (sMonSummaryScreen->detailedMoveCheck == 1)
     {
         gSprites[sMonSummaryScreen->spriteIds[0]].invisible = TRUE;
+        ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_LEVEL);
 
         gSprites[sMonSummaryScreen->summarySpriteIds[0]].invisible = FALSE;
         gSprites[sMonSummaryScreen->summarySpriteIds[1]].invisible = FALSE;
@@ -2397,8 +2398,7 @@ static void Handle_Move_Swap_Arrows(s16 *a, s8 b, u8 *c)
     schedule_bg_copy_tilemap_to_vram(2);
     PrintMoveDetails(move);
     if ((*c == 4 && sMonSummaryScreen->newMove == MOVE_NONE) || a[1] == 1)
-    {
-        //ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME);
+    {        
         if (!gSprites[sMonSummaryScreen->spriteIds[2]].invisible)
             ClearWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
         schedule_bg_copy_tilemap_to_vram(0);
@@ -2444,6 +2444,7 @@ static void sub_81C11F4(u8 taskId)
     if (sMonSummaryScreen->detailedMoveCheck == 0)
     {
         gSprites[sMonSummaryScreen->spriteIds[0]].invisible = FALSE;
+        PutWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_LEVEL);
         SetMonTypeIcons_Moves();
         gSprites[sMonSummaryScreen->summarySpriteIds[0]].invisible = TRUE;
         gSprites[sMonSummaryScreen->summarySpriteIds[1]].invisible = TRUE;
@@ -3358,6 +3359,7 @@ static void CreatePageWindowTilemaps(u8 page)
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_LEFT);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATS_RIGHT);
         PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_EXP);
+        ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER);
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->summarySpriteIds[0]]);
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->summarySpriteIds[1]]);
         DestroySpriteAndFreeResources(&gSprites[sMonSummaryScreen->summarySpriteIds[2]]);
@@ -3865,11 +3867,11 @@ static void BufferLeftColumnStats(void)
     u8 *defenseString = Alloc(8);
     u8 *spattackString = Alloc(8);
 
-    ConvertIntToDecimalStringN(currentHPString, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(maxHPString, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(attackString, sMonSummaryScreen->summary.atk, STR_CONV_MODE_RIGHT_ALIGN, 7);
-    ConvertIntToDecimalStringN(defenseString, sMonSummaryScreen->summary.def, STR_CONV_MODE_RIGHT_ALIGN, 7);
-    ConvertIntToDecimalStringN(spattackString, sMonSummaryScreen->summary.spatk, STR_CONV_MODE_RIGHT_ALIGN, 7);
+    ConvertIntToDecimalStringN(currentHPString, sMonSummaryScreen->summary.currentHP, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(maxHPString, sMonSummaryScreen->summary.maxHP, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(attackString, sMonSummaryScreen->summary.atk, STR_CONV_MODE_LEFT_ALIGN, 7);
+    ConvertIntToDecimalStringN(defenseString, sMonSummaryScreen->summary.def, STR_CONV_MODE_LEFT_ALIGN, 7);
+    ConvertIntToDecimalStringN(spattackString, sMonSummaryScreen->summary.spatk, STR_CONV_MODE_LEFT_ALIGN, 7);
 
     DynamicPlaceholderTextUtil_Reset();
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, currentHPString);
@@ -3892,26 +3894,27 @@ static void BufferLeftColumnStats(void)
 static void PrintLeftColumnStats(void)
 {
 
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar1, 36, 8, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 14, 20, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 14, 32, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 14, 44, 0, 0);
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar1, 4, 8, 0, 0);
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 4, 20, 0, 0);
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 4, 32, 0, 0);
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 44, 0, 0);
 }
 
 static void BufferRightColumnStats(void)
 {
 
-    ConvertIntToDecimalStringN(gStringVar1, sMonSummaryScreen->summary.spdef, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    ConvertIntToDecimalStringN(gStringVar2, sMonSummaryScreen->summary.speed, STR_CONV_MODE_RIGHT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar1, sMonSummaryScreen->summary.spdef, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar2, sMonSummaryScreen->summary.speed, STR_CONV_MODE_LEFT_ALIGN, 3);
 
     DynamicPlaceholderTextUtil_Reset();
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar1, sStatsRightColumnLayout1);
     DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar2);
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar1, sStatsRightColumnLayout2);
-
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 6, 0, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 6, 12, 0, 0);
+    
+    //Add a colorid change for natures
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 4, 0, 0, 0);
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 4, 12, 0, 0);
 }
 
 
@@ -3922,7 +3925,7 @@ static void PrintExpPointsNextLevel(void)
     int offset;
     u32 expToNextLevel;
 
-    ConvertIntToDecimalStringN(gStringVar1, sum->exp, STR_CONV_MODE_RIGHT_ALIGN, 7);
+    ConvertIntToDecimalStringN(gStringVar1, sum->exp, STR_CONV_MODE_LEFT_ALIGN, 7);
     SummaryScreen_PrintTextOnWindow(windowId, gStringVar1, 4, 0, 0, 0);
 
     if (sum->level < MAX_LEVEL)
@@ -3930,7 +3933,7 @@ static void PrintExpPointsNextLevel(void)
     else
         expToNextLevel = 0;
 
-    ConvertIntToDecimalStringN(gStringVar1, expToNextLevel, STR_CONV_MODE_RIGHT_ALIGN, 6);
+    ConvertIntToDecimalStringN(gStringVar1, expToNextLevel, STR_CONV_MODE_LEFT_ALIGN, 6);
     SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), gStringVar1, 4, 4, 0, 0);
 }
 
@@ -4160,7 +4163,7 @@ static void PrintMoveDetails(u16 move)
             if (move != 0)
                 ShowSplitIcon(gBattleMoves[move].split);
             PrintMovePowerAndAccuracy(move);
-            SummaryScreen_PrintTextOnWindow(windowId, gMoveDescriptionPointers[move - 1], 6, 1, 0, 0);
+            SummaryScreen_PrintTextOnWindow(windowId, gMoveDescriptionPointers[move - 1], 9, 1, 1, 0);
         }
         else
         {

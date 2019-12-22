@@ -134,7 +134,7 @@ gBattleAnims_Moves::
 	.4byte Move_FOCUS_ENERGY
 	.4byte Move_BIDE
 	.4byte Move_METRONOME
-	.4byte Move_MIRROR_MOVE @ doesn't have an actual animation
+	.4byte Move_MIRROR_MOVE @ does not have an actual animation
 	.4byte Move_SELF_DESTRUCT
 	.4byte Move_EGG_BOMB
 	.4byte Move_LICK
@@ -232,7 +232,7 @@ gBattleAnims_Moves::
 	.4byte Move_SLEEP_TALK
 	.4byte Move_HEAL_BELL
 	.4byte Move_RETURN
-	.4byte Move_PRESENT
+	.4byte MOVE_PRESENT
 	.4byte Move_FRUSTRATION
 	.4byte Move_SAFEGUARD
 	.4byte Move_PAIN_SPLIT
@@ -637,6 +637,7 @@ gBattleAnims_Moves::
 	.4byte Move_PRECIPICE_BLADES
 	.4byte Move_DRAGON_ASCENT
 	.4byte Move_HYPERSPACE_FURY
+	.4byte Move_DREAD_HOWL
 	.4byte Move_COUNT @ cannot be reached, because last move is Psycho Boost
 
 	.align 2
@@ -4515,6 +4516,28 @@ Move_DRAGON_ASCENT:
 	end
 	
 Move_HYPERSPACE_FURY:
+	end
+
+Move_DREAD_HOWL:
+    loadspritegfx ANIM_TAG_NOISE_LINE	
+    monbg ANIM_ATTACKER
+	fadetobg BG_DARK
+	waitbgfadein
+	delay 2
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -5, -5, 10, ANIM_ATTACKER, 1
+	call RoarEffect
+	waitforvisualfinish
+    delay 30
+    playsewithpan SE_W171, SOUND_PAN_TARGET
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 2, 0, 14, 1
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATK_PARTNER, 2, 0, 14, 1
+    createvisualtask AnimTask_ShakeMon2, 2, ANIM_DEF_PARTNER, 2, 0, 14, 1
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
+	blendoff
+	delay 0
+	restorebg
+	waitbgfadein
 	end
 
 Move_NONE:
@@ -11934,7 +11957,7 @@ Move_INGRAIN:
 	waitforvisualfinish
 	end
 
-Move_PRESENT:
+MOVE_PRESENT:
 	loadspritegfx ANIM_TAG_ITEM_BAG
 	createvisualtask AnimTask_IsHealingMove, 2
 	createsprite gPresentSpriteTemplate, ANIM_TARGET, 2, 0, -5, 10, 2, -1

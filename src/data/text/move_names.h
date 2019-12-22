@@ -622,6 +622,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_PRECIPICE_BLADES] = _("Precipice Bl"),
     [MOVE_DRAGON_ASCENT] = _("DragonAscent"),
     [MOVE_HYPERSPACE_FURY] = _("Hyperspace F"),
+    [MOVE_DREAD_HOWL] = _("Dread Howl"),
     [MOVE_SHORE_UP] = _("Shore Up"),
     [MOVE_FIRST_IMPRESSION] = _("First Impres"),
     [MOVE_BANEFUL_BUNKER] = _("Baneful Bunk"),

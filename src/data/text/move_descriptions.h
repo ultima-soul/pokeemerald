@@ -2533,6 +2533,12 @@ static const u8 sMULTI_ATTACKDescription[] = _(
 	"An attack that changes\n"
 	"with Memories.");
 
+static const u8 sDREAD_HOWLDescription[] = _(
+    "The user howls\n"
+    "ferociously, striking\n"
+    "everything. May\n"
+    "paralyze.");
+
 static const u8 sNotDoneYetDescription[] = _(
 	"Not done yet.");
 
@@ -3161,6 +3167,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PRECIPICE_BLADES - 1] = sPRECIPICE_BLADESDescription,
     [MOVE_DRAGON_ASCENT - 1] = sCLOSE_COMBATDescription,
     [MOVE_HYPERSPACE_FURY - 1] = sHYPERSPACE_HOLEDescription,
+    [MOVE_DREAD_HOWL - 1] = sDREAD_HOWLDescription,
     [MOVE_SHORE_UP - 1] = sSHORE_UPDescription,
     [MOVE_FIRST_IMPRESSION - 1] = sFIRST_IMPRESSIONDescription,
     [MOVE_BANEFUL_BUNKER - 1] = sBANEFUL_BUNKERDescription,

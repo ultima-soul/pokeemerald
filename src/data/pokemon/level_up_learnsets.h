@@ -4499,7 +4499,7 @@ static const struct LevelUpMove sOctilleryLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sDelibirdLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_PRESENT),
+    LEVEL_UP_MOVE( 1, MOVE_DREAD_HOWL),
     LEVEL_UP_MOVE(25, MOVE_DRILL_PECK),
     LEVEL_UP_END
 };
@@ -4591,6 +4591,7 @@ static const struct LevelUpMove sHoundoomLevelUpLearnset[] = {
     LEVEL_UP_MOVE(56, MOVE_CRUNCH),
     LEVEL_UP_MOVE(60, MOVE_NASTY_PLOT),
     LEVEL_UP_MOVE(65, MOVE_INFERNO),
+    LEVEL_UP_MOVE(70, MOVE_DREAD_HOWL),
     LEVEL_UP_END
 };
 
@@ -5379,7 +5380,7 @@ static const struct LevelUpMove sMightyenaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(36, MOVE_TAUNT),
     LEVEL_UP_MOVE(40, MOVE_CRUNCH),
     LEVEL_UP_MOVE(44, MOVE_YAWN),
-    LEVEL_UP_MOVE(48, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(48, MOVE_DREAD_HOWL),
     LEVEL_UP_MOVE(52, MOVE_SUCKER_PUNCH),
     LEVEL_UP_MOVE(56, MOVE_PLAY_ROUGH),
     LEVEL_UP_END

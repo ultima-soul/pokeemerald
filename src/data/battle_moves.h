@@ -8729,6 +8729,20 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_PHYSICAL,
     },
 
+    [MOVE_DREAD_HOWL] =
+        {
+            .effect = EFFECT_PARALYZE_HIT,
+            .power = 120,
+            .type = TYPE_DARK,
+            .accuracy = 90,
+            .pp = 5,
+            .secondaryEffectChance = 20,
+            .target = MOVE_TARGET_FOES_AND_ALLY,
+            .priority = 0,
+            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGSROCK_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
+            .split = SPLIT_SPECIAL,
+        },
+
     [MOVE_SHORE_UP] =
     {
         .effect = EFFECT_PLACEHOLDER,

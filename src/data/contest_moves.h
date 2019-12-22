@@ -1732,7 +1732,7 @@ const struct ContestMove gContestMoves[MOVES_COUNT] =
     [MOVE_PRESENT] =
     {
         .effect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
         .comboStarterId = 0,
         .comboMoves = {0},
     },
