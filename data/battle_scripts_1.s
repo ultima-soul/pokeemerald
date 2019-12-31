@@ -6575,6 +6575,15 @@ BattleScript_DazzlingProtected::
 	printstring STRINGID_POKEMONCANNOTUSEMOVE
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
+
+BattleScript_TelepathyActivates::
+	attackstring
+	ppreduce
+	pause 0x20
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_TELEPATHYACTIVATES
+	waitmessage 0x40
+	goto BattleScript_MoveEnd
 	
 BattleScript_MoveUsedPsychicTerrainPrevents::
 	printstring STRINGID_POKEMONCANNOTUSEMOVE

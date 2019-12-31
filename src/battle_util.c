@@ -3098,6 +3098,12 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
             gBattlescriptCurrInstr = BattleScript_DazzlingProtected;
             effect = 1;
         }
+        else if ((gLastUsedAbility == ABILITY_TELEPATHY) && (gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY)
+                && (GetBattlerSide(gBattlerAttacker) == GetBattlerSide(battler)))
+        {
+            gBattlescriptCurrInstr = BattleScript_TelepathyActivates;
+            effect = 1; 
+        }
         break;
     case ABILITYEFFECT_ABSORBING: // 3
         if (move != MOVE_NONE)

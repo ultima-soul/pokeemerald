@@ -7841,6 +7841,8 @@ static void Cmd_jumpifnexttargetvalid(void)
     {
         if (gBattlerTarget == gBattlerAttacker && !(gBattleMoves[gCurrentMove].target & MOVE_TARGET_USER))
             continue;
+        if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker) && GetBattlerAbility(gBattlerTarget) == ABILITY_TELEPATHY)
+            continue;
         if (IsBattlerAlive(gBattlerTarget))
             break;
     }
@@ -10187,6 +10189,8 @@ static void Cmd_selectfirstvalidtarget(void)
     for (gBattlerTarget = 0; gBattlerTarget < gBattlersCount; gBattlerTarget++)
     {
         if (gBattlerTarget == gBattlerAttacker && !(gBattleMoves[gCurrentMove].target & MOVE_TARGET_USER))
+            continue;
+        if (GetBattlerSide(gBattlerTarget) == GetBattlerSide(gBattlerAttacker) && GetBattlerAbility(gBattlerTarget) == ABILITY_TELEPATHY)
             continue;
         if (IsBattlerAlive(gBattlerTarget))
             break;
