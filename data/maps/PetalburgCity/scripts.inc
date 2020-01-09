@@ -33,8 +33,7 @@ PetalburgCity_OnFrame: @ 81DC31C
 	map_script_2 VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_WalkToWallyHouse
 	.2byte 0
 
-Receiive_Beta_Starter:: @ 827004D
-	msgbox Beta_Starter_kit_message MSGBOX_DEFAULT
+Receiive_Beta_Starter:: @ 827004D	
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_SYS_POKENAV_GET
 	setflag FLAG_SYS_POKEDEX_GET
@@ -47,6 +46,7 @@ Receiive_Beta_Starter:: @ 827004D
 	givemon SPECIES_PIDGEOT, 50, ITEM_SHARP_BEAK
 	givemon SPECIES_GLALIE, 50, ITEM_NEVER_MELT_ICE
 	givemon SPECIES_RAYQUAZA, 50, ITEM_DRAGON_FANG
+	msgbox Beta_Starter_kit_message MSGBOX_DEFAULT
 	closemessage
 	end
 	
@@ -115,6 +115,28 @@ PetalburgCity_EventScript_WallyAunt:: @ 81DC3FD
 	msgbox PetalburgCity_Text_WhereIsWally, MSGBOX_NPC
 	end
 
+Deneb_Academy_Lukas:: @ 81DC3FD
+	faceplayer
+	msgbox Beta_Lukas_Message, MSGBOX_NPC
+	applymovement 4, turn_left
+	closemessage
+	end
+
+Deneb_Academy_Carly:: @ 81DC3FD
+	faceplayer	
+	msgbox Beta_Carly_Message, MSGBOX_NPC
+	applymovement 3, turn_right
+	closemessage
+	end	
+
+turn_left: 
+	face_left
+	step_end
+	
+turn_right:
+	face_right
+	step_end
+	
 PetalburgCity_Movement_WalkToWallyHousePlayer: @ 81DC406
 	delay_8
 	walk_down
@@ -795,4 +817,10 @@ PetalburgCity_Text_ImLookingForTalentedTrainers: @ 81DCC09
 Beta_Starter_kit_message:
 	.string "Take a starting kit for the beta.\p"
 	.string "$"
+
+Beta_Lukas_Message:
+	.string "Can't you see I'm busy?$"
 	
+Beta_Carly_Message:
+	.string "I'm battling right now.\n"
+	.string "We can talk afterwards.$"

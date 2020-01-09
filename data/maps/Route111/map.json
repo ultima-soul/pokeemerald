@@ -25,6 +25,13 @@
     "requires_flash": false,
     "show_map_name": true,
     "warp_events": [
+        {
+            "dest_map": "MAP_ROUTE111_WINSTRATE_FAMILYS_HOUSE",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 32,
+            "y": 16
+        }
     ],
     "weather": "WEATHER_SUNNY"
 }

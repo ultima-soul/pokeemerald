@@ -58,7 +58,7 @@
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-            "script": "NULL",
+            "script": "Deneb_Academy_Carly",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
             "x": 13,
@@ -71,7 +71,7 @@
             "movement_range_x": 0,
             "movement_range_y": 0,
             "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-            "script": "NULL",
+            "script": "Deneb_Academy_Lukas",
             "trainer_sight_or_berry_tree_id": "0",
             "trainer_type": "0",
             "x": 18,
@@ -101,6 +101,48 @@
             "elevation": 3,
             "x": 27,
             "y": 24
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_HOUSE1",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 21,
+            "y": 24
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_HOUSE2",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 33,
+            "y": 24
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_GYM",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 12,
+            "y": 30
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_2F",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 21,
+            "y": 30
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_POKEMON_CENTER_1F",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 33,
+            "y": 30
+        },
+        {
+            "dest_map": "MAP_PETALBURG_CITY_MART",
+            "dest_warp_id": 0,
+            "elevation": 0,
+            "x": 27,
+            "y": 36
         }
     ],
     "weather": "WEATHER_SUNNY"

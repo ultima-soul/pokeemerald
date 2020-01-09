@@ -583,12 +583,12 @@
         {
             "blockdata_filepath": "data/layouts/House1/map.bin",
             "border_filepath": "data/layouts/House1/border.bin",
-            "height": 9,
+            "height": 6,
             "id": "LAYOUT_HOUSE1",
             "name": "House1_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_GenericBuilding",
-            "width": 10
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 5
         },
         {
             "blockdata_filepath": "data/layouts/House2/map.bin",
@@ -603,22 +603,22 @@
         {
             "blockdata_filepath": "data/layouts/PokemonCenter_1F/map.bin",
             "border_filepath": "data/layouts/PokemonCenter_1F/border.bin",
-            "height": 9,
+            "height": 6,
             "id": "LAYOUT_POKEMON_CENTER_1F",
             "name": "PokemonCenter_1F_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_PokemonCenter",
-            "width": 14
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 5
         },
         {
             "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin",
             "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
-            "height": 10,
+            "height": 6,
             "id": "LAYOUT_POKEMON_CENTER_2F",
             "name": "PokemonCenter_2F_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_PokemonCenter",
-            "width": 14
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 5
         },
         {
             "blockdata_filepath": "data/layouts/Mart/map.bin",
@@ -626,8 +626,8 @@
             "height": 8,
             "id": "LAYOUT_MART",
             "name": "Mart_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_Shop",
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
             "width": 11
         },
         {
@@ -783,32 +783,32 @@
         {
             "blockdata_filepath": "data/layouts/PetalburgCity_Gym/map.bin",
             "border_filepath": "data/layouts/PetalburgCity_Gym/border.bin",
-            "height": 112,
+            "height": 12,
             "id": "LAYOUT_PETALBURG_CITY_GYM",
             "name": "PetalburgCity_Gym_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_PetalburgGym",
-            "width": 9
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 8
         },
         {
             "blockdata_filepath": "data/layouts/HouseWithBed/map.bin",
             "border_filepath": "data/layouts/HouseWithBed/border.bin",
-            "height": 8,
+            "height": 6,
             "id": "LAYOUT_HOUSE_WITH_BED",
             "name": "HouseWithBed_Layout",
-            "primary_tileset": "gTileset_Building",
-            "secondary_tileset": "gTileset_GenericBuilding",
-            "width": 10
+            "primary_tileset": "gTileset_general_fall",
+            "secondary_tileset": "gTileset_Petalburg",
+            "width": 5
         },
         {
             "blockdata_filepath": "data/layouts/SlateportCity_SternsShipyard_1F/map.bin",
             "border_filepath": "data/layouts/SlateportCity_SternsShipyard_1F/border.bin",
-            "height": 15,
+            "height": 16,
             "id": "LAYOUT_SLATEPORT_CITY_STERNS_SHIPYARD_1F",
             "name": "SlateportCity_SternsShipyard_1F_Layout",
             "primary_tileset": "gTileset_General",
-            "secondary_tileset": "gTileset_Facility",
-            "width": 21
+            "secondary_tileset": "gTileset_Unused1",
+            "width": 22
         },
         {
             "blockdata_filepath": "data/layouts/SlateportCity_SternsShipyard_2F/map.bin",
