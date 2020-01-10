@@ -2009,7 +2009,7 @@ static bool8 sub_80B764C(struct Task *task, struct EventObject *eventObject, str
     FreezeEventObjects();
     CameraObjectReset2();
     SetCameraPanningCallback(NULL);
-    gPlayerAvatar.preventStep = TRUE;
+    gPlayerAvatar.preventStep = FALSE;
     eventObject->fixedPriority = 1;
     task->data[1] = 1;
     task->data[0]++;

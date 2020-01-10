@@ -111,7 +111,7 @@ $(TILESETGFXDIR)/secondary/pokemon_fan_club/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 319
 
 $(TILESETGFXDIR)/secondary/unused_1/tiles.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 17
+	$(GFX) $< $@ -num_tiles 80
 
 $(TILESETGFXDIR)/secondary/meteor_falls/tiles.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 460
