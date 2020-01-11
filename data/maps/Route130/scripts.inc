@@ -3,23 +3,43 @@ Route130_MapScripts:: @ 81F735F
 	.byte 0
 
 Route130_OnTransition: @ 81F7365
+	call Common_EventScript_SetupRivalGfxId
 	end
 
-Route130_EventScript_CheckSetAbnormalWeather:: @ 81F73B5
-	call_if_set FLAG_SYS_WEATHER_CTRL, Common_EventScript_SetAbnormalWeather
+Zaurak_Bridge_Conversation:: @ 82078F3
+	checkplayergender
+	compare VAR_RESULT, MALE
+	call_if_eq Zaurak_Bridge_Conversation_Derek
+	compare VAR_RESULT, FEMALE
+	call_if_eq Zaurak_Bridge_Conversation_Kate
+	end
+	
+Zaurak_Bridge_Conversation_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Zaurak_Bridge_Derek_Text_First_Battle, MSGBOX_NPC	
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
 	return
-
-Route130_EventScript_Rodney:: @ 81F73BF
-	trainerbattle_single TRAINER_RODNEY, Route130_Text_RodneyIntro, Route130_Text_RodneyDefeat
-	msgbox Route130_Text_RodneyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route130_EventScript_Katie:: @ 81F73D6
-	trainerbattle_single TRAINER_KATIE, Route130_Text_KatieIntro, Route130_Text_KatieDefeat
-	msgbox Route130_Text_KatiePostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route130_EventScript_Santiago:: @ 81F73ED
-	trainerbattle_single TRAINER_SANTIAGO, Route130_Text_SantiagoIntro, Route130_Text_SantiagoDefeat
-	msgbox Route130_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
-	end
+	
+Zaurak_Bridge_Conversation_Kate::	
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 2, 200, 83, VAR_0x8009
+	msgbox Zaurak_Bridge_Kate_Text_First_Battle,MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 2, VAR_0x8009
+	return
+	
+Zaurak_Bridge_Derek_Text_First_Battle:
+	.string "Hey {PLAYER}. Ready to head to\n"
+	.string "Zaurak City?\p"
+	.string "Before we go to see Professor\n"
+	.string "Hazel. How about a friendly\p"
+	.string "Battle?$"
+	
+Zaurak_Bridge_Kate_Text_First_Battle:
+	.string "Hey {PLAYER}. Ready to head to\n"
+	.string "Zaurak City?\p"
+	.string "Before we go to see Professor\n"
+	.string "Hazel. How about a friendly\p"
+	.string "Battle?$"	

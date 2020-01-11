@@ -743,19 +743,19 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
 };
 static const u8 sTextColors_861CD2C[][3] =
 {
-    {0, 1, 2},
-    {0, 3, 4},
-    {0, 5, 6},
-    {0, 7, 8},
-    {0, 9, 10},
-    {0, 11, 12},
-    {0, 13, 14},
-    {0, 7, 8},
-    {13, 15, 14},
-    {0, 1, 2},
-    {0, 3, 4},
-    {0, 5, 6},
-    {0, 7, 8}
+    {0, 1, 2}, //0
+    {0, 3, 4}, //1
+    {0, 5, 6}, //2
+    {0, 7, 8}, //3
+    {0, 9, 10},  //4
+    {0, 11, 12}, //5
+    {0, 13, 14}, //6
+    {0, 7, 8}, //7
+    {13, 15, 14}, //8
+    {0, 12, 11}, //9
+    {0, 3, 4}, //10
+    {0, 13, 15}, //11
+    {0, 7, 8} //12
 };
 
 static const u8 sSummaryAButtonBitmap[] = INCBIN_U8("graphics/interface/summary_a_button.4bpp");
@@ -3578,7 +3578,7 @@ static void PrintMonOTName(void)
         if (sMonSummaryScreen->summary.OTGender == 0)
             SummaryScreen_PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 2, 4, 0, 1);
         else
-            SummaryScreen_PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 2, 4, 0, 2);
+            SummaryScreen_PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 2, 4, 0, 4);
     }
 }
 
