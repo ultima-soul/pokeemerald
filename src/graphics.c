@@ -1263,7 +1263,7 @@ const u32 gPageInfoTilemap[] = INCBIN_U32("graphics/interface/status_screen.bin.
 const u32 gPageSkillsTilemap[] = INCBIN_U32("graphics/interface/status_tilemap1.bin.lz");
 const u32 gPageBattleMovesTilemap[] = INCBIN_U32("graphics/interface/status_tilemap2.bin.lz");
 const u32 gPageContestMovesTilemap[] = INCBIN_U32("graphics/interface/status_tilemap3.bin.lz");
-const u32 gUnknown_08D98CC8[] = INCBIN_U32("graphics/interface/status_tilemap0.bin.lz");
+const u32 gSummaryScreen_Info_Page[] = INCBIN_U32("graphics/interface/status_tilemap0.bin.lz");
 
 const u32 gBagMaleTiles[] = INCBIN_U32("graphics/misc/bag_male.4bpp.lz");
 const u32 gBagPalette[] = INCBIN_U32("graphics/misc/bag.gbapal.lz");

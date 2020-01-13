@@ -804,16 +804,16 @@ static const struct WindowTemplate sPokemonList_WindowTemplate[] =
         .width = 5,
         .height = 8,
         .paletteNum = 3,
-        .baseBlock = 321,
+        .baseBlock = 280,
     },
     {
-        .bg = 1,
-        .tilemapLeft = 3,
+        .bg = 0,
+        .tilemapLeft = 2,
         .tilemapTop = 12,
         .width = 10,
-        .height = 5,
+        .height = 4,
         .paletteNum = 3,
-        .baseBlock = 401,
+        .baseBlock = 320,
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -2128,6 +2128,8 @@ static const u8 sStatsSpAtkValue[] =   _("{SPECIAL_F7 0x00}");
 static const u8 sStatsSpDefValue[] =   _("{SPECIAL_F7 0x00}");
 static const u8 sStatsSpeedValue[] =   _("{SPECIAL_F7 0x00}");
 
+static const u8 sStatsAbility1[] =   _("{SPECIAL_F7 0x00}");
+
 static const u8 sStatsNoValue[] =   _("---");
 
 static void CreateBaseStatList (u8 direction, u16 num)
@@ -2138,20 +2140,30 @@ static void CreateBaseStatList (u8 direction, u16 num)
     u8 str3[0x10];
     u8 str4[0x10];
     u8 str5[0x10];
+    u8 str6[0x10];
     u8 color[3];
     u16 dexNum;
-
+    u8 ability1 = 0;
+    u8 ability2 = 0;
     color[0] = 0;
     color[1] = 15;
     color[2] = 4;
 
     if (sPokedexView->dexMode == DEX_MODE_HOENN)
+    {
         dexNum = HoennPokedexNumToSpecies(num + 1);
+        ability1 = gBaseStats[dexNum].abilities[0];
+        ability2 = gBaseStats[dexNum].abilities[1];
+    }
     else
+    {
         dexNum = NationalPokedexNumToSpecies(num + 1);
-    
+        ability1 = gBaseStats[num].abilities[0];
+        ability2 = gBaseStats[num].abilities[1];
+    }
 
     FillWindowPixelBuffer(1, PIXEL_FILL(0));
+    FillWindowPixelBuffer(2, PIXEL_FILL(0));
     
     AddTextPrinterParameterized4(1, 8, 1, 0, 0, 0, color, -1, sStatsHP);
     AddTextPrinterParameterized4(1, 8, 1, 10, 0, 0, color, -1, sStatsAttack);
@@ -2175,6 +2187,8 @@ static void CreateBaseStatList (u8 direction, u16 num)
         AddTextPrinterParameterized4(1, 8, 19, 30, 0, 0, color, -1, str3);
         AddTextPrinterParameterized4(1, 8, 19, 40, 0, 0, color, -1, str4);
         AddTextPrinterParameterized4(1, 8, 19, 50, 0, 0, color, -1, str5);
+        AddTextPrinterParameterized4(2, 8, 4, 04, 0, 0, color, -1, gAbilityNames[ability1]);
+        AddTextPrinterParameterized4(2, 8, 4, 14, 0, 0, color, -1, gAbilityNames[ability2]);
     }
     else
     {
@@ -2184,9 +2198,13 @@ static void CreateBaseStatList (u8 direction, u16 num)
         AddTextPrinterParameterized4(1, 8, 25, 30, 0, 0, color, -1, sStatsNoValue);
         AddTextPrinterParameterized4(1, 8, 25, 40, 0, 0, color, -1, sStatsNoValue);
         AddTextPrinterParameterized4(1, 8, 25, 50, 0, 0, color, -1, sStatsNoValue);
+        AddTextPrinterParameterized4(2, 8, 4, 04, 0, 0, color, -1, gAbilityNames[0]);
+        AddTextPrinterParameterized4(2, 8, 4, 14, 0, 0, color, -1, gAbilityNames[0]);
     }
     PutWindowTilemap(1);
+    PutWindowTilemap(2);
     CopyWindowToVram(1, 3);
+    CopyWindowToVram(2, 3);
 }
 
 static void CreateMonListEntry(u8 direction, u16 b, u16 c)

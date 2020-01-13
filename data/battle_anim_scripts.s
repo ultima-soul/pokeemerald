@@ -2069,11 +2069,9 @@ Move_DRAGON_PULSE:
 	waitforvisualfinish 
 	loadspritegfx ANIM_TAG_DRAGON_PULSE 
 	playsewithpan SE_W060, SOUND_PAN_ATTACKER 
-	createsoundtask sub_8158C58, 7, 200, -64, SOUND_PAN_TARGET, 3, 4, 0, 15  
-	call DragonPulseParticle 
-	call DragonPulseParticle 
-	createvisualtask AnimTask_SwayMon, 5, 5, 0, 6, 51200, 4, 1  
-	createvisualtask sub_8115A04, 2, 6, 4, 2, 2, 0, 12, RGB(30, 10, 13)  
+	createsoundtask sub_8158C58, 7, 200, -64, SOUND_PAN_TARGET, 3, 4, 0, 15   
+	createvisualtask AnimTask_SwayMon, 5, 0, 6, 2048, 4, ANIM_TARGET  
+	createvisualtask sub_8115A04, 2, 4, 2, 2, 0, 12, RGB(30, 10, 13)  
 	call DragonPulseParticle 
 	call DragonPulseParticle 
 	call DragonPulseParticle 
@@ -2084,7 +2082,7 @@ Move_DRAGON_PULSE:
 	call DragonPulseParticle 
 	call DragonPulseParticle 
 	waitforvisualfinish 
-	delay 1 
+    delay 1 
 	createsprite gSimplePaletteBlendSpriteTemplate, 2, 5, 1, 1, 7, 0, 0  
 	waitforvisualfinish 
 	clearmonbg ANIM_DEF_PARTNER 
@@ -2124,7 +2122,7 @@ Move_DRAGON_RUSH:
 	blendoff 
 	end
 	
-Move_POWER_GEM:
+Move_POWER_GEM: @ Bugged
 	createsprite gSimplePaletteBlendSpriteTemplate, 2, 5, 1, 1, 0, 7, 0
 	waitforvisualfinish 
 	loadspritegfx ANIM_TAG_POWER_GEM 

@@ -699,8 +699,8 @@ static void Task_TitleScreenPhase2(u8 taskId)
                                     | DISPCNT_BG1_ON
                                     | DISPCNT_BG2_ON
                                     | DISPCNT_OBJ_ON);
-        CreatePressStartBanner(START_BANNER_X, 108);
-        CreateCopyrightBanner(START_BANNER_X, 148);
+        CreatePressStartBanner(START_BANNER_X, 128);
+        CreateCopyrightBanner(START_BANNER_X, 152);
         gTasks[taskId].data[4] = 0;
         gTasks[taskId].func = Task_TitleScreenPhase3;
     }
@@ -803,11 +803,66 @@ static void UpdateLegendaryMarkingColor(u8 frameNum)
     if ((frameNum % 4) == 0) // Change color every 4th frame
     {
         s32 intensity = Cos(frameNum, 128) + 128;
-        s32 r = 17 - (intensity * 24/ 256);
-        s32 g = 2  - (intensity * 3 / 256);
-        s32 b = 6  - (intensity * 8/ 256);
+        s32 r = 17 - (intensity * 16/ 256);
+        s32 g = 2  - (intensity * 2 / 256);
+        s32 b = 5  - (intensity * 5/ 256);
 
         u16 color = RGB(r, g, b);
         LoadPalette(&color, 0xEF, sizeof(color));
    }
+    
+    if ((frameNum % 4) == 0) // Change color every 4th frame
+    {
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 22 - (intensity * 22 / 256);
+        s32 g = 5 - (intensity * 5 / 256);
+        s32 b = 7 - (intensity * 7 / 256);
+
+        u16 color = RGB(r, g, b);
+        LoadPalette(&color, 0xEE, sizeof(color));
+    }
+
+    if ((frameNum % 4) == 0) // Change color every 4th frame
+    {
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 25 - (intensity * 25 / 256);
+        s32 g = 9 - (intensity * 9 / 256);
+        s32 b = 10 - (intensity * 10 / 256);
+
+        u16 color = RGB(r, g, b);
+        LoadPalette(&color, 0xED, sizeof(color));
+    }
+
+    if ((frameNum % 4) == 0) // Change color every 4th frame
+    {
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 9 + (intensity * 19 / 256);
+        s32 g = 10 - (intensity * 5 / 256);
+        s32 b = 12 - (intensity * 11 / 256);
+
+        u16 color = RGB(r, g, b);
+        LoadPalette(&color, 0xEC, sizeof(color));
+    }
+
+    if ((frameNum % 4) == 0) // Change color every 4th frame
+    {
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 20 + (intensity * 11 / 256);
+        s32 g = 21 - (intensity * 5 / 256);
+        s32 b = 28 - (intensity * 21 / 256);
+
+        u16 color = RGB(r, g, b);
+        LoadPalette(&color, 0xEB, sizeof(color));
+    }
+
+    if ((frameNum % 4) == 0) // Change color every 4th frame
+    {
+        s32 intensity = Cos(frameNum, 128) + 128;
+        s32 r = 29 + (intensity * 2 / 256);
+        s32 g = 30 - (intensity * 10 / 256);
+        s32 b = 30 - (intensity * 25 / 256);
+
+        u16 color = RGB(r, g, b);
+        LoadPalette(&color, 0xEA, sizeof(color));
+    }
 }

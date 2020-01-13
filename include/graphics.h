@@ -4638,7 +4638,7 @@ extern const u32 gUnknown_08DDE030[];
 extern const u32 gUnknown_08DDE12C[];
 
 extern const u32 gPageInfoTilemap[];
-extern const u32 gUnknown_08D98CC8[];
+extern const u32 gSummaryScreen_Info_Page[];
 extern const u32 gPageSkillsTilemap[];
 extern const u32 gPageBattleMovesTilemap[];
 extern const u32 gPageContestMovesTilemap[];

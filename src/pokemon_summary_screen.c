@@ -1719,7 +1719,7 @@ static bool8 SummaryScreen_DecompressGraphics(void)
         }
         break;
     case 2:
-        LZDecompressWram(gUnknown_08D98CC8, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][1]);
+        LZDecompressWram(gSummaryScreen_Info_Page, sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_INFO][1]);
         sMonSummaryScreen->switchCounter++;
         break;
     case 3:
@@ -4438,6 +4438,7 @@ static void SetNewMoveTypeIcon(void)
                 {
                     SetSpriteInvisibility(9, TRUE);
                 }
+                //CreateMonIcon(summary->species, SpriteCB_MonIcon, 144, 32, 4, 1, 1); //Palette is not loaded for sprites. Find a workaround.
             }
         }
         //PutWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME);

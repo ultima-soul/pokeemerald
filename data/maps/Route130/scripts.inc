@@ -9,9 +9,9 @@ Route130_OnTransition: @ 81F7365
 Zaurak_Bridge_Conversation:: @ 82078F3
 	checkplayergender
 	compare VAR_RESULT, MALE
-	call_if_eq Zaurak_Bridge_Conversation_Derek
+	goto_if_eq Zaurak_Bridge_Conversation_Derek
 	compare VAR_RESULT, FEMALE
-	call_if_eq Zaurak_Bridge_Conversation_Kate
+	goto_if_eq Zaurak_Bridge_Conversation_Kate
 	end
 	
 Zaurak_Bridge_Conversation_Derek::
@@ -43,3 +43,4 @@ Zaurak_Bridge_Kate_Text_First_Battle:
 	.string "Before we go to see Professor\n"
 	.string "Hazel. How about a friendly\p"
 	.string "Battle?$"	
+	

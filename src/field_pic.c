@@ -39,6 +39,9 @@ static const u32 sPic4Gfx[] = INCBIN_U32("graphics/trainers/mugshots/kate_player
 static const u32 sPic5Gfx[] = INCBIN_U32("graphics/trainers/mugshots/kate_npc.4bpp.lz");
 static const u16 sPic3Pal[] = INCBIN_U16("graphics/trainers/mugshots/kate.gbapal");
 
+static const u32 sPic6Gfx[] = INCBIN_U32("graphics/trainers/mugshots/teala.4bpp.lz");
+static const u16 sPic4Pal[] = INCBIN_U16("graphics/trainers/mugshots/teala.gbapal");
+
 /* And this is an example script.
 FieldPicExample_2pics:
    load_field_pic 1, 40, 83, VAR_0x8008
@@ -60,6 +63,7 @@ static const struct Pic sPics[] =
     {sPic3Gfx, sPic2Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},         //2, Derek as an NPC
     {sPic4Gfx, sPic3Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},         //3, Kate as a Player
     {sPic5Gfx, sPic3Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},         //4, Kate as an NPC
+    {sPic6Gfx, sPic4Pal, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64)},         //5, Teala, the teacher
 };
 
 static EWRAM_DATA u8 sLastPicId = 0;

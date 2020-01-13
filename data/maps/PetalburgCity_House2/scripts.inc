@@ -7,4 +7,5 @@ Kates_House:: @ 82078F3
 
 
 Sleeping_Girl: @ 8207969
-	.string "They appear to be fast asleep$"
+	.string "Ugh!\n"
+	.string "I hate homework.$"
