@@ -1918,9 +1918,13 @@ BattleScript_EffectJudgment:
 BattleScript_EffectFusionCombo:
 BattleScript_EffectRevelationDance:
 BattleScript_EffectBelch:
-	jumpifnotmove MOVE_SURF, BattleScript_HitFromAtkCanceler
-	jumpifnostatus3 BS_TARGET, STATUS3_UNDERWATER, BattleScript_HitFromAtkCanceler
+	jumpifnotmove MOVE_SURF, BattleScript_EffectEarthquake
+	jumpifnostatus3 BS_TARGET, STATUS3_UNDERWATER, BattleScript_EffectEarthquake
 	orword gHitMarker, HITMARKER_IGNORE_UNDERWATER
+BattleScript_EffectEarthquake::
+	jumpifnotmove MOVE_EARTHQUAKE, BattleScript_HitFromAtkCanceler
+	jumpifnostatus3 BS_TARGET, STATUS3_UNDERGROUND, BattleScript_HitFromAtkCanceler
+	orword gHitMarker, HITMARKER_IGNORE_UNDERGROUND
 BattleScript_HitFromAtkCanceler::
 	attackcanceler
 BattleScript_HitFromAccCheck::
@@ -3712,7 +3716,6 @@ BattleScript_EffectStomp:
 
 BattleScript_EffectBulldoze:
 	setmoveeffect MOVE_EFFECT_SPD_MINUS_1
-BattleScript_EffectEarthquake:
 	attackcanceler
 	attackstring
 	ppreduce
