@@ -955,7 +955,7 @@ void GetBattlerHealthboxCoords(u8 battler, s16 *x, s16 *y)
         if (GetBattlerSide(battler) != B_SIDE_PLAYER)
             *x = 32, *y = 30;
         else
-            *x = 159, *y = 95;
+            *x = 159, *y = 88;
     }
     else
     {
@@ -1001,7 +1001,7 @@ static void UpdateLvlInHealthbox(u8 healthboxSpriteId, u8 lvl)
     }
     else
     {
-        text[0] = 0xF9;RemoveWindowOnHealthbox
+        text[0] = 0xF9;
         text[1] = 5;
 
         xPos = (u32) ConvertIntToDecimalStringN(text + 2, lvl, STR_CONV_MODE_LEFT_ALIGN, 3);
@@ -1046,12 +1046,12 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
     if (GetBattlerSide(gSprites[healthboxSpriteId].hMain_Battler) == B_SIDE_PLAYER && !IsDoubleBattle())
     {
 
-        struct WindowTemplate winTemplate = sHPWindowTemplate;
+        struct WindowTemplate winTemplate = sHealthboxWindowTemplate;
         spriteTileNum = gSprites[healthboxSpriteId].oam.tileNum * TILE_SIZE_4BPP;
         if (maxOrCurrent != HP_CURRENT) // singles, max
         {
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 9, 0, sHPWindowTemplate);
+            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 9, 0, &windowId);
             objVram = (void*)(OBJ_VRAM0);
             objVram += spriteTileNum + 0xA40;
             HpTextIntoHealthboxObject(objVram, windowTileData, 2);
@@ -1062,7 +1062,7 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text[3] = CHAR_SLASH;
             text[4] = EOS;
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 9, 0, sHPWindowTemplate);
+            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 9, 0, &windowId);
             objVram = (void*)(OBJ_VRAM0);
             objVram += spriteTileNum + 0x2E0;
             HpTextIntoHealthboxObject(objVram, windowTileData, 1);
