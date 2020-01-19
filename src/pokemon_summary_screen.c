@@ -306,8 +306,6 @@ static void sub_81C4BE4(struct Sprite *sprite);
 static void DestroyRedAndBlueFrame(u8 a);
 static void CreateBlueFrame(u8 a);
 static void sub_81C4D18(u8 a);
-static void UpdatePartyMonHPBar(u8, struct Pokemon*);
-static void DrawHPProgressBar(struct Pokemon* mon);
 
 // const rom data
 #define SPLIT_ICONS_TAG 0xD00D
@@ -2270,7 +2268,6 @@ static void CheckExperienceProgressBar(void)
 {
     if (sMonSummaryScreen->currPageIndex == 1)
         DrawExperienceProgressBar(&sMonSummaryScreen->currentMon);
-        DrawHPProgressBar(&sMonSummaryScreen->currentMon);
 }
 
 static void sub_81C0E48(u8 taskId)
@@ -3129,7 +3126,6 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     else
         schedule_bg_copy_tilemap_to_vram(2);
 }
-
 
 static void DrawContestMoveHearts(u16 move)
 {
@@ -4834,68 +4830,5 @@ static void sub_81C4D18(u8 firstSpriteId)
     {
         gSprites[spriteIds[i]].data[1] = 0;
         gSprites[spriteIds[i]].invisible = FALSE;
-    }
-}
-
-
-static void DrawHPProgressBar(struct Pokemon *unused)
-{
-    u8 palNum = GetWindowAttribute(menuBox->windowId, WINDOW_PALETTE_NUM) * 16;
-    u8 hpFraction;
-
-    switch (GetHPBarLevel(sMonSummaryScreen->summary.currentHP, sMonSummaryScreen->summary.maxHP))
-    {
-    case HP_BAR_GREEN:
-    case HP_BAR_FULL:
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarGreenPalIds[0]), sHPBarPalOffsets[0] + palNum, 2);
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarGreenPalIds[1]), sHPBarPalOffsets[1] + palNum, 2);
-        break;
-    case HP_BAR_YELLOW:
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarYellowPalIds[0]), sHPBarPalOffsets[0] + palNum, 2);
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarYellowPalIds[1]), sHPBarPalOffsets[1] + palNum, 2);
-        break;
-    default:
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarRedPalIds[0]), sHPBarPalOffsets[0] + palNum, 2);
-        LoadPalette(GetPartyMenuPalBufferPtr(sHPBarRedPalIds[1]), sHPBarPalOffsets[1] + palNum, 2);
-        break;
-    }
-
-    hpFraction = GetScaledHPFraction(hp, maxhp, menuBox->infoRects->dimensions[22]);
-    FillWindowPixelRect(menuBox->windowId, sHPBarPalOffsets[1], menuBox->infoRects->dimensions[20], menuBox->infoRects->dimensions[21], hpFraction, 1);
-    FillWindowPixelRect(menuBox->windowId, sHPBarPalOffsets[0], menuBox->infoRects->dimensions[20], menuBox->infoRects->dimensions[21] + 1, hpFraction, 2);
-    if (hpFraction != menuBox->infoRects->dimensions[22])
-    {
-        // This appears to be an alternating fill
-        FillWindowPixelRect(menuBox->windowId, 0x0D, menuBox->infoRects->dimensions[20] + hpFraction, menuBox->infoRects->dimensions[21], menuBox->infoRects->dimensions[22] - hpFraction, 1);
-        FillWindowPixelRect(menuBox->windowId, 0x02, menuBox->infoRects->dimensions[20] + hpFraction, menuBox->infoRects->dimensions[21] + 1, menuBox->infoRects->dimensions[22] - hpFraction, 2);
-    }
-    CopyWindowToVram(menuBox->windowId, 2);
-}
-
-static void UpdatePartyMonHPBar(u8 spriteId, struct Pokemon *mon)
-{
-    UpdateHPBar(spriteId);
-}
-
-
-static void UpdateHPBar(u8 spriteId)
-{
-    switch (GetHPBarLevel(sMonSummaryScreen->summary.currentHP, sMonSummaryScreen->summary.maxHP))
-    {
-    case HP_BAR_FULL:
-        SetPartyHPBarSprite(&gSprites[spriteId], 0);
-        break;
-    case HP_BAR_GREEN:
-        SetPartyHPBarSprite(&gSprites[spriteId], 1);
-        break;
-    case HP_BAR_YELLOW:
-        SetPartyHPBarSprite(&gSprites[spriteId], 2);
-        break;
-    case HP_BAR_RED:
-        SetPartyHPBarSprite(&gSprites[spriteId], 3);
-        break;
-    default:
-        SetPartyHPBarSprite(&gSprites[spriteId], 4);
-        break;
     }
 }
