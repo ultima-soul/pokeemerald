@@ -1051,9 +1051,9 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
         if (maxOrCurrent != HP_CURRENT) // singles, max
         {
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 9, 0, &windowId);
+            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 0, 5, 2, &windowId);
             objVram = (void*)(OBJ_VRAM0);
-            objVram += spriteTileNum + 0xA40;
+            objVram += spriteTileNum + 0xB40;
             HpTextIntoHealthboxObject(objVram, windowTileData, 2);
             //RemoveWindowOnHealthbox(windowId);
         }
@@ -1062,12 +1062,12 @@ void UpdateHpTextInHealthbox(u8 healthboxSpriteId, s16 value, u8 maxOrCurrent)
             ConvertIntToDecimalStringN(text, value, STR_CONV_MODE_RIGHT_ALIGN, 3);
             text[3] = CHAR_SLASH;
             text[4] = EOS;
-            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 9, 0, &windowId);
+            windowTileData = AddTextPrinterAndCreateWindowOnHealthbox(text, 4, 5, 2, &windowId);
             objVram = (void*)(OBJ_VRAM0);
-            objVram += spriteTileNum + 0x2E0;
+            objVram += spriteTileNum + 0x3E0;
             HpTextIntoHealthboxObject(objVram, windowTileData, 1);
             objVram = (void*)(OBJ_VRAM0);
-            objVram += spriteTileNum + 0xA00;
+            objVram += spriteTileNum + 0xB00;
             HpTextIntoHealthboxObject(objVram, windowTileData + 0x20, 2);
             //RemoveWindowOnHealthbox(windowId);
         }
