@@ -328,10 +328,6 @@ static void HandleInputChooseAction(void)
             PlayerBufferExecCompleted();
         }
     }
-    else if (gMain.newKeys & START_BUTTON)
-    {
-        SwapHpBarsWithHpText();
-    }
     else if (USE_BATTLE_DEBUG && gMain.newKeys & SELECT_BUTTON)
     {
         BtlController_EmitTwoReturnValues(1, B_ACTION_DEBUG, 0);

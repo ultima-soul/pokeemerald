@@ -647,46 +647,6 @@ static const struct SpriteTemplate sSeenOwnTextSpriteTemplate =
     .callback = sub_80BE44C,
 };
 
-static const struct OamData sOamData_AbilitySprite =
-{
-    .y = 0,
-    .affineMode = 0,
-    .objMode = 0,
-    .mosaic = 0,
-    .bpp = 0,
-    .shape = SPRITE_SHAPE(64x64),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(64x64),
-    .tileNum = 0,
-    .priority = 1,
-    .paletteNum = 0,
-    .affineParam = 0,
-};
-
-static const struct CompressedSpriteSheet sAbilitySpriteSheet =
-{
-    .data = gSummaryMonIconAbility_Gfx,
-    .size = 0x800,
-    .tag = 30009
-};
-static const struct CompressedSpritePalette sAbilitySpritePalette =
-{
-    .data = gSummaryIcons_Pal,
-    .tag = 30009
-};
-
-static const struct SpriteTemplate sAbilitySpriteTemplate =
-{
-    .tileTag = 30009,
-    .paletteTag = 30009,
-    .oam = &sOamData_AbilitySprite,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
-};
-
 static const struct SpriteTemplate gUnknown_0855D20C =
 {
     .tileTag = 4096,
@@ -1468,29 +1428,6 @@ void sub_80BB7D4(u8 taskId)
             PlaySE(SE_PIN);
             sub_80BC890();
         }
-        else if (gMain.newKeys & START_BUTTON)
-        {
-            //Open menu
-            sPokedexView->menuY = 0;
-            sPokedexView->menuIsOpen = 1;
-            sPokedexView->menuCursorPos = 0;
-            gTasks[taskId].func = sub_80BBA78;
-            PlaySE(SE_SELECT);
-        }
-        else if (gMain.newKeys & SELECT_BUTTON)
-        {
-            PlaySE(SE_SELECT);
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
-            gTasks[taskId].data[0] = LoadSearchMenu();
-            sPokedexView->unk64E = 0;
-            sPokedexView->unk62A = sPokedexView->unk62C;
-            sPokedexView->unk610 = sPokedexView->selectedPokemon;
-            sPokedexView->unk614 = sPokedexView->dexMode;
-            sPokedexView->unk618 = sPokedexView->dexOrder;
-            gTasks[taskId].func = sub_80BBD1C;
-            PlaySE(SE_PC_LOGIN);
-            sub_80BC890();
-        }
         else if (gMain.newKeys & B_BUTTON)
         {
             BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
@@ -1667,23 +1604,6 @@ void sub_80BBEB8(u8 taskId)
             BeginNormalPaletteFade(~a, 0, 0, 0x10, RGB_BLACK);
             gTasks[taskId].func = sub_80BC2D4;
             PlaySE(SE_PIN);
-            sub_80BC890();
-        }
-        else if (gMain.newKeys & START_BUTTON)
-        {
-            sPokedexView->menuY = 0;
-            sPokedexView->menuIsOpen = 1;
-            sPokedexView->menuCursorPos = 0;
-            gTasks[taskId].func = HandleButtonPress_StartMenu;
-            PlaySE(SE_SELECT);
-        }
-        else if (gMain.newKeys & SELECT_BUTTON)
-        {
-            BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 0x10, RGB_BLACK);
-            gTasks[taskId].data[0] = LoadSearchMenu();
-            sPokedexView->unk64E = 0;
-            gTasks[taskId].func = sub_80BBD1C;
-            PlaySE(SE_PC_LOGIN);
             sub_80BC890();
         }
         else if (gMain.newKeys & B_BUTTON)
@@ -1869,10 +1789,7 @@ bool8 sub_80BC514(u8 a)
             FreeAllSpritePalettes();
             gReservedSpritePaletteCount = 8;
             LoadCompressedSpriteSheet(&sInterfaceSpriteSheet[0]);
-            LoadSpritePalettes(sInterfaceSpritePalette);
-            
-            LoadCompressedSpriteSheet(&sAbilitySpriteSheet);
-            LoadCompressedSpritePalette(&sAbilitySpritePalette);
+            LoadSpritePalettes(sInterfaceSpritePalette);            
             CreateInterfaceSprites(a);
             gMain.state++;
             break;
@@ -2650,7 +2567,6 @@ static void CreateInterfaceSprites(u8 a)
         
         //InitWindows(gPokedex_BaseStats);'
         //Create Ability Icon
-        CreateSprite(&sAbilitySpriteTemplate, 64, 99, 0);
         //BST Tags
         AddTextPrinterParameterized4(9, 1, 0, 8, 0, 0, 0, -1, gText_DexHP);
 
