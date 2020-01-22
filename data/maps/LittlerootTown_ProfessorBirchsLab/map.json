@@ -188,7 +188,7 @@
         },
         {
             "elevation": 3,
-            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE",
+            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_BASCULIN",
             "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
             "movement_range_x": 1,
             "movement_range_y": 1,
@@ -201,7 +201,7 @@
         },
         {
             "elevation": 3,
-            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA",
+            "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_SNOVER",
             "graphics_id": "EVENT_OBJ_GFX_ITEM_BALL",
             "movement_range_x": 1,
             "movement_range_y": 1,

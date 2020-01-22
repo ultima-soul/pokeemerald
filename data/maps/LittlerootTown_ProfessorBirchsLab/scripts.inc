@@ -318,7 +318,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Totodile:: @ 81F9FEF
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter
 	applymovement 2, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	showmonpic SPECIES_TOTODILE, 10, 3
+	showmonpic SPECIES_BASCULIN, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
@@ -331,7 +331,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita:: @ 81FA023
 	goto_if_ge LittlerootTown_ProfessorBirchsLab_EventScript_AlreadyChoseJohtoStarter
 	applymovement 2, Common_Movement_WalkInPlaceFastestRight
 	waitmovement 0
-	showmonpic SPECIES_CHIKORITA, 10, 3
+	showmonpic SPECIES_SNOVER, 10, 3
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_TakeYourTime
@@ -395,9 +395,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedCyndaquil:: @ 81FA0FD
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveTotodile:: @ 81FA10D
-	bufferspeciesname 0, SPECIES_TOTODILE
-	setvar VAR_TEMP_1, SPECIES_TOTODILE
-	givemon SPECIES_TOTODILE, 5, ITEM_NONE
+	bufferspeciesname 0, SPECIES_BASCULIN
+	setvar VAR_TEMP_1, SPECIES_BASCULIN
+	givemon SPECIES_BASCULIN, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SendTotodileToParty
 	compare VAR_RESULT, 1
@@ -440,9 +440,9 @@ LittlerootTown_ProfessorBirchsLab_EventScript_ReceivedTotodile:: @ 81FA19E
 	end
 
 LittlerootTown_ProfessorBirchsLab_EventScript_GiveChikorita:: @ 81FA1AE
-	bufferspeciesname 0, SPECIES_CHIKORITA
-	setvar VAR_TEMP_1, SPECIES_CHIKORITA
-	givemon SPECIES_CHIKORITA, 5, ITEM_NONE
+	bufferspeciesname 0, SPECIES_SNOVER
+	setvar VAR_TEMP_1, SPECIES_SNOVER
+	givemon SPECIES_SNOVER, 5, ITEM_NONE
 	compare VAR_RESULT, 0
 	goto_if_eq LittlerootTown_ProfessorBirchsLab_EventScript_SendChikoritaToParty
 	compare VAR_RESULT, 1
@@ -956,15 +956,15 @@ LittlerootTown_ProfessorBirchsLab_Text_YoullTakeCyndaquil: @ 81FB7F6
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeTotodile: @ 81FB869
 	.string "PROF. BIRCH: The WATER POKéMON\n"
-	.string "TOTODILE is your choice!\p"
+	.string "BASCULIN is your choice!\p"
 	.string "You know how to pick a good one.\p"
-	.string "So, you'll take the TOTODILE?$"
+	.string "So, you'll take the BASCULIN?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_YoullTakeChikorita: @ 81FB8E0
 	.string "PROF. BIRCH: The GRASS POKéMON\n"
-	.string "CHIKORITA is your choice!\p"
+	.string "SNOVER is your choice!\p"
 	.string "You sure know what you're doing.\p"
-	.string "So, you'll take the CHIKORITA?$"
+	.string "So, you'll take the SNOVER?$"
 
 LittlerootTown_ProfessorBirchsLab_Text_TakeYourTimeAllInvaluable: @ 81FB959
 	.string "PROF. BIRCH: Take your time before\n"

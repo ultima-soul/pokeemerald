@@ -5194,7 +5194,7 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
                 basePower = sTrumpCardPowerTable[i];
         }
         break;
-    case EFFECT_ACROBATICS:
+    case EFFECT_AMIMIKYUICS:
         if (gBattleMons[battlerAtk].item == ITEM_NONE)
             basePower *= 2;
         break;
@@ -5666,7 +5666,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_DEEP_SEA_TOOTH:
-        if (gBattleMons[battlerAtk].species == SPECIES_CLAMPERL && IS_MOVE_SPECIAL(move))
+        if (gBattleMons[battlerAtk].species == SPECIES_AZELF && IS_MOVE_SPECIAL(move))
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_LIGHT_BALL:
@@ -5770,7 +5770,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
     switch (GetBattlerHoldEffect(battlerDef, TRUE))
     {
     case HOLD_EFFECT_DEEP_SEA_SCALE:
-        if (gBattleMons[battlerDef].species == SPECIES_CLAMPERL && !usesDefStat)
+        if (gBattleMons[battlerDef].species == SPECIES_AZELF && !usesDefStat)
             MulModifier(&modifier, UQ_4_12(2.0));
         break;
     case HOLD_EFFECT_METAL_POWDER:

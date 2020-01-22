@@ -334,7 +334,7 @@ LilycoveCity_EventScript_DefeatedMay:: @ 81E2F3E
 	compare VAR_RESULT, TRUE
 	call_if_eq LilycoveCity_EventScript_MayPokemonLeague
 	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_PICHU_DOLL
+	clearflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_SEWADDLE_DOLL
 	goto LilycoveCity_EventScript_RivalFlyAway
 	end
 

@@ -1639,7 +1639,7 @@ Route113_Text_DillonPostBattle: @ 8299E38
 Route113_Text_MadelineIntro: @ 8299EA6
 	.string "I use this parasol to ward off this\n"
 	.string "filthy, yucky volcanic ash from\l"
-	.string "my dear NUMEL.$"
+	.string "my dear MANETHUNDR.$"
 
 Route113_Text_MadelineDefeat: @ 8299EF9
 	.string "Huff, huff…\n"
@@ -2030,14 +2030,14 @@ Route115_Text_TimothyPostRematch: @ 829B385
 
 Route115_Text_KoichiIntro: @ 829B3CC
 	.string "You!\p"
-	.string "My MACHOP!\p"
+	.string "My SCATTERBUG!\p"
 	.string "Demand a battle!$"
 
 Route115_Text_KoichiDefeat: @ 829B3ED
 	.string "Ouch, ouch, ouch!$"
 
 Route115_Text_KoichiPostBattle: @ 829B3FF
-	.string "My MACHOP crew!\p"
+	.string "My SCATTERBUG crew!\p"
 	.string "So long as they seek power, I will\n"
 	.string "grow strong with them!$"
 
@@ -3800,7 +3800,7 @@ Route125_Text_StanDefeat: @ 82A15C7
 	.string "I floundered…$"
 
 Route125_Text_StanPostBattle: @ 82A15D5
-	.string "I was blown away by HORSEA's charm,\n"
+	.string "I was blown away by BUIZEL's charm,\n"
 	.string "so I started swimming, too.$"
 
 Route125_Text_TanyaIntro: @ 82A1615
@@ -4682,7 +4682,7 @@ Route134_Text_JackPostBattle: @ 82A45C5
 	.string "currents around these parts.$"
 
 Route134_Text_LaurelIntro: @ 82A4609
-	.string "My LUVDISC are looking for a fun\n"
+	.string "My CHANDELURE are looking for a fun\n"
 	.string "match. Will you join us?$"
 
 Route134_Text_LaurelDefeat: @ 82A4643
@@ -4690,7 +4690,7 @@ Route134_Text_LaurelDefeat: @ 82A4643
 
 Route134_Text_LaurelPostBattle: @ 82A464B
 	.string "There's a collector who's after\n"
-	.string "the SCALES of LUVDISC.$"
+	.string "the SCALES of CHANDELURE.$"
 
 Route134_Text_AlexIntro: @ 82A4682
 	.string "Okeydokey! That's enough rest, gang!\n"

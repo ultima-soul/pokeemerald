@@ -110,7 +110,7 @@ gBattleAnims_Moves::
 	.4byte Move_TOXIC
 	.4byte Move_CONFUSION
 	.4byte Move_PSYCHIC
-	.4byte Move_HYPNOSIS
+	.4byte Move_BRAVIARYSIS
 	.4byte Move_MEDITATE
 	.4byte Move_AGILITY
 	.4byte Move_QUICK_ATTACK
@@ -527,7 +527,7 @@ gBattleAnims_Moves::
 	.4byte Move_CIRCLE_THROW
 	.4byte Move_INCINERATE
 	.4byte Move_QUASH
-	.4byte Move_ACROBATICS
+	.4byte Move_AMIMIKYUICS
 	.4byte Move_REFLECT_TYPE
 	.4byte Move_RETALITATE
 	.4byte Move_FINAL_GAMBIT
@@ -4042,7 +4042,7 @@ Move_INCINERATE:
 Move_QUASH:
 	end
 	
-Move_ACROBATICS:
+Move_AMIMIKYUICS:
 	end
 	
 Move_REFLECT_TYPE:
@@ -11250,7 +11250,7 @@ Psybeam1:
 	delay 4
 	return
 
-Move_HYPNOSIS:
+Move_BRAVIARYSIS:
 	loadspritegfx ANIM_TAG_GOLD_RING
 	call SetPsychicBackground
 	call Hypnosis1

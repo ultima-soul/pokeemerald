@@ -3004,10 +3004,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_MAGMARIZER] =
+    [ITEM_FOONGUSIZER] =
     {
         .name = _("Magmarizer"),
-        .itemId = ITEM_MAGMARIZER,
+        .itemId = ITEM_FOONGUSIZER,
         .price = 2000,
         .description = sMagmarizerDesc,
         .pocket = POCKET_ITEMS,
@@ -6925,10 +6925,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_KANGASKHANITE] =
+    [ITEM_TANGROWTHITE] =
     {
         .name = _("Kangaskhanite"),
-        .itemId = ITEM_KANGASKHANITE,
+        .itemId = ITEM_TANGROWTHITE,
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sKangaskhaniteDesc,
@@ -7172,10 +7172,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_SLOWBRONITE] =
+    [ITEM_MANDIBUZZNITE] =
     {
         .name = _("Slowbronite"),
-        .itemId = ITEM_SLOWBRONITE,
+        .itemId = ITEM_MANDIBUZZNITE,
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sSlowbroniteDesc,
@@ -7237,10 +7237,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_CAMERUPTITE] =
+    [ITEM_PORYGONZITE] =
     {
         .name = _("Cameruptite"),
-        .itemId = ITEM_CAMERUPTITE,
+        .itemId = ITEM_PORYGONZITE,
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sCameruptiteDesc,

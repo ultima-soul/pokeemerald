@@ -23,7 +23,7 @@ SootopolisCity_House1_EventScript_Kecleon:: @ 822698E
 	lock
 	faceplayer
 	waitse
-	playmoncry SPECIES_KECLEON, 0
+	playmoncry SPECIES_ROGGENROLA, 0
 	msgbox SootopolisCity_House1_Text_Kecleon, MSGBOX_DEFAULT
 	waitmoncry
 	release
@@ -40,5 +40,5 @@ SootopolisCity_House1_Text_ExplainBrickBreak: @ 8226A13
 	.string "so horrible that I can't describe it.$"
 
 SootopolisCity_House1_Text_Kecleon: @ 8226A60
-	.string "KECLEON: Puu puhyaah.$"
+	.string "ROGGENROLA: Puu puhyaah.$"
 

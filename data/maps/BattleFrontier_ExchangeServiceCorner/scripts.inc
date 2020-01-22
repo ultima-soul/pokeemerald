@@ -128,7 +128,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_SmoochumDoll:: @ 825F264
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
 	setvar VAR_0x8008, 32
-	setvar VAR_0x8009, DECOR_SMOOCHUM_DOLL
+	setvar VAR_0x8009, DECOR_GOTHITA_DOLL
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -146,7 +146,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_MeowthDoll:: @ 825F2AA
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8009, DECOR_MEOWTH_DOLL
+	setvar VAR_0x8009, DECOR_TYRUNT_DOLL
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -182,7 +182,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChikoritaDoll:: @ 825F336
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
 	setvar VAR_0x8008, 80
-	setvar VAR_0x8009, DECOR_CHIKORITA_DOLL
+	setvar VAR_0x8009, DECOR_SNOVER_DOLL
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -191,7 +191,7 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TotodileDoll:: @ 825F359
 	compare VAR_RESULT, NO
 	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
 	setvar VAR_0x8008, 80
-	setvar VAR_0x8009, DECOR_TOTODILE_DOLL
+	setvar VAR_0x8009, DECOR_BASCULIN_DOLL
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -494,7 +494,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmKissCushion: @ 825F8E6
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmSmoochumDoll: @ 825F917
-	.string "You've chosen the SMOOCHUM DOLL.\n"
+	.string "You've chosen the GOTHITA DOLL.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmTogepiDoll: @ 825F949
@@ -502,7 +502,7 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmTogepiDoll: @ 825F949
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmMeowthDoll: @ 825F979
-	.string "You've chosen the MEOWTH DOLL.\n"
+	.string "You've chosen the TYRUNT DOLL.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmClefairyDoll: @ 825F9A9
@@ -518,11 +518,11 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmCyndaquilDoll: @ 825FA0A
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmChikoritaDoll: @ 825FA3D
-	.string "You've chosen the CHIKORITA DOLL.\n"
+	.string "You've chosen the SNOVER DOLL.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmTotodileDoll: @ 825FA70
-	.string "You've chosen the TOTODILE DOLL.\n"
+	.string "You've chosen the BASCULIN DOLL.\n"
 	.string "Is that correct?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmLaprasDoll: @ 825FAA2
@@ -654,7 +654,7 @@ BattleFrontier_ExchangeServiceCorner_Text_GoGetYourOwnDoll: @ 8260099
 	.string "I don't like you staring at my plush\n"
 	.string "doll like that.\p"
 	.string "If you want it, go get one yourself!\n"
-	.string "Isn't that right, SMOOCHUM?$"
+	.string "Isn't that right, GOTHITA?$"
 
 BattleFrontier_ExchangeServiceCorner_Text_MoreBattlePointsForRecord: @ 826012D
 	.string "Did you know?\p"
@@ -663,14 +663,14 @@ BattleFrontier_ExchangeServiceCorner_Text_MoreBattlePointsForRecord: @ 826012D
 	.string "giving you more and more Battle Points.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc:: @ 82601AA
-	.string "A large poster with a SMOOCHUM print.$"
+	.string "A large poster with a GOTHITA print.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc:: @ 82601D0
-	.string "A SMOOCHUM cushion.\n"
+	.string "A GOTHITA cushion.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_SmoochumDollDesc:: @ 8260201
-	.string "A SMOOCHUM DOLL.\n"
+	.string "A GOTHITA DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc:: @ 826022F
@@ -678,7 +678,7 @@ BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc:: @ 826022F
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_MeowthDollDesc:: @ 826025B
-	.string "A MEOWTH DOLL.\n"
+	.string "A TYRUNT DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ClefairyDollDesc:: @ 8260287
@@ -694,11 +694,11 @@ BattleFrontier_ExchangeServiceCorner_Text_CyndaquilDollDesc:: @ 82602E0
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ChikoritaDollDesc:: @ 826030F
-	.string "A CHIKORITA DOLL.\n"
+	.string "A SNOVER DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_TotodileDollDesc:: @ 826033E
-	.string "A TOTODILE DOLL.\n"
+	.string "A BASCULIN DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc:: @ 826036C

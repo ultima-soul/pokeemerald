@@ -1330,7 +1330,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_SPECIAL,
     },
 
-    [MOVE_HYPNOSIS] =
+    [MOVE_BRAVIARYSIS] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
@@ -7179,9 +7179,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_STATUS,
     },
 
-    [MOVE_ACROBATICS] =
+    [MOVE_AMIMIKYUICS] =
     {
-        .effect = EFFECT_ACROBATICS,
+        .effect = EFFECT_AMIMIKYUICS,
         .power = 55,
         .type = TYPE_FLYING,
         .accuracy = 100,

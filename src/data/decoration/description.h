@@ -208,7 +208,7 @@ const u8 DecorDesc_TV[] = _(
 const u8 DecorDesc_ROUND_TV[] = _(
     "A toy TV modeled\n"
         "in the image of a\n"
-        "SEEDOT.");
+        "PANGORO.");
 
 const u8 DecorDesc_CUTE_TV[] = _(
     "A toy TV modeled\n"
@@ -324,16 +324,16 @@ const u8 DecorDesc_BLUE_POSTER[] = _(
 
 const u8 DecorDesc_CUTE_POSTER[] = _(
     "A small poster with\n"
-        "an AZURILL print.");
+        "an CARRACOSTA print.");
 
 const u8 DecorDesc_PIKA_POSTER[] = _(
     "A large poster with\n"
         "a PIKACHU and\n"
-        "PICHU print.");
+        "SEWADDLE print.");
 
 const u8 DecorDesc_LONG_POSTER[] = _(
     "A large poster with\n"
-        "a SEVIPER print.");
+        "a BANSHEETTE print.");
 
 const u8 DecorDesc_SEA_POSTER[] = _(
     "A large poster with\n"
@@ -345,10 +345,10 @@ const u8 DecorDesc_SKY_POSTER[] = _(
 
 const u8 DecorDesc_KISS_POSTER[] = _(
     "A large poster with\n"
-        "a SMOOCHUM print.");
+        "a GOTHITA print.");
 
-const u8 DecorDesc_PICHU_DOLL[] = _(
-    "A PICHU doll.\n"
+const u8 DecorDesc_SEWADDLE_DOLL[] = _(
+    "A SEWADDLE doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -372,23 +372,23 @@ const u8 DecorDesc_CYNDAQUIL_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_CHIKORITA_DOLL[] = _(
-    "A CHIKORITA doll.\n"
+const u8 DecorDesc_SNOVER_DOLL[] = _(
+    "A SNOVER doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_TOTODILE_DOLL[] = _(
-    "A TOTODILE doll.\n"
+const u8 DecorDesc_BASCULIN_DOLL[] = _(
+    "A BASCULIN doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_JIGGLYPUFF_DOLL[] = _(
-    "A JIGGLYPUFF doll.\n"
+const u8 DecorDesc_FROAKIE_DOLL[] = _(
+    "A FROAKIE doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_MEOWTH_DOLL[] = _(
-    "A MEOWTH doll.\n"
+const u8 DecorDesc_TYRUNT_DOLL[] = _(
+    "A TYRUNT doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -402,8 +402,8 @@ const u8 DecorDesc_DITTO_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_SMOOCHUM_DOLL[] = _(
-    "A SMOOCHUM doll.\n"
+const u8 DecorDesc_GOTHITA_DOLL[] = _(
+    "A GOTHITA doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -422,8 +422,8 @@ const u8 DecorDesc_MUDKIP_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_DUSKULL_DOLL[] = _(
-    "A DUSKULL doll.\n"
+const u8 DecorDesc_GURDURR_DOLL[] = _(
+    "A GURDURR doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -432,18 +432,18 @@ const u8 DecorDesc_WYNAUT_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_BALTOY_DOLL[] = _(
-    "A BALTOY doll.\n"
+const u8 DecorDesc_BOLDORE_DOLL[] = _(
+    "A BOLDORE doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_KECLEON_DOLL[] = _(
-    "A KECLEON doll.\n"
+const u8 DecorDesc_ROGGENROLA_DOLL[] = _(
+    "A ROGGENROLA doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_AZURILL_DOLL[] = _(
-    "An AZURILL doll.\n"
+const u8 DecorDesc_CARRACOSTA_DOLL[] = _(
+    "An CARRACOSTA doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -457,18 +457,18 @@ const u8 DecorDesc_SWABLU_DOLL[] = _(
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_GULPIN_DOLL[] = _(
-    "A GULPIN doll.\n"
+const u8 DecorDesc_DARKRAI_DOLL[] = _(
+    "A DARKRAI doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_LOTAD_DOLL[] = _(
-    "A LOTAD doll.\n"
+const u8 DecorDesc_DUOSION_DOLL[] = _(
+    "A DUOSION doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
-const u8 DecorDesc_SEEDOT_DOLL[] = _(
-    "A SEEDOT doll.\n"
+const u8 DecorDesc_PANGORO_DOLL[] = _(
+    "A PANGORO doll.\n"
         "Place it on a mat\n"
         "or a desk.");
 
@@ -483,7 +483,7 @@ const u8 DecorDesc_ROUND_CUSHION[] = _(
         "or a desk.");
 
 const u8 DecorDesc_KISS_CUSHION[] = _(
-    "A SMOOCHUM\n"
+    "A GOTHITA\n"
         "cushion. Place it on\n"
         "a mat or a desk.");
 
@@ -493,7 +493,7 @@ const u8 DecorDesc_ZIGZAG_CUSHION[] = _(
         "a mat or a desk.");
 
 const u8 DecorDesc_SPIN_CUSHION[] = _(
-    "A SPINDA cushion.\n"
+    "A PALKIA cushion.\n"
         "Place it on a mat\n"
         "or a desk.");
 

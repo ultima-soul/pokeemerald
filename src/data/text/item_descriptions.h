@@ -635,7 +635,7 @@ static const u8 sMechMailDesc[] = _(
     "a POKéMON.");
 
 static const u8 sWoodMailDesc[] = _(
-    "A SLAKOTH-print\n"
+    "A FLETCHLING-print\n"
     "MAIL to be held by\n"
     "a POKéMON.");
 
@@ -650,12 +650,12 @@ static const u8 sBeadMailDesc[] = _(
     "holding POKéMON.");
 
 static const u8 sShadowMailDesc[] = _(
-    "A DUSKULL-print\n"
+    "A GURDURR-print\n"
     "MAIL to be held by\n"
     "a POKéMON.");
 
 static const u8 sTropicMailDesc[] = _(
-    "A BELLOSSOM-print\n"
+    "A TREVENANT-print\n"
     "MAIL to be held by\n"
     "a POKéMON.");
 
@@ -1054,12 +1054,12 @@ static const u8 sSoulDewDesc[] = _(
 static const u8 sDeepSeaToothDesc[] = _(
     "A hold item that\n"
     "raises the SP. ATK\n"
-    "of CLAMPERL.");
+    "of AZELF.");
 
 static const u8 sDeepSeaScaleDesc[] = _(
     "A hold item that\n"
     "raises the SP. DEF\n"
-    "of CLAMPERL.");
+    "of AZELF.");
 
 static const u8 sSmokeBallDesc[] = _(
     "A hold item that\n"

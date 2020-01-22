@@ -15,24 +15,24 @@ AquaHideout_B1F_EventScript_TryRemoveElectrode:: @ 82339BC
 	return
 
 AquaHideout_B1F_OnTransition: @ 82339D0
-	call_if_unset FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT, AquaHideout_B1F_EventScript_ShowElectrode1
-	call_if_unset FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT, AquaHideout_B1F_EventScript_ShowElectrode2
+	call_if_unset FLAG_DEFEATED_SCRAFTY_1_AQUA_HIDEOUT, AquaHideout_B1F_EventScript_ShowElectrode1
+	call_if_unset FLAG_DEFEATED_SCRAFTY_2_AQUA_HIDEOUT, AquaHideout_B1F_EventScript_ShowElectrode2
 	end
 
 AquaHideout_B1F_EventScript_ShowElectrode1:: @ 82339E3
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
+	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_SCRAFTY_1
 	return
 
 AquaHideout_B1F_EventScript_ShowElectrode2:: @ 82339E7
-	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
+	clearflag FLAG_HIDE_AQUA_HIDEOUT_B1F_SCRAFTY_2
 	return
 
 AquaHideout_B1F_EventScript_Electrode1:: @ 82339EB
 	lock
 	faceplayer
-	setwildbattle SPECIES_ELECTRODE, 30, ITEM_NONE
+	setwildbattle SPECIES_SCRAFTY, 30, ITEM_NONE
 	waitse
-	playmoncry SPECIES_ELECTRODE, 2
+	playmoncry SPECIES_SCRAFTY, 2
 	delay 40
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -45,21 +45,21 @@ AquaHideout_B1F_EventScript_Electrode1:: @ 82339EB
 	goto_if_eq AquaHideout_B1F_EventScript_DefeatedElectrode1
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq AquaHideout_B1F_EventScript_DefeatedElectrode1
-	setflag FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT
+	setflag FLAG_DEFEATED_SCRAFTY_1_AQUA_HIDEOUT
 	release
 	end
 
 AquaHideout_B1F_EventScript_DefeatedElectrode1:: @ 8233A2F
-	setflag FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT
+	setflag FLAG_DEFEATED_SCRAFTY_1_AQUA_HIDEOUT
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
 AquaHideout_B1F_EventScript_Electrode2:: @ 8233A38
 	lock
 	faceplayer
-	setwildbattle SPECIES_ELECTRODE, 30, ITEM_NONE
+	setwildbattle SPECIES_SCRAFTY, 30, ITEM_NONE
 	waitse
-	playmoncry SPECIES_ELECTRODE, 2
+	playmoncry SPECIES_SCRAFTY, 2
 	delay 40
 	waitmoncry
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -72,12 +72,12 @@ AquaHideout_B1F_EventScript_Electrode2:: @ 8233A38
 	goto_if_eq AquaHideout_B1F_EventScript_DefeatedElectrode2
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq AquaHideout_B1F_EventScript_DefeatedElectrode2
-	setflag FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT
+	setflag FLAG_DEFEATED_SCRAFTY_2_AQUA_HIDEOUT
 	release
 	end
 
 AquaHideout_B1F_EventScript_DefeatedElectrode2:: @ 8233A7C
-	setflag FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT
+	setflag FLAG_DEFEATED_SCRAFTY_2_AQUA_HIDEOUT
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 

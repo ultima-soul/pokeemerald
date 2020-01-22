@@ -287,7 +287,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_EnterStatusRoom:: @ 825D605
 	copyvar VAR_0x8004, VAR_RESULT
 	compare VAR_0x8004, PIKE_STATUSMON_KIRLIA
 	call_if_eq BattleFrontier_BattlePikeRoomNormal_EventScript_KirliaAttack
-	compare VAR_0x8004, PIKE_STATUSMON_DUSCLOPS
+	compare VAR_0x8004, PIKE_STATUSMON_CONKELDURR
 	call_if_eq BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_AttacksWhenStartled, MSGBOX_DEFAULT
 	closemessage
@@ -333,7 +333,7 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack:: @ 825D6D5
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_DusclopsStop, MSGBOX_DEFAULT
 	closemessage
 	waitse
-	playmoncry SPECIES_DUSCLOPS, 0
+	playmoncry SPECIES_CONKELDURR, 0
 	waitmoncry
 	pike_getstatus
 	compare VAR_RESULT, PIKE_STATUS_FREEZE
@@ -347,11 +347,11 @@ BattleFrontier_BattlePikeRoomNormal_EventScript_DusclopsAttack:: @ 825D6D5
 	applymovement 2, BattleFrontier_BattlePikeRoomNormal_Movement_MonFaceNPC
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_DUSCLOPS, 0
+	playmoncry SPECIES_CONKELDURR, 0
 	waitmoncry
 	msgbox BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough, MSGBOX_DEFAULT
 	waitse
-	playmoncry SPECIES_DUSCLOPS, 0
+	playmoncry SPECIES_CONKELDURR, 0
 	waitmoncry
 	closemessage
 	applymovement 2, BattleFrontier_BattlePikeRoomNormal_Movement_MonMoveAside
@@ -716,13 +716,13 @@ BattleFrontier_BattlePikeRoomNormal_Text_KirliaStop: @ 825DBE4
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsStop: @ 825DC01
 	.string "Now, now!\n"
-	.string "DUSCLOPS, stop that!$"
+	.string "CONKELDURR, stop that!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedToxic: @ 825DC20
 	.string "KIRLIA used TOXIC!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedHypnosis: @ 825DC33
-	.string "KIRLIA used HYPNOSIS!$"
+	.string "KIRLIA used BRAVIARYSIS!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedThunderWave: @ 825DC49
 	.string "KIRLIA used THUNDER WAVE!$"
@@ -731,10 +731,10 @@ BattleFrontier_BattlePikeRoomNormal_Text_KirliaUsedWillOWisp: @ 825DC63
 	.string "KIRLIA used WILL-O-WISP!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedWillOWisp: @ 825DC7C
-	.string "DUSCLOPS used WILL-O-WISP!$"
+	.string "CONKELDURR used WILL-O-WISP!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_DusclopsUsedIceBeam: @ 825DC97
-	.string "DUSCLOPS used ICE BEAM!$"
+	.string "CONKELDURR used ICE BEAM!$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_ThatsEnough: @ 825DCAF
 	.string "Look here!\n"
@@ -746,7 +746,7 @@ BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForKirlia: @ 825DCCF
 
 BattleFrontier_BattlePikeRoomNormal_Text_ApologizeForDusclops: @ 825DD06
 	.string "I must apologize to you…\p"
-	.string "My DUSCLOPS has a TIMID nature…$"
+	.string "My CONKELDURR has a TIMID nature…$"
 
 BattleFrontier_BattlePikeRoomNormal_Text_AttacksWhenStartled: @ 825DD3F
 	.string "It attacks without warning if it is\n"

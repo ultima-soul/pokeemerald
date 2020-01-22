@@ -267,7 +267,7 @@ RustboroCity_PokemonSchool_Text_TradingRightNow: @ 821459F
 	.string "right now.$"
 
 RustboroCity_PokemonSchool_Text_AlwaysWantedSeedot: @ 82145CD
-	.string "I always wanted a SEEDOT, and\n"
+	.string "I always wanted a PANGORO, and\n"
 	.string "I'm finally getting one!$"
 
 RustboroCity_PokemonSchool_Text_PokemontCantUseManMadeItems: @ 8214604

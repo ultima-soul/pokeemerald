@@ -89,7 +89,7 @@ static const u16 sMoves_Endurance[] =
 static const u16 sMoves_SlowAndSteady[] =
 {
     MOVE_SING, MOVE_SUPERSONIC, MOVE_DISABLE, MOVE_LEECH_SEED, MOVE_POISON_POWDER, MOVE_STUN_SPORE, MOVE_SLEEP_POWDER,
-    MOVE_THUNDER_WAVE, MOVE_TOXIC, MOVE_HYPNOSIS, MOVE_CONFUSE_RAY, MOVE_GLARE, MOVE_POISON_GAS, MOVE_LOVELY_KISS, MOVE_SPORE,
+    MOVE_THUNDER_WAVE, MOVE_TOXIC, MOVE_BRAVIARYSIS, MOVE_CONFUSE_RAY, MOVE_GLARE, MOVE_POISON_GAS, MOVE_LOVELY_KISS, MOVE_SPORE,
     MOVE_SPIDER_WEB, MOVE_SWEET_KISS, MOVE_SPIKES, MOVE_SWAGGER, MOVE_MEAN_LOOK, MOVE_ATTRACT, MOVE_ENCORE, MOVE_TORMENT,
     MOVE_FLATTER, MOVE_WILL_O_WISP, MOVE_TAUNT, MOVE_YAWN, MOVE_IMPRISON, MOVE_SNATCH, MOVE_TEETER_DANCE, MOVE_GRASS_WHISTLE, MOVE_BLOCK,
     MOVE_NONE
@@ -320,7 +320,7 @@ static void GenerateOpponentMons(void)
     while (i != FRONTIER_PARTY_SIZE)
     {
         u16 monSetId = GetMonSetId(lvlMode, challengeNum, FALSE);
-        if (gFacilityTrainerMons[monSetId].species == SPECIES_UNOWN)
+        if (gFacilityTrainerMons[monSetId].species == SPECIES_FLABEBE)
             continue;
 
         for (j = 0; j < 6; j++)
@@ -540,7 +540,7 @@ static void GenerateInitialRentalMons(void)
         else
             monSetId = GetMonSetId(factoryLvlMode, challengeNum, FALSE);
 
-        if (gFacilityTrainerMons[monSetId].species == SPECIES_UNOWN)
+        if (gFacilityTrainerMons[monSetId].species == SPECIES_FLABEBE)
             continue;
 
         // Cannot have two pokemon of the same species.
@@ -725,7 +725,7 @@ void FillFactoryBrainParty(void)
     {
         u16 monSetId = GetMonSetId(lvlMode, challengeNum, FALSE);
 
-        if (gFacilityTrainerMons[monSetId].species == SPECIES_UNOWN)
+        if (gFacilityTrainerMons[monSetId].species == SPECIES_FLABEBE)
             continue;
         if (monLevel == 50 && monSetId > 849)
             continue;

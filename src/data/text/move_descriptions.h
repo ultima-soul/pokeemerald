@@ -1957,7 +1957,7 @@ static const u8 sQUASHDescription[] = _(
 	"Suppresses the foe, making\n"
 	"it move last.");
 
-static const u8 sACROBATICSDescription[] = _(
+static const u8 sAMIMIKYUICSDescription[] = _(
 	"Does double damage if the\n"
 	"user has no item.");
 
@@ -2640,7 +2640,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TOXIC - 1] = sToxicDescription,
     [MOVE_CONFUSION - 1] = sConfusionDescription,
     [MOVE_PSYCHIC - 1] = sPsychicDescription,
-    [MOVE_HYPNOSIS - 1] = sHypnosisDescription,
+    [MOVE_BRAVIARYSIS - 1] = sHypnosisDescription,
     [MOVE_MEDITATE - 1] = sMeditateDescription,
     [MOVE_AGILITY - 1] = sAgilityDescription,
     [MOVE_QUICK_ATTACK - 1] = sQuickAttackDescription,
@@ -3057,7 +3057,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_CIRCLE_THROW - 1] = sCIRCLE_THROWDescription,
     [MOVE_INCINERATE - 1] = sINCINERATEDescription,
     [MOVE_QUASH - 1] = sQUASHDescription,
-    [MOVE_ACROBATICS - 1] = sACROBATICSDescription,
+    [MOVE_AMIMIKYUICS - 1] = sAMIMIKYUICSDescription,
     [MOVE_REFLECT_TYPE - 1] = sREFLECT_TYPEDescription,
     [MOVE_RETALIATE - 1] = sRETALIATEDescription,
     [MOVE_FINAL_GAMBIT - 1] = sFINAL_GAMBITDescription,

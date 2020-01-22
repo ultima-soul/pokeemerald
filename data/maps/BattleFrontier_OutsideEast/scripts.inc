@@ -17,11 +17,11 @@ BattleFrontier_OutsideEast_EventScript_TryRemoveSudowoodo:: @ 8242C19
 BattleFrontier_OutsideEast_OnTransition: @ 8242C2D
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
-	call_if_unset FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
+	call_if_unset FLAG_DEFEATED_GIBLE, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
 	end
 
 BattleFrontier_OutsideEast_EventScript_ShowSudowoodo:: @ 8242C3F
-	clearflag FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO
+	clearflag FLAG_HIDE_BATTLE_FRONTIER_GIBLE
 	return
 
 BattleFrontier_OutsideEast_EventScript_BattleTowerSign:: @ 8242C43
@@ -124,11 +124,11 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo:: @ 8242CFC
 	msgbox gText_Sudowoodo_Attacked, MSGBOX_DEFAULT
 	closemessage
 	waitse
-	playmoncry SPECIES_SUDOWOODO, 2
+	playmoncry SPECIES_GIBLE, 2
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, 14  @ Sudowoodo object event id
-	setwildbattle SPECIES_SUDOWOODO, 40, ITEM_NONE
+	setwildbattle SPECIES_GIBLE, 40, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
@@ -139,12 +139,12 @@ BattleFrontier_OutsideEast_EventScript_WaterSudowoodo:: @ 8242CFC
 	goto_if_eq BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo
-	setflag FLAG_DEFEATED_SUDOWOODO
+	setflag FLAG_DEFEATED_GIBLE
 	release
 	end
 
 BattleFrontier_OutsideEast_EventScript_DefeatedSudowoodo:: @ 8242D60
-	setflag FLAG_DEFEATED_SUDOWOODO
+	setflag FLAG_DEFEATED_GIBLE
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
@@ -221,7 +221,7 @@ BattleFrontier_OutsideEast_EventScript_Gentleman:: @ 8242DE0
 BattleFrontier_OutsideEast_EventScript_OldWoman:: @ 8242DE9
 	lock
 	faceplayer
-	goto_if_set FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_OldWomanSudowoodoGone
+	goto_if_set FLAG_DEFEATED_GIBLE, BattleFrontier_OutsideEast_EventScript_OldWomanSudowoodoGone
 	msgbox BattleFrontier_OutsideEast_Text_OddTreeHereSeemsToWiggle, MSGBOX_DEFAULT
 	release
 	end

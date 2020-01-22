@@ -18,7 +18,7 @@ FortreeCity_EventScript_Man:: @ 81E25B6
 FortreeCity_EventScript_Woman:: @ 81E25BF
 	lock
 	faceplayer
-	goto_if_set FLAG_KECLEON_FLED_FORTREE, FortreeCity_EventScript_WomanGymAccessible
+	goto_if_set FLAG_ROGGENROLA_FLED_FORTREE, FortreeCity_EventScript_WomanGymAccessible
 	msgbox FortreeCity_Text_SomethingBlockingGym, MSGBOX_DEFAULT
 	release
 	end
@@ -75,13 +75,13 @@ FortreeCity_EventScript_UseDevonScope:: @ 81E2645
 	applymovement VAR_LAST_TALKED, Movement_KecleonAppears
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_KECLEON, 2
+	playmoncry SPECIES_ROGGENROLA, 2
 	delay 40
 	waitmoncry
 	applymovement VAR_LAST_TALKED, FortreeCity_Movement_KecleonFlee
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
-	setflag FLAG_KECLEON_FLED_FORTREE
+	setflag FLAG_ROGGENROLA_FLED_FORTREE
 	release
 	end
 

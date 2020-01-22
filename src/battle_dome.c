@@ -215,7 +215,7 @@ static const u8 sMovePointsForDomeTrainers[MOVES_COUNT][DOME_TOURNAMENT_TRAINERS
     [MOVE_TOXIC] = {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
     [MOVE_CONFUSION] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1},
     [MOVE_PSYCHIC] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
-    [MOVE_HYPNOSIS] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+    [MOVE_BRAVIARYSIS] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     [MOVE_MEDITATE] = {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     [MOVE_AGILITY] = {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
     [MOVE_QUICK_ATTACK] = {0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0},
@@ -2626,7 +2626,7 @@ static void CalcDomeMonStats(u16 species, int level, int ivs, u8 evBits, u8 natu
             evs[i] = resultingEvs;
     }
 
-    if (species == SPECIES_SHEDINJA)
+    if (species == SPECIES_DIALGA)
     {
         stats[STAT_HP] = 1;
     }

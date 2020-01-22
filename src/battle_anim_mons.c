@@ -183,7 +183,7 @@ u8 GetBattlerYDelta(u8 battlerId, u16 species)
 
     if (GetBattlerSide(battlerId) == B_SIDE_PLAYER || IsContest())
     {
-        if (species == SPECIES_UNOWN)
+        if (species == SPECIES_FLABEBE)
         {
             if (IsContest())
             {
@@ -222,7 +222,7 @@ u8 GetBattlerYDelta(u8 battlerId, u16 species)
     }
     else
     {
-        if (species == SPECIES_UNOWN)
+        if (species == SPECIES_FLABEBE)
         {
             spriteInfo = gBattleSpritesDataPtr->battlerData;
             if (!spriteInfo[battlerId].transformSpecies)
@@ -1224,7 +1224,7 @@ static bool8 sub_80A7238(void)
 {
     if (IsContest())
     {
-        if (gSprites[GetAnimBattlerSpriteId(ANIM_ATTACKER)].data[2] == SPECIES_UNOWN)
+        if (gSprites[GetAnimBattlerSpriteId(ANIM_ATTACKER)].data[2] == SPECIES_FLABEBE)
             return FALSE;
         else
             return TRUE;
@@ -2111,11 +2111,11 @@ s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 attr)
             species = gContestResources->field_18->species;
             personality = gContestResources->field_18->unk8;
         }
-        if (species == SPECIES_UNOWN)
+        if (species == SPECIES_FLABEBE)
         {
             letter = GET_UNOWN_LETTER(personality);
             if (!letter)
-                unownSpecies = SPECIES_UNOWN;
+                unownSpecies = SPECIES_FLABEBE;
             else
                 unownSpecies = letter + SPECIES_UNOWN_B - 1;
             coords = &gMonBackPicCoords[unownSpecies];
@@ -2149,11 +2149,11 @@ s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 attr)
                 personality = gTransformedPersonalities[battlerId];
             }
 
-            if (species == SPECIES_UNOWN)
+            if (species == SPECIES_FLABEBE)
             {
                 letter = GET_UNOWN_LETTER(personality);
                 if (!letter)
-                    unownSpecies = SPECIES_UNOWN;
+                    unownSpecies = SPECIES_FLABEBE;
                 else
                     unownSpecies = letter + SPECIES_UNOWN_B - 1;
                 coords = &gMonBackPicCoords[unownSpecies];
@@ -2181,11 +2181,11 @@ s16 GetBattlerSpriteCoordAttr(u8 battlerId, u8 attr)
                 personality = gTransformedPersonalities[battlerId];
             }
 
-            if (species == SPECIES_UNOWN)
+            if (species == SPECIES_FLABEBE)
             {
                 letter = GET_UNOWN_LETTER(personality);
                 if (!letter)
-                    unownSpecies = SPECIES_UNOWN;
+                    unownSpecies = SPECIES_FLABEBE;
                 else
                     unownSpecies = letter + SPECIES_UNOWN_B - 1;
                 coords = &gMonFrontPicCoords[unownSpecies];

@@ -2954,7 +2954,7 @@
             "blockdata_filepath": "data/layouts/SootopolisCity_LotadAndSeedotHouse/map.bin",
             "border_filepath": "data/layouts/SootopolisCity_LotadAndSeedotHouse/border.bin",
             "height": 7,
-            "id": "LAYOUT_SOOTOPOLIS_CITY_LOTAD_AND_SEEDOT_HOUSE",
+            "id": "LAYOUT_SOOTOPOLIS_CITY_DUOSION_AND_PANGORO_HOUSE",
             "name": "SootopolisCity_LotadAndSeedotHouse_Layout",
             "primary_tileset": "gTileset_Building",
             "secondary_tileset": "gTileset_GenericBuilding",

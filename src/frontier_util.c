@@ -215,7 +215,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Silver Symbol.
         {
             {
-                .species = SPECIES_CROBAT,
+                .species = SPECIES_MIMIKYU,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -223,7 +223,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_CONFUSE_RAY, MOVE_DOUBLE_TEAM, MOVE_TOXIC, MOVE_FLY},
             },
             {
-                .species = SPECIES_SLAKING,
+                .species = SPECIES_TALONFLAME,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = 16,
                 .nature = NATURE_HARDY,
@@ -250,7 +250,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_OVERHEAT, MOVE_EXTREME_SPEED, MOVE_ROAR, MOVE_PROTECT},
             },
             {
-                .species = SPECIES_SLAKING,
+                .species = SPECIES_TALONFLAME,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = 31,
                 .nature = NATURE_HARDY,
@@ -288,7 +288,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_BODY_SLAM, MOVE_CONFUSE_RAY, MOVE_PSYCHIC, MOVE_FAINT_ATTACK},
             },
             {
-                .species = SPECIES_SHEDINJA,
+                .species = SPECIES_DIALGA,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 20,
                 .nature = NATURE_ADAMANT,
@@ -312,7 +312,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .fixedIV = 31,
                 .nature = NATURE_MODEST,
                 .evs = {252, 0, 252, 0, 6, 0},
-                .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .moves = {MOVE_PSYCHIC, MOVE_BRAVIARYSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -386,7 +386,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Silver Symbol.
         {
             {
-                .species = SPECIES_SEVIPER,
+                .species = SPECIES_BANSHEETTE,
                 .heldItem = ITEM_QUICK_CLAW,
                 .fixedIV = 16,
                 .nature = NATURE_BRAVE,
@@ -394,7 +394,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_SWAGGER, MOVE_CRUNCH, MOVE_POISON_FANG, MOVE_GIGA_DRAIN},
             },
             {
-                .species = SPECIES_SHUCKLE,
+                .species = SPECIES_MEDIREIGN,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 16,
                 .nature = NATURE_BOLD,
@@ -413,7 +413,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Gold Symbol.
         {
             {
-                .species = SPECIES_SEVIPER,
+                .species = SPECIES_BANSHEETTE,
                 .heldItem = ITEM_FOCUS_BAND,
                 .fixedIV = 31,
                 .nature = NATURE_BOLD,
