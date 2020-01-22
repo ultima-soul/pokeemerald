@@ -50,17 +50,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x86,
         .y_offset = 0x08,
     },
-    [SPECIES_CATERPIE] =
+    [SPECIES_SNIVY] =
     {
         .size = 0x55,
         .y_offset = 0x0f,
     },
-    [SPECIES_METAPOD] =
+    [SPECIES_SERVINE] =
     {
         .size = 0x65,
         .y_offset = 0x0c,
     },
-    [SPECIES_BUTTERFREE] =
+    [SPECIES_SERPERIOR] =
     {
         .size = 0x87,
         .y_offset = 0x06,
@@ -105,12 +105,12 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x75,
         .y_offset = 0x0d,
     },
-    [SPECIES_SPEAROW] =
+    [SPECIES_NOIBAT] =
     {
         .size = 0x65,
         .y_offset = 0x0c,
     },
-    [SPECIES_FEAROW] =
+    [SPECIES_NOIVERN] =
     {
         .size = 0x87,
         .y_offset = 0x05,

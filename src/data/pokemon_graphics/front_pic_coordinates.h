@@ -50,17 +50,17 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x88,
         .y_offset = 0x00,
     },
-    [SPECIES_CATERPIE] =
+    [SPECIES_SNIVY] =
     {
         .size = 0x45,
         .y_offset = 0x10,
     },
-    [SPECIES_METAPOD] =
+    [SPECIES_SERVINE] =
     {
         .size = 0x54,
         .y_offset = 0x14,
     },
-    [SPECIES_BUTTERFREE] =
+    [SPECIES_SERPERIOR] =
     {
         .size = 0x76,
         .y_offset = 0x09,
@@ -105,12 +105,12 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x66,
         .y_offset = 0x0b,
     },
-    [SPECIES_SPEAROW] =
+    [SPECIES_NOIBAT] =
     {
         .size = 0x45,
         .y_offset = 0x0f,
     },
-    [SPECIES_FEAROW] =
+    [SPECIES_NOIVERN] =
     {
         .size = 0x78,
         .y_offset = 0x00,

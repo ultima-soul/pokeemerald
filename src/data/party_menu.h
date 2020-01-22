@@ -84,12 +84,12 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
     },
     [PARTY_LAYOUT_DOUBLE] = 
     {
-        {16, 24, 20, 34, 50, 36, 16, 18},
-        {16, 80, 20, 90, 50, 92, 16, 74},
-        {104, 18, 108, 28, 136, 27, 102, 25},
-        {104, 50, 108, 60, 136, 59, 102, 57},
-        {104, 82, 108, 92, 136, 91, 102, 89},
-        {104, 114, 108, 124, 136, 123, 102, 121},
+        {24, 8, 32, 16, 24, 28, 24, 8}, //2 first sets: icon position| Second set: Held Item icon| Third set: Status symbol
+        {136, 16, 144, 24, 136, 36, 102, 25},
+        {24, 48, 32, 52, 24, 68, 102, 49},
+        {136, 56, 144, 64, 136, 76, 102, 73},
+        {24, 88, 32, 100, 24, 108, 102, 97},
+        {136, 96, 144, 104, 136, 116, 102, 121},
     },
     [PARTY_LAYOUT_MULTI] = 
     {
@@ -199,7 +199,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
     {
         .bg = 0,
         .tilemapLeft = 1,
-        .tilemapTop = 1,
+        .tilemapTop = 0,
         .width = 14,
         .height = 5,
         .paletteNum = 3,
@@ -207,8 +207,8 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
     },
     {
         .bg = 0,
-        .tilemapLeft = 1,
-        .tilemapTop = 8,
+        .tilemapLeft = 15,
+        .tilemapTop = 1,
         .width = 14,
         .height = 5,
         .paletteNum = 4,
@@ -216,8 +216,8 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
     },
     {
         .bg = 0,
-        .tilemapLeft = 12,
-        .tilemapTop = 1,
+        .tilemapLeft = 1,
+        .tilemapTop = 5,
         .width = 14,
         .height = 5,
         .paletteNum = 5,
@@ -225,30 +225,30 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
     },
     {
         .bg = 0,
-        .tilemapLeft = 12,
-        .tilemapTop = 5,
+        .tilemapLeft = 15,
+        .tilemapTop = 6,
         .width = 14,
         .height = 5,
         .paletteNum = 6,
-        .baseBlock = 0x125,
+        .baseBlock = 0x135,
     },
     {
         .bg = 0,
-        .tilemapLeft = 12,
-        .tilemapTop = 9,
+        .tilemapLeft = 1,
+        .tilemapTop = 10,
         .width = 14,
         .height = 5,
         .paletteNum = 7,
-        .baseBlock = 0x15B,
+        .baseBlock = 0x17B,
     },
     {
         .bg = 0,
-        .tilemapLeft = 12,
-        .tilemapTop = 13,
+        .tilemapLeft = 15,
+        .tilemapTop = 11,
         .width = 14,
         .height = 5,
         .paletteNum = 8,
-        .baseBlock = 0x191,
+        .baseBlock = 0x1C1,
     },
     {
         .bg = 2,
@@ -260,7 +260,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .baseBlock = 0x26D,
     },
     DUMMY_WIN_TEMPLATE
-};
+};  
 
 static const struct WindowTemplate sMultiPartyMenuWindowTemplate[] =
 {

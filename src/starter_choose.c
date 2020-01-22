@@ -112,16 +112,16 @@ static const struct WindowTemplate gUnknown_085B1DE4 =
 
 static const u8 sPokeballCoords[STARTER_MON_COUNT][2] =
 {
-    {0x3c, 0x40},
-    {0x78, 0x58},
-    {0xb4, 0x40},
+    {88, 66},
+    {120, 66},
+    {152, 66},
 };
 
 static const u8 gStarterChoose_LabelCoords[][2] =
 {
-    {0x00, 0x09},
-    {0x10, 0x0a},
-    {0x08, 0x04},
+    {0x08, 0x09},
+    {0x08, 0x09},
+    {0x08, 0x09},
 };
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
@@ -215,11 +215,11 @@ static const struct OamData gOamData_85B1E20 =
     .affineParam = 0,
 };
 
-static const u8 gUnknown_085B1E28[][2] =
+static const u8 sHandCoords[][2] =
 {
-    {0x3c, 0x20},
-    {0x78, 0x38},
-    {0xb4, 0x20},
+    {88, 0x20},
+    {120, 0x20},
+    {152, 0x20},
 };
 
 static const union AnimCmd gSpriteAnim_85B1E30[] =
@@ -647,8 +647,8 @@ static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
 
 void sub_81346DC(struct Sprite *sprite)
 {
-    sprite->pos1.x = gUnknown_085B1E28[gTasks[sprite->data[0]].tStarterSelection][0];
-    sprite->pos1.y = gUnknown_085B1E28[gTasks[sprite->data[0]].tStarterSelection][1];
+    sprite->pos1.x = sHandCoords[gTasks[sprite->data[0]].tStarterSelection][0];
+    sprite->pos1.y = sHandCoords[gTasks[sprite->data[0]].tStarterSelection][1];
     sprite->pos2.y = Sin(sprite->data[1], 8);
     sprite->data[1] = (u8)(sprite->data[1]) + 4;
 }

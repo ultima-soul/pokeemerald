@@ -5,7 +5,7 @@ extern u8 gUnusedPokedexU8;
 extern void (*gUnknown_030060B4)(void);
 
 #define KANTO_DEX_COUNT 151
-#define HOENN_DEX_COUNT 202
+#define HOENN_DEX_COUNT 386
 #define NATIONAL_DEX_COUNT 386
 
 enum

@@ -7892,14 +7892,14 @@
                         "encounter_rate": 20,
                         "mons": [
                             {
-                                "max_level": 30,
-                                "min_level": 30,
-                                "species": "SPECIES_ABSOL"
+                                "max_level": 40,
+                                "min_level": 40,
+                                "species": "SPECIES_PIDGEOT"
                             },
                             {
-                                "max_level": 30,
-                                "min_level": 30,
-                                "species": "SPECIES_DODUO"
+                                "max_level": 40,
+                                "min_level": 40,
+                                "species": "SPECIES_BLAZIKEN"
                             },
                             {
                                 "max_level": 35,

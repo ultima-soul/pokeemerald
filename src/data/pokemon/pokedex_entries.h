@@ -120,7 +120,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 2,
     },
 
-    [NATIONAL_DEX_CATERPIE] =
+    [NATIONAL_DEX_SNIVY] =
     {
         .categoryName = _("WORM"),
         .height = 3,
@@ -132,7 +132,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_METAPOD] =
+    [NATIONAL_DEX_SERVINE] =
     {
         .categoryName = _("COCOON"),
         .height = 7,
@@ -144,7 +144,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_BUTTERFREE] =
+    [NATIONAL_DEX_SERPERIOR] =
     {
         .categoryName = _("BUTTERFLY"),
         .height = 11,
@@ -252,7 +252,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_SPEAROW] =
+    [NATIONAL_DEX_NOIBAT] =
     {
         .categoryName = _("TINY BIRD"),
         .height = 3,
@@ -264,7 +264,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_FEAROW] =
+    [NATIONAL_DEX_NOIVERN] =
     {
         .categoryName = _("BEAK"),
         .height = 12,

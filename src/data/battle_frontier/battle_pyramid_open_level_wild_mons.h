@@ -65,7 +65,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round2[] =
         .moves = {MOVE_TOXIC, MOVE_GIGA_DRAIN, MOVE_MAGICAL_LEAF, MOVE_PETAL_DANCE}
     },
     {
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_SERPERIOR,
         .lvl = 12,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_POISON_POWDER, MOVE_GUST, MOVE_PSYBEAM, MOVE_NONE}
@@ -1019,7 +1019,7 @@ static const struct PyramidWildMon sOpenLevelWildMons_Round20[] =
         .moves = {MOVE_EARTHQUAKE, MOVE_HYPER_BEAM, MOVE_SURF, MOVE_THUNDERBOLT}
     },
     {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NOIVERN,
         .lvl = 6,
         .abilityNum = ABILITY_RANDOM,
         .moves = {MOVE_HYPER_BEAM, MOVE_FLY, MOVE_MIRROR_MOVE, MOVE_PROTECT}

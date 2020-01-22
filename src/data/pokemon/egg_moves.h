@@ -50,7 +50,7 @@ const u16 gEggMoves[] = {
               MOVE_UPROAR,
               MOVE_SWAGGER),
 
-    egg_moves(SPEAROW,
+    egg_moves(NOIBAT,
               MOVE_FAINT_ATTACK,
               MOVE_FALSE_SWIPE,
               MOVE_SCARY_FACE,

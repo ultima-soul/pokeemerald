@@ -230,6 +230,7 @@ static void sub_81C20F0(u8 taskId);
 static void DrawPowAccBackground(u16 *a, u16 b, u8 c);
 static void DrawPokerusCuredSymbol(struct Pokemon* mon);
 static void DrawExperienceProgressBar(struct Pokemon* mon);
+static void DrawHPProgressBar(struct Pokemon* mon);
 static void DrawContestMoveHearts(u16 move);
 static void LimitEggSummaryPageDisplay(void);
 static void ResetWindows(void);
@@ -563,8 +564,8 @@ static const struct WindowTemplate sSummaryTemplate[] =
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 18,
-        .width = 6,
-        .height = 2,
+        .width = 0,
+        .height = 0,
         .paletteNum = 6,
         .baseBlock = 319,
     },
@@ -755,7 +756,8 @@ static const u8 sTextColors_861CD2C[][3] =
     {0, 12, 11}, //9
     {0, 3, 4}, //10
     {0, 13, 15}, //11
-    {0, 7, 8} //12
+    {0, 7, 8}, //12
+    {0, 4, 2} //13
 };
 
 static const u8 sSummaryAButtonBitmap[] = INCBIN_U8("graphics/interface/summary_a_button.4bpp");
@@ -2268,6 +2270,7 @@ static void CheckExperienceProgressBar(void)
 {
     if (sMonSummaryScreen->currPageIndex == 1)
         DrawExperienceProgressBar(&sMonSummaryScreen->currentMon);
+        DrawHPProgressBar(&sMonSummaryScreen->currentMon);
 }
 
 static void sub_81C0E48(u8 taskId)
@@ -2292,7 +2295,10 @@ static void sub_81C0E48(u8 taskId)
     {
         gSprites[sMonSummaryScreen->spriteIds[0]].invisible = TRUE;
         ClearWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_LEVEL);
-
+        
+        LoadPalette(gMonIconPalettes[gMonIconPaletteIndices[GetIconSpecies(sMonSummaryScreen->summary.species, 0)]], 0x1B0, 0x20);
+        CreateMonIcon(sMonSummaryScreen->summary.species, SpriteCB_MonIcon, 144, 32, 4, 1, 1);
+    
         gSprites[sMonSummaryScreen->summarySpriteIds[0]].invisible = FALSE;
         gSprites[sMonSummaryScreen->summarySpriteIds[1]].invisible = FALSE;
         gSprites[sMonSummaryScreen->summarySpriteIds[2]].invisible = FALSE;
@@ -2996,7 +3002,7 @@ static void sub_81C20F0(u8 taskId)
         if (data[0] < 0)
         {
             CreateSetStatusSprite();
-            PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
+            //PutWindowTilemap(PSS_LABEL_WINDOW_POKEMON_SKILLS_STATUS);
             schedule_bg_copy_tilemap_to_vram(0);
         }
         DestroyTask(taskId);
@@ -3096,10 +3102,10 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
     {
         u32 expBetweenLevels = gExperienceTables[gBaseStats[summary->species].growthRate][summary->level + 1] - gExperienceTables[gBaseStats[summary->species].growthRate][summary->level];
         u32 expSinceLastLevel = summary->exp - gExperienceTables[gBaseStats[summary->species].growthRate][summary->level];
-
+        //Add nature colours
         // Calculate the number of 1-pixel "ticks" to illuminate in the experience progress bar.
         // There are 8 tiles that make up the bar, and each tile has 8 "ticks". Hence, the numerator
-        // is multiplied by 64.
+        // is multiplied by 64. 125 * 64 / 91
         numExpProgressBarTicks = expSinceLastLevel * 64 / expBetweenLevels;
         if (numExpProgressBarTicks == 0 && expSinceLastLevel != 0)
             numExpProgressBarTicks = 1;
@@ -3119,6 +3125,65 @@ static void DrawExperienceProgressBar(struct Pokemon *unused)
         numExpProgressBarTicks -= 8;
         if (numExpProgressBarTicks < 0)
             numExpProgressBarTicks = 0;
+    }
+
+    if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
+        schedule_bg_copy_tilemap_to_vram(1);
+    else
+        schedule_bg_copy_tilemap_to_vram(2);
+}
+
+static void DrawHPProgressBar(struct Pokemon *unused)
+{
+    s64 numExpProgressBarTicks;
+    struct PokeSummary *summary = &sMonSummaryScreen->summary;
+    u16 *r9;
+    u8 i;
+
+        u32 expBetweenLevels = gExperienceTables[gBaseStats[summary->species].growthRate][summary->level + 1] - gExperienceTables[gBaseStats[summary->species].growthRate][summary->level];
+        u32 expSinceLastLevel = summary->exp - gExperienceTables[gBaseStats[summary->species].growthRate][summary->level];
+
+        // Calculate the number of 1-pixel "ticks" to illuminate in the experience progress bar.
+        // There are 8 tiles that make up the bar, and each tile has 8 "ticks". Hence, the numerator
+        // is multiplied by 64. sMonSummaryScreen->summary.currentHP
+        numExpProgressBarTicks = sMonSummaryScreen->summary.currentHP * 64 / sMonSummaryScreen->summary.maxHP;
+        if (numExpProgressBarTicks == 0 && expSinceLastLevel != 0)
+            numExpProgressBarTicks = 1;
+
+    r9 = &sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][1][0x45];
+    for (i = 0; i < 8; i++)
+    {
+        if (sMonSummaryScreen->summary.maxHP / 5 >= sMonSummaryScreen->summary.currentHP)
+        {
+            if (numExpProgressBarTicks > 7)
+                r9[i] = 0x30ED;
+            else
+                r9[i] = 0x30E5 + (numExpProgressBarTicks % 8);
+            numExpProgressBarTicks -= 8;
+            if (numExpProgressBarTicks < 0)
+                numExpProgressBarTicks = 0;
+        }
+        else if (sMonSummaryScreen->summary.maxHP / 2 >= sMonSummaryScreen->summary.currentHP)
+        {
+            if (numExpProgressBarTicks > 7)
+                r9[i] = 0x40ED;
+            else
+                r9[i] = 0x40E5 + (numExpProgressBarTicks % 8);
+            numExpProgressBarTicks -= 8;
+            if (numExpProgressBarTicks < 0)
+                numExpProgressBarTicks = 0;
+        }
+        else 
+        {
+            if (numExpProgressBarTicks > 7)
+                r9[i] = 0x50ED;
+            else
+                r9[i] = 0x50E5 + (numExpProgressBarTicks % 8);
+            numExpProgressBarTicks -= 8;
+            if (numExpProgressBarTicks < 0)
+                numExpProgressBarTicks = 0;
+        }
+        
     }
 
     if (GetBgTilemapBuffer(1) == sMonSummaryScreen->bgTilemapBuffers[PSS_PAGE_SKILLS][0])
@@ -3893,11 +3958,29 @@ static void BufferLeftColumnStats(void)
 
 static void PrintLeftColumnStats(void)
 {
+    
+    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar1, 4, 8, 0, 0); //HP String
 
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar1, 4, 8, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 4, 20, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 4, 32, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 44, 0, 0);
+    if (gNatureStatTable[sMonSummaryScreen->summary.nature][0] > 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 4, 20, 0, 11);
+    else if (gNatureStatTable[sMonSummaryScreen->summary.nature][0] < 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 4, 20, 0, 13);
+    else
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar2, 4, 20, 0, 0);
+
+    if (gNatureStatTable[sMonSummaryScreen->summary.nature][1] > 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 4, 32, 0, 11);
+    else if (gNatureStatTable[sMonSummaryScreen->summary.nature][1] < 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 4, 32, 0, 13);
+    else
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar3, 4, 32, 0, 0);
+    
+    if (gNatureStatTable[sMonSummaryScreen->summary.nature][3] > 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 44, 0, 11);
+    else if (gNatureStatTable[sMonSummaryScreen->summary.nature][3] < 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 44, 0, 13);
+    else
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_LEFT), gStringVar4, 4, 44, 0, 0);
 }
 
 static void BufferRightColumnStats(void)
@@ -3913,8 +3996,18 @@ static void BufferRightColumnStats(void)
     DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar1, sStatsRightColumnLayout2);
     
     //Add a colorid change for natures
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 4, 0, 0, 0);
-    SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 4, 12, 0, 0);
+    if (gNatureStatTable[sMonSummaryScreen->summary.nature][4] > 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 4, 0, 0, 11);
+    else if (gNatureStatTable[sMonSummaryScreen->summary.nature][4] < 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 4, 0, 0, 13);
+    else
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar1, 4, 0, 0, 0);
+    if (gNatureStatTable[sMonSummaryScreen->summary.nature][2] > 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 4, 12, 0, 11);
+    else if (gNatureStatTable[sMonSummaryScreen->summary.nature][2] < 0)
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 4, 12, 0, 13);
+    else
+        SummaryScreen_PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS_RIGHT), gStringVar2, 4, 12, 0, 0);
 }
 
 
@@ -4438,7 +4531,8 @@ static void SetNewMoveTypeIcon(void)
                 {
                     SetSpriteInvisibility(9, TRUE);
                 }
-                //CreateMonIcon(summary->species, SpriteCB_MonIcon, 144, 32, 4, 1, 1); //Palette is not loaded for sprites. Find a workaround.
+                CreateMonIcon(summary->species, SpriteCB_MonIcon, 144, 32, 4, 1, 1); //Palette is not loaded for sprites. Find a workaround.
+                //LoadPalette(gMonIconPalettes[gMonIconPaletteIndices[GetIconSpecies(summary->species, 0)]], 0xA0, 0x20);
             }
         }
         //PutWindowTilemap(PSS_LABEL_WINDOW_PORTRAIT_NICKNAME);

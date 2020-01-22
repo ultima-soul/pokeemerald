@@ -15,7 +15,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_RASH
     },
     [2] = {
-        .species = SPECIES_CATERPIE,
+        .species = SPECIES_SNIVY,
         .moves = {MOVE_TACKLE, MOVE_STRING_SHOT, MOVE_NONE, MOVE_NONE},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -57,7 +57,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_LONELY
     },
     [8] = {
-        .species = SPECIES_METAPOD,
+        .species = SPECIES_SERVINE,
         .moves = {MOVE_HARDEN, MOVE_NONE, MOVE_NONE, MOVE_NONE},
         .itemTableId = BATTLE_FRONTIER_ITEM_LAX_INCENSE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_HP,
@@ -260,7 +260,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_DOCILE
     },
     [37] = {
-        .species = SPECIES_SPEAROW,
+        .species = SPECIES_NOIBAT,
         .moves = {MOVE_FURY_ATTACK, MOVE_PURSUIT, MOVE_MIRROR_MOVE, MOVE_PROTECT},
         .itemTableId = BATTLE_FRONTIER_ITEM_LIECHI_BERRY,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -1072,7 +1072,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_DOCILE
     },
     [153] = {
-        .species = SPECIES_BUTTERFREE,
+        .species = SPECIES_SERPERIOR,
         .moves = {MOVE_SILVER_WIND, MOVE_PSYBEAM, MOVE_TOXIC, MOVE_WHIRLWIND},
         .itemTableId = BATTLE_FRONTIER_ITEM_PECHA_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
@@ -2626,7 +2626,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_IMPISH
     },
     [375] = {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NOIVERN,
         .moves = {MOVE_DRILL_PECK, MOVE_TRI_ATTACK, MOVE_FACADE, MOVE_MUD_SLAP},
         .itemTableId = BATTLE_FRONTIER_ITEM_SHARP_BEAK,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -3312,7 +3312,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_BOLD
     },
     [473] = {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NOIVERN,
         .moves = {MOVE_DRILL_PECK, MOVE_TRI_ATTACK, MOVE_ATTRACT, MOVE_PURSUIT},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -3970,7 +3970,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_BOLD
     },
     [567] = {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NOIVERN,
         .moves = {MOVE_DRILL_PECK, MOVE_RETURN, MOVE_STEEL_WING, MOVE_FAINT_ATTACK},
         .itemTableId = BATTLE_FRONTIER_ITEM_SCOPE_LENS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -4642,7 +4642,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_TIMID
     },
     [663] = {
-        .species = SPECIES_FEAROW,
+        .species = SPECIES_NOIVERN,
         .moves = {MOVE_DRILL_PECK, MOVE_DOUBLE_EDGE, MOVE_STEEL_WING, MOVE_SKY_ATTACK},
         .itemTableId = BATTLE_FRONTIER_ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,

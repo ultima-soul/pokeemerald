@@ -711,7 +711,7 @@ bool8 LoadBagMenu_Graphics(void)
             gBagMenu->unk834++;
             break;
         case 3:
-                LoadCompressedSpriteSheet(&gBagSpriteSheet);
+            LoadCompressedSpriteSheet(&gBagSpriteSheet);
             gBagMenu->unk834++;
             break;
         case 4:

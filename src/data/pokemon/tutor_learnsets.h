@@ -197,11 +197,11 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_CATERPIE]         = (0),
+    [SPECIES_SNIVY]         = (0),
 
-    [SPECIES_METAPOD]          = (0),
+    [SPECIES_SERVINE]          = (0),
 
-    [SPECIES_BUTTERFREE]       = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_SERPERIOR]       = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_DREAM_EATER)
                                 | TUTOR(MOVE_SUBSTITUTE)
@@ -286,7 +286,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SWIFT)
                                 | TUTOR(MOVE_DEFENSE_CURL)),
 
-    [SPECIES_SPEAROW]          = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_NOIBAT]          = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)
@@ -296,7 +296,7 @@ static const u32 sTutorLearnsets[] =
                                 | TUTOR(MOVE_SLEEP_TALK)
                                 | TUTOR(MOVE_SWIFT)),
 
-    [SPECIES_FEAROW]           = (TUTOR(MOVE_DOUBLE_EDGE)
+    [SPECIES_NOIVERN]           = (TUTOR(MOVE_DOUBLE_EDGE)
                                 | TUTOR(MOVE_MIMIC)
                                 | TUTOR(MOVE_SUBSTITUTE)
                                 | TUTOR(MOVE_SNORE)

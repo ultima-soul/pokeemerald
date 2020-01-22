@@ -66,7 +66,7 @@ const u8 gCaterpiePokedexText[] = _(
 
 const u8 gMetapodPokedexText[] = _(
     "Its shell is as hard as an iron slab.\n"
-    "A METAPOD does not move very much\n"
+    "A SERVINE does not move very much\n"
     "because it is preparing its soft innards\n"
     "for evolution inside the shell.");
 

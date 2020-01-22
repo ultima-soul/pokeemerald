@@ -1535,48 +1535,38 @@ static void UpdatePartySelectionSingleLayout(s8 *slotPtr, s8 movementDir)
 static void UpdatePartySelectionDoubleLayout(s8 *slotPtr, s8 movementDir)
 {
     // PARTY_SIZE + 1 is Cancel, PARTY_SIZE is Confirm
-    // newSlot is used temporarily as a movement direction during its later assignment
-    s8 newSlot = movementDir;
-
     switch (movementDir)
     {
     case MENU_DIR_UP:
-        if (*slotPtr == 0)
+        if (*slotPtr == 0 || *slotPtr == 1)
         {
             *slotPtr = PARTY_SIZE + 1;
-            break;
         }
         else if (*slotPtr == PARTY_SIZE)
         {
             *slotPtr = gPlayerPartyCount - 1;
-            break;
         }
         else if (*slotPtr == PARTY_SIZE + 1)
         {
             if (sPartyMenuInternal->chooseHalf)
-            {
                 *slotPtr = PARTY_SIZE;
-                break;
-            }
+            else
+                *slotPtr = gPlayerPartyCount - 2;
+        }
+        else
+        {
+            (*slotPtr)--;
             (*slotPtr)--;
         }
-        newSlot = GetNewSlotDoubleLayout(*slotPtr, newSlot);
-        if (newSlot != -1)
-            *slotPtr = newSlot;
         break;
     case MENU_DIR_DOWN:
-        if (*slotPtr == PARTY_SIZE)
-        {
-            *slotPtr = PARTY_SIZE + 1;
-        }
-        else if (*slotPtr == PARTY_SIZE + 1)
+        if (*slotPtr == PARTY_SIZE + 1)
         {
             *slotPtr = 0;
         }
         else
         {
-            newSlot = GetNewSlotDoubleLayout(*slotPtr, MENU_DIR_DOWN);
-            if (newSlot == -1)
+            if (*slotPtr == gPlayerPartyCount - 1 || *slotPtr == gPlayerPartyCount - 2)
             {
                 if (sPartyMenuInternal->chooseHalf)
                     *slotPtr = PARTY_SIZE;
@@ -1585,46 +1575,43 @@ static void UpdatePartySelectionDoubleLayout(s8 *slotPtr, s8 movementDir)
             }
             else
             {
-                *slotPtr = newSlot;
+                (*slotPtr)++;
+                (*slotPtr)++;
             }
         }
         break;
     case MENU_DIR_RIGHT:
-        if (*slotPtr == 0)
+        if (*slotPtr == 0 && gPlayerPartyCount > 1)
         {
-            if (sPartyMenuInternal->lastSelectedSlot == 3)
-            {
-                if (GetMonData(&gPlayerParty[3], MON_DATA_SPECIES) != SPECIES_NONE)
-                    *slotPtr = 3;
-            }
-            else if (GetMonData(&gPlayerParty[2], MON_DATA_SPECIES) != SPECIES_NONE)
-            {
-                *slotPtr = 2;
-            }
+            sPartyMenuInternal->lastSelectedSlot = *slotPtr;
+            *slotPtr = 1;
         }
-        else if (*slotPtr == 1)
+        if (*slotPtr == 2 && gPlayerPartyCount > 3)
         {
-            if (sPartyMenuInternal->lastSelectedSlot == 5)
-            {
-                if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES) != SPECIES_NONE)
-                    *slotPtr = 5;
-            }
-            else if (GetMonData(&gPlayerParty[4], MON_DATA_SPECIES) != SPECIES_NONE)
-            {
-                *slotPtr = 4;
-            }
+            sPartyMenuInternal->lastSelectedSlot = *slotPtr;
+            *slotPtr = 3;
+        }
+        if (*slotPtr == 4 && gPlayerPartyCount > 5)
+        {
+            sPartyMenuInternal->lastSelectedSlot = *slotPtr;
+            *slotPtr = 5;
         }
         break;
     case MENU_DIR_LEFT:
-        if (*slotPtr == 2 || *slotPtr == 3)
+        if (*slotPtr == 1)
         {
             sPartyMenuInternal->lastSelectedSlot = *slotPtr;
             *slotPtr = 0;
         }
-        else if (*slotPtr == 4 || *slotPtr == 5)
+        if (*slotPtr == 3)
         {
             sPartyMenuInternal->lastSelectedSlot = *slotPtr;
-            *slotPtr = 1;
+            *slotPtr = 2;
+        }
+        if (*slotPtr == 5)
+        {
+            sPartyMenuInternal->lastSelectedSlot = *slotPtr;
+            *slotPtr = 4;
         }
         break;
     }
@@ -4822,8 +4809,6 @@ static void Task_LearnedMove(u8 taskId)
     if (move[1] == 0)
     {
         AdjustFriendship(mon, 4);
-        if (item < ITEM_HM01_CUT)
-            RemoveBagItem(item, 1);
     }
     GetMonNickname(mon, gStringVar1);
     StringCopy(gStringVar2, gMoveNames[move[0]]);

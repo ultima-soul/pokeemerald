@@ -3,20 +3,20 @@ PetalburgCity_MapScripts::
 
 Teala_EventScript::
 	faceplayer	
-	load_field_pic 5, 200, 83, VAR_0x8009
 	checkplayergender
 	compare VAR_RESULT, MALE
 	goto_if_eq PetalburgCity_Conversation_Derek
 	compare VAR_RESULT, FEMALE
 	goto_if_eq PetalburgCity_Conversation_Kate
-	msgbox Beta_Teala_Text MSGBOX_NPC	
-	destroy_field_pic 5, VAR_0x8009
+	msgbox Beta_Teala_Text MSGBOX_NPC		
 	end
 
 PetalburgCity_Conversation_Derek::
+	load_field_pic 5, 200, 83, VAR_0x8009
 	load_field_pic 1, 40, 83, VAR_0x8008
 	goto_if_unset FLAG_MET_RIVAL_MOM, Beta_EventScript_Give_Starter_Kit
 	msgbox Beta_Teala_Text MSGBOX_NPC	
+	destroy_field_pic 5, VAR_0x8009
 	destroy_field_pic 1, VAR_0x8008
 	return
 
@@ -35,13 +35,7 @@ Beta_EventScript_Give_Starter_Kit:: @ 827004D
 	setflag FLAG_RECEIVED_POKENAV
 	setflag FLAG_MET_RIVAL_MOM
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	givemon SPECIES_BLAZIKEN, 50, ITEM_CHARCOAL
-	givemon SPECIES_METAGROSS, 50, ITEM_LEFTOVERS
-	givemon SPECIES_MIGHTYENA, 50, ITEM_BLACK_GLASSES
-	givemon SPECIES_PIDGEOT, 50, ITEM_SHARP_BEAK
-	givemon SPECIES_GLALIE, 50, ITEM_NEVER_MELT_ICE
-	givemon SPECIES_RAYQUAZA, 50, ITEM_DRAGON_FANG
-	msgbox Beta_Starter_kit_message MSGBOX_DEFAULT
+	special ChooseStarter
 	return
 	
 Deneb_Academy_Lukas:: @ 81DC3FD
@@ -79,4 +73,3 @@ Beta_Carly_Message:
 Beta_Teala_Text:
 	.string "Please take care {PLAYER}\n"
 	.string "I am rooting for you.$"
-	
