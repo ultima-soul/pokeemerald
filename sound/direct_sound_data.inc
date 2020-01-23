@@ -744,11 +744,11 @@ Cry_Mudsdale::
 
 	.align 2
 Cry_Ducklett::
-	.incbin "sound/direct_sound_samples/cry_Ducklett.bin"
+	.incbin "sound/direct_sound_samples/cry_ducklett.bin"
 
 	.align 2
 Cry_Swanna::
-	.incbin "sound/direct_sound_samples/cry_Swanna.bin"
+	.incbin "sound/direct_sound_samples/cry_swanna.bin"
 
 	.align 2
 Cry_Gastly::
@@ -768,11 +768,11 @@ Cry_Onix::
 
 	.align 2
 Cry_Rufflet::
-	.incbin "sound/direct_sound_samples/cry_Rufflet.bin"
+	.incbin "sound/direct_sound_samples/cry_rufflet.bin"
 
 	.align 2
 Cry_Braviary::
-	.incbin "sound/direct_sound_samples/cry_Braviary.bin"
+	.incbin "sound/direct_sound_samples/cry_braviary.bin"
 
 	.align 2
 Cry_Krabby::
@@ -784,19 +784,19 @@ Cry_Kingler::
 
 	.align 2
 Cry_Scraggy::
-	.incbin "sound/direct_sound_samples/cry_Scraggy.bin"
+	.incbin "sound/direct_sound_samples/cry_scraggy.bin"
 
 	.align 2
 Cry_Scrafty::
-	.incbin "sound/direct_sound_samples/cry_Scrafty.bin"
+	.incbin "sound/direct_sound_samples/cry_scrafty.bin"
 
 	.align 2
 Cry_Cubchoo::
-	.incbin "sound/direct_sound_samples/cry_Cubchoo.bin"
+	.incbin "sound/direct_sound_samples/cry_cubchoo.bin"
 
 	.align 2
 Cry_Beartic::
-	.incbin "sound/direct_sound_samples/cry_Beartic.bin"
+	.incbin "sound/direct_sound_samples/cry_beartic.bin"
 
 	.align 2
 Cry_Cubone::
@@ -816,7 +816,7 @@ Cry_Hitmonchan::
 
 	.align 2
 Cry_Bunnelby::
-	.incbin "sound/direct_sound_samples/cry_Bunnelby.bin"
+	.incbin "sound/direct_sound_samples/cry_bunnelby.bin"
 
 	.align 2
 Cry_Diggersby::
