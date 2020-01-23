@@ -208,7 +208,6 @@ static void PrintMonHeight(u16 height, u8 left, u8 top);
 static void PrintMonWeight(u16 weight, u8 left, u8 top);
 static void ResetOtherVideoRegisters(u16);
 u8 sub_80C0B44(u8, u16, u8, u8);
-static void PrintFootprint(u8 windowId, u16 dexNum);
 u16 sub_80C0EF8(u16, s16, s16, s8);
 u16 sub_80C0E0C(u8, u16, u16, u16);
 u8 LoadSearchMenu(void);
@@ -2879,7 +2878,6 @@ void LoadInfoScreen(u8 taskId)
             FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
             PutWindowTilemap(WIN_INFO);
             PutWindowTilemap(WIN_FOOTPRINT);
-            PrintFootprint(WIN_FOOTPRINT, sPokedexListItem->dexNum);
             CopyWindowToVram(WIN_FOOTPRINT, 2);
             gMain.state++;
             break;
@@ -3719,7 +3717,6 @@ static void Task_DisplayNewMonData(u8 taskId)
             FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
             PutWindowTilemap(WIN_INFO);
             PutWindowTilemap(WIN_FOOTPRINT);
-            PrintFootprint(WIN_FOOTPRINT, gTasks[taskId].data[1]);
             CopyWindowToVram(WIN_FOOTPRINT, 2);
             ResetPaletteFade();
             LoadPokedexBgPalette(0);
@@ -4512,29 +4509,6 @@ void sub_80C0C6C(u8 windowId, u16 b, u8 left, u8 top) // unused
     str[4] = CHAR_0 + ((b % 1000) % 100) % 10;
     str[5] = EOS;
     sub_80C0A88(windowId, str, left, top);
-}
-
-static void PrintFootprint(u8 windowId, u16 dexNum)
-{
-    u8 image[32 * 4];
-    const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
-    u16 r5 = 0;
-    u16 i;
-    u16 j;
-
-    for (i = 0; i < 32; i++)
-    {
-        u8 r3 = r12[i];
-        for (j = 0; j < 4; j++)
-        {
-            u8 value = ((r3 >> (2 * j)) & 1 ? 2 : 0);
-            if ((2 << (2 * j)) & r3)
-                value |= 0x20;
-            image[r5] = value;
-            r5++;
-        }
-    }
-    CopyToWindowPixelBuffer(windowId, image, sizeof(image), 0);
 }
 
 void sub_80C0DC0(u16 a, u16 b)
