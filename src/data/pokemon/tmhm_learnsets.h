@@ -5539,7 +5539,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM04_STRENGTH)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_DONPHAN]     = TMHM_LEARNSET(TMHM(TM05_ROAR)
+    [SPECIES_PYROAR]     = TMHM_LEARNSET(TMHM(TM05_ROAR)
                                         | TMHM(TM06_TOXIC)
                                         | TMHM(TM10_HIDDEN_POWER)
                                         | TMHM(TM11_SUNNY_DAY)
@@ -8022,7 +8022,7 @@ const u32 gTMHMLearnsets[][2] =
                                         | TMHM(HM02_FLY)
                                         | TMHM(HM06_ROCK_SMASH)),
 
-    [SPECIES_WYNAUT]      = TMHM_LEARNSET(0),
+    [SPECIES_TIMBURR]      = TMHM_LEARNSET(0),
 
     [SPECIES_GURDURR]     = TMHM_LEARNSET(TMHM(TM04_CALM_MIND)
                                         | TMHM(TM06_TOXIC)

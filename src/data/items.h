@@ -6730,19 +6730,6 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_CHARIZARDITE_X] =
-    {
-        .name = _("CharizarditeX"),
-        .itemId = ITEM_CHARIZARDITE_X,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sCharizarditeDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
     [ITEM_BLASTOISINITE] =
     {
         .name = _("Blastoisinite"),
@@ -6802,19 +6789,6 @@ const struct Item gItems[] =
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sMedichamiteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_HOUNDOOMINITE] =
-    {
-        .name = _("Houndoominite"),
-        .itemId = ITEM_HOUNDOOMINITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sHoundoominiteDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -6906,32 +6880,6 @@ const struct Item gItems[] =
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sLucarioniteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_ABOMASITE] =
-    {
-        .name = _("Abomasite"),
-        .itemId = ITEM_ABOMASITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sAbomasiteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_TANGROWTHITE] =
-    {
-        .name = _("Kangaskhanite"),
-        .itemId = ITEM_TANGROWTHITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sKangaskhaniteDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
@@ -7042,32 +6990,6 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_LATIASITE] =
-    {
-        .name = _("Latiasite"),
-        .itemId = ITEM_LATIASITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sLatiasiteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_LATIOSITE] =
-    {
-        .name = _("Latiosite"),
-        .itemId = ITEM_LATIOSITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sLatiositeDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
     [ITEM_SWAMPERTITE] =
     {
         .name = _("Swampertite"),
@@ -7172,19 +7094,6 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_MANDIBUZZNITE] =
-    {
-        .name = _("Slowbronite"),
-        .itemId = ITEM_MANDIBUZZNITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sSlowbroniteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
     [ITEM_STEELIXITE] =
     {
         .name = _("Steelixite"),
@@ -7218,32 +7127,6 @@ const struct Item gItems[] =
         .price = 200,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sGlalititeDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_DIANCITE] =
-    {
-        .name = _("Diancite"),
-        .itemId = ITEM_DIANCITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sDianciteDesc,
-        .pocket = POCKET_ITEMS,
-        .type = 4,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .secondaryId = 0,
-    },
-
-    [ITEM_PORYGONZITE] =
-    {
-        .name = _("Cameruptite"),
-        .itemId = ITEM_PORYGONZITE,
-        .price = 200,
-        .holdEffect = HOLD_EFFECT_MEGA_STONE,
-        .description = sCameruptiteDesc,
         .pocket = POCKET_ITEMS,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,

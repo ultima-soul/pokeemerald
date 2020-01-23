@@ -936,8 +936,7 @@ static const struct WindowTemplate gPokedex_BaseStats[] =
 
 static const u8 sText_TenDashes2[] = _("----------");
 
-#include "data/pokemon_graphics/footprint_table.h"
-
+//#include "data/pokemon_graphics/footprint_table.h" Because who the fuck cares about footprints?
 static const u8 gUnknown_0856ED08[][4] =
 {
     {0x00, 0x00, 0x00, 0x00},

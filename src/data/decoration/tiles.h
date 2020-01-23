@@ -524,8 +524,8 @@ const u16 DecorGfx_GURDURR_DOLL[] = {
     EVENT_OBJ_GFX_GURDURR_DOLL
 };
 
-const u16 DecorGfx_WYNAUT_DOLL[] = {
-    EVENT_OBJ_GFX_WYNAUT_DOLL
+const u16 DecorGfx_TIMBURR_DOLL[] = {
+    EVENT_OBJ_GFX_TIMBURR_DOLL
 };
 
 const u16 DecorGfx_BOLDORE_DOLL[] = {

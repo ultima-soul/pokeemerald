@@ -195,16 +195,14 @@ static const u8 gUnknown_085E4AD0[][2] =
 };
 static const struct CompressedSpriteSheet gIntroPokemonRunningSpriteSheet[] =
 {
-    {gIntro2VolbeatGfx, 0x400, 1500},
-    {gIntro2TorchicGfx, 0xC00, 1501},
-    {gIntro2ManectricGfx, 0x2000, 1502},
+    {gIntro2TorchicGfx, 0xC00, 1500},
+    {gIntro2ManectricGfx, 0x2000, 1501},
     {NULL},
 };
 static const struct SpritePalette gIntroPokemonRunningPalette[] =
 {
-    {gIntro2VolbeatPal, 1500},
-    {gIntro2TorchicPal, 1501},
-    {gIntro2ManectricPal, 1502},
+    {gIntro2TorchicPal, 1500},
+    {gIntro2ManectricPal, 1501},
     {NULL},
 };
 static const struct OamData gUnknown_085E4B28 =

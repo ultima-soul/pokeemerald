@@ -159,7 +159,7 @@
 #define EVENT_OBJ_GFX_TORCHIC_DOLL               155
 #define EVENT_OBJ_GFX_MUDKIP_DOLL                156
 #define EVENT_OBJ_GFX_GURDURR_DOLL               157
-#define EVENT_OBJ_GFX_WYNAUT_DOLL                158
+#define EVENT_OBJ_GFX_TIMBURR_DOLL                158
 #define EVENT_OBJ_GFX_BOLDORE_DOLL                159
 #define EVENT_OBJ_GFX_ROGGENROLA_DOLL               160
 #define EVENT_OBJ_GFX_CARRACOSTA_DOLL               161

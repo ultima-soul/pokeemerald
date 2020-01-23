@@ -246,7 +246,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_DOCILE
     },
     [35] = {
-        .species = SPECIES_WYNAUT,
+        .species = SPECIES_TIMBURR,
         .moves = {MOVE_ENCORE, MOVE_COUNTER, MOVE_MIRROR_COAT, MOVE_CHARM},
         .itemTableId = BATTLE_FRONTIER_ITEM_LAX_INCENSE,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE,
@@ -2990,7 +2990,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_QUIRKY
     },
     [427] = {
-        .species = SPECIES_DONPHAN,
+        .species = SPECIES_PYROAR,
         .moves = {MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER, MOVE_SWAGGER, MOVE_REST},
         .itemTableId = BATTLE_FRONTIER_ITEM_CHESTO_BERRY,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -3662,7 +3662,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_MODEST
     },
     [523] = {
-        .species = SPECIES_DONPHAN,
+        .species = SPECIES_PYROAR,
         .moves = {MOVE_FLAIL, MOVE_ENDURE, MOVE_EARTHQUAKE, MOVE_ROCK_TOMB},
         .itemTableId = BATTLE_FRONTIER_ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -4334,7 +4334,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_QUIRKY
     },
     [619] = {
-        .species = SPECIES_DONPHAN,
+        .species = SPECIES_PYROAR,
         .moves = {MOVE_FISSURE, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_SECRET_POWER},
         .itemTableId = BATTLE_FRONTIER_ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -5006,7 +5006,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_MODEST
     },
     [715] = {
-        .species = SPECIES_DONPHAN,
+        .species = SPECIES_PYROAR,
         .moves = {MOVE_FISSURE, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_IRON_TAIL},
         .itemTableId = BATTLE_FRONTIER_ITEM_QUICK_CLAW,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,

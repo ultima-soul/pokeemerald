@@ -2723,7 +2723,7 @@ static const union AnimCmd sAnim_LITLEO_2[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_DONPHAN_1[] =
+static const union AnimCmd sAnim_PYROAR_1[] =
 {
     ANIMCMD_FRAME(0, 15),
     ANIMCMD_FRAME(1, 20),
@@ -2735,7 +2735,7 @@ static const union AnimCmd sAnim_DONPHAN_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_DONPHAN_2[] =
+static const union AnimCmd sAnim_PYROAR_2[] =
 {
     ANIMCMD_FRAME(0, 20),
     ANIMCMD_FRAME(2, 20),
@@ -3935,7 +3935,7 @@ static const union AnimCmd sAnim_ALTARIA_2[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_WYNAUT_1[] =
+static const union AnimCmd sAnim_TIMBURR_1[] =
 {
     ANIMCMD_FRAME(0, 15),
     ANIMCMD_FRAME(1, 15),
@@ -6001,10 +6001,10 @@ static const union AnimCmd *const sAnims_LITLEO[] ={
     sAnim_LITLEO_2,
 };
 
-static const union AnimCmd *const sAnims_DONPHAN[] ={
+static const union AnimCmd *const sAnims_PYROAR[] ={
     sAnim_GeneralFrame0,
-    sAnim_DONPHAN_1,
-    sAnim_DONPHAN_2,
+    sAnim_PYROAR_1,
+    sAnim_PYROAR_2,
 };
 
 static const union AnimCmd *const sAnims_PORYGON2[] ={
@@ -6534,9 +6534,9 @@ static const union AnimCmd *const sAnims_ALTARIA[] ={
     sAnim_ALTARIA_2,
 };
 
-static const union AnimCmd *const sAnims_WYNAUT[] ={
+static const union AnimCmd *const sAnims_TIMBURR[] ={
     sAnim_GeneralFrame0,
-    sAnim_WYNAUT_1,
+    sAnim_TIMBURR_1,
 };
 
 static const union AnimCmd *const sAnims_GURDURR[] ={
@@ -7182,7 +7182,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(HOUNDOOM),
     ANIM_CMD(HOUNDREAD),
     ANIM_CMD(LITLEO),
-    ANIM_CMD(DONPHAN),
+    ANIM_CMD(PYROAR),
     ANIM_CMD(PORYGON2),
     ANIM_CMD(RESHIRAM),
     ANIM_CMD(SMEARGLE),
@@ -7310,7 +7310,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(MEDICHAM),
     ANIM_CMD(SWABLU),
     ANIM_CMD(ALTARIA),
-    ANIM_CMD(WYNAUT),
+    ANIM_CMD(TIMBURR),
     ANIM_CMD(GURDURR),
     ANIM_CMD(CONKELDURR),
     ANIM_CMD(GIRATINA),

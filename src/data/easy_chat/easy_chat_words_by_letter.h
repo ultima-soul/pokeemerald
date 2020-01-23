@@ -386,8 +386,8 @@ const u16 gEasyChatWordsByLetter_D[] = {
     EC_WORD_DON_T,
     EC_WORD_DONE,
     -1, 2, // Doubled pokemon species name
-    EC_POKEMON(DONPHAN),
-    EC_POKEMON2(DONPHAN),
+    EC_POKEMON(PYROAR),
+    EC_POKEMON2(PYROAR),
     EC_MOVE2(DOOM_DESIRE),
     EC_MOVE2(DOUBLE_KICK),
     EC_MOVE(DOUBLE_TEAM),
@@ -1924,7 +1924,7 @@ const u16 gEasyChatWordsByLetter_W[] = {
     EC_MOVE2(WRAP),
     EC_WORD_WROOOAAR_EXCL,
     EC_POKEMON(PETILIL),
-    EC_POKEMON(WYNAUT),
+    EC_POKEMON(TIMBURR),
 };
 
 const u16 gEasyChatWordsByLetter_X[] = {

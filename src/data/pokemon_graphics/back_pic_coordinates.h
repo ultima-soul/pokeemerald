@@ -1160,7 +1160,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x65,
         .y_offset = 0x0e,
     },
-    [SPECIES_DONPHAN] =
+    [SPECIES_PYROAR] =
     {
         .size = 0x85,
         .y_offset = 0x0d,
@@ -1800,7 +1800,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x87,
         .y_offset = 0x06,
     },
-    [SPECIES_WYNAUT] =
+    [SPECIES_TIMBURR] =
     {
         .size = 0x77,
         .y_offset = 0x07,

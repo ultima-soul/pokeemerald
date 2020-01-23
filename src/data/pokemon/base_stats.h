@@ -7430,7 +7430,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_DONPHAN] =
+    [SPECIES_PYROAR] =
     {
         .baseHP        = 90,
         .baseAttack    = 120,
@@ -10776,7 +10776,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_WYNAUT] =
+    [SPECIES_TIMBURR] =
     {
         .baseHP        = 95,
         .baseAttack    = 23,
