@@ -390,12 +390,7 @@ void InitAndLaunchChosenStatusAnimation(bool8 isStatus2, u32 status)
 bool8 TryHandleLaunchBattleTableAnimation(u8 activeBattler, u8 atkBattler, u8 defBattler, u8 tableId, u16 argument)
 {
     u8 taskId;
-
-    if (tableId == B_ANIM_CASTFORM_CHANGE && (argument & 0x80))
-    {
-        gBattleMonForms[activeBattler] = (argument & ~(0x80));
-        return TRUE;
-    }
+   
     if (gBattleSpritesDataPtr->battlerData[activeBattler].behindSubstitute
         && !ShouldAnimBeDoneRegardlessOfSubsitute(tableId))
     {
@@ -564,7 +559,7 @@ static void BattleLoadMonSpriteGfx(struct Pokemon *mon, u32 battlerId, bool32 op
     LoadPalette(gDecompressionBuffer, paletteOffset, 0x20);
     LoadPalette(gDecompressionBuffer, 0x80 + battlerId * 16, 0x20);
 
-    if (species == SPECIES_CASTFORM || species == SPECIES_CHERRIM)
+    if (species == SPECIES_CHERRIM)
     {
         paletteOffset = 0x100 + battlerId * 16;
         LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
@@ -883,7 +878,7 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, bool8 notTransform
         LZDecompressWram(lzPaletteData, gDecompressionBuffer);
         LoadPalette(gDecompressionBuffer, paletteOffset, 32);
 
-        if (targetSpecies == SPECIES_CASTFORM || targetSpecies == SPECIES_CHERRIM)
+        if (targetSpecies == SPECIES_CHERRIM)
         {
             gSprites[gBattlerSpriteIds[battlerAtk]].anims = gMonFrontAnimsPtrTable[targetSpecies];
             LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);

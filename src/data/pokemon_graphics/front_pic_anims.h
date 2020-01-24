@@ -4202,24 +4202,6 @@ static const union AnimCmd sAnim_CASTFORM_0[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_CASTFORM_1[] =
-{
-    ANIMCMD_FRAME(1, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_CASTFORM_2[] =
-{
-    ANIMCMD_FRAME(2, 1),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd sAnim_CASTFORM_3[] =
-{
-    ANIMCMD_FRAME(3, 1),
-    ANIMCMD_END,
-};
-
 static const union AnimCmd sAnim_RHYPERIOR_1[] =
 {
     ANIMCMD_FRAME(0, 11),
@@ -6660,10 +6642,8 @@ static const union AnimCmd *const sAnims_AGGRON[] ={
 };
 
 static const union AnimCmd *const sAnims_CASTFORM[] ={
+    sAnim_GeneralFrame0,
     sAnim_CASTFORM_0,
-    sAnim_CASTFORM_1,
-    sAnim_CASTFORM_2,
-    sAnim_CASTFORM_3,
 };
 
 static const union AnimCmd *const sAnims_RHYPERIOR[] ={

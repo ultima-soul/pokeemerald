@@ -6300,7 +6300,6 @@ BattleScript_CastformChange::
 BattleScript_82DB4AF::
 	copybyte gBattlerAbility, sBATTLER
 	call BattleScript_AbilityPopUp
-	docastformchangeanimation
 	waitstate
 	printstring STRINGID_PKMNTRANSFORMED
 	waitmessage 0x40
