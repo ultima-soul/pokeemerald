@@ -201,7 +201,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_PSYCHIC, MOVE_METEOR_MASH, MOVE_EARTHQUAKE, MOVE_PROTECT},
             },
             {
-                .species = SPECIES_LATIAS,
+                .species = SPECIES_KYUREM_WHITE,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 31,
                 .nature = NATURE_MODEST,

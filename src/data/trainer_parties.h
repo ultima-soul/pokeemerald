@@ -324,7 +324,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Matt[] = {
     {
     .iv = 50,
     .lvl = 34,
-    .species = SPECIES_DURANT,
+    .species = SPECIES_BONDED_GRENINJA,
     }
 };
 
@@ -6697,7 +6697,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Tabitha1[] = {
     {
     .iv = 100,
     .lvl = 40,
-    .species = SPECIES_DURANT,
+    .species = SPECIES_BONDED_GRENINJA,
     }
 };
 
@@ -7608,7 +7608,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GruntSeafloorCavern5[] =
     {
     .iv = 50,
     .lvl = 35,
-    .species = SPECIES_DURANT,
+    .species = SPECIES_BONDED_GRENINJA,
     }
 };
 

@@ -513,7 +513,7 @@ static const union AnimCmd sAnim_GRENINJA_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_DURANT_1[] =
+static const union AnimCmd sAnim_BONDED_GRENINJA_1[] =
 {
     ANIMCMD_FRAME(0, 5),
     ANIMCMD_FRAME(1, 5),
@@ -4467,7 +4467,7 @@ static const union AnimCmd sAnim_RAYQUAZA_2[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_LATIAS_1[] =
+static const union AnimCmd sAnim_KYUREM_WHITE_1[] =
 {
     ANIMCMD_FRAME(0, 10),
     ANIMCMD_FRAME(1, 10),
@@ -4477,7 +4477,7 @@ static const union AnimCmd sAnim_LATIAS_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_LATIAS_2[] =
+static const union AnimCmd sAnim_KYUREM_WHITE_2[] =
 {
     ANIMCMD_FRAME(0, 20),
     ANIMCMD_FRAME(2, 20),
@@ -5005,9 +5005,9 @@ static const union AnimCmd *const sAnims_GRENINJA[] ={
     sAnim_GRENINJA_1,
 };
 
-static const union AnimCmd *const sAnims_DURANT[] ={
+static const union AnimCmd *const sAnims_BONDED_GRENINJA[] ={
     sAnim_GeneralFrame0,
-    sAnim_DURANT_1,
+    sAnim_BONDED_GRENINJA_1,
 };
 
 static const union AnimCmd *const sAnims_ROWLET[] ={
@@ -6756,10 +6756,10 @@ static const union AnimCmd *const sAnims_RAYQUAZA[] ={
     sAnim_RAYQUAZA_2,
 };
 
-static const union AnimCmd *const sAnims_LATIAS[] ={
+static const union AnimCmd *const sAnims_KYUREM_WHITE[] ={
     sAnim_GeneralFrame0,
-    sAnim_LATIAS_1,
-    sAnim_LATIAS_2,
+    sAnim_KYUREM_WHITE_1,
+    sAnim_KYUREM_WHITE_2,
 };
 
 static const union AnimCmd *const sAnims_LATIOS[] ={
@@ -6972,7 +6972,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(FROAKIE),
     ANIM_CMD(FROGADIER),
     ANIM_CMD(GRENINJA),
-    ANIM_CMD(DURANT),
+    ANIM_CMD(BONDED_GRENINJA),
     ANIM_CMD(ROWLET),
     ANIM_CMD(DARTRIX),
     ANIM_CMD(DECIDUEYE),
@@ -7337,7 +7337,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(KYOGRE),
     ANIM_CMD(GROUDON),
     ANIM_CMD(RAYQUAZA),
-    ANIM_CMD(LATIAS),
+    ANIM_CMD(KYUREM_WHITE),
     ANIM_CMD(LATIOS),
     ANIM_CMD(JIRACHI),
     ANIM_CMD(DEOXYS),

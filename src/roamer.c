@@ -43,7 +43,7 @@ static const u8 sRoamerLocations[][6] =
 void ClearRoamerData(void)
 {
     memset(&gSaveBlock1Ptr->roamer, 0, sizeof(struct Roamer));
-    (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIAS;
+    (&gSaveBlock1Ptr->roamer)->species = SPECIES_KYUREM_WHITE;
 }
 
 void ClearRoamerLocationData(void)
@@ -63,7 +63,7 @@ void ClearRoamerLocationData(void)
 static void CreateInitialRoamerMon(bool16 createLatios)
 {
     if (!createLatios)
-        (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIAS;
+        (&gSaveBlock1Ptr->roamer)->species = SPECIES_KYUREM_WHITE;
     else
         (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIOS;
 

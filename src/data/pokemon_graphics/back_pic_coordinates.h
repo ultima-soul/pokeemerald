@@ -210,7 +210,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x76,
         .y_offset = 0x0b,
     },
-    [SPECIES_DURANT] =
+    [SPECIES_BONDED_GRENINJA] =
     {
         .size = 0x87,
         .y_offset = 0x06,
@@ -2035,7 +2035,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x78,
         .y_offset = 0x00,
     },
-    [SPECIES_LATIAS] =
+    [SPECIES_KYUREM_WHITE] =
     {
         .size = 0x88,
         .y_offset = 0x02,

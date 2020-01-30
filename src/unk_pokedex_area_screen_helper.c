@@ -8,7 +8,7 @@
 
 EWRAM_DATA u8 *gUnknown_0203CF28 = NULL;
 
-static const u16 gUnknown_0861D140[] = INCBIN_U16("graphics/interface/region_map.gbapal");
+static const u16 gPokedexAreaRegionMap_Pal[] = INCBIN_U16("graphics/interface/region_map.gbapal");
 static const u32 gUnknown_0861D1A0[] = INCBIN_U32("graphics/interface/region_map.8bpp.lz");
 static const u32 gUnknown_0861DEF4[] = INCBIN_U32("graphics/interface/region_map.bin.lz");
 static const u32 gUnknown_0861E208[] = INCBIN_U32("graphics/interface/region_map_affine.8bpp.lz");
@@ -37,7 +37,7 @@ void sub_81C4D70(const struct UnkStruct_1C4D70 *template)
     ChangeBgX(template->bg, 0, 0);
     ChangeBgY(template->bg, 0, 0);
     SetBgAttribute(template->bg, BG_ATTR_PALETTEMODE, 1);
-    CpuCopy32(gUnknown_0861D140, &gPlttBufferUnfaded[0x70], 0x60);
+    CpuCopy32(gPokedexAreaRegionMap_Pal, &gPlttBufferUnfaded[0x70], 0x60);
     *gUnknown_0203CF28 = template->bg;
 }
 

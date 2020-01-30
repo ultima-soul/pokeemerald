@@ -188,7 +188,7 @@
 #define EVENT_OBJ_GFX_BIG_REGIROCK_DOLL          184
 #define EVENT_OBJ_GFX_BIG_REGICE_DOLL            185
 #define EVENT_OBJ_GFX_BIG_REGISTEEL_DOLL         186
-#define EVENT_OBJ_GFX_LATIAS                     187
+#define EVENT_OBJ_GFX_KYUREM_WHITE                     187
 #define EVENT_OBJ_GFX_LATIOS                     188
 #define EVENT_OBJ_GFX_GAMEBOY_KID                189
 #define EVENT_OBJ_GFX_CONTEST_JUDGE              190

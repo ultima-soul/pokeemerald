@@ -28,8 +28,8 @@ SouthernIsland_Interior_EventScript_SetUpLatios:: @ 8242A8A
 	return
 
 SouthernIsland_Interior_EventScript_SetUpLatias:: @ 8242A95
-	setvar VAR_OBJ_GFX_ID_1, EVENT_OBJ_GFX_LATIAS
-	setvar VAR_TEMP_4, SPECIES_LATIAS
+	setvar VAR_OBJ_GFX_ID_1, EVENT_OBJ_GFX_KYUREM_WHITE
+	setvar VAR_TEMP_4, SPECIES_KYUREM_WHITE
 	return
 
 SouthernIsland_Interior_EventScript_SetUpPlayerGfx:: @ 8242AA0
@@ -56,10 +56,10 @@ SouthernIsland_Interior_EventScript_TryLatiEncounter:: @ 8242AC4
 
 SouthernIsland_Interior_EventScript_Lati:: @ 8242AD0
 	goto_if_set FLAG_TEMP_2, SouthernIsland_Interior_EventScript_Sign
-	goto_if_set FLAG_DEFEATED_LATIAS_OR_LATIOS, SouthernIsland_Interior_EventScript_Sign
-	goto_if_set FLAG_CAUGHT_LATIAS_OR_LATIOS, SouthernIsland_Interior_EventScript_Sign
+	goto_if_set FLAG_DEFEATED_KYUREM_WHITE_OR_LATIOS, SouthernIsland_Interior_EventScript_Sign
+	goto_if_set FLAG_CAUGHT_KYUREM_WHITE_OR_LATIOS, SouthernIsland_Interior_EventScript_Sign
 	goto_if_unset FLAG_SYS_HAS_EON_TICKET, SouthernIsland_Interior_EventScript_Sign
-	setflag FLAG_ENCOUNTERED_LATIAS_OR_LATIOS
+	setflag FLAG_ENCOUNTERED_KYUREM_WHITE_OR_LATIOS
 	setflag FLAG_TEMP_2
 	special SpawnCameraObject
 	applymovement EVENT_OBJ_ID_CAMERA, SouthernIsland_Interior_Movement_CameraPanUp
@@ -92,12 +92,12 @@ SouthernIsland_Interior_EventScript_Lati:: @ 8242AD0
 	goto_if_eq SouthernIsland_Interior_EventScript_RanFromLati
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq SouthernIsland_Interior_EventScript_RanFromLati
-	setflag FLAG_CAUGHT_LATIAS_OR_LATIOS
+	setflag FLAG_CAUGHT_KYUREM_WHITE_OR_LATIOS
 	releaseall
 	end
 
 SouthernIsland_Interior_EventScript_LatiDefeated:: @ 8242B81
-	setflag FLAG_DEFEATED_LATIAS_OR_LATIOS
+	setflag FLAG_DEFEATED_KYUREM_WHITE_OR_LATIOS
 	copyvar VAR_0x8004, VAR_TEMP_4
 	goto Common_EventScript_LegendaryFlewAway
 	end
@@ -120,7 +120,7 @@ SouthernIsland_Interior_EventScript_SetLatiosBattleVars:: @ 8242BA4
 	return
 
 SouthernIsland_Interior_EventScript_SetLatiasBattleVars:: @ 8242BB7
-	setvar VAR_0x8004, SPECIES_LATIAS
+	setvar VAR_0x8004, SPECIES_KYUREM_WHITE
 	setvar VAR_0x8005, 50 @ level
 	setvar VAR_0x8006, ITEM_SOUL_DEW
 	special CreateObedientEnemyMon

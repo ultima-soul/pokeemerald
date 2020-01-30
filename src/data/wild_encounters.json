@@ -987,22 +987,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -1056,22 +1056,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -1125,22 +1125,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -1194,22 +1194,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -1263,22 +1263,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -2833,17 +2833,17 @@
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -2863,7 +2863,7 @@
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 39,
@@ -2873,22 +2873,22 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -2899,12 +2899,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -2987,17 +2987,17 @@
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -3017,7 +3017,7 @@
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 39,
@@ -3027,22 +3027,22 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -3053,12 +3053,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -3141,12 +3141,12 @@
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 30,
@@ -3181,22 +3181,22 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -3207,12 +3207,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -3240,17 +3240,17 @@
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
@@ -3270,7 +3270,7 @@
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 39,
@@ -3280,22 +3280,22 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -7919,7 +7919,7 @@
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 50,
@@ -7949,7 +7949,7 @@
                             {
                                 "max_level": 50,
                                 "min_level": 50,
-                                "species": "SPECIES_LATIAS"
+                                "species": "SPECIES_KYUREM_WHITE"
                             }
                         ]
                     },
@@ -9461,12 +9461,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     }
@@ -9519,22 +9519,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9588,22 +9588,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9657,22 +9657,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9726,22 +9726,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9795,22 +9795,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9919,22 +9919,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -9960,12 +9960,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     }
@@ -10073,22 +10073,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -10114,12 +10114,12 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     }
@@ -10172,22 +10172,22 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 33,
                                 "min_level": 33,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 36,
                                 "min_level": 36,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     },
@@ -10296,7 +10296,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10306,7 +10306,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10395,7 +10395,7 @@
                             {
                                 "max_level": 30,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 28,
@@ -10405,7 +10405,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 30,
@@ -10519,7 +10519,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10529,7 +10529,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10618,7 +10618,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10628,7 +10628,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10687,7 +10687,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10697,7 +10697,7 @@
                             {
                                 "max_level": 32,
                                 "min_level": 32,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 32,
@@ -10721,12 +10721,12 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 34,
@@ -10790,12 +10790,12 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 34,
@@ -10859,12 +10859,12 @@
                             {
                                 "max_level": 34,
                                 "min_level": 34,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 35,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 34,
@@ -11169,7 +11169,7 @@
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
@@ -11199,7 +11199,7 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
@@ -11238,7 +11238,7 @@
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
@@ -11258,7 +11258,7 @@
                             {
                                 "max_level": 38,
                                 "min_level": 38,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 38,
@@ -11268,7 +11268,7 @@
                             {
                                 "max_level": 42,
                                 "min_level": 42,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 42,
@@ -11392,7 +11392,7 @@
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
@@ -11412,7 +11412,7 @@
                             {
                                 "max_level": 42,
                                 "min_level": 42,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 42,
@@ -11422,7 +11422,7 @@
                             {
                                 "max_level": 44,
                                 "min_level": 44,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 44,
@@ -11458,27 +11458,27 @@
                             {
                                 "max_level": 35,
                                 "min_level": 30,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 30,
                                 "min_level": 25,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             },
                             {
                                 "max_level": 40,
                                 "min_level": 35,
-                                "species": "SPECIES_DURANT"
+                                "species": "SPECIES_BONDED_GRENINJA"
                             }
                         ]
                     }

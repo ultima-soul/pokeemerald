@@ -603,8 +603,8 @@ const u16 gEasyChatWordsByLetter_G[] = {
     EC_WORD_GOES,
     EC_WORD_GOING,
     -1, 2, // Doubled pokemon species name
-    EC_POKEMON(DURANT),
-    EC_POKEMON2(DURANT),
+    EC_POKEMON(BONDED_GRENINJA),
+    EC_POKEMON2(BONDED_GRENINJA),
     EC_WORD_GOLD,
     -1, 2, // Doubled pokemon species name
     EC_POKEMON(DRILLBUR),
@@ -871,7 +871,7 @@ const u16 gEasyChatWordsByLetter_L[] = {
     EC_WORD_LAST,
     EC_WORD_LATE,
     EC_WORD_LATER,
-    EC_POKEMON(LATIAS),
+    EC_POKEMON(KYUREM_WHITE),
     EC_POKEMON(LATIOS),
     EC_WORD_LAVISH,
     EC_WORD_LAY,
@@ -2447,7 +2447,7 @@ const u16 gEasyChatWordsByLetter_UnusedJapaneseRa[] = {
     EC_MOVE2(LUSTER_PURGE),
     EC_POKEMON2(CHANSEY),
     EC_POKEMON2(RATICATE),
-    EC_POKEMON(LATIAS),
+    EC_POKEMON(KYUREM_WHITE),
     EC_POKEMON(LATIOS),
     EC_POKEMON(CHANDELURE),
     EC_POKEMON2(LAPRAS),

@@ -504,7 +504,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_DURANT] =
+    [NATIONAL_DEX_BONDED_GRENINJA] =
     {
         .categoryName = _("BAT"),
         .height = 16,
@@ -4560,7 +4560,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 6,
     },
 
-    [NATIONAL_DEX_LATIAS] =
+    [NATIONAL_DEX_KYUREM_WHITE] =
     {
         .categoryName = _("EON"),
         .height = 14,

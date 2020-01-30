@@ -964,7 +964,7 @@ const struct FacilityMon gSlateportBattleTentMons[] =
         .nature = NATURE_IMPISH
     },
     [30] = {
-        .species = SPECIES_DURANT,
+        .species = SPECIES_BONDED_GRENINJA,
         .moves = {MOVE_ASTONISH, MOVE_GUST, MOVE_MEAN_LOOK, MOVE_CONFUSE_RAY},
         .itemTableId = BATTLE_FRONTIER_ITEM_SPELL_TAG,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_SPEED | F_EV_SPREAD_DEFENSE,
@@ -1139,7 +1139,7 @@ const struct FacilityMon gSlateportBattleTentMons[] =
         .nature = NATURE_BRAVE
     },
     [55] = {
-        .species = SPECIES_DURANT,
+        .species = SPECIES_BONDED_GRENINJA,
         .moves = {MOVE_BITE, MOVE_TORMENT, MOVE_SCREECH, MOVE_POISON_FANG},
         .itemTableId = BATTLE_FRONTIER_ITEM_LEFTOVERS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_HP,
@@ -2877,7 +2877,7 @@ const struct FacilityMon gFallarborBattleTentMons[] =
         .nature = NATURE_BOLD
     },
     [27] = {
-        .species = SPECIES_DURANT,
+        .species = SPECIES_BONDED_GRENINJA,
         .moves = {MOVE_CONFUSE_RAY, MOVE_BITE, MOVE_DOUBLE_TEAM, MOVE_SUBSTITUTE},
         .itemTableId = BATTLE_FRONTIER_ITEM_PETAYA_BERRY,
         .evSpread = F_EV_SPREAD_SP_DEFENSE | F_EV_SPREAD_DEFENSE | F_EV_SPREAD_HP,
