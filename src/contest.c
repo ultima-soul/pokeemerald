@@ -2949,7 +2949,7 @@ static u8 sub_80DB174(u16 species, u32 otId, u32 personality, u32 index)
     if (index == gContestPlayerMonIndex)
         HandleLoadSpecialPokePic_2(gMonBackPicTable + species, gMonSpritesGfxPtr->sprites[0], species, personality);
     else
-        HandleLoadSpecialPokePic_DontHandleDeoxys(gMonBackPicTable + species, gMonSpritesGfxPtr->sprites[0], species, personality);
+        HandleLoadSpecialPokePic_DontHandleBonded_Alakazam(gMonBackPicTable + species, gMonSpritesGfxPtr->sprites[0], species, personality);
 
     LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality), 0x120, 0x20);
     SetMultiuseSpriteTemplateToPokemon(species, 0);

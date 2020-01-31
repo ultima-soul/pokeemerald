@@ -82,7 +82,6 @@ u8 sub_80FD9B0(s16 a, s16 b);
 void sub_80FDA24(u8 a);
 void sub_80FD8E0(u8 taskId, s16 x, s16 y);
 void sub_80FDBEC(void);
-bool8 TryToWaterSudowoodo(void);
 void ItemUseOutOfBattle_CannotUse(u8 taskId);
 
 // EWRAM variables
@@ -677,12 +676,7 @@ void ItemUseOnFieldCB_Berry(u8 taskId)
 
 void ItemUseOutOfBattle_WailmerPail(u8 taskId)
 {
-    if (TryToWaterSudowoodo() == TRUE)
-    {
-        gUnknown_0203A0F4 = ItemUseOnFieldCB_WailmerPailSudowoodo;
-        SetUpItemUseOnFieldCallback(taskId);
-    }
-    else if (TryToWaterBerryTree() == TRUE)
+if (TryToWaterBerryTree() == TRUE)
     {
         gUnknown_0203A0F4 = ItemUseOnFieldCB_WailmerPailBerry;
         SetUpItemUseOnFieldCallback(taskId);
@@ -698,20 +692,6 @@ void ItemUseOnFieldCB_WailmerPailBerry(u8 taskId)
     ScriptContext2_Enable();
     ScriptContext1_SetupScript(BerryTree_EventScript_ItemUseWailmerPail);
     DestroyTask(taskId);
-}
-
-bool8 TryToWaterSudowoodo(void)
-{
-    u16 x, y;
-    u8 z;
-    u8 objId;
-    GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
-    z = PlayerGetZCoord();
-    objId = GetEventObjectIdByXYZ(x, y, z);
-    if (objId == EVENT_OBJECTS_COUNT || gEventObjects[objId].graphicsId != EVENT_OBJ_GFX_GIBLE)
-        return FALSE;
-    else
-        return TRUE;
 }
 
 void ItemUseOnFieldCB_WailmerPailSudowoodo(u8 taskId)

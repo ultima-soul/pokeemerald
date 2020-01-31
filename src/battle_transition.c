@@ -83,9 +83,9 @@ static void Phase2Task_Drake(u8 taskId);
 static void Phase2Task_Champion(u8 taskId);
 static void Phase2Task_Aqua(u8 taskId);
 static void Phase2Task_Magma(u8 taskId);
-static void Phase2Task_Regice(u8 taskId);
-static void Phase2Task_Registeel(u8 taskId);
-static void Phase2Task_Regirock(u8 taskId);
+static void Phase2Task_Lycanroc(u8 taskId);
+static void Phase2Task_Bonded_Aerodactyl(u8 taskId);
+static void Phase2Task_Rockruff(u8 taskId);
 static void Phase2Task_Kyogre(u8 taskId);
 static void Phase2Task_Groudon(u8 taskId);
 static void Phase2Task_Rayquaza(u8 taskId);
@@ -131,9 +131,9 @@ static bool8 Phase2_Magma_Func1(struct Task *task);
 static bool8 Phase2_Magma_Func2(struct Task *task);
 static bool8 Phase2_FramesCountdown(struct Task *task);
 static bool8 Phase2_Regi_Func1(struct Task *task);
-static bool8 Phase2_Regice_Func2(struct Task *task);
-static bool8 Phase2_Registeel_Func2(struct Task *task);
-static bool8 Phase2_Regirock_Func2(struct Task *task);
+static bool8 Phase2_Lycanroc_Func2(struct Task *task);
+static bool8 Phase2_Bonded_Aerodactyl_Func2(struct Task *task);
+static bool8 Phase2_Rockruff_Func2(struct Task *task);
 static bool8 Phase2_WeatherTrio_Func1(struct Task *task);
 static bool8 Phase2_WaitPaletteFade(struct Task *task);
 static bool8 Phase2_Kyogre_Func3(struct Task *task);
@@ -338,9 +338,9 @@ static const TaskFunc sPhase2_Tasks[B_TRANSITION_COUNT] =
     Phase2Task_Champion,                    // 16
     Phase2Task_Aqua,                        // 17
     Phase2Task_Magma,                       // 18
-    Phase2Task_Regice,                      // 19
-    Phase2Task_Registeel,                   // 20
-    Phase2Task_Regirock,                    // 21
+    Phase2Task_Lycanroc,                      // 19
+    Phase2Task_Bonded_Aerodactyl,                   // 20
+    Phase2Task_Rockruff,                    // 21
     Phase2Task_Kyogre,                      // 22
     Phase2Task_Groudon,                     // 23
     Phase2Task_Rayquaza,                    // 24
@@ -422,30 +422,30 @@ static const TransitionStateFunc sPhase2_BigPokeball_Funcs[] =
     Phase2_BigPokeball_Func6
 };
 
-static const TransitionStateFunc sPhase2_Regice_Funcs[] =
+static const TransitionStateFunc sPhase2_Lycanroc_Funcs[] =
 {
     Phase2_Regi_Func1,
-    Phase2_Regice_Func2,
+    Phase2_Lycanroc_Func2,
     Phase2_BigPokeball_Func3,
     Phase2_BigPokeball_Func4,
     Phase2_BigPokeball_Func5,
     Phase2_BigPokeball_Func6
 };
 
-static const TransitionStateFunc sPhase2_Registeel_Funcs[] =
+static const TransitionStateFunc sPhase2_Bonded_Aerodactyl_Funcs[] =
 {
     Phase2_Regi_Func1,
-    Phase2_Registeel_Func2,
+    Phase2_Bonded_Aerodactyl_Func2,
     Phase2_BigPokeball_Func3,
     Phase2_BigPokeball_Func4,
     Phase2_BigPokeball_Func5,
     Phase2_BigPokeball_Func6
 };
 
-static const TransitionStateFunc sPhase2_Regirock_Funcs[] =
+static const TransitionStateFunc sPhase2_Rockruff_Funcs[] =
 {
     Phase2_Regi_Func1,
-    Phase2_Regirock_Func2,
+    Phase2_Rockruff_Func2,
     Phase2_BigPokeball_Func3,
     Phase2_BigPokeball_Func4,
     Phase2_BigPokeball_Func5,
@@ -1225,19 +1225,19 @@ static void Phase2Task_Magma(u8 taskId)
     while (sPhase2_Magma_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
-static void Phase2Task_Regice(u8 taskId)
+static void Phase2Task_Lycanroc(u8 taskId)
 {
-    while (sPhase2_Regice_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+    while (sPhase2_Lycanroc_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
-static void Phase2Task_Registeel(u8 taskId)
+static void Phase2Task_Bonded_Aerodactyl(u8 taskId)
 {
-    while (sPhase2_Registeel_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+    while (sPhase2_Bonded_Aerodactyl_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
-static void Phase2Task_Regirock(u8 taskId)
+static void Phase2Task_Rockruff(u8 taskId)
 {
-    while (sPhase2_Regirock_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
+    while (sPhase2_Rockruff_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
 static void Phase2Task_Kyogre(u8 taskId)
@@ -1374,7 +1374,7 @@ static bool8 Phase2_Magma_Func2(struct Task *task)
     return FALSE;
 }
 
-static bool8 Phase2_Regice_Func2(struct Task *task)
+static bool8 Phase2_Lycanroc_Func2(struct Task *task)
 {
     u16 *dst1, *dst2;
 
@@ -1387,7 +1387,7 @@ static bool8 Phase2_Regice_Func2(struct Task *task)
     return FALSE;
 }
 
-static bool8 Phase2_Registeel_Func2(struct Task *task)
+static bool8 Phase2_Bonded_Aerodactyl_Func2(struct Task *task)
 {
     u16 *dst1, *dst2;
 
@@ -1400,7 +1400,7 @@ static bool8 Phase2_Registeel_Func2(struct Task *task)
     return FALSE;
 }
 
-static bool8 Phase2_Regirock_Func2(struct Task *task)
+static bool8 Phase2_Rockruff_Func2(struct Task *task)
 {
     u16 *dst1, *dst2;
 

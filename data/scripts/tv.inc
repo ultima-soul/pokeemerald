@@ -46,8 +46,8 @@ EventScript_PlayersHouseMovie:: @ 827EE9A
 EventScript_PlayersHouseLatiNewsFlash:: @ 827EEA4
 	msgbox PlayersHouse_1F_Text_LatiEmergencyNewsFlash, MSGBOX_DEFAULT
 	special InitRoamer
-	clearflag FLAG_SYS_TV_KYUREM_WHITE_LATIOS
-	setflag FLAG_LATIOS_OR_KYUREM_WHITE_ROAMING
+	clearflag FLAG_SYS_TV_KYUREM_WHITE_KYUREM_BLACK
+	setflag FLAG_KYUREM_BLACK_OR_KYUREM_WHITE_ROAMING
 	special TurnOffTVScreen
 	releaseall
 	end

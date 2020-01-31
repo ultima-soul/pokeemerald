@@ -1049,7 +1049,7 @@ static const u8 sCleanseTagDesc[] = _(
 static const u8 sSoulDewDesc[] = _(
     "Hold item: raises\n"
     "SP. ATK & SP. DEF of\n"
-    "LATIOS & KYUREM_WHITE.");
+    "removed Pokemon");
 
 static const u8 sDeepSeaToothDesc[] = _(
     "A hold item that\n"

@@ -67,6 +67,6 @@
 #define FLDEFF_USE_TELEPORT              63
 #define FLDEFF_RAYQUAZA                  64
 #define FLDEFF_65                        65
-#define FLDEFF_MOVE_DEOXYS_ROCK          66
+#define FLDEFF_MOVE_BONDED_ALAKAZAM_ROCK          66
 
 #endif

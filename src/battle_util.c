@@ -2910,7 +2910,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
             effect = TryWeatherFormChange(battler);
             if (effect != 0)
             {
-                BattleScriptPushCursorAndCallback(BattleScript_CastformChange);
                 gBattleScripting.battler = battler;
                 *(&gBattleStruct->formToChangeInto) = effect - 1;
             }
@@ -2929,7 +2928,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 effect = TryWeatherFormChange(i);
                 if (effect != 0)
                 {
-                    BattleScriptPushCursorAndCallback(BattleScript_CastformChange);
                     gBattleScripting.battler = i;
                     gBattleStruct->formToChangeInto = effect - 1;
                     break;
@@ -3533,7 +3531,6 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 effect = TryWeatherFormChange(battler);
                 if (effect)
                 {
-                    BattleScriptPushCursorAndCallback(BattleScript_CastformChange);
                     gBattleScripting.battler = battler;
                     gBattleStruct->formToChangeInto = effect - 1;
                     return effect;
@@ -4665,8 +4662,7 @@ static bool32 HasObedientBitSet(u8 battlerId)
 {
     if (GetBattlerSide(battlerId) == B_SIDE_OPPONENT)
         return TRUE;
-    if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS
-        && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
+    if (GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_SPECIES, NULL) != SPECIES_MEW)
             return TRUE;
     return GetMonData(&gPlayerParty[gBattlerPartyIndexes[battlerId]], MON_DATA_OBEDIENCE, NULL);
 }
@@ -4682,7 +4678,7 @@ u8 IsMonDisobedient(void)
     if (GetBattlerSide(gBattlerAttacker) == B_SIDE_OPPONENT)
         return 0;
 
-    if (HasObedientBitSet(gBattlerAttacker)) // only if species is Mew or Deoxys
+    if (HasObedientBitSet(gBattlerAttacker)) // only if species is Mew or Bonded_Alakazam
     {
         if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == 2)
             return 0;
@@ -5402,7 +5398,7 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_SOUL_DEW:
-        if ((gBattleMons[battlerAtk].species == SPECIES_KYUREM_WHITE || gBattleMons[battlerAtk].species == SPECIES_LATIOS) && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
+        if ((gBattleMons[battlerAtk].species == SPECIES_KYUREM_WHITE || gBattleMons[battlerAtk].species == SPECIES_KYUREM_BLACK) && !(gBattleTypeFlags & BATTLE_TYPE_FRONTIER))
             MulModifier(&modifier, holdEffectModifier);
         break;
     case HOLD_EFFECT_GEMS:

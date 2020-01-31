@@ -719,7 +719,7 @@ struct SaveBlock1 /* 0x02025734 */
         /*0x3123*/ u32 currentPokeCoupons;
         /*0x3127*/ u32 totalEarnedPokeCoupons;
         /*0x312B*/ u8 unknown3[6];
-        /*0x3131*/ u8 receivedWishmakerJirachi;
+        /*0x3131*/ u8 receivedWishmakerBonded_Aggron;
         /*0x3132*/ u8 unknown4[18];
     } __attribute__((packed)) externalReservedData;
     /*0x3144*/ struct Roamer roamer;

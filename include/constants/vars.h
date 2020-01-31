@@ -66,16 +66,16 @@
 #define VAR_FRONTIER_GAMBLER_AMOUNT_BET      0x4032
 #define VAR_FRONTIER_GAMBLER_STATE           0x4033
 
-#define VAR_DEOXYS_ROCK_STEP_COUNT           0x4034
-#define VAR_DEOXYS_ROCK_LEVEL                0x4035
+#define VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT           0x4034
+#define VAR_BONDED_ALAKAZAM_ROCK_LEVEL                0x4035
 #define VAR_PC_BOX_TO_SEND_MON               0x4036
 #define VAR_ABNORMAL_WEATHER_LOCATION        0x4037
 #define VAR_ABNORMAL_WEATHER_STEP_COUNTER    0x4038
 #define VAR_SHOULD_END_ABNORMAL_WEATHER      0x4039
 #define VAR_FARAWAY_ISLAND_STEP_COUNTER      0x403A
-#define VAR_REGICE_STEPS_1                   0x403B
-#define VAR_REGICE_STEPS_2                   0x403C
-#define VAR_REGICE_STEPS_3                   0x403D
+#define VAR_LYCANROC_STEPS_1                   0x403B
+#define VAR_LYCANROC_STEPS_2                   0x403C
+#define VAR_LYCANROC_STEPS_3                   0x403D
 #define VAR_ALTERING_CAVE_WILD_SET           0x403E
 #define VAR_DISTRIBUTE_EON_TICKET            0x403F // This var is read and written, but is always zero. The only way to obtain the Eon Ticket in Emerald is via Record Mixing
 #define VAR_DAYS                             0x4040

@@ -65,7 +65,7 @@ static void CreateInitialRoamerMon(bool16 createLatios)
     if (!createLatios)
         (&gSaveBlock1Ptr->roamer)->species = SPECIES_KYUREM_WHITE;
     else
-        (&gSaveBlock1Ptr->roamer)->species = SPECIES_LATIOS;
+        (&gSaveBlock1Ptr->roamer)->species = SPECIES_KYUREM_BLACK;
 
     CreateMon(&gEnemyParty[0], (&gSaveBlock1Ptr->roamer)->species, 40, 0x20, 0, 0, OT_ID_PLAYER_ID, 0);
     (&gSaveBlock1Ptr->roamer)->level = 40;

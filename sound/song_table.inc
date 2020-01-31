@@ -261,7 +261,7 @@ gSongTable:: @ 86B49F0
 	song se_rg_help_op, 1, 1        @ Help Menu Open (FRLG)
 	song se_rg_help_cl, 1, 1        @ Help Menu Close (FRLG)
 	song se_rg_help_ng, 1, 1        @ Help Menu Error (FRLG)
-	song se_rg_deomov, 1, 1         @ Deoxys Moves
+	song se_rg_deomov, 1, 1         @ Bonded_Alakazam Moves
 	song se_rg_excellent, 1, 1      @ HP Restored (FRLG)
 	song se_rg_nawamiss, 1, 1
 	song se_toreeye, 1, 1           @ Trainer's Eye Call
@@ -480,7 +480,7 @@ gSongTable:: @ 86B49F0
 	song mus_battle20, 0, 0         @ Battle! (Trainer Battle)
 	song mus_battle32, 0, 0         @ Battle! (Gym Leader)
 	song mus_battle33, 0, 0         @ Battle! (Champion Wallace)
-	song mus_battle36, 0, 0         @ Battle! (Regirock/Regice/Registeel)
+	song mus_battle36, 0, 0         @ Battle! (Rockruff/Lycanroc/Bonded_Aerodactyl)
 	song mus_battle34, 0, 0         @ Battle! (Groudon/Kyogre)
 	song mus_battle35, 0, 0         @ Battle! (Brendan/May/Steven)
 	song mus_battle38, 0, 0         @ Battle! (Elite Four)
@@ -552,11 +552,11 @@ gSongTable:: @ 86B49F0
 	song mus_rg_nana45, 0, 0        @ Sevii Islands: Four & Five Islands (FRLG)
 	song mus_rg_nana67, 0, 0        @ Sevii Islands: Six & Seven Islands (FRLG)
 	song mus_rg_pokefue, 2, 2       @ The Poké Flute (FRLG)
-	song mus_rg_vs_deo, 0, 0        @ Battle! (Deoxys)
+	song mus_rg_vs_deo, 0, 0        @ Battle! (Bonded_Alakazam)
 	song mus_rg_vs_myu2, 0, 0       @ Battle! (Mewtwo) (FRLG)
 	song mus_rg_vs_den, 0, 0        @ Battle! (Ho-Oh/Lugia)
 	song mus_rg_exeye, 0, 0         @ Tense Battle! (FRLG)
-	song mus_rg_deoeye, 0, 0        @ Deoxys Appears
+	song mus_rg_deoeye, 0, 0        @ Bonded_Alakazam Appears
 	song mus_rg_t_tower, 0, 0       @ Trainer Tower (FRLG)
 	song mus_rg_slowmasara, 0, 0    @ Epilogue (FRLG)
 	song mus_rg_tvnoize, 0, 0       @ Teachy TV Menu (FRLG)

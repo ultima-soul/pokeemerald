@@ -112,7 +112,6 @@ static void Task_MoveElevator(u8 taskId);
 static void MoveElevatorWindowLights(u16 floorDelta, bool8 descending);
 static void Task_MoveElevatorWindowLights(u8 taskId);
 static void Task_ShowScrollableMultichoice(u8 taskId);
-static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection);
 static void ShowBattleFrontierTutorWindow(u8 menu, u16 selection);
 static void InitScrollableMultichoice(void);
 static void ScrollableMultichoice_ProcessInput(u8 taskId);
@@ -125,9 +124,9 @@ static void ScrollableMultichoice_RemoveScrollArrows(u8 taskId);
 static void sub_813A600(u8 taskId);
 static void sub_813A664(u8 taskId);
 static void ShowFrontierExchangeCornerItemIcon(u16 item);
-static void Task_DeoxysRockInteraction(u8 taskId);
-static void ChangeDeoxysRockLevel(u8 a0);
-static void WaitForDeoxysRockMovement(u8 taskId);
+static void Task_Bonded_AlakazamRockInteraction(u8 taskId);
+static void ChangeBonded_AlakazamRockLevel(u8 a0);
+static void WaitForBonded_AlakazamRockMovement(u8 taskId);
 static void sub_813B57C(u8 taskId);
 static void Task_LoopWingFlapSE(u8 taskId);
 static void Task_CloseBattlePikeCurtain(u8 taskId);
@@ -2473,12 +2472,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_KissCushion32BP,
         gText_SmoochumDoll32BP,
         gText_TogepiDoll48BP,
-        gText_MeowthDoll48BP,
         gText_ClefairyDoll48BP,
         gText_DittoDoll48BP,
         gText_CyndaquilDoll80BP,
-        gText_ChikoritaDoll80BP,
-        gText_TotodileDoll80BP,
         gText_Exit
     },
     [SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2] =
@@ -2601,7 +2597,6 @@ static void Task_ShowScrollableMultichoice(u8 taskId)
     ScriptContext2_Enable();
     sScrollableMultichoice_ScrollOffset = 0;
     sScrollableMultichoice_ItemSpriteId = MAX_SPRITES;
-    FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, 0);
     ShowBattleFrontierTutorWindow(task->tScrollMultiId, 0);
     sScrollableMultichoice_ListMenuItem = AllocZeroed(task->tNumItems * 8);
     sFrontierExchangeCorner_NeverRead = 0;
@@ -2680,7 +2675,6 @@ static void ScrollableMultichoice_MoveCursor(s32 itemIndex, bool8 onInit, struct
         sScrollableMultichoice_ScrollOffset = selection;
         ListMenuGetCurrentItemArrayId(task->tListTaskId, &selection);
         HideFrontierExchangeCornerItemIcon(task->tScrollMultiId, sFrontierExchangeCorner_NeverRead);
-        FillFrontierExchangeCornerWindowAndItemIcon(task->tScrollMultiId, selection);
         ShowBattleFrontierTutorMoveDescription(task->tScrollMultiId, selection);
         sFrontierExchangeCorner_NeverRead = selection;
     }
@@ -3067,53 +3061,6 @@ void CloseFrontierExchangeCornerItemIconWindow(void)
     RemoveWindow(sFrontierExchangeCorner_ItemIconWindowId);
 }
 
-static void FillFrontierExchangeCornerWindowAndItemIcon(u16 menu, u16 selection)
-{
-    #include "data/battle_frontier/battle_frontier_exchange_corner.h"
-
-    if (menu >= SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1 && menu <= SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR)
-    {
-        FillWindowPixelRect(0, PIXEL_FILL(1), 0, 0, 216, 32);
-        switch (menu)
-        {
-            case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_1:
-                AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_Decor1Descriptions[selection], 0, NULL, 2, 1, 3);
-                if (sFrontierExchangeCorner_Decor1[selection] == 0xFFFF)
-                {
-                    ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor1[selection]);
-                }
-                else
-                {
-                    FreeSpriteTilesByTag(5500);
-                    FreeSpritePaletteByTag(5500);
-                    sScrollableMultichoice_ItemSpriteId = AddDecorationIconObject(sFrontierExchangeCorner_Decor1[selection], 33, 88, 0, 5500, 5500);
-                }
-                break;
-            case SCROLL_MULTI_BF_EXCHANGE_CORNER_DECOR_VENDOR_2:
-                AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_Decor2Descriptions[selection], 0, NULL, 2, 1, 3);
-                if (sFrontierExchangeCorner_Decor2[selection] == 0xFFFF)
-                {
-                    ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Decor2[selection]);
-                }
-                else
-                {
-                    FreeSpriteTilesByTag(5500);
-                    FreeSpritePaletteByTag(5500);
-                    sScrollableMultichoice_ItemSpriteId = AddDecorationIconObject(sFrontierExchangeCorner_Decor2[selection], 33, 88, 0, 5500, 5500);
-                }
-                break;
-            case SCROLL_MULTI_BF_EXCHANGE_CORNER_VITAMIN_VENDOR:
-                AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_VitaminsDescriptions[selection], 0, NULL, 2, 1, 3);
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_Vitamins[selection]);
-                break;
-            case SCROLL_MULTI_BF_EXCHANGE_CORNER_HOLD_ITEM_VENDOR:
-                AddTextPrinterParameterized2(0, 1, sFrontierExchangeCorner_HoldItemsDescriptions[selection], 0, NULL, 2, 1, 3);
-                ShowFrontierExchangeCornerItemIcon(sFrontierExchangeCorner_HoldItems[selection]);
-                break;
-        }
-    }
-}
-
 static void ShowFrontierExchangeCornerItemIcon(u16 item)
 {
     FreeSpriteTilesByTag(5500);
@@ -3356,12 +3303,12 @@ void sub_813AF48(void)
 #undef tListTaskId         
 #undef tTaskId              
 
-void DoDeoxysRockInteraction(void)
+void DoBonded_AlakazamRockInteraction(void)
 {
-    CreateTask(Task_DeoxysRockInteraction, 8);
+    CreateTask(Task_Bonded_AlakazamRockInteraction, 8);
 }
 
-static const u16 sDeoxysRockPalettes[][16] = {
+static const u16 sBonded_AlakazamRockPalettes[][16] = {
     INCBIN_U16("graphics/misc/deoxys1.gbapal"),
     INCBIN_U16("graphics/misc/deoxys2.gbapal"),
     INCBIN_U16("graphics/misc/deoxys3.gbapal"),
@@ -3375,7 +3322,7 @@ static const u16 sDeoxysRockPalettes[][16] = {
     INCBIN_U16("graphics/misc/deoxys11.gbapal"),
 };
 
-static const u8 sDeoxysRockCoords[][2] = {
+static const u8 sBonded_AlakazamRockCoords[][2] = {
     { 15, 12 },
     { 11, 14 },
     { 15,  8 },
@@ -3389,11 +3336,11 @@ static const u8 sDeoxysRockCoords[][2] = {
     { 15, 10 },
 };
 
-static void Task_DeoxysRockInteraction(u8 taskId)
+static void Task_Bonded_AlakazamRockInteraction(u8 taskId)
 {
     static const u8 sStoneMaxStepCounts[] = { 4, 8, 8, 8, 4, 4, 4, 6, 3, 3 };
 
-    if (FlagGet(FLAG_DEOXYS_ROCK_COMPLETE) == TRUE)
+    if (FlagGet(FLAG_BONDED_ALAKAZAM_ROCK_COMPLETE) == TRUE)
     {
         gSpecialVar_Result = 3;
         EnableBothScriptContexts();
@@ -3401,21 +3348,21 @@ static void Task_DeoxysRockInteraction(u8 taskId)
     }
     else
     {
-        u16 rockLevel = VarGet(VAR_DEOXYS_ROCK_LEVEL);
-        u16 stepCount = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
+        u16 rockLevel = VarGet(VAR_BONDED_ALAKAZAM_ROCK_LEVEL);
+        u16 stepCount = VarGet(VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT);
 
-        VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, 0);
+        VarSet(VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT, 0);
         if (rockLevel != 0 && sStoneMaxStepCounts[rockLevel - 1] < stepCount)
         {
             // Player failed to take the shortest path to the stone, so it resets.
-            ChangeDeoxysRockLevel(0);
-            VarSet(VAR_DEOXYS_ROCK_LEVEL, 0);
+            ChangeBonded_AlakazamRockLevel(0);
+            VarSet(VAR_BONDED_ALAKAZAM_ROCK_LEVEL, 0);
             gSpecialVar_Result = 0;
             DestroyTask(taskId);
         }
         else if (rockLevel == 10)
         {
-            FlagSet(FLAG_DEOXYS_ROCK_COMPLETE);
+            FlagSet(FLAG_BONDED_ALAKAZAM_ROCK_COMPLETE);
             gSpecialVar_Result = 2;
             EnableBothScriptContexts();
             DestroyTask(taskId);
@@ -3423,18 +3370,18 @@ static void Task_DeoxysRockInteraction(u8 taskId)
         else
         {
             rockLevel++;
-            ChangeDeoxysRockLevel(rockLevel);
-            VarSet(VAR_DEOXYS_ROCK_LEVEL, rockLevel);
+            ChangeBonded_AlakazamRockLevel(rockLevel);
+            VarSet(VAR_BONDED_ALAKAZAM_ROCK_LEVEL, rockLevel);
             gSpecialVar_Result = 1;
             DestroyTask(taskId);
         }
     }
 }
 
-static void ChangeDeoxysRockLevel(u8 rockLevel)
+static void ChangeBonded_AlakazamRockLevel(u8 rockLevel)
 {
     u8 eventObjectId;
-    LoadPalette(&sDeoxysRockPalettes[rockLevel], 0x1A0, 8);
+    LoadPalette(&sBonded_AlakazamRockPalettes[rockLevel], 0x1A0, 8);
     TryGetEventObjectIdByLocalIdAndMap(1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &eventObjectId);
 
     if (rockLevel == 0)
@@ -3442,25 +3389,25 @@ static void ChangeDeoxysRockLevel(u8 rockLevel)
     else
         PlaySE(SE_RG_DEOMOV);
 
-    CreateTask(WaitForDeoxysRockMovement, 8);
+    CreateTask(WaitForBonded_AlakazamRockMovement, 8);
     gFieldEffectArguments[0] = 1;
     gFieldEffectArguments[1] = 58;
     gFieldEffectArguments[2] = 26;
-    gFieldEffectArguments[3] = sDeoxysRockCoords[rockLevel][0];
-    gFieldEffectArguments[4] = sDeoxysRockCoords[rockLevel][1];
+    gFieldEffectArguments[3] = sBonded_AlakazamRockCoords[rockLevel][0];
+    gFieldEffectArguments[4] = sBonded_AlakazamRockCoords[rockLevel][1];
 
     if (rockLevel == 0)
         gFieldEffectArguments[5] = 60;
     else
         gFieldEffectArguments[5] = 5;
 
-    FieldEffectStart(FLDEFF_MOVE_DEOXYS_ROCK);
-    Overworld_SetEventObjTemplateCoords(1, sDeoxysRockCoords[rockLevel][0], sDeoxysRockCoords[rockLevel][1]);
+    FieldEffectStart(FLDEFF_MOVE_BONDED_ALAKAZAM_ROCK);
+    Overworld_SetEventObjTemplateCoords(1, sBonded_AlakazamRockCoords[rockLevel][0], sBonded_AlakazamRockCoords[rockLevel][1]);
 }
 
-static void WaitForDeoxysRockMovement(u8 taskId)
+static void WaitForBonded_AlakazamRockMovement(u8 taskId)
 {
-    if (FieldEffectActiveListContains(FLDEFF_MOVE_DEOXYS_ROCK) == FALSE)
+    if (FieldEffectActiveListContains(FLDEFF_MOVE_BONDED_ALAKAZAM_ROCK) == FALSE)
     {
         EnableBothScriptContexts();
         DestroyTask(taskId);
@@ -3469,24 +3416,24 @@ static void WaitForDeoxysRockMovement(u8 taskId)
 
 void IncrementBirthIslandRockStepCount(void)
 {
-    u16 var = VarGet(VAR_DEOXYS_ROCK_STEP_COUNT);
+    u16 var = VarGet(VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT);
     if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(BIRTH_ISLAND_EXTERIOR) && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(BIRTH_ISLAND_EXTERIOR))
     {
         var++;
         if (var > 99)
         {
-            VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, 0);
+            VarSet(VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT, 0);
         }
         else
         {
-            VarSet(VAR_DEOXYS_ROCK_STEP_COUNT, var);
+            VarSet(VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT, var);
         }
     }
 }
 
-void SetDeoxysRockPalette(void)
+void SetBonded_AlakazamRockPalette(void)
 {
-    LoadPalette(&sDeoxysRockPalettes[(u8)VarGet(VAR_DEOXYS_ROCK_LEVEL)], 0x1A0, 8);
+    LoadPalette(&sBonded_AlakazamRockPalettes[(u8)VarGet(VAR_BONDED_ALAKAZAM_ROCK_LEVEL)], 0x1A0, 8);
     BlendPalettes(0x04000000, 16, 0);
 }
 

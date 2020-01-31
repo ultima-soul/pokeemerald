@@ -54,31 +54,6 @@ static const struct UCoords8 sBattlerCoords[][4] =
     },
 };
 
-// One entry for each of the four Castform forms.
-const struct MonCoords gCastformFrontSpriteCoords[] =
-{
-    { .size = 0x44, .y_offset = 17 }, // NORMAL
-    { .size = 0x66, .y_offset =  9 }, // SUN
-    { .size = 0x46, .y_offset =  9 }, // RAIN
-    { .size = 0x86, .y_offset =  8 }, // HAIL
-};
-
-static const u8 sCastformElevations[] =
-{
-    13, // NORMAL
-    14, // SUN
-    13, // RAIN
-    13, // HAIL
-};
-
-// Y position of the backsprite for each of the four Castform forms.
-static const u8 sCastformBackSpriteYCoords[] =
-{
-    0, // NORMAL
-    0, // SUN
-    0, // RAIN
-    0, // HAIL
-};
 
 static const struct SpriteTemplate sUnknown_08525F90[] =
 {
@@ -1978,7 +1953,7 @@ u8 sub_80A8394(u16 species, bool8 isBackpic, u8 a3, s16 x, s16 y, u8 subpriority
     {
         LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, trainerId, personality), (palette * 0x10) + 0x100, 0x20);
         if (a10 == 1 || sub_80688F8(5, battlerId) == 1 || gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != 0)
-            LoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species],
+            LoadSpecialPokePic_DontHandleBonded_Alakazam(&gMonFrontPicTable[species],
                                                 gMonSpritesGfxPtr->field_17C,
                                                 species,
                                                 personality,
@@ -1994,7 +1969,7 @@ u8 sub_80A8394(u16 species, bool8 isBackpic, u8 a3, s16 x, s16 y, u8 subpriority
     {
         LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, trainerId, personality), (palette * 0x10) + 0x100, 0x20);
         if (a10 == 1 || sub_80688F8(5, battlerId) == 1 || gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != 0)
-            LoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[species],
+            LoadSpecialPokePic_DontHandleBonded_Alakazam(&gMonBackPicTable[species],
                                                 gMonSpritesGfxPtr->field_17C,
                                                 species,
                                                 personality,

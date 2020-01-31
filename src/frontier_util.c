@@ -136,7 +136,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_THUNDERBOLT, MOVE_CALM_MIND, MOVE_REFLECT, MOVE_REST},
             },
             {
-                .species = SPECIES_LATIOS,
+                .species = SPECIES_KYUREM_BLACK,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 31,
                 .nature = NATURE_MODEST,
@@ -443,7 +443,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Silver Symbol.
         {
             {
-                .species = SPECIES_REGIROCK,
+                .species = SPECIES_ROCKRUFF,
                 .heldItem = ITEM_QUICK_CLAW,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -451,7 +451,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_EXPLOSION, MOVE_SUPERPOWER, MOVE_EARTHQUAKE, MOVE_ANCIENT_POWER},
             },
             {
-                .species = SPECIES_REGISTEEL,
+                .species = SPECIES_BONDED_AERODACTYL,
                 .heldItem = ITEM_LEFTOVERS,
                 .fixedIV = 16,
                 .nature = NATURE_ADAMANT,
@@ -459,7 +459,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_EARTHQUAKE, MOVE_METAL_CLAW, MOVE_TOXIC, MOVE_IRON_DEFENSE},
             },
             {
-                .species = SPECIES_REGICE,
+                .species = SPECIES_LYCANROC,
                 .heldItem = ITEM_CHESTO_BERRY,
                 .fixedIV = 16,
                 .nature = NATURE_MODEST,
@@ -470,7 +470,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Gold Symbol.
         {
             {
-                .species = SPECIES_ARTICUNO,
+                .species = SPECIES_BONDED_GROUDON,
                 .heldItem = ITEM_SCOPE_LENS,
                 .fixedIV = 31,
                 .nature = NATURE_MILD,
@@ -478,7 +478,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_BLIZZARD, MOVE_WATER_PULSE, MOVE_AERIAL_ACE, MOVE_REFLECT},
             },
             {
-                .species = SPECIES_ZAPDOS,
+                .species = SPECIES_BONDED_KYOGRE,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 31,
                 .nature = NATURE_MILD,
@@ -486,7 +486,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_THUNDER, MOVE_DETECT, MOVE_DRILL_PECK, MOVE_LIGHT_SCREEN},
             },
             {
-                .species = SPECIES_MOLTRES,
+                .species = SPECIES_BONDED_RAYQUAZA,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .fixedIV = 31,
                 .nature = NATURE_MILD,
@@ -679,7 +679,7 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
 const u16 gFrontierBannedSpecies[] =
 {
     SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
-    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS, 0xFFFF
+    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_BONDED_AGGRON, SPECIES_BONDED_ALAKAZAM, 0xFFFF
 };
 
 static const u8 *const sRecordsWindowChallengeTexts[][2] =

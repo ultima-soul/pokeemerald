@@ -5588,7 +5588,7 @@ static const struct TrainerMonItemCustomMoves sParty_Lao5[] = {
     {
     .iv = 40,
     .lvl = 35,
-    .species = SPECIES_EMOLGA,
+    .species = SPECIES_BONDED_BEARTIC,
     .heldItem = ITEM_SMOKE_BALL,
     .moves = MOVE_TACKLE, MOVE_SLUDGE, MOVE_NONE, MOVE_NONE
     }
@@ -5717,7 +5717,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_Angelica[] = {
     {
     .iv = 50,
     .lvl = 30,
-    .species = SPECIES_CASTFORM,
+    .species = SPECIES_ALOLAN_MAROWAK,
     .moves = MOVE_RAIN_DANCE, MOVE_WEATHER_BALL, MOVE_THUNDER, MOVE_WATER_PULSE
     }
 };
@@ -6582,7 +6582,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_Kayley[] = {
     {
     .iv = 0,
     .lvl = 31,
-    .species = SPECIES_CASTFORM,
+    .species = SPECIES_ALOLAN_MAROWAK,
     .moves = MOVE_SUNNY_DAY, MOVE_WEATHER_BALL, MOVE_FLAMETHROWER, MOVE_SOLAR_BEAM
     }
 };

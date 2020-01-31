@@ -460,10 +460,6 @@ const u16 DecorGfx_KISS_POSTER[] = {
     0x12D
 };
 
-const u16 DecorGfx_SEWADDLE_DOLL[] = {
-    EVENT_OBJ_GFX_SEWADDLE_DOLL
-};
-
 const u16 DecorGfx_PIKACHU_DOLL[] = {
     EVENT_OBJ_GFX_PIKACHU_DOLL
 };
@@ -480,32 +476,12 @@ const u16 DecorGfx_CYNDAQUIL_DOLL[] = {
     EVENT_OBJ_GFX_CYNDAQUIL_DOLL
 };
 
-const u16 DecorGfx_SNOVER_DOLL[] = {
-    EVENT_OBJ_GFX_SNOVER_DOLL
-};
-
-const u16 DecorGfx_BASCULIN_DOLL[] = {
-    EVENT_OBJ_GFX_BASCULIN_DOLL
-};
-
-const u16 DecorGfx_FROAKIE_DOLL[] = {
-    EVENT_OBJ_GFX_FROAKIE_DOLL
-};
-
-const u16 DecorGfx_TYRUNT_DOLL[] = {
-    EVENT_OBJ_GFX_TYRUNT_DOLL
-};
-
 const u16 DecorGfx_CLEFAIRY_DOLL[] = {
     EVENT_OBJ_GFX_CLEFAIRY_DOLL
 };
 
 const u16 DecorGfx_DITTO_DOLL[] = {
     EVENT_OBJ_GFX_DITTO_DOLL
-};
-
-const u16 DecorGfx_GOTHITA_DOLL[] = {
-    EVENT_OBJ_GFX_GOTHITA_DOLL
 };
 
 const u16 DecorGfx_TREECKO_DOLL[] = {
@@ -520,44 +496,12 @@ const u16 DecorGfx_MUDKIP_DOLL[] = {
     EVENT_OBJ_GFX_MUDKIP_DOLL
 };
 
-const u16 DecorGfx_GURDURR_DOLL[] = {
-    EVENT_OBJ_GFX_GURDURR_DOLL
-};
-
-const u16 DecorGfx_TIMBURR_DOLL[] = {
-    EVENT_OBJ_GFX_TIMBURR_DOLL
-};
-
-const u16 DecorGfx_BOLDORE_DOLL[] = {
-    EVENT_OBJ_GFX_BOLDORE_DOLL
-};
-
-const u16 DecorGfx_ROGGENROLA_DOLL[] = {
-    EVENT_OBJ_GFX_ROGGENROLA_DOLL
-};
-
-const u16 DecorGfx_CARRACOSTA_DOLL[] = {
-    EVENT_OBJ_GFX_CARRACOSTA_DOLL
-};
-
 const u16 DecorGfx_SKITTY_DOLL[] = {
     EVENT_OBJ_GFX_SKITTY_DOLL
 };
 
 const u16 DecorGfx_SWABLU_DOLL[] = {
     EVENT_OBJ_GFX_SWABLU_DOLL
-};
-
-const u16 DecorGfx_DARKRAI_DOLL[] = {
-    EVENT_OBJ_GFX_DARKRAI_DOLL
-};
-
-const u16 DecorGfx_DUOSION_DOLL[] = {
-    EVENT_OBJ_GFX_DUOSION_DOLL
-};
-
-const u16 DecorGfx_PANGORO_DOLL[] = {
-    EVENT_OBJ_GFX_PANGORO_DOLL
 };
 
 const u16 DecorGfx_PIKA_CUSHION[] = {
@@ -626,16 +570,4 @@ const u16 DecorGfx_BLASTOISE_DOLL[] = {
 
 const u16 DecorGfx_WAILMER_DOLL[] = {
     EVENT_OBJ_GFX_BIG_WAILMER_DOLL
-};
-
-const u16 DecorGfx_REGIROCK_DOLL[] = {
-    EVENT_OBJ_GFX_BIG_REGIROCK_DOLL
-};
-
-const u16 DecorGfx_REGICE_DOLL[] = {
-    EVENT_OBJ_GFX_BIG_REGICE_DOLL
-};
-
-const u16 DecorGfx_REGISTEEL_DOLL[] = {
-    EVENT_OBJ_GFX_BIG_REGISTEEL_DOLL
 };

@@ -550,7 +550,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x66,
         .y_offset = 0x09,
     },
-    [SPECIES_EMOLGA] =
+    [SPECIES_BONDED_BEARTIC] =
     {
         .size = 0x77,
         .y_offset = 0x06,
@@ -610,7 +610,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x85,
         .y_offset = 0x0e,
     },
-    [SPECIES_PACHIRISU] =
+    [SPECIES_BONDED_FLYGON] =
     {
         .size = 0x85,
         .y_offset = 0x0d,
@@ -720,17 +720,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x86,
         .y_offset = 0x0b,
     },
-    [SPECIES_ARTICUNO] =
+    [SPECIES_BONDED_GROUDON] =
     {
         .size = 0x65,
         .y_offset = 0x0c,
     },
-    [SPECIES_ZAPDOS] =
+    [SPECIES_BONDED_KYOGRE] =
     {
         .size = 0x76,
         .y_offset = 0x0b,
     },
-    [SPECIES_MOLTRES] =
+    [SPECIES_BONDED_RAYQUAZA] =
     {
         .size = 0x87,
         .y_offset = 0x04,
@@ -965,7 +965,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x66,
         .y_offset = 0x08,
     },
-    [SPECIES_YANMA] =
+    [SPECIES_BONDED_RAICHU] =
     {
         .size = 0x77,
         .y_offset = 0x04,
@@ -1035,7 +1035,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x85,
         .y_offset = 0x0f,
     },
-    [SPECIES_GLIGAR] =
+    [SPECIES_WEAVILE] =
     {
         .size = 0x87,
         .y_offset = 0x05,
@@ -1925,7 +1925,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x87,
         .y_offset = 0x07,
     },
-    [SPECIES_CASTFORM] =
+    [SPECIES_ALOLAN_MAROWAK] =
     {
         .size = 0x45,
         .y_offset = 0x0d,
@@ -2005,17 +2005,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x83,
         .y_offset = 0x14,
     },
-    [SPECIES_REGIROCK] =
+    [SPECIES_ROCKRUFF] =
     {
         .size = 0x86,
         .y_offset = 0x0a,
     },
-    [SPECIES_REGICE] =
+    [SPECIES_LYCANROC] =
     {
         .size = 0x85,
         .y_offset = 0x0e,
     },
-    [SPECIES_REGISTEEL] =
+    [SPECIES_BONDED_AERODACTYL] =
     {
         .size = 0x85,
         .y_offset = 0x0e,
@@ -2040,17 +2040,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x88,
         .y_offset = 0x02,
     },
-    [SPECIES_LATIOS] =
+    [SPECIES_KYUREM_BLACK] =
     {
         .size = 0x88,
         .y_offset = 0x03,
     },
-    [SPECIES_JIRACHI] =
+    [SPECIES_BONDED_AGGRON] =
     {
         .size = 0x87,
         .y_offset = 0x05,
     },
-    [SPECIES_DEOXYS] =
+    [SPECIES_BONDED_ALAKAZAM] =
     {
         .size = 0x86,
         .y_offset = 0x09,

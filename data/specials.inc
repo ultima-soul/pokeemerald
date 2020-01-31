@@ -291,7 +291,7 @@ gSpecials:: @ 81DBA64
 	def_special GetPokeblockNameByMonNature
 	def_special GetSecretBaseNearbyMapName
 	def_special CheckRelicanthWailord
-	def_special ShouldDoBrailleRegirockEffectOld
+	def_special ShouldDoBrailleRockruffEffectOld
 	def_special DoOrbEffect
 	def_special FadeOutOrbEffect
 	def_special WaitWeather
@@ -488,8 +488,8 @@ gSpecials:: @ 81DBA64
 	def_special ChooseMonForMoveTutor
 	def_special GetBattleFrontierTutorMoveIndex
 	def_special sub_813AF48
-	def_special DoDeoxysRockInteraction
-	def_special SetDeoxysRockPalette
+	def_special DoBonded_AlakazamRockInteraction
+	def_special SetBonded_AlakazamRockPalette
 	def_special CreateObedientEnemyMon
 	def_special StartMirageTowerDisintegration
 	def_special StartMirageTowerShake
@@ -506,7 +506,7 @@ gSpecials:: @ 81DBA64
 	def_special Unused_SetWeatherSunny
 	def_special sub_81AFDA0
 	def_special IsTrainerRegistered
-	def_special ShouldDoBrailleRegicePuzzle
+	def_special ShouldDoBrailleLycanrocPuzzle
 	def_special EnableNationalPokedex
 	def_special ScriptMenu_CreateLilycoveSSTidalMultichoice
 	def_special GetLilycoveSSTidalSelection

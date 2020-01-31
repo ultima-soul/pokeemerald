@@ -3529,7 +3529,7 @@ u8 CheckForBigMovieOrEmergencyNewsOnTV(void)
             return 0;
         }
     }
-    if (FlagGet(FLAG_SYS_TV_KYUREM_WHITE_LATIOS) == TRUE)
+    if (FlagGet(FLAG_SYS_TV_KYUREM_WHITE_KYUREM_BLACK) == TRUE)
     {
         return 1;
     }

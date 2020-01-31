@@ -190,7 +190,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(HITMONCHAN),
     SPECIES_TO_HOENN(BUNNELBY),
     SPECIES_TO_HOENN(DIGGERSBY),
-    SPECIES_TO_HOENN(EMOLGA),
+    SPECIES_TO_HOENN(BONDED_BEARTIC),
     SPECIES_TO_HOENN(RHYHORN),
     SPECIES_TO_HOENN(RHYDON),
     SPECIES_TO_HOENN(CHANSEY),
@@ -202,7 +202,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(EXCADRILL),
     SPECIES_TO_HOENN(STARYU),
     SPECIES_TO_HOENN(STARMIE),
-    SPECIES_TO_HOENN(PACHIRISU),
+    SPECIES_TO_HOENN(BONDED_FLYGON),
     SPECIES_TO_HOENN(SCYTHER),
     SPECIES_TO_HOENN(LARVESTA),
     SPECIES_TO_HOENN(VOLCARONA),
@@ -224,9 +224,9 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(DRAGALGE),
     SPECIES_TO_HOENN(AERODACTYL),
     SPECIES_TO_HOENN(SNORLAX),
-    SPECIES_TO_HOENN(ARTICUNO),
-    SPECIES_TO_HOENN(ZAPDOS),
-    SPECIES_TO_HOENN(MOLTRES),
+    SPECIES_TO_HOENN(BONDED_KYOGRE),
+    SPECIES_TO_HOENN(BONDED_GROUDON),
+    SPECIES_TO_HOENN(BONDED_RAYQUAZA),
     SPECIES_TO_HOENN(GOOMY),
     SPECIES_TO_HOENN(SLIGGOO),
     SPECIES_TO_HOENN(GOODRA),
@@ -273,7 +273,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(AEGISLASH),
     SPECIES_TO_HOENN(SCIMITEYE),
     SPECIES_TO_HOENN(JAWGUILE),
-    SPECIES_TO_HOENN(YANMA),
+    SPECIES_TO_HOENN(BONDED_RAICHU),
     SPECIES_TO_HOENN(WOOPER),
     SPECIES_TO_HOENN(QUAGSIRE),
     SPECIES_TO_HOENN(ESPEON),
@@ -287,7 +287,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(JOLTIK),
     SPECIES_TO_HOENN(GALVANTULA),
     SPECIES_TO_HOENN(AUDINO),
-    SPECIES_TO_HOENN(GLIGAR),
+    SPECIES_TO_HOENN(WEAVILE),
     SPECIES_TO_HOENN(STEELIX),
     SPECIES_TO_HOENN(POPPLIO),
     SPECIES_TO_HOENN(BRIONNE),
@@ -465,7 +465,7 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(ARON),
     SPECIES_TO_HOENN(LAIRON),
     SPECIES_TO_HOENN(AGGRON),
-    SPECIES_TO_HOENN(CASTFORM),
+    SPECIES_TO_HOENN(ALOLAN_MAROWAK),
     SPECIES_TO_HOENN(RHYPERIOR),
     SPECIES_TO_HOENN(GALLADE),
     SPECIES_TO_HOENN(LILEEP),
@@ -481,16 +481,16 @@ const u16 gSpeciesToHoennPokedexNum[] = // Assigns all species to the Hoenn Dex 
     SPECIES_TO_HOENN(BELDUM),
     SPECIES_TO_HOENN(METANG),
     SPECIES_TO_HOENN(METAGROSS),
-    SPECIES_TO_HOENN(REGIROCK),
-    SPECIES_TO_HOENN(REGICE),
-    SPECIES_TO_HOENN(REGISTEEL),
+    SPECIES_TO_HOENN(ROCKRUFF),
+    SPECIES_TO_HOENN(LYCANROC),
+    SPECIES_TO_HOENN(BONDED_AERODACTYL),
     SPECIES_TO_HOENN(KYOGRE),
     SPECIES_TO_HOENN(GROUDON),
     SPECIES_TO_HOENN(RAYQUAZA),
     SPECIES_TO_HOENN(KYUREM_WHITE),
-    SPECIES_TO_HOENN(LATIOS),
-    SPECIES_TO_HOENN(JIRACHI),
-    SPECIES_TO_HOENN(DEOXYS),
+    SPECIES_TO_HOENN(KYUREM_BLACK),
+    SPECIES_TO_HOENN(BONDED_AGGRON),
+    SPECIES_TO_HOENN(BONDED_ALAKAZAM),
     SPECIES_TO_HOENN(ARCEUS),
 };
 
@@ -605,7 +605,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(HITMONCHAN),
     SPECIES_TO_NATIONAL(BUNNELBY),
     SPECIES_TO_NATIONAL(DIGGERSBY),
-    SPECIES_TO_NATIONAL(EMOLGA),
+    SPECIES_TO_NATIONAL(BONDED_BEARTIC),
     SPECIES_TO_NATIONAL(RHYHORN),
     SPECIES_TO_NATIONAL(RHYDON),
     SPECIES_TO_NATIONAL(CHANSEY),
@@ -617,7 +617,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(EXCADRILL),
     SPECIES_TO_NATIONAL(STARYU),
     SPECIES_TO_NATIONAL(STARMIE),
-    SPECIES_TO_NATIONAL(PACHIRISU),
+    SPECIES_TO_NATIONAL(BONDED_FLYGON),
     SPECIES_TO_NATIONAL(SCYTHER),
     SPECIES_TO_NATIONAL(LARVESTA),
     SPECIES_TO_NATIONAL(VOLCARONA),
@@ -639,9 +639,9 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(DRAGALGE),
     SPECIES_TO_NATIONAL(AERODACTYL),
     SPECIES_TO_NATIONAL(SNORLAX),
-    SPECIES_TO_NATIONAL(ARTICUNO),
-    SPECIES_TO_NATIONAL(ZAPDOS),
-    SPECIES_TO_NATIONAL(MOLTRES),
+    SPECIES_TO_NATIONAL(BONDED_KYOGRE),
+    SPECIES_TO_NATIONAL(BONDED_GROUDON),
+    SPECIES_TO_NATIONAL(BONDED_RAYQUAZA),
     SPECIES_TO_NATIONAL(GOOMY),
     SPECIES_TO_NATIONAL(SLIGGOO),
     SPECIES_TO_NATIONAL(GOODRA),
@@ -688,7 +688,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(AEGISLASH),
     SPECIES_TO_NATIONAL(SCIMITEYE),
     SPECIES_TO_NATIONAL(JAWGUILE),
-    SPECIES_TO_NATIONAL(YANMA),
+    SPECIES_TO_NATIONAL(BONDED_RAICHU),
     SPECIES_TO_NATIONAL(WOOPER),
     SPECIES_TO_NATIONAL(QUAGSIRE),
     SPECIES_TO_NATIONAL(ESPEON),
@@ -702,7 +702,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(JOLTIK),
     SPECIES_TO_NATIONAL(GALVANTULA),
     SPECIES_TO_NATIONAL(AUDINO),
-    SPECIES_TO_NATIONAL(GLIGAR),
+    SPECIES_TO_NATIONAL(WEAVILE),
     SPECIES_TO_NATIONAL(STEELIX),
     SPECIES_TO_NATIONAL(POPPLIO),
     SPECIES_TO_NATIONAL(BRIONNE),
@@ -880,7 +880,7 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(ARON),
     SPECIES_TO_NATIONAL(LAIRON),
     SPECIES_TO_NATIONAL(AGGRON),
-    SPECIES_TO_NATIONAL(CASTFORM),
+    SPECIES_TO_NATIONAL(ALOLAN_MAROWAK),
     SPECIES_TO_NATIONAL(RHYPERIOR),
     SPECIES_TO_NATIONAL(GALLADE),
     SPECIES_TO_NATIONAL(LILEEP),
@@ -896,16 +896,16 @@ const u16 gSpeciesToNationalPokedexNum[] = // Assigns all species to the Nationa
     SPECIES_TO_NATIONAL(BELDUM),
     SPECIES_TO_NATIONAL(METANG),
     SPECIES_TO_NATIONAL(METAGROSS),
-    SPECIES_TO_NATIONAL(REGIROCK),
-    SPECIES_TO_NATIONAL(REGICE),
-    SPECIES_TO_NATIONAL(REGISTEEL),
+    SPECIES_TO_NATIONAL(ROCKRUFF),
+    SPECIES_TO_NATIONAL(LYCANROC),
+    SPECIES_TO_NATIONAL(BONDED_AERODACTYL),
     SPECIES_TO_NATIONAL(KYOGRE),
     SPECIES_TO_NATIONAL(GROUDON),
     SPECIES_TO_NATIONAL(RAYQUAZA),
     SPECIES_TO_NATIONAL(KYUREM_WHITE),
-    SPECIES_TO_NATIONAL(LATIOS),
-    SPECIES_TO_NATIONAL(JIRACHI),
-    SPECIES_TO_NATIONAL(DEOXYS),
+    SPECIES_TO_NATIONAL(KYUREM_BLACK),
+    SPECIES_TO_NATIONAL(BONDED_AGGRON),
+    SPECIES_TO_NATIONAL(BONDED_ALAKAZAM),
     SPECIES_TO_NATIONAL(ARCEUS),
 };
 
@@ -1019,7 +1019,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(MUDBRAY),
     HOENN_TO_NATIONAL(MUDSDALE),
     HOENN_TO_NATIONAL(DIGGERSBY),
-    HOENN_TO_NATIONAL(EMOLGA),
+    HOENN_TO_NATIONAL(BONDED_BEARTIC),
     HOENN_TO_NATIONAL(SPOINK),
     HOENN_TO_NATIONAL(GRUMPIG),
     HOENN_TO_NATIONAL(SANDSHREW),
@@ -1052,7 +1052,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(FROGADIER),
     HOENN_TO_NATIONAL(FEEBAS),
     HOENN_TO_NATIONAL(MILOTIC),
-    HOENN_TO_NATIONAL(CASTFORM),
+    HOENN_TO_NATIONAL(ALOLAN_MAROWAK),
     HOENN_TO_NATIONAL(STARYU),
     HOENN_TO_NATIONAL(STARMIE),
     HOENN_TO_NATIONAL(ROGGENROLA),
@@ -1103,16 +1103,16 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(BELDUM),
     HOENN_TO_NATIONAL(METANG),
     HOENN_TO_NATIONAL(METAGROSS),
-    HOENN_TO_NATIONAL(REGIROCK),
-    HOENN_TO_NATIONAL(REGICE),
-    HOENN_TO_NATIONAL(REGISTEEL),
+    HOENN_TO_NATIONAL(ROCKRUFF),
+    HOENN_TO_NATIONAL(LYCANROC),
+    HOENN_TO_NATIONAL(BONDED_AERODACTYL),
     HOENN_TO_NATIONAL(KYUREM_WHITE),
-    HOENN_TO_NATIONAL(LATIOS),
+    HOENN_TO_NATIONAL(KYUREM_BLACK),
     HOENN_TO_NATIONAL(KYOGRE),
     HOENN_TO_NATIONAL(GROUDON),
     HOENN_TO_NATIONAL(RAYQUAZA),
-    HOENN_TO_NATIONAL(JIRACHI),
-    HOENN_TO_NATIONAL(DEOXYS),
+    HOENN_TO_NATIONAL(BONDED_AGGRON),
+    HOENN_TO_NATIONAL(BONDED_ALAKAZAM),
     HOENN_TO_NATIONAL(BULBASAUR), // Pokémon from here onwards are UNSEEN in the HoennDex.
     HOENN_TO_NATIONAL(IVYSAUR),
     HOENN_TO_NATIONAL(VENUSAUR),
@@ -1190,7 +1190,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(CHANSEY),
     HOENN_TO_NATIONAL(TANGELA),
     HOENN_TO_NATIONAL(TANGROWTH),
-    HOENN_TO_NATIONAL(PACHIRISU),
+    HOENN_TO_NATIONAL(BONDED_FLYGON),
     HOENN_TO_NATIONAL(SCYTHER),
     HOENN_TO_NATIONAL(LARVESTA),
     HOENN_TO_NATIONAL(VOLCARONA),
@@ -1209,9 +1209,9 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(DRAGALGE),
     HOENN_TO_NATIONAL(AERODACTYL),
     HOENN_TO_NATIONAL(SNORLAX),
-    HOENN_TO_NATIONAL(ARTICUNO),
-    HOENN_TO_NATIONAL(ZAPDOS),
-    HOENN_TO_NATIONAL(MOLTRES),
+    HOENN_TO_NATIONAL(BONDED_KYOGRE),
+    HOENN_TO_NATIONAL(BONDED_GROUDON),
+    HOENN_TO_NATIONAL(BONDED_RAYQUAZA),
     HOENN_TO_NATIONAL(GOOMY),
     HOENN_TO_NATIONAL(SLIGGOO),
     HOENN_TO_NATIONAL(GOODRA),
@@ -1248,7 +1248,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(AEGISLASH),
     HOENN_TO_NATIONAL(SCIMITEYE),
     HOENN_TO_NATIONAL(JAWGUILE),
-    HOENN_TO_NATIONAL(YANMA),
+    HOENN_TO_NATIONAL(BONDED_RAICHU),
     HOENN_TO_NATIONAL(WOOPER),
     HOENN_TO_NATIONAL(QUAGSIRE),
     HOENN_TO_NATIONAL(ESPEON),
@@ -1260,7 +1260,7 @@ const u16 gHoennToNationalOrder[] = // Assigns Hoenn Dex Pokémon (Using Nationa
     HOENN_TO_NATIONAL(JOLTIK),
     HOENN_TO_NATIONAL(GALVANTULA),
     HOENN_TO_NATIONAL(AUDINO),
-    HOENN_TO_NATIONAL(GLIGAR),
+    HOENN_TO_NATIONAL(WEAVILE),
     HOENN_TO_NATIONAL(STEELIX),
     HOENN_TO_NATIONAL(POPPLIO),
     HOENN_TO_NATIONAL(BRIONNE),
@@ -1486,7 +1486,7 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_HITMONCHAN - 1] = 0x09,
     [SPECIES_BUNNELBY - 1] = 0x45,
     [SPECIES_DIGGERSBY - 1] = 0x13,
-    [SPECIES_EMOLGA - 1] = 0x04,
+    [SPECIES_BONDED_BEARTIC - 1] = 0x04,
     [SPECIES_RHYHORN - 1] = 0x10,
     [SPECIES_RHYDON - 1] = 0x13,
     [SPECIES_CHANSEY - 1] = 0x45,
@@ -1498,7 +1498,7 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_EXCADRILL - 1] = 0x1c,
     [SPECIES_STARYU - 1] = 0x4e,
     [SPECIES_STARMIE - 1] = 0x12,
-    [SPECIES_PACHIRISU - 1] = 0x46,
+    [SPECIES_BONDED_FLYGON - 1] = 0x46,
     [SPECIES_SCYTHER - 1] = 0x02,
     [SPECIES_LARVESTA - 1] = 0x17,
     [SPECIES_VOLCARONA - 1] = 0x2c,
@@ -1520,9 +1520,9 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_DRAGALGE - 1] = 0x0f,
     [SPECIES_AERODACTYL - 1] = 0x47,
     [SPECIES_SNORLAX - 1] = 0x0b,
-    [SPECIES_ARTICUNO - 1] = 0x09,
-    [SPECIES_ZAPDOS - 1] = 0x2c,
-    [SPECIES_MOLTRES - 1] = 0x45,
+    [SPECIES_BONDED_KYOGRE - 1] = 0x09,
+    [SPECIES_BONDED_GROUDON - 1] = 0x2c,
+    [SPECIES_BONDED_RAYQUAZA - 1] = 0x45,
     [SPECIES_GOOMY - 1] = 0x00,
     [SPECIES_SLIGGOO - 1] = 0x10,
     [SPECIES_GOODRA - 1] = 0x47,
@@ -1569,7 +1569,7 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_AEGISLASH - 1] = 0x32,
     [SPECIES_SCIMITEYE - 1] = 0x52,
     [SPECIES_JAWGUILE - 1] = 0x00,
-    [SPECIES_YANMA - 1] = 0x2b,
+    [SPECIES_BONDED_RAICHU - 1] = 0x2b,
     [SPECIES_WOOPER - 1] = 0x00,
     [SPECIES_QUAGSIRE - 1] = 0x16,
     [SPECIES_ESPEON - 1] = 0x09,
@@ -1583,7 +1583,7 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_JOLTIK - 1] = 0x0b,
     [SPECIES_GALVANTULA - 1] = 0x10,
     [SPECIES_AUDINO - 1] = 0x00,
-    [SPECIES_GLIGAR - 1] = 0x13,
+    [SPECIES_WEAVILE - 1] = 0x13,
     [SPECIES_STEELIX - 1] = 0x0f,
     [SPECIES_POPPLIO - 1] = 0x17,
     [SPECIES_BRIONNE - 1] = 0x10,
@@ -1761,7 +1761,7 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_ARON - 1] = 0x45,
     [SPECIES_LAIRON - 1] = 0x00,
     [SPECIES_AGGRON - 1] = 0x19,
-    [SPECIES_CASTFORM - 1] = 0x1d,
+    [SPECIES_ALOLAN_MAROWAK - 1] = 0x1d,
     [SPECIES_RHYPERIOR - 1] = 0x00,
     [SPECIES_GALLADE - 1] = 0x05,
     [SPECIES_LILEEP - 1] = 0x17,
@@ -1777,16 +1777,16 @@ static const u8 sMonFrontAnimIdsTable[] =
     [SPECIES_BELDUM - 1] = 0x0f,
     [SPECIES_METANG - 1] = 0x04,
     [SPECIES_METAGROSS - 1] = 0x10,
-    [SPECIES_REGIROCK - 1] = 0x01,
-    [SPECIES_REGICE - 1] = 0x44,
-    [SPECIES_REGISTEEL - 1] = 0x09,
+    [SPECIES_ROCKRUFF - 1] = 0x01,
+    [SPECIES_LYCANROC - 1] = 0x44,
+    [SPECIES_BONDED_AERODACTYL - 1] = 0x09,
     [SPECIES_KYOGRE - 1] = 0x2d,
     [SPECIES_GROUDON - 1] = 0x10,
     [SPECIES_RAYQUAZA - 1] = 0x0f,
     [SPECIES_KYUREM_WHITE - 1] = 0x2d,
-    [SPECIES_LATIOS - 1] = 0x10,
-    [SPECIES_JIRACHI - 1] = 0x0d,
-    [SPECIES_DEOXYS - 1] = 0x1b,
+    [SPECIES_KYUREM_BLACK - 1] = 0x10,
+    [SPECIES_BONDED_AGGRON - 1] = 0x0d,
+    [SPECIES_BONDED_ALAKAZAM - 1] = 0x1b,
     [SPECIES_ARCEUS - 1] = 0x1d,
 };
 
@@ -1870,7 +1870,7 @@ const u8 gStatStageRatios[][2] =
     {40, 10}, // +6
 };
 
-static const u8 sDeoxysBaseStats[] =
+static const u8 sBonded_AlakazamBaseStats[] =
 {
     50, // Hp
     95, // Attack
@@ -2629,24 +2629,24 @@ bool8 sub_80688F8(u8 caseId, u8 battlerId)
     return TRUE;
 }
 
-static u16 GetDeoxysStat(struct Pokemon *mon, s32 statId)
+static u16 GetBonded_AlakazamStat(struct Pokemon *mon, s32 statId)
 {
     s32 ivVal, evVal;
     u16 statValue = 0;
     u8 nature;
 
-    if (gBattleTypeFlags & BATTLE_TYPE_20 || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+    if (gBattleTypeFlags & BATTLE_TYPE_20 || GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_BONDED_ALAKAZAM)
         return 0;
 
     ivVal = GetMonData(mon, MON_DATA_HP_IV + statId, NULL);
     evVal = GetMonData(mon, MON_DATA_HP_EV + statId, NULL);
-    statValue = ((sDeoxysBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
+    statValue = ((sBonded_AlakazamBaseStats[statId] * 2 + ivVal + evVal / 4) * mon->level) / 100 + 5;
     nature = GetNature(mon);
     statValue = ModifyStatByNature(nature, statValue, (u8)statId);
     return statValue;
 }
 
-void SetDeoxysStats(void)
+void SetBonded_AlakazamStats(void)
 {
     s32 i, value;
 
@@ -2654,7 +2654,7 @@ void SetDeoxysStats(void)
     {
         struct Pokemon *mon = &gPlayerParty[i];
 
-        if (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_DEOXYS)
+        if (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_BONDED_ALAKAZAM)
             continue;
 
         value = GetMonData(mon, MON_DATA_ATK, NULL);
@@ -3295,27 +3295,27 @@ u32 GetMonData(struct Pokemon *mon, s32 field, u8* data)
         ret = mon->maxHP;
         break;
     case MON_DATA_ATK:
-        ret = GetDeoxysStat(mon, STAT_ATK);
+        ret = GetBonded_AlakazamStat(mon, STAT_ATK);
         if (!ret)
             ret = mon->attack;
         break;
     case MON_DATA_DEF:
-        ret = GetDeoxysStat(mon, STAT_DEF);
+        ret = GetBonded_AlakazamStat(mon, STAT_DEF);
         if (!ret)
             ret = mon->defense;
         break;
     case MON_DATA_SPEED:
-        ret = GetDeoxysStat(mon, STAT_SPEED);
+        ret = GetBonded_AlakazamStat(mon, STAT_SPEED);
         if (!ret)
             ret = mon->speed;
         break;
     case MON_DATA_SPATK:
-        ret = GetDeoxysStat(mon, STAT_SPATK);
+        ret = GetBonded_AlakazamStat(mon, STAT_SPATK);
         if (!ret)
             ret = mon->spAttack;
         break;
     case MON_DATA_SPDEF:
-        ret = GetDeoxysStat(mon, STAT_SPDEF);
+        ret = GetBonded_AlakazamStat(mon, STAT_SPDEF);
         if (!ret)
             ret = mon->spDefense;
         break;
@@ -6487,8 +6487,8 @@ const u8 *GetTrainerNameFromId(u16 trainerId)
 
 bool8 HasTwoFramesAnimation(u16 species)
 {
-    return (species != SPECIES_CASTFORM
-            && species != SPECIES_DEOXYS
+    return (species != SPECIES_ALOLAN_MAROWAK
+            && species != SPECIES_BONDED_ALAKAZAM
             && species != SPECIES_PALKIA
             && species != SPECIES_FLABEBE);
 }

@@ -44,9 +44,9 @@ enum // TRANSITION_MUGSHOT
 // added in Emerald
 #define B_TRANSITION_AQUA                   17
 #define B_TRANSITION_MAGMA                  18
-#define B_TRANSITION_REGICE                 19
-#define B_TRANSITION_REGISTEEL              20
-#define B_TRANSITION_REGIROCK               21
+#define B_TRANSITION_LYCANROC                 19
+#define B_TRANSITION_BONDED_AERODACTYL              20
+#define B_TRANSITION_ROCKRUFF               21
 #define B_TRANSITION_KYOGRE                 22
 #define B_TRANSITION_GROUDON                23
 #define B_TRANSITION_RAYQUAZA               24

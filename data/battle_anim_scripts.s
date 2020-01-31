@@ -655,7 +655,6 @@ gBattleAnims_StatusConditions::
 	
 	.align 2
 gBattleAnims_General::
-	.4byte General_CastformChange
 	.4byte General_StatsChange
 	.4byte General_SubstituteFade
 	.4byte General_SubstituteAppear
@@ -14404,22 +14403,6 @@ Status_Nightmare:
 	end
 	
 Status_Powder:
-	end
-
-General_CastformChange:
-	createvisualtask AnimTask_IsMonInvisible, 2
-	jumpreteq 1, AnimScript_82D7ECA
-	goto AnimScript_82D7EB2
-AnimScript_82D7EB2:
-	monbg ANIM_ATTACKER
-	playsewithpan SE_W100, SOUND_PAN_ATTACKER
-	waitplaysewithpan SE_W107, SOUND_PAN_ATTACKER, 48
-	createvisualtask AnimTask_TransformMon, 2, 1, 0
-	waitforvisualfinish
-	clearmonbg ANIM_ATTACKER
-	end
-AnimScript_82D7ECA:
-	createvisualtask AnimTask_CastformGfxChange, 2, 1
 	end
 
 General_StatsChange:

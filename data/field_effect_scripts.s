@@ -71,7 +71,7 @@ gFieldEffectScriptPointers:: @ 82DB9D4
 	.4byte gFieldEffectScript_UseTeleport
 	.4byte gFieldEffectScript_Rayquaza
 	.4byte gFieldEffectScript_Unknown65
-	.4byte gFieldEffectScript_MoveDeoxysRock
+	.4byte gFieldEffectScript_MoveBonded_AlakazamRock
 
 gFieldEffectScript_ExclamationMarkIcon1:: @ 82DBAE0
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -340,6 +340,6 @@ gFieldEffectScript_Unknown65:: @ 82DBCF9
 	field_eff_callnative sub_80B9ADC
 	field_eff_end
 
-gFieldEffectScript_MoveDeoxysRock:: @ 82DBCFF
-	field_eff_callnative Fldeff_MoveDeoxysRock
+gFieldEffectScript_MoveBonded_AlakazamRock:: @ 82DBCFF
+	field_eff_callnative Fldeff_MoveBonded_AlakazamRock
 	field_eff_end

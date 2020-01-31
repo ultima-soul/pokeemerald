@@ -896,7 +896,7 @@ static void CB2_HandleStartBattle(void)
             gTasks[taskId].data[4] = gBlockRecvBuffer[enemyMultiplayerId][1];
             sub_8185F90(gBlockRecvBuffer[playerMultiplayerId][1]);
             sub_8185F90(gBlockRecvBuffer[enemyMultiplayerId][1]);
-            SetDeoxysStats();
+            SetBonded_AlakazamStats();
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -1475,7 +1475,7 @@ static void CB2_HandleStartMultiBattle(void)
             ResetBlockReceivedFlags();
             sub_8036EB8(4, playerMultiplayerId);
             SetAllPlayersBerryData();
-            SetDeoxysStats();
+            SetBonded_AlakazamStats();
             var = CreateTask(InitLinkBattleVsScreen, 0);
             gTasks[var].data[1] = 0x10E;
             gTasks[var].data[2] = 0x5A;
@@ -2584,7 +2584,6 @@ static void sub_80398D0(struct Sprite *sprite)
 }
 
 extern const struct MonCoords gMonFrontPicCoords[];
-extern const struct MonCoords gCastformFrontSpriteCoords[];
 
 void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
 {

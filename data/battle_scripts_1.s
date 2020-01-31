@@ -6288,14 +6288,9 @@ BattleScript_ShedSkinActivates::
 BattleScript_WeatherFormChanges::
 	setbyte sBATTLER, 0x0
 BattleScript_WeatherFormChangesLoop::
-	trycastformdatachange
 	addbyte sBATTLER, 0x1
 	jumpifbytenotequal sBATTLER, gBattlersCount, BattleScript_WeatherFormChangesLoop
 	return
-
-BattleScript_CastformChange::
-	call BattleScript_82DB4AF
-	end3
 
 BattleScript_82DB4AF::
 	copybyte gBattlerAbility, sBATTLER

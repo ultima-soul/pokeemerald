@@ -262,7 +262,7 @@
 #define SE_RG_HELP_OP 257       // Help Menu Open
 #define SE_RG_HELP_CL 258       // Help Menu Close
 #define SE_RG_HELP_NG 259       // Help Menu Error
-#define SE_RG_DEOMOV 260        // Deoxys Moves
+#define SE_RG_DEOMOV 260        // Bonded_Alakazam Moves
 #define SE_RG_EXCELLENT 261
 #define SE_RG_NAWAMISS 262
 // end FRLG SFX
@@ -476,11 +476,11 @@
 #define MUS_RG_NANA45 548       // Sevii Islands 4-5 (Azalea Town)
 #define MUS_RG_NANA67 549       // Sevii Islands 6-7 (Violet City)
 #define MUS_RG_POKEFUE 550      // Poké Flute
-#define MUS_RG_VS_DEO 551       // Battle! Deoxys
+#define MUS_RG_VS_DEO 551       // Battle! Bonded_Alakazam
 #define MUS_RG_VS_MYU2 552      // Battle! Mewtwo
 #define MUS_RG_VS_DEN 553       // Battle! Legendary Birds
 #define MUS_RG_EXEYE 554        // Encounter! Gym Leader
-#define MUS_RG_DEOEYE 555       // Encounter! Deoxys
+#define MUS_RG_DEOEYE 555       // Encounter! Bonded_Alakazam
 #define MUS_RG_T_TOWER 556      // Trainer Tower (Gym)
 #define MUS_RG_SLOWMASARA 557   // Pallet Town (Hall of Fame remix)
 #define MUS_RG_TVNOIZE 558      // Teachy TV

@@ -18,13 +18,13 @@
 // why do this, GF?
 enum
 {
-    REGIROCK_PUZZLE,
-    REGISTEEL_PUZZLE
+    ROCKRUFF_PUZZLE,
+    BONDED_AERODACTYL_PUZZLE
 };
 
 EWRAM_DATA static u8 sBraillePuzzleCallbackFlag = 0;
 
-static const u8 gRegicePathCoords[][2] =
+static const u8 gLycanrocPathCoords[][2] =
 {
     {4,  21},
     {5,  21},
@@ -65,8 +65,8 @@ static const u8 gRegicePathCoords[][2] =
 };
 
 void SealedChamberShakingEffect(u8);
-void DoBrailleRegirockEffect(void);
-void DoBrailleRegisteelEffect(void);
+void DoBrailleRockruffEffect(void);
+void DoBrailleBonded_AerodactylEffect(void);
 
 bool8 ShouldDoBrailleDigEffect(void)
 {
@@ -115,10 +115,10 @@ bool8 CheckRelicanthWailord(void)
 
 // THEORY: this was caused by block commenting out all of the older R/S braille functions but leaving the call to it itself, which creates the nullsub.
 // the code is shown below to show what this might look like.
-void ShouldDoBrailleRegirockEffectOld(void)
+void ShouldDoBrailleRockruffEffectOld(void)
 {
     /*
-        if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED) && (gSaveBlock1.location.mapGroup == MAP_GROUP_DESERT_RUINS && gSaveBlock1.location.mapNum == MAP_ID_DESERT_RUINS))
+        if (!FlagGet(FLAG_SYS_ROCKRUFF_PUZZLE_COMPLETED) && (gSaveBlock1.location.mapGroup == MAP_GROUP_DESERT_RUINS && gSaveBlock1.location.mapNum == MAP_ID_DESERT_RUINS))
     {
         if (gSaveBlock1.pos.x == 10 && gSaveBlock1.pos.y == 23)
             return TRUE;
@@ -131,7 +131,7 @@ void ShouldDoBrailleRegirockEffectOld(void)
     return FALSE;
 }
 
-void DoBrailleRegirockEffect(void)
+void DoBrailleRockruffEffect(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_STRENGTH);
     MapGridSetMetatileIdAt(14, 26, 554);
@@ -142,13 +142,13 @@ void DoBrailleRegirockEffect(void)
     MapGridSetMetatileIdAt(16, 27, 3636);
     DrawWholeMapView();
     PlaySE(SE_BAN);
-    FlagSet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED);
+    FlagSet(FLAG_SYS_ROCKRUFF_PUZZLE_COMPLETED);
     ScriptContext2_Disable();
 }
 
-bool8 ShouldDoBrailleRegisteelEffect(void)
+bool8 ShouldDoBrailleBonded_AerodactylEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1.location.mapGroup == MAP_GROUP_ANCIENT_TOMB && gSaveBlock1.location.mapNum == MAP_ID_ANCIENT_TOMB))
+    if (!FlagGet(FLAG_SYS_BONDED_AERODACTYL_PUZZLE_COMPLETED) && (gSaveBlock1.location.mapGroup == MAP_GROUP_ANCIENT_TOMB && gSaveBlock1.location.mapNum == MAP_ID_ANCIENT_TOMB))
     {
         if (gSaveBlock1.pos.x == 8 && gSaveBlock1.pos.y == 25)
             return TRUE;
@@ -157,7 +157,7 @@ bool8 ShouldDoBrailleRegisteelEffect(void)
     return FALSE;
 }
 
-void DoBrailleRegisteelEffect(void)
+void DoBrailleBonded_AerodactylEffect(void)
 {
     gFieldEffectArguments[0] = gLastFieldPokeMenuOpened;
     FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
@@ -167,12 +167,12 @@ bool8 FldEff_UseFlyAncientTomb(void)
 {
     u8 taskId = oei_task_add();
 
-    gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
-    gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+    gTasks[taskId].data[8] = (u32)UseBonded_AerodactylHm_Callback >> 16;
+    gTasks[taskId].data[9] = (u32)UseBonded_AerodactylHm_Callback;
     return FALSE;
 }
 
-void UseRegisteelHm_Callback(void)
+void UseBonded_AerodactylHm_Callback(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
     UseFlyAncientTomb_Finish();
@@ -188,7 +188,7 @@ void UseFlyAncientTomb_Finish(void)
     MapGridSetMetatileIdAt(16, 27, 3636);
     DrawWholeMapView();
     PlaySE(SE_BAN);
-    FlagSet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED);
+    FlagSet(FLAG_SYS_BONDED_AERODACTYL_PUZZLE_COMPLETED);
     ScriptContext2_Disable();
 }
     */
@@ -240,25 +240,25 @@ void SealedChamberShakingEffect(u8 taskId)
 }
 
 // moved later in the function because it was rewritten.
-bool8 ShouldDoBrailleRegirockEffect(void)
+bool8 ShouldDoBrailleRockruffEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED)
+    if (!FlagGet(FLAG_SYS_ROCKRUFF_PUZZLE_COMPLETED)
         && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(DESERT_RUINS)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(DESERT_RUINS))
     {
         if (gSaveBlock1Ptr->pos.x == 6 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sBraillePuzzleCallbackFlag = REGIROCK_PUZZLE;
+            sBraillePuzzleCallbackFlag = ROCKRUFF_PUZZLE;
             return TRUE;
         }
         else if (gSaveBlock1Ptr->pos.x == 5 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sBraillePuzzleCallbackFlag = REGIROCK_PUZZLE;
+            sBraillePuzzleCallbackFlag = ROCKRUFF_PUZZLE;
             return TRUE;
         }
         else if (gSaveBlock1Ptr->pos.x == 7 && gSaveBlock1Ptr->pos.y == 23)
         {
-            sBraillePuzzleCallbackFlag = REGIROCK_PUZZLE;
+            sBraillePuzzleCallbackFlag = ROCKRUFF_PUZZLE;
             return TRUE;
         }
     }
@@ -266,19 +266,19 @@ bool8 ShouldDoBrailleRegirockEffect(void)
     return FALSE;
 }
 
-void SetUpPuzzleEffectRegirock(void)
+void SetUpPuzzleEffectRockruff(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
 }
 
-void UseRegirockHm_Callback(void)
+void UseRockruffHm_Callback(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
-    DoBrailleRegirockEffect();
+    DoBrailleRockruffEffect();
 }
 
-void DoBrailleRegirockEffect(void)
+void DoBrailleRockruffEffect(void)
 {
     MapGridSetMetatileIdAt(14, 26, METATILE_ID(Cave, SealedChamberEntrance_TopLeft));
     MapGridSetMetatileIdAt(15, 26, METATILE_ID(Cave, SealedChamberEntrance_TopMid));
@@ -288,36 +288,36 @@ void DoBrailleRegirockEffect(void)
     MapGridSetMetatileIdAt(16, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomRight) | METATILE_COLLISION_MASK);
     DrawWholeMapView();
     PlaySE(SE_BAN);
-    FlagSet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED);
+    FlagSet(FLAG_SYS_ROCKRUFF_PUZZLE_COMPLETED);
     ScriptContext2_Disable();
 }
 
-bool8 ShouldDoBrailleRegisteelEffect(void)
+bool8 ShouldDoBrailleBonded_AerodactylEffect(void)
 {
-    if (!FlagGet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ANCIENT_TOMB)))
+    if (!FlagGet(FLAG_SYS_BONDED_AERODACTYL_PUZZLE_COMPLETED) && (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ANCIENT_TOMB) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ANCIENT_TOMB)))
     {
         if (gSaveBlock1Ptr->pos.x == 8 && gSaveBlock1Ptr->pos.y == 25)
         {
-            sBraillePuzzleCallbackFlag = REGISTEEL_PUZZLE;
+            sBraillePuzzleCallbackFlag = BONDED_AERODACTYL_PUZZLE;
             return TRUE;
         }
     }
     return FALSE;
 }
 
-void SetUpPuzzleEffectRegisteel(void)
+void SetUpPuzzleEffectBonded_Aerodactyl(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     FieldEffectStart(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
 }
 
-void UseRegisteelHm_Callback(void)
+void UseBonded_AerodactylHm_Callback(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_TOMB_PUZZLE_EFFECT);
-    DoBrailleRegisteelEffect();
+    DoBrailleBonded_AerodactylEffect();
 }
 
-void DoBrailleRegisteelEffect(void)
+void DoBrailleBonded_AerodactylEffect(void)
 {
     MapGridSetMetatileIdAt(14, 26, METATILE_ID(Cave, SealedChamberEntrance_TopLeft));
     MapGridSetMetatileIdAt(15, 26, METATILE_ID(Cave, SealedChamberEntrance_TopMid));
@@ -327,7 +327,7 @@ void DoBrailleRegisteelEffect(void)
     MapGridSetMetatileIdAt(16, 27, METATILE_ID(Cave, SealedChamberEntrance_BottomRight) | METATILE_COLLISION_MASK);
     DrawWholeMapView();
     PlaySE(SE_BAN);
-    FlagSet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED);
+    FlagSet(FLAG_SYS_BONDED_AERODACTYL_PUZZLE_COMPLETED);
     ScriptContext2_Disable();
 }
 
@@ -335,7 +335,7 @@ void DoBrailleRegisteelEffect(void)
 void DoBrailleWait(void)
 {
     /*
-    if (!FlagGet(FLAG_SYS_BRAILLE_REGICE_COMPLETED))
+    if (!FlagGet(FLAG_SYS_BRAILLE_LYCANROC_COMPLETED))
         CreateTask(Task_BrailleWait, 0x50);
 }
 
@@ -386,7 +386,7 @@ void Task_BrailleWait(u8 taskId)
         break;
     case 4:
         sub_8064E2C();
-        ScriptContext1_SetupScript(S_OpenRegiceChamber);
+        ScriptContext1_SetupScript(S_OpenLycanrocChamber);
         DestroyTask(taskId);
         break;
     }
@@ -413,27 +413,27 @@ bool8 FldEff_UsePuzzleEffect(void)
 {
     u8 taskId = oei_task_add();
 
-    if (sBraillePuzzleCallbackFlag == REGISTEEL_PUZZLE)
+    if (sBraillePuzzleCallbackFlag == BONDED_AERODACTYL_PUZZLE)
     {
-        gTasks[taskId].data[8] = (u32)UseRegisteelHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegisteelHm_Callback;
+        gTasks[taskId].data[8] = (u32)UseBonded_AerodactylHm_Callback >> 16;
+        gTasks[taskId].data[9] = (u32)UseBonded_AerodactylHm_Callback;
     }
     else
     {
-        gTasks[taskId].data[8] = (u32)UseRegirockHm_Callback >> 16;
-        gTasks[taskId].data[9] = (u32)UseRegirockHm_Callback;
+        gTasks[taskId].data[8] = (u32)UseRockruffHm_Callback >> 16;
+        gTasks[taskId].data[9] = (u32)UseRockruffHm_Callback;
     }
     return FALSE;
 }
 
-bool8 ShouldDoBrailleRegicePuzzle(void)
+bool8 ShouldDoBrailleLycanrocPuzzle(void)
 {
     u8 i;
 
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ISLAND_CAVE)
         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ISLAND_CAVE))
     {
-        if (FlagGet(FLAG_SYS_BRAILLE_REGICE_COMPLETED))
+        if (FlagGet(FLAG_SYS_BRAILLE_LYCANROC_COMPLETED))
             return FALSE;
         if (FlagGet(FLAG_TEMP_2) == FALSE)
             return FALSE;
@@ -442,33 +442,33 @@ bool8 ShouldDoBrailleRegicePuzzle(void)
 
         for (i = 0; i < 36; i++)
         {
-            u8 xPos = gRegicePathCoords[i][0];
-            u8 yPos = gRegicePathCoords[i][1];
+            u8 xPos = gLycanrocPathCoords[i][0];
+            u8 yPos = gLycanrocPathCoords[i][1];
             if (gSaveBlock1Ptr->pos.x == xPos && gSaveBlock1Ptr->pos.y == yPos)
             {
                 u16 varValue;
 
                 if (i < 16)
                 {
-                    u16 val = VarGet(VAR_REGICE_STEPS_1);
+                    u16 val = VarGet(VAR_LYCANROC_STEPS_1);
                     val |= 1 << i;
-                    VarSet(VAR_REGICE_STEPS_1, val);
+                    VarSet(VAR_LYCANROC_STEPS_1, val);
                 }
                 else if (i < 32)
                 {
-                    u16 val = VarGet(VAR_REGICE_STEPS_2);
+                    u16 val = VarGet(VAR_LYCANROC_STEPS_2);
                     val |= 1 << (i - 16);
-                    VarSet(VAR_REGICE_STEPS_2, val);
+                    VarSet(VAR_LYCANROC_STEPS_2, val);
                 }
                 else
                 {
-                    u16 val = VarGet(VAR_REGICE_STEPS_3);
+                    u16 val = VarGet(VAR_LYCANROC_STEPS_3);
                     val |= 1 << (i - 32);
-                    VarSet(VAR_REGICE_STEPS_3, val);
+                    VarSet(VAR_LYCANROC_STEPS_3, val);
                 }
 
-                varValue = VarGet(VAR_REGICE_STEPS_1);
-                if (varValue != 0xFFFF || VarGet(VAR_REGICE_STEPS_2) != 0xFFFF || VarGet(VAR_REGICE_STEPS_3) != 0xF)
+                varValue = VarGet(VAR_LYCANROC_STEPS_1);
+                if (varValue != 0xFFFF || VarGet(VAR_LYCANROC_STEPS_2) != 0xFFFF || VarGet(VAR_LYCANROC_STEPS_3) != 0xF)
                     return FALSE;
 
                 // This final check is redundant.

@@ -54,12 +54,9 @@ static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc,
     BattleFrontier_ExchangeServiceCorner_Text_SmoochumDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_MeowthDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_ClefairyDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_DittoDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_CyndaquilDollDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_ChikoritaDollDesc,
-    BattleFrontier_ExchangeServiceCorner_Text_TotodileDollDesc,
     gText_Exit,
 };
 

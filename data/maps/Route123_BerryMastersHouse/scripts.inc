@@ -66,7 +66,7 @@ Route123_BerryMastersHouse_EventScript_GavePhrase:: @ 826F909
 	goto_if_eq Route123_BerryMastersHouse_EventScript_GivePamtreBerry
 	compare VAR_0x8004, PHRASE_OVERWHELMING_KYUREM_WHITE
 	goto_if_eq Route123_BerryMastersHouse_EventScript_GiveWatmelBerry
-	compare VAR_0x8004, PHRASE_COOL_LATIOS
+	compare VAR_0x8004, PHRASE_COOL_KYUREM_BLACK
 	goto_if_eq Route123_BerryMastersHouse_EventScript_GiveDurinBerry
 	compare VAR_0x8004, PHRASE_SUPER_HUSTLE
 	goto_if_eq Route123_BerryMastersHouse_EventScript_GiveBelueBerry

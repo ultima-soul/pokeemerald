@@ -95,7 +95,6 @@ BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1:: @ 825F185
 	case 1, BattleFrontier_ExchangeServiceCorner_EventScript_KissCushion
 	case 2, BattleFrontier_ExchangeServiceCorner_EventScript_SmoochumDoll
 	case 3, BattleFrontier_ExchangeServiceCorner_EventScript_TogepiDoll
-	case 4, BattleFrontier_ExchangeServiceCorner_EventScript_MeowthDoll
 	case 5, BattleFrontier_ExchangeServiceCorner_EventScript_ClefairyDoll
 	case 6, BattleFrontier_ExchangeServiceCorner_EventScript_DittoDoll
 	case 7, BattleFrontier_ExchangeServiceCorner_EventScript_CyndaquilDoll
@@ -141,14 +140,6 @@ BattleFrontier_ExchangeServiceCorner_EventScript_TogepiDoll:: @ 825F287
 	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-BattleFrontier_ExchangeServiceCorner_EventScript_MeowthDoll:: @ 825F2AA
-	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmMeowthDoll, MSGBOX_YESNO
-	compare VAR_RESULT, NO
-	goto_if_eq BattleFrontier_ExchangeServiceCorner_EventScript_ChooseDecor1
-	setvar VAR_0x8008, 48
-	setvar VAR_0x8009, DECOR_TYRUNT_DOLL
-	goto BattleFrontier_ExchangeServiceCorner_EventScript_TryPurchasePrize
-	end
 
 BattleFrontier_ExchangeServiceCorner_EventScript_ClefairyDoll:: @ 825F2CD
 	msgbox BattleFrontier_ExchangeServiceCorner_Text_ConfirmClefairyDoll, MSGBOX_YESNO
@@ -501,10 +492,6 @@ BattleFrontier_ExchangeServiceCorner_Text_ConfirmTogepiDoll: @ 825F949
 	.string "You've chosen the TOGEPI DOLL.\n"
 	.string "Is that correct?$"
 
-BattleFrontier_ExchangeServiceCorner_Text_ConfirmMeowthDoll: @ 825F979
-	.string "You've chosen the TYRUNT DOLL.\n"
-	.string "Is that correct?$"
-
 BattleFrontier_ExchangeServiceCorner_Text_ConfirmClefairyDoll: @ 825F9A9
 	.string "You've chosen the CLEFAIRY DOLL.\n"
 	.string "Is that correct?$"
@@ -662,23 +649,8 @@ BattleFrontier_ExchangeServiceCorner_Text_MoreBattlePointsForRecord: @ 826012D
 	.string "the BATTLE facilities, they start\l"
 	.string "giving you more and more Battle Points.$"
 
-BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc:: @ 82601AA
-	.string "A large poster with a GOTHITA print.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc:: @ 82601D0
-	.string "A GOTHITA cushion.\n"
-	.string "Place it on a mat or a desk.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_SmoochumDollDesc:: @ 8260201
-	.string "A GOTHITA DOLL.\n"
-	.string "Place it on a mat or a desk.$"
-
 BattleFrontier_ExchangeServiceCorner_Text_TogepiDollDesc:: @ 826022F
 	.string "A TOGEPI DOLL.\n"
-	.string "Place it on a mat or a desk.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_MeowthDollDesc:: @ 826025B
-	.string "A TYRUNT DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_ClefairyDollDesc:: @ 8260287
@@ -691,14 +663,6 @@ BattleFrontier_ExchangeServiceCorner_Text_DittoDollDesc:: @ 82602B5
 
 BattleFrontier_ExchangeServiceCorner_Text_CyndaquilDollDesc:: @ 82602E0
 	.string "A CYNDAQUIL DOLL.\n"
-	.string "Place it on a mat or a desk.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_ChikoritaDollDesc:: @ 826030F
-	.string "A SNOVER DOLL.\n"
-	.string "Place it on a mat or a desk.$"
-
-BattleFrontier_ExchangeServiceCorner_Text_TotodileDollDesc:: @ 826033E
-	.string "A BASCULIN DOLL.\n"
 	.string "Place it on a mat or a desk.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc:: @ 826036C

@@ -7944,7 +7944,7 @@
                             {
                                 "max_level": 50,
                                 "min_level": 50,
-                                "species": "SPECIES_LATIOS"
+                                "species": "SPECIES_KYUREM_BLACK"
                             },
                             {
                                 "max_level": 50,
@@ -9182,7 +9182,7 @@
                             {
                                 "max_level": 37,
                                 "min_level": 37,
-                                "species": "SPECIES_GLIGAR"
+                                "species": "SPECIES_WEAVILE"
                             },
                             {
                                 "max_level": 39,
@@ -9192,7 +9192,7 @@
                             {
                                 "max_level": 40,
                                 "min_level": 40,
-                                "species": "SPECIES_GLIGAR"
+                                "species": "SPECIES_WEAVILE"
                             }
                         ]
                     },

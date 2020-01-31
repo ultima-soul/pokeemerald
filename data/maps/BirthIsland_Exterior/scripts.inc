@@ -5,34 +5,34 @@ BirthIsland_Exterior_MapScripts:: @ 8267F15
 	.byte 0
 
 BirthIsland_Exterior_OnReturnToField: @ 8267F25
-	special SetDeoxysRockPalette
+	special SetBonded_AlakazamRockPalette
 	end
 
 BirthIsland_Exterior_OnTransition: @ 8267F29
-	setflag FLAG_MAP_SCRIPT_CHECKED_DEOXYS
+	setflag FLAG_MAP_SCRIPT_CHECKED_BONDED_ALAKAZAM
 	setvar VAR_OBJ_GFX_ID_0, EVENT_OBJ_GFX_RIVAL_BRENDAN_NORMAL
-	setvar VAR_DEOXYS_ROCK_STEP_COUNT, 0
-	setvar VAR_DEOXYS_ROCK_LEVEL, 0
-	call_if_set FLAG_BATTLED_DEOXYS, BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle
-	call_if_unset FLAG_BATTLED_DEOXYS, BirthIsland_Exterior_EventScript_TryShowDeoxysPuzzle
+	setvar VAR_BONDED_ALAKAZAM_ROCK_STEP_COUNT, 0
+	setvar VAR_BONDED_ALAKAZAM_ROCK_LEVEL, 0
+	call_if_set FLAG_BATTLED_BONDED_ALAKAZAM, BirthIsland_Exterior_EventScript_HideBonded_AlakazamAndPuzzle
+	call_if_unset FLAG_BATTLED_BONDED_ALAKAZAM, BirthIsland_Exterior_EventScript_TryShowBonded_AlakazamPuzzle
 	end
 
-BirthIsland_Exterior_EventScript_HideDeoxysAndPuzzle:: @ 8267F4E
-	setflag FLAG_HIDE_DEOXYS
-	setflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+BirthIsland_Exterior_EventScript_HideBonded_AlakazamAndPuzzle:: @ 8267F4E
+	setflag FLAG_HIDE_BONDED_ALAKAZAM
+	setflag FLAG_HIDE_BIRTH_ISLAND_BONDED_ALAKAZAM_TRIANGLE
 	return
 
-BirthIsland_Exterior_EventScript_TryShowDeoxysPuzzle:: @ 8267F55
-	goto_if_set FLAG_DEFEATED_DEOXYS, Common_EventScript_NopReturn
-	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
-	clearflag FLAG_DEOXYS_ROCK_COMPLETE
+BirthIsland_Exterior_EventScript_TryShowBonded_AlakazamPuzzle:: @ 8267F55
+	goto_if_set FLAG_DEFEATED_BONDED_ALAKAZAM, Common_EventScript_NopReturn
+	clearflag FLAG_HIDE_BIRTH_ISLAND_BONDED_ALAKAZAM_TRIANGLE
+	clearflag FLAG_BONDED_ALAKAZAM_ROCK_COMPLETE
 	return
 
 BirthIsland_Exterior_OnResume: @ 8267F65
-	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, BirthIsland_Exterior_EventScript_TryRemoveDeoxys
+	call_if_set FLAG_SYS_CTRL_OBJ_DELETE, BirthIsland_Exterior_EventScript_TryRemoveBonded_Alakazam
 	end
 
-BirthIsland_Exterior_EventScript_TryRemoveDeoxys:: @ 8267F6F
+BirthIsland_Exterior_EventScript_TryRemoveBonded_Alakazam:: @ 8267F6F
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_ne Common_EventScript_NopReturn
@@ -42,12 +42,12 @@ BirthIsland_Exterior_EventScript_TryRemoveDeoxys:: @ 8267F6F
 BirthIsland_Exterior_EventScript_Triangle:: @ 8267F83
 	lock
 	faceplayer
-	special DoDeoxysRockInteraction
+	special DoBonded_AlakazamRockInteraction
 	waitstate
 	switch VAR_RESULT
 	case 0, BirthIsland_Exterior_EventScript_NotSolved1
 	case 1, BirthIsland_Exterior_EventScript_NotSolved2
-	case 2, BirthIsland_Exterior_EventScript_Deoxys
+	case 2, BirthIsland_Exterior_EventScript_Bonded_Alakazam
 	case 3, BirthIsland_Exterior_EventScript_NotSolved3
 	end
 
@@ -63,7 +63,7 @@ BirthIsland_Exterior_EventScript_NotSolved3:: @ 8267FBF
 	release
 	end
 
-BirthIsland_Exterior_EventScript_Deoxys:: @ 8267FC1
+BirthIsland_Exterior_EventScript_Bonded_Alakazam:: @ 8267FC1
 	waitse
 	setfieldeffectargument 0, 1
 	setfieldeffectargument 1, 58
@@ -72,14 +72,14 @@ BirthIsland_Exterior_EventScript_Deoxys:: @ 8267FC1
 	playbgm MUS_RG_DEOEYE, 0
 	waitfieldeffect FLDEFF_65
 	addobject 2
-	applymovement 2, BirthIsland_Exterior_Movement_DeoxysApproach
+	applymovement 2, BirthIsland_Exterior_Movement_Bonded_AlakazamApproach
 	waitmovement 0
 	waitse
-	playmoncry SPECIES_DEOXYS, 2
+	playmoncry SPECIES_BONDED_ALAKAZAM, 2
 	delay 40
 	waitmoncry
 	setvar VAR_LAST_TALKED, 2
-	setvar VAR_0x8004, SPECIES_DEOXYS
+	setvar VAR_0x8004, SPECIES_BONDED_ALAKAZAM
 	setvar VAR_0x8005, 30 @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateObedientEnemyMon
@@ -89,27 +89,27 @@ BirthIsland_Exterior_EventScript_Deoxys:: @ 8267FC1
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_WON
-	goto_if_eq BirthIsland_Exterior_EventScript_DefeatedDeoxys
+	goto_if_eq BirthIsland_Exterior_EventScript_DefeatedBonded_Alakazam
 	compare VAR_RESULT, B_OUTCOME_RAN
-	goto_if_eq BirthIsland_Exterior_EventScript_RanFromDeoxys
+	goto_if_eq BirthIsland_Exterior_EventScript_RanFromBonded_Alakazam
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
-	goto_if_eq BirthIsland_Exterior_EventScript_RanFromDeoxys
-	setflag FLAG_BATTLED_DEOXYS
+	goto_if_eq BirthIsland_Exterior_EventScript_RanFromBonded_Alakazam
+	setflag FLAG_BATTLED_BONDED_ALAKAZAM
 	release
 	end
 
-BirthIsland_Exterior_EventScript_DefeatedDeoxys:: @ 826803B
-	setflag FLAG_DEFEATED_DEOXYS
-	setvar VAR_0x8004, SPECIES_DEOXYS
+BirthIsland_Exterior_EventScript_DefeatedBonded_Alakazam:: @ 826803B
+	setflag FLAG_DEFEATED_BONDED_ALAKAZAM
+	setvar VAR_0x8004, SPECIES_BONDED_ALAKAZAM
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
-BirthIsland_Exterior_EventScript_RanFromDeoxys:: @ 8268049
-	setvar VAR_0x8004, SPECIES_DEOXYS
+BirthIsland_Exterior_EventScript_RanFromBonded_Alakazam:: @ 8268049
+	setvar VAR_0x8004, SPECIES_BONDED_ALAKAZAM
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
-BirthIsland_Exterior_Movement_DeoxysApproach: @ 8268054
+BirthIsland_Exterior_Movement_Bonded_AlakazamApproach: @ 8268054
 	walk_slow_down
 	walk_slow_down
 	walk_slow_down

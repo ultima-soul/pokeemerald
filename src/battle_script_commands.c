@@ -310,8 +310,6 @@ static void Cmd_switchoutabilities(void);
 static void Cmd_jumpifhasnohp(void);
 static void Cmd_getsecretpowereffect(void);
 static void Cmd_pickup(void);
-static void Cmd_docastformchangeanimation(void);
-static void Cmd_trycastformdatachange(void);
 static void Cmd_settypebasedhalvers(void);
 static void Cmd_jumpifsubstituteblocks(void);
 static void Cmd_tryrecycleitem(void);
@@ -569,8 +567,6 @@ void (* const gBattleScriptingCommandsTable[])(void) =
 	Cmd_jumpifhasnohp, // 0xE3
 	Cmd_getsecretpowereffect, // 0xE4
 	Cmd_pickup, // 0xE5
-	Cmd_docastformchangeanimation, // 0xE6
-	Cmd_trycastformdatachange, // 0xE7
 	Cmd_settypebasedhalvers, // 0xE8
 	Cmd_jumpifsubstituteblocks, // 0xE9
 	Cmd_tryrecycleitem, // 0xEA
@@ -10968,32 +10964,6 @@ static void Cmd_pickup(void)
     }
 
     gBattlescriptCurrInstr++;
-}
-
-static void Cmd_docastformchangeanimation(void)
-{
-    gActiveBattler = gBattleScripting.battler;
-
-    if (gBattleMons[gActiveBattler].status2 & STATUS2_SUBSTITUTE)
-        *(&gBattleStruct->formToChangeInto) |= 0x80;
-
-    BtlController_EmitBattleAnimation(0, B_ANIM_CASTFORM_CHANGE, gBattleStruct->formToChangeInto);
-    MarkBattlerForControllerExec(gActiveBattler);
-
-    gBattlescriptCurrInstr++;
-}
-
-static void Cmd_trycastformdatachange(void)
-{
-    u8 form;
-
-    gBattlescriptCurrInstr++;
-    form = TryWeatherFormChange(gBattleScripting.battler);
-    if (form)
-    {
-        BattleScriptPushCursorAndCallback(BattleScript_CastformChange);
-        *(&gBattleStruct->formToChangeInto) = form - 1;
-    }
 }
 
 static void Cmd_settypebasedhalvers(void) // water and mud sport

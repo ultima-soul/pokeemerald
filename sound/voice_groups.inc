@@ -14148,7 +14148,7 @@ gCryTable:: @ 869DCF4
 	cry Cry_Hitmonchan  @ 869E1EC
 	cry Cry_Bunnelby  @ 869E1F8
 	cry Cry_Diggersby  @ 869E204
-	cry Cry_Emolga  @ 869E210
+	cry Cry_Bonded_Beartic  @ 869E210
 	cry Cry_Rhyhorn  @ 869E21C
 	cry Cry_Rhydon  @ 869E228
 	cry Cry_Chansey  @ 869E234
@@ -14182,9 +14182,9 @@ gCryTable:: @ 869DCF4
 	cry Cry_Dragalge  @ 869E384
 	cry Cry_Aerodactyl  @ 869E390
 	cry Cry_Snorlax  @ 869E39C
-	cry Cry_Articuno  @ 869E3A8
-	cry Cry_Zapdos  @ 869E3B4
-	cry Cry_Moltres  @ 869E3C0
+	cry Cry_Bonded_Kyogre  @ 869E3A8
+	cry Cry_Bonded_Groudon  @ 869E3B4
+	cry Cry_Bonded_Rayquaza  @ 869E3C0
 	cry Cry_Goomy  @ 869E3CC
 	cry Cry_Sliggoo  @ 869E3D8
 	cry Cry_Goodra  @ 869E3E4
@@ -14231,7 +14231,7 @@ gCryTable:: @ 869DCF4
 	cry Cry_Aegislash  @ 869E5D0
 	cry Cry_Scimiteye  @ 869E5DC
 	cry Cry_Jawguile  @ 869E5E8
-	cry Cry_Yanma  @ 869E5F4
+	cry Cry_Bonded_Raichu  @ 869E5F4
 	cry Cry_Wooper  @ 869E600
 	cry Cry_Quagsire  @ 869E60C
 	cry Cry_Espeon  @ 869E618
@@ -14245,7 +14245,7 @@ gCryTable:: @ 869DCF4
 	cry Cry_Joltik  @ 869E678
 	cry Cry_Galvantula  @ 869E684
 	cry Cry_Audino  @ 869E690
-	cry Cry_Gligar  @ 869E69C
+	cry Cry_Weavile  @ 869E69C
 	cry Cry_Steelix  @ 869E6A8
 	cry Cry_Popplio  @ 869E6B4
 	cry Cry_Brionne  @ 869E6C0
@@ -14296,7 +14296,7 @@ gCryTable:: @ 869DCF4
 	cry Cry_Electrike  @ 869E8DC
 	cry Cry_Manectric  @ 869E8E8
 	cry Cry_Gurdurr  @ 869E8F4
-	cry Cry_Latias  @ 869E900
+	cry Cry_Kyurem_White  @ 869E900
 	cry Cry_Timburr  @ 869E90C
 	cry Cry_Bansheette  @ 869E918
 	cry Cry_Sharpedo  @ 869E924
@@ -14392,9 +14392,9 @@ gCryTable:: @ 869DCF4
 	cry Cry_Metagross  @ 869ED5C
 	cry Cry_Bagon  @ 869ED68
 	cry Cry_Shelgon  @ 869ED74
-	cry Cry_Regirock  @ 869ED80
-	cry Cry_Regice  @ 869ED8C
-	cry Cry_Registeel  @ 869ED98
+	cry Cry_Rockruff  @ 869ED80
+	cry Cry_Lycanroc  @ 869ED8C
+	cry Cry_Bonded_Aerodactyl  @ 869ED98
 	cry Cry_MarowakA  @ 869EDA4
 	cry Cry_Rhyperior  @ 869EDB0
 	cry Cry_Gallade  @ 869EDBC
@@ -14423,9 +14423,9 @@ gCryTable:: @ 869DCF4
 	cry Cry_Wailord  @ 869EED0
 	cry Cry_Xerneas  @ 869EEDC
 	cry Cry_Snorunt  @ 869EEE8
-	cry Cry_Latios  @ 869EEF4
-	cry Cry_Jirachi  @ 869EF00
-	cry Cry_Deoxys  @ 869EF0C
+	cry Cry_Kyurem_Black  @ 869EEF4
+	cry Cry_Bonded_Aggron  @ 869EF00
+	cry Cry_Bonded_Alakazam  @ 869EF0C
 	cry Cry_Arceus  @ 869EF18
 
 	.align 2
@@ -14539,7 +14539,7 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Hitmonchan  @ 869F41C
 	cry2 Cry_Bunnelby  @ 869F428
 	cry2 Cry_Diggersby  @ 869F434
-	cry2 Cry_Emolga  @ 869F440
+	cry2 Cry_Bonded_Beartic  @ 869F440
 	cry2 Cry_Rhyhorn  @ 869F44C
 	cry2 Cry_Rhydon  @ 869F458
 	cry2 Cry_Chansey  @ 869F464
@@ -14573,9 +14573,9 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Dragalge  @ 869F5B4
 	cry2 Cry_Aerodactyl  @ 869F5C0
 	cry2 Cry_Snorlax  @ 869F5CC
-	cry2 Cry_Articuno  @ 869F5D8
-	cry2 Cry_Zapdos  @ 869F5E4
-	cry2 Cry_Moltres  @ 869F5F0
+	cry2 Cry_Bonded_Kyogre  @ 869F5D8
+	cry2 Cry_Bonded_Groudon  @ 869F5E4
+	cry2 Cry_Bonded_Rayquaza  @ 869F5F0
 	cry2 Cry_Goomy  @ 869F5FC
 	cry2 Cry_Sliggoo  @ 869F608
 	cry2 Cry_Goodra  @ 869F614
@@ -14622,7 +14622,7 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Aegislash  @ 869F800
 	cry2 Cry_Scimiteye  @ 869F80C
 	cry2 Cry_Jawguile  @ 869F818
-	cry2 Cry_Yanma  @ 869F824
+	cry2 Cry_Bonded_Raichu  @ 869F824
 	cry2 Cry_Wooper  @ 869F830
 	cry2 Cry_Quagsire  @ 869F83C
 	cry2 Cry_Espeon  @ 869F848
@@ -14636,7 +14636,7 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Joltik  @ 869F8A8
 	cry2 Cry_Galvantula  @ 869F8B4
 	cry2 Cry_Audino  @ 869F8C0
-	cry2 Cry_Gligar  @ 869F8CC
+	cry2 Cry_Weavile  @ 869F8CC
 	cry2 Cry_Steelix  @ 869F8D8
 	cry2 Cry_Popplio  @ 869F8E4
 	cry2 Cry_Brionne  @ 869F8F0
@@ -14687,7 +14687,7 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Electrike  @ 869FB0C
 	cry2 Cry_Manectric  @ 869FB18
 	cry2 Cry_Gurdurr  @ 869FB24
-	cry2 Cry_Latias  @ 869FB30
+	cry2 Cry_Kyurem_White  @ 869FB30
 	cry2 Cry_Timburr  @ 869FB3C
 	cry2 Cry_Bansheette  @ 869FB48
 	cry2 Cry_Sharpedo  @ 869FB54
@@ -14783,9 +14783,9 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Metagross  @ 869FF8C
 	cry2 Cry_Bagon  @ 869FF98
 	cry2 Cry_Shelgon  @ 869FFA4
-	cry2 Cry_Regirock  @ 869FFB0
-	cry2 Cry_Regice  @ 869FFBC
-	cry2 Cry_Registeel  @ 869FFC8
+	cry2 Cry_Rockruff  @ 869FFB0
+	cry2 Cry_Lycanroc  @ 869FFBC
+	cry2 Cry_Bonded_Aerodactyl  @ 869FFC8
 	cry2 Cry_MarowakA  @ 869FFD4
 	cry2 Cry_Rhyperior  @ 869FFE0
 	cry2 Cry_Gallade  @ 869FFEC
@@ -14814,9 +14814,9 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Wailord  @ 86A0100
 	cry2 Cry_Xerneas  @ 86A010C
 	cry2 Cry_Snorunt  @ 86A0118
-	cry2 Cry_Latios  @ 86A0124
-	cry2 Cry_Jirachi  @ 86A0130
-	cry2 Cry_Deoxys  @ 86A013C
+	cry2 Cry_Kyurem_Black  @ 86A0124
+	cry2 Cry_Bonded_Aggron  @ 86A0130
+	cry2 Cry_Bonded_Alakazam  @ 86A013C
 	cry2 Cry_Arceus  @ 86A0148
 
 	.align 2

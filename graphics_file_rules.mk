@@ -1,4 +1,4 @@
-CASTFORMGFXDIR := graphics/pokemon/castform
+ALOLAN_MAROWAKGFXDIR := graphics/pokemon/ALOLAN_MAROWAK
 TILESETGFXDIR := data/tilesets
 FONTGFXDIR := data/graphics/fonts
 INTERFACEGFXDIR := graphics/interface

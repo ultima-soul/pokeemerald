@@ -412,7 +412,7 @@ const u16 gEggMoves[] = {
               MOVE_SLEEP_TALK,
               MOVE_MUD_SPORT),
 
-    egg_moves(PACHIRISU,
+    egg_moves(BONDED_FLYGON,
               MOVE_FUTURE_SIGHT,
               MOVE_BRAVIARYSIS,
               MOVE_MIMIC,
@@ -657,7 +657,7 @@ const u16 gEggMoves[] = {
               MOVE_CURSE,
               MOVE_HELPING_HAND),
 
-    egg_moves(YANMA,
+    egg_moves(BONDED_RAICHU,
               MOVE_WHIRLWIND,
               MOVE_REVERSAL,
               MOVE_LEECH_LIFE,
@@ -717,7 +717,7 @@ const u16 gEggMoves[] = {
               MOVE_ASTONISH,
               MOVE_CURSE),
 
-    egg_moves(GLIGAR,
+    egg_moves(WEAVILE,
               MOVE_METAL_CLAW,
               MOVE_WING_ATTACK,
               MOVE_RAZOR_WIND,
@@ -1260,7 +1260,7 @@ const u16 gEggMoves[] = {
               MOVE_STOMP,
               MOVE_SMELLING_SALT),
 
-    egg_moves(CASTFORM,
+    egg_moves(ALOLAN_MAROWAK,
               MOVE_FUTURE_SIGHT,
               MOVE_PSYCH_UP),
 

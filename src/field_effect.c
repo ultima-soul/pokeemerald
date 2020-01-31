@@ -228,7 +228,7 @@ static void sub_80B9A60(struct Task *);
 
 static void sub_80B9BE8(u8 taskId);
 static void sub_80B9DB8(struct Sprite* sprite);
-static void Fldeff_MoveDeoxysRock_Step(u8 taskId);
+static void Fldeff_MoveBonded_AlakazamRock_Step(u8 taskId);
 
 // Static RAM declarations
 
@@ -904,7 +904,7 @@ u8 AddNewGameBirchObject(s16 x, s16 y, u8 subpriority)
 
 u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority)
 {
-    s32 spriteId = CreateMonPicSprite_HandleDeoxys(species, 0, 0x8000, 1, x, y, 0, gMonPaletteTable[species].tag);
+    s32 spriteId = CreateMonPicSprite_HandleBonded_Alakazam(species, 0, 0x8000, 1, x, y, 0, gMonPaletteTable[species].tag);
     PreservePaletteInWeather(IndexOfSpritePaletteTag(gMonPaletteTable[species].tag) + 0x10);
     if (spriteId == 0xFFFF)
         return MAX_SPRITES;
@@ -915,7 +915,7 @@ u8 CreateMonSprite_PicBox(u16 species, s16 x, s16 y, u8 subpriority)
 u8 CreateMonSprite_FieldMove(u16 species, u32 d, u32 g, s16 x, s16 y, u8 subpriority)
 {
     const struct CompressedSpritePalette *spritePalette = GetMonSpritePalStructFromOtIdPersonality(species, d, g);
-    u16 spriteId = CreateMonPicSprite_HandleDeoxys(species, d, g, 1, x, y, 0, spritePalette->tag);
+    u16 spriteId = CreateMonPicSprite_HandleBonded_Alakazam(species, d, g, 1, x, y, 0, spritePalette->tag);
     PreservePaletteInWeather(IndexOfSpritePaletteTag(spritePalette->tag) + 0x10);
     if (spriteId == 0xFFFF)
         return MAX_SPRITES;
@@ -3788,7 +3788,7 @@ static void sub_80B9DB8(struct Sprite* sprite)
         DestroySprite(sprite);
 }
 
-bool8 Fldeff_MoveDeoxysRock(struct Sprite* sprite)
+bool8 Fldeff_MoveBonded_AlakazamRock(struct Sprite* sprite)
 {
     u8 eventObjectIdBuffer;
     if (!TryGetEventObjectIdByLocalIdAndMap(gFieldEffectArguments[0], gFieldEffectArguments[1], gFieldEffectArguments[2], &eventObjectIdBuffer))
@@ -3802,7 +3802,7 @@ bool8 Fldeff_MoveDeoxysRock(struct Sprite* sprite)
         xPos = (gFieldEffectArguments[3] - xPos) * 16;
         yPos = (gFieldEffectArguments[4] - yPos) * 16;
         ShiftEventObjectCoords(object, gFieldEffectArguments[3] + 7, gFieldEffectArguments[4] + 7);
-        taskId = CreateTask(Fldeff_MoveDeoxysRock_Step, 0x50);
+        taskId = CreateTask(Fldeff_MoveBonded_AlakazamRock_Step, 0x50);
         gTasks[taskId].data[1] = object->spriteId;
         gTasks[taskId].data[2] = gSprites[object->spriteId].pos1.x + xPos;
         gTasks[taskId].data[3] = gSprites[object->spriteId].pos1.y + yPos;
@@ -3812,7 +3812,7 @@ bool8 Fldeff_MoveDeoxysRock(struct Sprite* sprite)
     return FALSE;
 }
 
-static void Fldeff_MoveDeoxysRock_Step(u8 taskId)
+static void Fldeff_MoveBonded_AlakazamRock_Step(u8 taskId)
 {
     // BUG: Possible divide by zero
     s16 *data = gTasks[taskId].data;

@@ -135,7 +135,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_HITMONCHAN] = gMonIcon_Hitmonchan,
     [SPECIES_BUNNELBY] = gMonIcon_Bunnelby,
     [SPECIES_DIGGERSBY] = gMonIcon_Diggersby,
-    [SPECIES_EMOLGA] = gMonIcon_Emolga,
+    [SPECIES_BONDED_BEARTIC] = gMonIcon_Bonded_Beartic,
     [SPECIES_RHYHORN] = gMonIcon_Rhyhorn,
     [SPECIES_RHYDON] = gMonIcon_Rhydon,
     [SPECIES_CHANSEY] = gMonIcon_Chansey,
@@ -147,7 +147,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_EXCADRILL] = gMonIcon_Excadrill,
     [SPECIES_STARYU] = gMonIcon_Staryu,
     [SPECIES_STARMIE] = gMonIcon_Starmie,
-    [SPECIES_PACHIRISU] = gMonIcon_Pachirisu,
+    [SPECIES_BONDED_FLYGON] = gMonIcon_Bonded_Flygon,
     [SPECIES_SCYTHER] = gMonIcon_Scyther,
     [SPECIES_LARVESTA] = gMonIcon_Larvesta,
     [SPECIES_VOLCARONA] = gMonIcon_Volcarona,
@@ -169,9 +169,9 @@ const u8 *const gMonIconTable[] =
     [SPECIES_DRAGALGE] = gMonIcon_Dragalge,
     [SPECIES_AERODACTYL] = gMonIcon_Aerodactyl,
     [SPECIES_SNORLAX] = gMonIcon_Snorlax,
-    [SPECIES_ARTICUNO] = gMonIcon_Articuno,
-    [SPECIES_ZAPDOS] = gMonIcon_Zapdos,
-    [SPECIES_MOLTRES] = gMonIcon_Moltres,
+    [SPECIES_BONDED_KYOGRE] = gMonIcon_Bonded_Kyogre,
+    [SPECIES_BONDED_GROUDON] = gMonIcon_Bonded_Groudon,
+    [SPECIES_BONDED_RAYQUAZA] = gMonIcon_Bonded_Rayquaza,
     [SPECIES_GOOMY] = gMonIcon_Goomy,
     [SPECIES_SLIGGOO] = gMonIcon_Sliggoo,
     [SPECIES_GOODRA] = gMonIcon_Goodra,
@@ -218,7 +218,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_AEGISLASH] = gMonIcon_Aegislash,
     [SPECIES_SCIMITEYE] = gMonIcon_Scimiteye,
     [SPECIES_JAWGUILE] = gMonIcon_Jawguile,
-    [SPECIES_YANMA] = gMonIcon_Yanma,
+    [SPECIES_BONDED_RAICHU] = gMonIcon_Bonded_Raichu,
     [SPECIES_WOOPER] = gMonIcon_Wooper,
     [SPECIES_QUAGSIRE] = gMonIcon_Quagsire,
     [SPECIES_ESPEON] = gMonIcon_Espeon,
@@ -232,7 +232,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_JOLTIK] = gMonIcon_Joltik,
     [SPECIES_GALVANTULA] = gMonIcon_Galvantula,
     [SPECIES_AUDINO] = gMonIcon_Audino,
-    [SPECIES_GLIGAR] = gMonIcon_Gligar,
+    [SPECIES_WEAVILE] = gMonIcon_Weavile,
     [SPECIES_STEELIX] = gMonIcon_Steelix,
     [SPECIES_POPPLIO] = gMonIcon_Popplio,
     [SPECIES_BRIONNE] = gMonIcon_Brionne,
@@ -410,7 +410,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_ARON] = gMonIcon_Aron,
     [SPECIES_LAIRON] = gMonIcon_Lairon,
     [SPECIES_AGGRON] = gMonIcon_Aggron,
-    [SPECIES_CASTFORM] = gMonIcon_MarowakA,
+    [SPECIES_ALOLAN_MAROWAK] = gMonIcon_MarowakA,
     [SPECIES_RHYPERIOR] = gMonIcon_Rhyperior,
     [SPECIES_GALLADE] = gMonIcon_Gallade,
     [SPECIES_LILEEP] = gMonIcon_Lileep,
@@ -426,16 +426,16 @@ const u8 *const gMonIconTable[] =
     [SPECIES_BELDUM] = gMonIcon_Beldum,
     [SPECIES_METANG] = gMonIcon_Metang,
     [SPECIES_METAGROSS] = gMonIcon_Metagross,
-    [SPECIES_REGIROCK] = gMonIcon_Regirock,
-    [SPECIES_REGICE] = gMonIcon_Regice,
-    [SPECIES_REGISTEEL] = gMonIcon_Registeel,
+    [SPECIES_ROCKRUFF] = gMonIcon_Rockruff,
+    [SPECIES_LYCANROC] = gMonIcon_Lycanroc,
+    [SPECIES_BONDED_AERODACTYL] = gMonIcon_Bonded_Aerodactyl,
     [SPECIES_KYOGRE] = gMonIcon_Kyogre,
     [SPECIES_GROUDON] = gMonIcon_Groudon,
     [SPECIES_RAYQUAZA] = gMonIcon_Rayquaza,
-    [SPECIES_KYUREM_WHITE] = gMonIcon_Latias,
-    [SPECIES_LATIOS] = gMonIcon_Latios,
-    [SPECIES_JIRACHI] = gMonIcon_Jirachi,
-    [SPECIES_DEOXYS] = gMonIcon_Deoxys,
+    [SPECIES_KYUREM_WHITE] = gMonIcon_Kyurem_White,
+    [SPECIES_KYUREM_BLACK] = gMonIcon_Kyurem_Black,
+    [SPECIES_BONDED_AGGRON] = gMonIcon_Bonded_Aggron,
+    [SPECIES_BONDED_ALAKAZAM] = gMonIcon_Bonded_Alakazam,
     [SPECIES_ARCEUS] = gMonIcon_Arceus,
     [SPECIES_EGG] = gMonIcon_Egg,
     [SPECIES_UNOWN_B] = gMonIcon_bonded_altaria,
@@ -579,7 +579,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_HITMONCHAN] = 2,
     [SPECIES_BUNNELBY] = 1,
     [SPECIES_DIGGERSBY] = 2,
-    [SPECIES_EMOLGA] = 2,
+    [SPECIES_BONDED_BEARTIC] = 2,
     [SPECIES_RHYHORN] = 1,
     [SPECIES_RHYDON] = 1,
     [SPECIES_CHANSEY] = 0,
@@ -591,7 +591,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_EXCADRILL] = 0,
     [SPECIES_STARYU] = 2,
     [SPECIES_STARMIE] = 2,
-    [SPECIES_PACHIRISU] = 0,
+    [SPECIES_BONDED_FLYGON] = 0,
     [SPECIES_SCYTHER] = 1,
     [SPECIES_LARVESTA] = 2,
     [SPECIES_VOLCARONA] = 1,
@@ -613,9 +613,9 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_DRAGALGE] = 2,
     [SPECIES_AERODACTYL] = 0,
     [SPECIES_SNORLAX] = 1,
-    [SPECIES_ARTICUNO] = 0,
-    [SPECIES_ZAPDOS] = 0,
-    [SPECIES_MOLTRES] = 0,
+    [SPECIES_BONDED_KYOGRE] = 0,
+    [SPECIES_BONDED_GROUDON] = 0,
+    [SPECIES_BONDED_RAYQUAZA] = 0,
     [SPECIES_GOOMY] = 0,
     [SPECIES_SLIGGOO] = 0,
     [SPECIES_GOODRA] = 2,
@@ -662,7 +662,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_AEGISLASH] = 2,
     [SPECIES_SCIMITEYE] = 1,
     [SPECIES_JAWGUILE] = 1,
-    [SPECIES_YANMA] = 1,
+    [SPECIES_BONDED_RAICHU] = 1,
     [SPECIES_WOOPER] = 0,
     [SPECIES_QUAGSIRE] = 0,
     [SPECIES_ESPEON] = 2,
@@ -676,7 +676,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_JOLTIK] = 0,
     [SPECIES_GALVANTULA] = 2,
     [SPECIES_AUDINO] = 2,
-    [SPECIES_GLIGAR] = 2,
+    [SPECIES_WEAVILE] = 2,
     [SPECIES_STEELIX] = 0,
     [SPECIES_POPPLIO] = 0,
     [SPECIES_BRIONNE] = 2,
@@ -854,7 +854,7 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_ARON] = 2,
     [SPECIES_LAIRON] = 2,
     [SPECIES_AGGRON] = 2,
-    [SPECIES_CASTFORM] = 0,
+    [SPECIES_ALOLAN_MAROWAK] = 0,
     [SPECIES_RHYPERIOR] = 0,
     [SPECIES_GALLADE] = 2,
     [SPECIES_LILEEP] = 2,
@@ -870,16 +870,16 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_BELDUM] = 0,
     [SPECIES_METANG] = 0,
     [SPECIES_METAGROSS] = 0,
-    [SPECIES_REGIROCK] = 2,
-    [SPECIES_REGICE] = 2,
-    [SPECIES_REGISTEEL] = 2,
+    [SPECIES_ROCKRUFF] = 2,
+    [SPECIES_LYCANROC] = 2,
+    [SPECIES_BONDED_AERODACTYL] = 2,
     [SPECIES_KYOGRE] = 2,
     [SPECIES_GROUDON] = 0,
     [SPECIES_RAYQUAZA] = 1,
     [SPECIES_KYUREM_WHITE] = 0,
-    [SPECIES_LATIOS] = 2,
-    [SPECIES_JIRACHI] = 0,
-    [SPECIES_DEOXYS] = 0,
+    [SPECIES_KYUREM_BLACK] = 2,
+    [SPECIES_BONDED_AGGRON] = 0,
+    [SPECIES_BONDED_ALAKAZAM] = 0,
     [SPECIES_ARCEUS] = 0,
     [SPECIES_EGG] = 1,
     [SPECIES_UNOWN_B] = 0,
@@ -1027,13 +1027,13 @@ const u16 sSpriteImageSizes[3][4] =
     },
 };
 
-u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleDeoxys)
+u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleBonded_Alakazam)
 {
     u8 spriteId;
     struct MonIconSpriteTemplate iconTemplate =
     {
         .oam = &sMonIconOamData,
-        .image = GetMonIconPtr(species, personality, handleDeoxys),
+        .image = GetMonIconPtr(species, personality, handleBonded_Alakazam),
         .anims = sMonIconAnims,
         .affineAnims = sMonIconAffineAnims,
         .callback = callback,
@@ -1123,9 +1123,9 @@ u16 sub_80D2E84(u16 species)
     }
 }
 
-const u8 *GetMonIconPtr(u16 species, u32 personality, bool32 handleDeoxys)
+const u8 *GetMonIconPtr(u16 species, u32 personality, bool32 handleBonded_Alakazam)
 {
-    return GetMonIconTiles(GetIconSpecies(species, personality), handleDeoxys);
+    return GetMonIconTiles(GetIconSpecies(species, personality), handleBonded_Alakazam);
 }
 
 void sub_80D2EF8(struct Sprite *sprite)
@@ -1187,12 +1187,12 @@ void SpriteCB_MonIcon(struct Sprite *sprite)
     UpdateMonIconFrame(sprite);
 }
 
-const u8* GetMonIconTiles(u16 species, bool32 handleDeoxys)
+const u8* GetMonIconTiles(u16 species, bool32 handleBonded_Alakazam)
 {
     const u8* iconSprite = gMonIconTable[species];
-    if (species == SPECIES_DEOXYS && handleDeoxys == TRUE)
+    if (species == SPECIES_BONDED_ALAKAZAM && handleBonded_Alakazam == TRUE)
     {
-        iconSprite = (const u8*)(0x400 + (u32)iconSprite); // use the specific Deoxys form icon (Speed in this case)
+        iconSprite = (const u8*)(0x400 + (u32)iconSprite); // use the specific Bonded_Alakazam form icon (Speed in this case)
     }
     return iconSprite;
 }

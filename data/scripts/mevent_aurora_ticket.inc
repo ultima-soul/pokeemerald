@@ -4,7 +4,7 @@ MysteryEventScript_AuroraTicket:: @ 867533C
 	faceplayer
 	checkflag FLAG_RECEIVED_AURORA_TICKET
 	vgoto_if_eq AuroraTicket_Obtained
-	checkflag FLAG_BATTLED_DEOXYS
+	checkflag FLAG_BATTLED_BONDED_ALAKAZAM
 	vgoto_if_eq AuroraTicket_Obtained
 	checkitem ITEM_AURORA_TICKET, 1
 	compare_var_to_value VAR_RESULT, TRUE

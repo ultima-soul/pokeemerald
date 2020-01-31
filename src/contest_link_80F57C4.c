@@ -653,7 +653,7 @@ static void sub_80F6404(u8 taskId)
         }
         else
         {
-            HandleLoadSpecialPokePic_DontHandleDeoxys(
+            HandleLoadSpecialPokePic_DontHandleBonded_Alakazam(
                 &gMonFrontPicTable[species],
                 gMonSpritesGfxPtr->sprites[1],
                 species,

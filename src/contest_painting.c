@@ -366,7 +366,7 @@ static void InitContestMonPixels(u16 species, u8 whichSprite)
     LZDecompressVram(pal, gContestPaintingMonPalette);
     if (whichSprite == 0)
     {
-        HandleLoadSpecialPokePic_DontHandleDeoxys(
+        HandleLoadSpecialPokePic_DontHandleBonded_Alakazam(
             &gMonFrontPicTable[species],
             gMonSpritesGfxPtr->sprites[1],
             species,
@@ -375,7 +375,7 @@ static void InitContestMonPixels(u16 species, u8 whichSprite)
     }
     else
     {
-        HandleLoadSpecialPokePic_DontHandleDeoxys(
+        HandleLoadSpecialPokePic_DontHandleBonded_Alakazam(
             &gMonBackPicTable[species],
             gMonSpritesGfxPtr->sprites[0],
             species,

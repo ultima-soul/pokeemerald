@@ -518,7 +518,7 @@ void BattleSetup_StartLegendaryBattle(void)
         gBattleTypeFlags |= BATTLE_TYPE_RAYQUAZA;
         CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_REKKU);
         break;
-    case SPECIES_DEOXYS:
+    case SPECIES_BONDED_ALAKAZAM:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEO);
         break;
     case SPECIES_LUGIA:
@@ -565,14 +565,14 @@ void StartRegiBattle(void)
     species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
     switch (species)
     {
-    case SPECIES_REGIROCK:
-        transitionId = B_TRANSITION_REGIROCK;
+    case SPECIES_ROCKRUFF:
+        transitionId = B_TRANSITION_ROCKRUFF;
         break;
-    case SPECIES_REGICE:
-        transitionId = B_TRANSITION_REGICE;
+    case SPECIES_LYCANROC:
+        transitionId = B_TRANSITION_LYCANROC;
         break;
-    case SPECIES_REGISTEEL:
-        transitionId = B_TRANSITION_REGISTEEL;
+    case SPECIES_BONDED_AERODACTYL:
+        transitionId = B_TRANSITION_BONDED_AERODACTYL;
         break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;

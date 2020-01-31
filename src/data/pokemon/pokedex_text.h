@@ -658,10 +658,10 @@ const u8 gDiggersbyPokedexText[] = _(
     "skin, the toxic gases swirling inside. It\n"
     "blows up at the slightest stimulation.");
 
-const u8 gEmolgaPokedexText[] = _(
+const u8 gBonded_BearticPokedexText[] = _(
     "By diluting its toxic gases with a special\n"
     "process, the highest grade of perfume can\n"
-    "be extracted. To EMOLGA, gases emanating\n"
+    "be extracted. To , gases emanating\n"
     "from garbage are the ultimate feast.");
 
 const u8 gRhyhornPokedexText[] = _(
@@ -730,7 +730,7 @@ const u8 gStarmiePokedexText[] = _(
     "reflections of stars that twinkled on\n"
     "gentle waves at night.");
 
-const u8 gPachirisuPokedexText[] = _(
+const u8 gBonded_FlygonPokedexText[] = _(
     "A MR. MIME is a master of pantomime. It can\n"
     "convince others that something unseeable\n"
     "actually exists. Once believed, the\n"
@@ -862,20 +862,20 @@ const u8 gSnorlaxPokedexText[] = _(
     "a docile POKéMON that there are children\n"
     "who use its big belly as a place to play.");
 
-const u8 gArticunoPokedexText[] = _(
-    "ARTICUNO is a legendary bird POKéMON that\n"
+const u8 gBonded_KyogrePokedexText[] = _(
+    "BONDED KYOGRE is a legendary bird POKéMON that\n"
     "can control ice. The flapping of its wings\n"
     "chills the air. As a result, it is said that\n"
     "when this POKéMON flies, snow will fall.");
 
-const u8 gZapdosPokedexText[] = _(
-    "ZAPDOS is a legendary bird POKéMON that\n"
+const u8 gBonded_GroudonPokedexText[] = _(
+    "BONDED GROUDON is a legendary bird POKéMON that\n"
     "has the ability to control electricity.\n"
     "It usually lives in thunderclouds. It gains\n"
     "power if it is stricken by lightning bolts.");
 
-const u8 gMoltresPokedexText[] = _(
-    "MOLTRES is a legendary bird POKéMON\n"
+const u8 gBonded_RayquazaPokedexText[] = _(
+    "BONDED RAYQUAZA is a legendary bird POKéMON\n"
     "that can control fire. If injured, it is said\n"
     "to dip its body in the molten magma of\n"
     "a volcano to burn and heal itself.");
@@ -1156,7 +1156,7 @@ const u8 gJawguilePokedexText[] = _(
     "warm daytime but suddenly stop moving as\n"
     "soon as the sun sets.");
 
-const u8 gYanmaPokedexText[] = _(
+const u8 gBonded_RaichuPokedexText[] = _(
     "It can see 360 degrees without moving\n"
     "its eyes. It is a great flier capable of\n"
     "making sudden stops and turning midair to\n"
@@ -1240,7 +1240,7 @@ const u8 gAudinoPokedexText[] = _(
     "known to make its nest in complex shapes\n"
     "deep under the ground.");
 
-const u8 gGligarPokedexText[] = _(
+const u8 gWeavilePokedexText[] = _(
     "It glides without making a single sound.\n"
     "It grasps the face of its foe using its\n"
     "hind and large front claws, then stabs\n"
@@ -2104,7 +2104,7 @@ const u8 gMiloticPokedexText[] = _(
     "beautiful of all POKéMON, it has been\n"
     "depicted in paintings and statues.");
 
-const u8 gCastformPokedexText[] = _(
+const u8 gAlolan_MarowakText[] = _(
     "It alters its form depending on the\n"
     "weather. Changes in the climate such as\n"
     "the temperature and humidity appear to\n"
@@ -2260,19 +2260,19 @@ const u8 gMetagrossPokedexText[] = _(
     "integration, this POKéMON is smarter than\n"
     "a supercomputer.");
 
-const u8 gRegirockPokedexText[] = _(
+const u8 gRockruffPokedexText[] = _(
     "A POKéMON that is made entirely of rocks\n"
     "and boulders. If parts of its body chip off\n"
-    "in battle, REGIROCK repairs itself by\n"
+    "in battle, ROCKRUFF repairs itself by\n"
     "adding new rocks.");
 
-const u8 gRegicePokedexText[] = _(
+const u8 gLycanrocPokedexText[] = _(
     "Its entire body is made of Antarctic ice.\n"
     "After extensive studies, researchers\n"
     "believe the ice was formed during an\n"
     "ice age.");
 
-const u8 gRegisteelPokedexText[] = _(
+const u8 gBonded_AerodactylPokedexText[] = _(
     "Its body is harder than any other kind of\n"
     "metal. The body metal is composed of a\n"
     "mysterious substance. Not only is it hard,\n"
@@ -2308,13 +2308,13 @@ const u8 gRayquazaPokedexText[] = _(
     "to the ground if KYOGRE and GROUDON\n"
     "were to fight.");
 
-const u8 gJirachiPokedexText[] = _(
-    "JIRACHI is said to make wishes come true.\n"
+const u8 gBonded_AggronPokedexText[] = _(
+    "AGGRON is said to make wishes come true.\n"
     "While it sleeps, a tough crystalline shell\n"
     "envelops the body to protect it from\n"
     "enemies.");
 
-const u8 gDeoxysPokedexText[] = _(
+const u8 gBonded_AlakazamPokedexText[] = _(
     "A POKéMON that mutated from an\n"
     "extraterrestrial virus exposed to a laser\n"
     "beam. Its body is configured for superior\n"
