@@ -2289,16 +2289,16 @@ const u32 gMonBackPic_Rayquaza[] = INCBIN_U32("graphics/pokemon/rayquaza/back.4b
 const u32 gMonShinyPalette_Rayquaza[] = INCBIN_U32("graphics/pokemon/rayquaza/shiny.gbapal.lz");
 const u8 gMonIcon_Rayquaza[] = INCBIN_U8("graphics/pokemon/rayquaza/icon.4bpp");
 
-const u32 gMonStillFrontPic_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/front_white.4bpp_white.lz");
-const u32 gMonPalette_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/normal_white.gbapal_white.lz");
-const u32 gMonBackPic_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/back_white.4bpp_white.lz");
-const u32 gMonShinyPalette_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/shiny_white.gbapal_white.lz");
+const u32 gMonStillFrontPic_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/front_white.4bpp.lz");
+const u32 gMonPalette_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/normal_white.gbapal.lz");
+const u32 gMonBackPic_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/back_white.4bpp.lz");
+const u32 gMonShinyPalette_Kyurem_White[] = INCBIN_U32("graphics/pokemon/kyurem/shiny_white.gbapal.lz");
 const u8 gMonIcon_Kyurem_White[] = INCBIN_U8("graphics/pokemon/kyurem/icon_white.4bpp");
 
-const u32 gMonStillFrontPic_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/front_black.4bpp_black.lz");
-const u32 gMonPalette_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/normal_black.gbapal_black.lz");
-const u32 gMonBackPic_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/back_black.4bpp_black.lz");
-const u32 gMonShinyPalette_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/shiny_black.gbapal_black.lz");
+const u32 gMonStillFrontPic_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/front_black.4bpp.lz");
+const u32 gMonPalette_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/normal_black.gbapal.lz");
+const u32 gMonBackPic_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/back_black.4bpp.lz");
+const u32 gMonShinyPalette_Kyurem_Black[] = INCBIN_U32("graphics/pokemon/kyurem/shiny_black.gbapal.lz");
 const u8 gMonIcon_Kyurem_Black[] = INCBIN_U8("graphics/pokemon/kyurem/icon_black.4bpp");
 
 const u32 gMonStillFrontPic_Bonded_Aggron[] = INCBIN_U32("graphics/pokemon/bonded_aggron/front.4bpp.lz");
