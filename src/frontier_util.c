@@ -109,7 +109,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_THUNDER_PUNCH, MOVE_FIRE_PUNCH, MOVE_ICE_PUNCH, MOVE_DISABLE},
             },
             {
-                .species = SPECIES_ENTEI,
+                .species = SPECIES_ROTOM_MOW,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 24,
                 .nature = NATURE_LONELY,
@@ -128,7 +128,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
         // Gold Symbol.
         {
             {
-                .species = SPECIES_RAIKOU,
+                .species = SPECIES_ROTOM_FAN,
                 .heldItem = ITEM_LUM_BERRY,
                 .fixedIV = 31,
                 .nature = NATURE_MODEST,
@@ -258,7 +258,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .moves = {MOVE_HYPER_BEAM, MOVE_EARTHQUAKE, MOVE_SHADOW_BALL, MOVE_YAWN},
             },
             {
-                .species = SPECIES_SUICUNE,
+                .species = SPECIES_ROTOM_HEAT,
                 .heldItem = ITEM_KINGS_ROCK,
                 .fixedIV = 31,
                 .nature = NATURE_HASTY,
@@ -312,7 +312,7 @@ static const struct FrontierBrainMon sFrontierBrainsMons[][2][3] =
                 .fixedIV = 31,
                 .nature = NATURE_MODEST,
                 .evs = {252, 0, 252, 0, 6, 0},
-                .moves = {MOVE_PSYCHIC, MOVE_BRAVIARYSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
+                .moves = {MOVE_PSYCHIC, MOVE_HYPNOSIS, MOVE_DREAM_EATER, MOVE_DESTINY_BOND},
             },
             {
                 .species = SPECIES_BRELOOM,
@@ -678,8 +678,7 @@ static const u8 sFrontierBrainObjEventGfx[NUM_FRONTIER_FACILITIES][2] =
 
 const u16 gFrontierBannedSpecies[] =
 {
-    SPECIES_MEW, SPECIES_MEWTWO, SPECIES_HO_OH, SPECIES_LUGIA, SPECIES_CELEBI,
-    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_BONDED_AGGRON, SPECIES_BONDED_ALAKAZAM, 0xFFFF
+    0xFFFF
 };
 
 static const u8 *const sRecordsWindowChallengeTexts[][2] =

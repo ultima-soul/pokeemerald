@@ -49,10 +49,10 @@ NavelRock_Bottom_EventScript_Lugia:: @ 82692A2
 	delay 30
 	delay 50
 	waitse
-	playmoncry SPECIES_LUGIA, 2
+	playmoncry SPECIES_ROTOM_WASH, 2
 	waitmoncry
 	delay 20
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_ROTOM_WASH
 	setvar VAR_0x8005, 70  @ level
 	setvar VAR_0x8006, ITEM_NONE
 	special CreateObedientEnemyMon
@@ -73,11 +73,11 @@ NavelRock_Bottom_EventScript_Lugia:: @ 82692A2
 
 NavelRock_Bottom_EventScript_DefeatedLugia:: @ 8269336
 	setflag FLAG_DEFEATED_LUGIA
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_ROTOM_WASH
 	goto Common_EventScript_LegendaryFlewAway
 	end
 
 NavelRock_Bottom_EventScript_RanFromLugia:: @ 8269344
-	setvar VAR_0x8004, SPECIES_LUGIA
+	setvar VAR_0x8004, SPECIES_ROTOM_WASH
 	goto Common_EventScript_LegendaryFlewAway
 	end

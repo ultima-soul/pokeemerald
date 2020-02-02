@@ -910,7 +910,7 @@ static void sub_8140470(void)
         case SPECIES_SHROOMISH:
             gUnknown_0203AB88->var02 |= 0x1;
             break;
-        case SPECIES_TAILLOW:
+        case SPECIES_SHELMET:
             gUnknown_0203AB88->var02 |= 0x2;
             break;
         }
@@ -1291,7 +1291,7 @@ static u8 sub_814118C(u16 r0, u16 r1)
     switch (gUnknown_0203AB88->var02)
     {
     case 1: // SHROOMISH
-    case 2: // TAILLOW
+    case 2: // SHELMET
         // one of the two is in party
         if (gLocalTime.hours > 3 && gLocalTime.hours < 10)
         {
@@ -4129,9 +4129,9 @@ static void sub_8144A24(struct Sprite *sprite)
     if (gUnknown_0203AB88->var03_0)
     {
         if (sprite->data[0])
-            PlayCry1(SPECIES_TAILLOW, -63);
+            PlayCry1(SPECIES_SHELMET, -63);
         else
-            PlayCry1(SPECIES_TAILLOW, 63);
+            PlayCry1(SPECIES_SHELMET, 63);
     }
     else
     {
@@ -4384,9 +4384,9 @@ static void sub_81450D8(struct Sprite *sprite)
         {
             m4aSongNumStartOrChange(SE_BASABASA);
             if (gUnknown_0203AB88->var38->data[0] == 0)
-                PlayCry1(SPECIES_TAILLOW, 63);
+                PlayCry1(SPECIES_SHELMET, 63);
             else
-                PlayCry1(SPECIES_TAILLOW, -63);
+                PlayCry1(SPECIES_SHELMET, -63);
             StartSpriteAnim(sprite, gUnknown_0203AB88->var38->data[0] + 2);
             sprite->data[1] = 45;
             sprite->callback = sub_8145030;

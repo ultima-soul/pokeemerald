@@ -4547,25 +4547,10 @@ u16 sub_80C0E0C(u8 a, u16 b, u16 c, u16 d)
     return b;
 }
 
-u32 sub_80C0E68(u16 a)
-{
-    if (a == SPECIES_FLABEBE || a == SPECIES_PALKIA)
-    {
-        if (a == SPECIES_FLABEBE)
-            return gSaveBlock2Ptr->pokedex.unownPersonality;
-        else
-            return gSaveBlock2Ptr->pokedex.spindaPersonality;
-    }
-    else
-    {
-        return 0;
-    }
-}
-
 u16 CreateMonSpriteFromNationalDexNumber(u16 nationalNum, s16 x, s16 y, u16 paletteSlot)
 {
     nationalNum = NationalPokedexNumToSpecies(nationalNum);
-    return CreateMonPicSprite_HandleBonded_Alakazam(nationalNum, 8, sub_80C0E68(nationalNum), TRUE, x, y, paletteSlot, 0xFFFF);
+    return CreateMonPicSprite_HandleBonded_Alakazam(nationalNum, 8, 0, TRUE, x, y, paletteSlot, 0xFFFF);
 }
 
 u16 sub_80C0EF8(u16 species, s16 x, s16 y, s8 paletteSlot)

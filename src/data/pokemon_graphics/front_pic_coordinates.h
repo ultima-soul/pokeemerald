@@ -1205,7 +1205,7 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x45,
         .y_offset = 0x0,
     },
-    [SPECIES_MILTANK] =
+    [SPECIES_BONDED_MEWTWO_Y] =
     {
         .size = 0x77,
         .y_offset = 0x8,
@@ -1215,17 +1215,17 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x77,
         .y_offset = 0x5,
     },
-    [SPECIES_RAIKOU] =
+    [SPECIES_ROTOM_FAN] =
     {
         .size = 0x88,
         .y_offset = 0x00,
     },
-    [SPECIES_ENTEI] =
+    [SPECIES_ROTOM_MOW] =
     {
         .size = 0x88,
         .y_offset = 0x00,
     },
-    [SPECIES_SUICUNE] =
+    [SPECIES_ROTOM_HEAT] =
     {
         .size = 0x88,
         .y_offset = 0x00,
@@ -1245,12 +1245,12 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x88,
         .y_offset = 0x0,
     },
-    [SPECIES_LUGIA] =
+    [SPECIES_ROTOM_WASH] =
     {
         .size = 0x88,
         .y_offset = 0x00,
     },
-    [SPECIES_HO_OH] =
+    [SPECIES_ROTOM_FREEZE] =
     {
         .size = 0x88,
         .y_offset = 0x00,
@@ -1259,131 +1259,6 @@ const struct MonCoords gMonFrontPicCoords[] =
     {
         .size = 0x55,
         .y_offset = 0xc,
-    },
-    [SPECIES_OLD_UNOWN_B] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_C] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_D] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_E] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_F] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_G] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_H] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_I] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_J] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_K] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_L] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_M] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_N] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_O] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_P] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_Q] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_R] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_S] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_T] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_U] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_V] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_W] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_X] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_Y] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
-    },
-    [SPECIES_OLD_UNOWN_Z] =
-    {
-        .size = 0x87,
-        .y_offset = 0x04,
     },
     [SPECIES_TREECKO] =
     {
@@ -1520,12 +1395,12 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x77,
         .y_offset = 0x0,
     },
-    [SPECIES_TAILLOW] =
+    [SPECIES_SHELMET] =
     {
         .size = 0x64,
         .y_offset = 0x10,
     },
-    [SPECIES_SWELLOW] =
+    [SPECIES_ACCELGOR] =
     {
         .size = 0x87,
         .y_offset = 0x06,
@@ -1835,12 +1710,12 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x45,
         .y_offset = 0x01,
     },
-    [SPECIES_DARKRAI] =
+    [SPECIES_GIRATINA_ORIGIN] =
     {
         .size = 0x55,
         .y_offset = 0x12,
     },
-    [SPECIES_CRESSELIA] =
+    [SPECIES_BONDED_SERPERIOR] =
     {
         .size = 0x66,
         .y_offset = 0x08,
@@ -1850,17 +1725,17 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x45,
         .y_offset = 0x6,
     },
-    [SPECIES_XERNEAS] =
+    [SPECIES_MELOETTA] =
     {
         .size = 0x55,
         .y_offset = 0x0e,
     },
-    [SPECIES_YVELTAL] =
+    [SPECIES_BUNEARY] =
     {
         .size = 0x78,
         .y_offset = 0x03,
     },
-    [SPECIES_ZYGARDE] =
+    [SPECIES_LOPUNNY] =
     {
         .size = 0x88,
         .y_offset = 0x01,

@@ -1205,7 +1205,7 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x88,
         .y_offset = 0x0,
     },
-    [SPECIES_MILTANK] =
+    [SPECIES_BONDED_MEWTWO_Y] =
     {
         .size = 0x87,
         .y_offset = 0x6,
@@ -1215,17 +1215,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x84,
         .y_offset = 0x10,
     },
-    [SPECIES_RAIKOU] =
+    [SPECIES_ROTOM_FAN] =
     {
         .size = 0x86,
         .y_offset = 0x0a,
     },
-    [SPECIES_ENTEI] =
+    [SPECIES_ROTOM_MOW] =
     {
         .size = 0x87,
         .y_offset = 0x06,
     },
-    [SPECIES_SUICUNE] =
+    [SPECIES_ROTOM_HEAT] =
     {
         .size = 0x88,
         .y_offset = 0x03,
@@ -1245,12 +1245,12 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x88,
         .y_offset = 0x1,
     },
-    [SPECIES_LUGIA] =
+    [SPECIES_ROTOM_WASH] =
     {
         .size = 0x88,
         .y_offset = 0x01,
     },
-    [SPECIES_HO_OH] =
+    [SPECIES_ROTOM_FREEZE] =
     {
         .size = 0x88,
         .y_offset = 0x01,
@@ -1395,12 +1395,12 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x88,
         .y_offset = 0x0,
     },
-    [SPECIES_TAILLOW] =
+    [SPECIES_SHELMET] =
     {
         .size = 0x64,
         .y_offset = 0x11,
     },
-    [SPECIES_SWELLOW] =
+    [SPECIES_ACCELGOR] =
     {
         .size = 0x86,
         .y_offset = 0x08,
@@ -1710,12 +1710,12 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x87,
         .y_offset = 0x5,
     },
-    [SPECIES_DARKRAI] =
+    [SPECIES_GIRATINA_ORIGIN] =
     {
         .size = 0x66,
         .y_offset = 0x0b,
     },
-    [SPECIES_CRESSELIA] =
+    [SPECIES_BONDED_SERPERIOR] =
     {
         .size = 0x77,
         .y_offset = 0x06,
@@ -1725,17 +1725,17 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x85,
         .y_offset = 0xc,
     },
-    [SPECIES_XERNEAS] =
+    [SPECIES_MELOETTA] =
     {
         .size = 0x85,
         .y_offset = 0x0d,
     },
-    [SPECIES_YVELTAL] =
+    [SPECIES_BUNEARY] =
     {
         .size = 0x86,
         .y_offset = 0x09,
     },
-    [SPECIES_ZYGARDE] =
+    [SPECIES_LOPUNNY] =
     {
         .size = 0x88,
         .y_offset = 0x03,

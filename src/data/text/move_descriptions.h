@@ -1957,7 +1957,7 @@ static const u8 sQUASHDescription[] = _(
 	"Suppresses the foe, making\n"
 	"it move last.");
 
-static const u8 sAMIMIKYUICSDescription[] = _(
+static const u8 sACROBATICSDescription[] = _(
 	"Does double damage if the\n"
 	"user has no item.");
 
@@ -2329,9 +2329,11 @@ static const u8 sLAVA_PLUMEDescription[] = _(
 	"Scarlet flames torch\n"
 	"everything around the user.");
 
-static const u8 sSHORE_UPDescription[] = _(
-	"Restores the user's HP.\n"
-	"More HP in a sandstorm.");
+static const u8 sGLACIAL_CRASHDescription[] = _(
+	"The user charges ahead\n"
+	"recklessly, dealing serious\n"
+	"massive damage, but also\n"
+	"takes serious recoil damage.");
 
 static const u8 sFIRST_IMPRESSIONDescription[] = _(
 	"Hits hard and first.\n"
@@ -2640,7 +2642,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TOXIC - 1] = sToxicDescription,
     [MOVE_CONFUSION - 1] = sConfusionDescription,
     [MOVE_PSYCHIC - 1] = sPsychicDescription,
-    [MOVE_BRAVIARYSIS - 1] = sHypnosisDescription,
+    [MOVE_HYPNOSIS - 1] = sHypnosisDescription,
     [MOVE_MEDITATE - 1] = sMeditateDescription,
     [MOVE_AGILITY - 1] = sAgilityDescription,
     [MOVE_QUICK_ATTACK - 1] = sQuickAttackDescription,
@@ -3057,7 +3059,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_CIRCLE_THROW - 1] = sCIRCLE_THROWDescription,
     [MOVE_INCINERATE - 1] = sINCINERATEDescription,
     [MOVE_QUASH - 1] = sQUASHDescription,
-    [MOVE_AMIMIKYUICS - 1] = sAMIMIKYUICSDescription,
+    [MOVE_ACROBATICS - 1] = sACROBATICSDescription,
     [MOVE_REFLECT_TYPE - 1] = sREFLECT_TYPEDescription,
     [MOVE_RETALIATE - 1] = sRETALIATEDescription,
     [MOVE_FINAL_GAMBIT - 1] = sFINAL_GAMBITDescription,
@@ -3168,7 +3170,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DRAGON_ASCENT - 1] = sCLOSE_COMBATDescription,
     [MOVE_HYPERSPACE_FURY - 1] = sHYPERSPACE_HOLEDescription,
     [MOVE_DREAD_HOWL - 1] = sDREAD_HOWLDescription,
-    [MOVE_SHORE_UP - 1] = sSHORE_UPDescription,
+    [MOVE_GLACIAL_CRASH - 1] = sGLACIAL_CRASHDescription,
     [MOVE_FIRST_IMPRESSION - 1] = sFIRST_IMPRESSIONDescription,
     [MOVE_BANEFUL_BUNKER - 1] = sBANEFUL_BUNKERDescription,
     [MOVE_SPIRIT_SHACKLE - 1] = sSPIRIT_SHACKLEDescription,

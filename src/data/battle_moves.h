@@ -1330,7 +1330,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_SPECIAL,
     },
 
-    [MOVE_BRAVIARYSIS] =
+    [MOVE_HYPNOSIS] =
     {
         .effect = EFFECT_SLEEP,
         .power = 0,
@@ -7179,9 +7179,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
         .split = SPLIT_STATUS,
     },
 
-    [MOVE_AMIMIKYUICS] =
+    [MOVE_ACROBATICS] =
     {
-        .effect = EFFECT_AMIMIKYUICS,
+        .effect = EFFECT_ACROBATICS,
         .power = 55,
         .type = TYPE_FLYING,
         .accuracy = 100,
@@ -8743,18 +8743,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
             .split = SPLIT_SPECIAL,
         },
 
-    [MOVE_SHORE_UP] =
+    [MOVE_GLACIAL_CRASH] =
     {
-        .effect = EFFECT_PLACEHOLDER,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 10,
+        .effect = EFFECT_RECOIL,
+        .power = 120,
+        .type = TYPE_ICE,
+        .accuracy = 80,
+        .pp = 5,
         .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
+        .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGSROCK_AFFECTED,
+        .split = SPLIT_PHYSICAL,
     },
 
     [MOVE_FIRST_IMPRESSION] =

@@ -5,7 +5,7 @@ gTrickHouse_Mechadoll_Poochyena:: @ 27ECC3
 	.string "POOCHYENA$"
 
 gTrickHouse_Mechadoll_Taillow:: @ 27ECCD
-	.string "TAILLOW$"
+	.string "SHELMET$"
 
 gTrickHouse_Mechadoll_Azurill:: @ 27ECD5
 	.string "CARRACOSTA$"

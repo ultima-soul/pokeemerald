@@ -2605,7 +2605,7 @@ u8 TryWeatherFormChange(u8 battler)
     u8 ret = 0;
     bool32 weatherEffect = WEATHER_HAS_EFFECT;
 
-    if (gBattleMons[battler].species == SPECIES_CHERRIM)
+    if (gBattleMons[battler].species == SPECIES_EGG)
     {
         if (gBattleMons[battler].ability != ABILITY_FLOWER_GIFT || gBattleMons[battler].hp == 0)
             ret = 0;
@@ -5154,7 +5154,7 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
                 basePower = sTrumpCardPowerTable[i];
         }
         break;
-    case EFFECT_AMIMIKYUICS:
+    case EFFECT_ACROBATICS:
         if (gBattleMons[battlerAtk].item == ITEM_NONE)
             basePower *= 2;
         break;
@@ -5588,7 +5588,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         }
         break;
     case ABILITY_FLOWER_GIFT:
-        if (gBattleMons[battlerAtk].species == SPECIES_CHERRIM && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY)
+        if (gBattleMons[battlerAtk].species == SPECIES_EGG && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY)
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
     case ABILITY_HUSTLE:
@@ -5612,7 +5612,7 @@ static u32 CalcAttackStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, b
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerAtk)))
         {
         case ABILITY_FLOWER_GIFT:
-            if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_CHERRIM)
+            if (gBattleMons[BATTLE_PARTNER(battlerAtk)].species == SPECIES_EGG)
                 MulModifier(&modifier, UQ_4_12(1.5));
             break;
         }
@@ -5709,7 +5709,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
     case ABILITY_FLOWER_GIFT:
-        if (gBattleMons[battlerDef].species == SPECIES_CHERRIM && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY && !usesDefStat)
+        if (gBattleMons[battlerDef].species == SPECIES_EGG && WEATHER_HAS_EFFECT && gBattleWeather & WEATHER_SUN_ANY && !usesDefStat)
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
     }
@@ -5720,7 +5720,7 @@ static u32 CalcDefenseStat(u16 move, u8 battlerAtk, u8 battlerDef, u8 moveType, 
         switch (GetBattlerAbility(BATTLE_PARTNER(battlerDef)))
         {
         case ABILITY_FLOWER_GIFT:
-            if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_CHERRIM && !usesDefStat)
+            if (gBattleMons[BATTLE_PARTNER(battlerDef)].species == SPECIES_EGG && !usesDefStat)
                 MulModifier(&modifier, UQ_4_12(1.5));
             break;
         }
@@ -6230,10 +6230,6 @@ bool32 CanBattlerGetOrLoseItem(u8 battlerId, u16 itemId)
     else if (ItemId_GetHoldEffect(itemId) == HOLD_EFFECT_MEGA_STONE && GetMegaEvolutionSpecies(species, itemId) != SPECIES_NONE)
         return FALSE;
     else if (species == SPECIES_GIRATINA && itemId == ITEM_GRISEOUS_ORB)
-        return FALSE;
-    else if (species == SPECIES_GENESECT && GetBattlerHoldEffect(battlerId, FALSE) == HOLD_EFFECT_DRIVE)
-        return FALSE;
-    else if (species == SPECIES_SILVALLY && GetBattlerHoldEffect(battlerId, FALSE) == HOLD_EFFECT_MEMORY)
         return FALSE;
     else
         return TRUE;

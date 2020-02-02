@@ -518,13 +518,6 @@ void BattleSetup_StartLegendaryBattle(void)
         gBattleTypeFlags |= BATTLE_TYPE_RAYQUAZA;
         CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_REKKU);
         break;
-    case SPECIES_BONDED_ALAKAZAM:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEO);
-        break;
-    case SPECIES_LUGIA:
-    case SPECIES_HO_OH:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEN);
-        break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
         break;

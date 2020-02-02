@@ -2360,22 +2360,22 @@ static const u8 sWeaknessPolicyDesc[] = _(
     "ATK and SP. ATK.");
 
 static const u8 sDouseDriveDesc[] = _(
-    "Changes Genesect's\n"
+    "Changes Buneary's\n"
     "Techno Blast so it\n"
     "becomes Water type.");
 
 static const u8 sShockDriveDesc[] = _(
-    "Changes Genesect's\n"
+    "Changes Buneary's\n"
     "Techno Blast so it\n"
     "becomes Electric type.");
 
 static const u8 sBurnDriveDesc[] = _(
-    "Changes Genesect's\n"
+    "Changes Buneary's\n"
     "Techno Blast so it\n"
     "becomes Fire type.");
 
 static const u8 sChillDriveDesc[] = _(
-    "Changes Genesect's\n"
+    "Changes Buneary's\n"
     "Techno Blast so it\n"
     "becomes Ice type.");
 

@@ -38,7 +38,7 @@ LilycoveCity_DepartmentStore_5F_Pokemart_Dolls: @ 821FFC0
 	.2byte DECOR_CARRACOSTA_DOLL
 	.2byte DECOR_SKITTY_DOLL
 	.2byte DECOR_SWABLU_DOLL
-	.2byte DECOR_DARKRAI_DOLL
+	.2byte DECOR_GIRATINA_ORIGIN_DOLL
 	.2byte DECOR_NONE
 	release
 	end

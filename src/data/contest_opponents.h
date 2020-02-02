@@ -159,7 +159,7 @@ const struct ContestWinner gUnknown_08587FA4[] =
     {
         .personality = 0,
         .trainerId = 0xFFFF,
-        .species = SPECIES_YVELTAL,
+        .species = SPECIES_BUNEARY,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .monName = _("LOUDED"),
         .trainerName = _("BRYANT"),
@@ -295,7 +295,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_MADISON] = {
-        .species = SPECIES_TAILLOW,
+        .species = SPECIES_SHELMET,
         .nickname = _("TATAY"),
         .trainerName = _("MADISON"),
         .trainerGfxId = EVENT_OBJ_GFX_POKEFAN_F,
@@ -440,7 +440,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_SYDNEY] = {
-        .species = SPECIES_XERNEAS,
+        .species = SPECIES_MELOETTA,
         .nickname = _("WHIRIS"),
         .trainerName = _("SYDNEY"),
         .trainerGfxId = EVENT_OBJ_GFX_LASS,
@@ -556,7 +556,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_MELANIE] = {
-        .species = SPECIES_DARKRAI,
+        .species = SPECIES_GIRATINA_ORIGIN,
         .nickname = _("GULIN"),
         .trainerName = _("MELANIE"),
         .trainerGfxId = EVENT_OBJ_GFX_TWIN,
@@ -1093,7 +1093,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_TEETER_DANCE,
             MOVE_PSYCH_UP,
-            MOVE_BRAVIARYSIS,
+            MOVE_HYPNOSIS,
             MOVE_UPROAR
         },
         .cool = 25,
@@ -1658,7 +1658,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_JADE] = {
-        .species = SPECIES_SWELLOW,
+        .species = SPECIES_ACCELGOR,
         .nickname = _("WELOW"),
         .trainerName = _("JADE"),
         .trainerGfxId = EVENT_OBJ_GFX_POKEFAN_F,
@@ -2020,7 +2020,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_STOMP,
-            MOVE_BRAVIARYSIS,
+            MOVE_HYPNOSIS,
             MOVE_EGG_BOMB,
             MOVE_SKILL_SWAP
         },
@@ -2238,7 +2238,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_DEVON] = {
-        .species = SPECIES_MILTANK,
+        .species = SPECIES_BONDED_MEWTWO_Y,
         .nickname = _("MILKAN"),
         .trainerName = _("DEVON"),
         .trainerGfxId = EVENT_OBJ_GFX_POKEFAN_M,
@@ -2296,7 +2296,7 @@ const struct ContestPokemon gContestOpponents[] =
         .otId = 0xFFFF
     },
     [CONTEST_OPPONENT_RALPH] = {
-        .species = SPECIES_YVELTAL,
+        .species = SPECIES_BUNEARY,
         .nickname = _("LOUDERD"),
         .trainerName = _("RALPH"),
         .trainerGfxId = EVENT_OBJ_GFX_EXPERT_M,

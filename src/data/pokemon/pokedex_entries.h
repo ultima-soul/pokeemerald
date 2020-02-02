@@ -509,7 +509,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .categoryName = _("BAT"),
         .height = 16,
         .weight = 550,
-        .description = gDurantPokedexText,
+        .description = gBonded_GreninjaPokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 1,
         .trainerScale = 256,
@@ -1154,7 +1154,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_RUFFLET] =
     {
-        .categoryName = _("BRAVIARYSIS"),
+        .categoryName = _("HYPNOSIS"),
         .height = 10,
         .weight = 324,
         .description = gRuffletPokedexText,
@@ -1166,7 +1166,7 @@ const struct PokedexEntry gPokedexEntries[] =
 
     [NATIONAL_DEX_BRAVIARY] =
     {
-        .categoryName = _("BRAVIARYSIS"),
+        .categoryName = _("HYPNOSIS"),
         .height = 16,
         .weight = 756,
         .description = gBraviaryPokedexText,
@@ -2892,12 +2892,12 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_MILTANK] =
+    [NATIONAL_DEX_BONDED_MEWTWO_Y] =
     {
         .categoryName = _("MILK COW"),
         .height = 12,
         .weight = 755,
-        .description = gMiltankPokedexText,
+        .description = gMewtwo_YPokedexText,
         .pokemonScale = 280,
         .pokemonOffset = 5,
         .trainerScale = 256,
@@ -2916,36 +2916,36 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 3,
     },
 
-    [NATIONAL_DEX_RAIKOU] =
+    [NATIONAL_DEX_ROTOM_FAN] =
     {
         .categoryName = _("THUNDER"),
         .height = 19,
         .weight = 1780,
-        .description = gRaikouPokedexText,
+        .description = gRotom_FanPokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 345,
         .trainerOffset = 7,
     },
 
-    [NATIONAL_DEX_ENTEI] =
+    [NATIONAL_DEX_ROTOM_MOW] =
     {
         .categoryName = _("VOLCANO"),
         .height = 21,
         .weight = 1980,
-        .description = gEnteiPokedexText,
+        .description = gRotom_MowPokedexText,
         .pokemonScale = 259,
         .pokemonOffset = 0,
         .trainerScale = 345,
         .trainerOffset = 7,
     },
 
-    [NATIONAL_DEX_SUICUNE] =
+    [NATIONAL_DEX_ROTOM_HEAT] =
     {
         .categoryName = _("AURORA"),
         .height = 20,
         .weight = 1870,
-        .description = gSuicunePokedexText,
+        .description = gRotom_HeatPokedexText,
         .pokemonScale = 269,
         .pokemonOffset = 0,
         .trainerScale = 345,
@@ -2988,24 +2988,24 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 7,
     },
 
-    [NATIONAL_DEX_LUGIA] =
+    [NATIONAL_DEX_ROTOM_WASH] =
     {
         .categoryName = _("DIVING"),
         .height = 52,
         .weight = 2160,
-        .description = gLugiaPokedexText,
+        .description = gRotom_WashPokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 721,
         .trainerOffset = 19,
     },
 
-    [NATIONAL_DEX_HO_OH] =
+    [NATIONAL_DEX_ROTOM_FREEZE] =
     {
         .categoryName = _("RAINBOW"),
         .height = 38,
         .weight = 1990,
-        .description = gHoOhPokedexText,
+        .description = gRotom_FreezePokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 0,
         .trainerScale = 610,
@@ -3312,24 +3312,24 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_TAILLOW] =
+    [NATIONAL_DEX_SHELMET] =
     {
         .categoryName = _("TINYSWALLOW"),
         .height = 3,
         .weight = 23,
-        .description = gTaillowPokedexText,
+        .description = gShelmetPokedexText,
         .pokemonScale = 465,
         .pokemonOffset = 21,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_SWELLOW] =
+    [NATIONAL_DEX_ACCELGOR] =
     {
         .categoryName = _("SWALLOW"),
         .height = 7,
         .weight = 198,
-        .description = gSwellowPokedexText,
+        .description = gAccelgorPokedexText,
         .pokemonScale = 428,
         .pokemonOffset = 15,
         .trainerScale = 256,
@@ -3516,36 +3516,36 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_XERNEAS] =
+    [NATIONAL_DEX_MELOETTA] =
     {
         .categoryName = _("WHISPER"),
         .height = 6,
         .weight = 163,
-        .description = gXerneasPokedexText,
+        .description = gMeloettaPokedexText,
         .pokemonScale = 373,
         .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_YVELTAL] =
+    [NATIONAL_DEX_BUNEARY] =
     {
         .categoryName = _("BIG VOICE"),
         .height = 10,
         .weight = 405,
-        .description = gYveltalPokedexText,
+        .description = gBunearyPokedexText,
         .pokemonScale = 356,
         .pokemonOffset = 10,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_ZYGARDE] =
+    [NATIONAL_DEX_LOPUNNY] =
     {
         .categoryName = _("LOUD NOISE"),
         .height = 15,
         .weight = 840,
-        .description = gZygardePokedexText,
+        .description = gLopunnyPokedexText,
         .pokemonScale = 284,
         .pokemonOffset = 1,
         .trainerScale = 256,
@@ -3792,24 +3792,24 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_DARKRAI] =
+    [NATIONAL_DEX_GIRATINA_ORIGIN] =
     {
         .categoryName = _("STOMACH"),
         .height = 4,
         .weight = 103,
-        .description = gDarkraiPokedexText,
+        .description = gGiratina_OriginPokedexText,
         .pokemonScale = 593,
         .pokemonOffset = 23,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_CRESSELIA] =
+    [NATIONAL_DEX_BONDED_SERPERIOR] =
     {
         .categoryName = _("POISON BAG"),
         .height = 17,
         .weight = 800,
-        .description = gCresseliaPokedexText,
+        .description = gBonded_SerperiorPokedexText,
         .pokemonScale = 256,
         .pokemonOffset = 6,
         .trainerScale = 345,

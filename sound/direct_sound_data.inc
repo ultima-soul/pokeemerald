@@ -551,7 +551,7 @@ Cry_Greninja::
 	.incbin "sound/direct_sound_samples/cry_greninja.bin"
 
 	.align 2
-Cry_Durant::
+Cry_Bonded_Greninja::
 	.incbin "sound/direct_sound_samples/cry_durant.bin"
 
 	.align 2
@@ -1347,23 +1347,23 @@ Cry_Gothitelle::
 	.incbin "sound/direct_sound_samples/cry_gothitelle.bin"
 
 	.align 2
-Cry_Miltank::
-	.incbin "sound/direct_sound_samples/cry_miltank.bin"
+Cry_Bonded_Mewtwo_Y::
+	.incbin "sound/direct_sound_samples/cry_bonded_mewtwo_y.bin"
 
 	.align 2
 Cry_Blissey::
 	.incbin "sound/direct_sound_samples/cry_blissey.bin"
 
 	.align 2
-Cry_Raikou::
+Cry_Rotom_Fan::
 	.incbin "sound/direct_sound_samples/cry_raikou.bin"
 
 	.align 2
-Cry_Entei::
+Cry_Rotom_Mow::
 	.incbin "sound/direct_sound_samples/cry_entei.bin"
 
 	.align 2
-Cry_Suicune::
+Cry_Rotom_Heat::
 	.incbin "sound/direct_sound_samples/cry_suicune.bin"
 
 	.align 2
@@ -1379,11 +1379,11 @@ Cry_Tyranitar::
 	.incbin "sound/direct_sound_samples/cry_tyranitar.bin"
 
 	.align 2
-Cry_Lugia::
+Cry_Rotom_Wash::
 	.incbin "sound/direct_sound_samples/cry_lugia.bin"
 
 	.align 2
-Cry_HoOh::
+Cry_Rotom_Freeze::
 	.incbin "sound/direct_sound_samples/cry_ho_oh.bin"
 
 	.align 2
@@ -1451,12 +1451,12 @@ Cry_Unused265::
 	.incbin "sound/direct_sound_samples/cry_unused_265.bin"
 
 	.align 2
-Cry_Taillow::
-	.incbin "sound/direct_sound_samples/cry_taillow.bin"
+Cry_Shelmet::
+	.incbin "sound/direct_sound_samples/cry_shelmet.bin"
 
 	.align 2
-Cry_Swellow::
-	.incbin "sound/direct_sound_samples/cry_swellow.bin"
+Cry_Accelgor::
+	.incbin "sound/direct_sound_samples/cry_accelgor.bin"
 
 	.align 2
 Cry_Unused268::
@@ -1643,12 +1643,12 @@ Cry_Delcatty::
 	.incbin "sound/direct_sound_samples/cry_delcatty.bin"
 
 	.align 2
-Cry_Darkrai::
-	.incbin "sound/direct_sound_samples/cry_darkrai.bin"
+Cry_Giratina_Origin::
+	.incbin "sound/direct_sound_samples/cry_giratina_origin.bin"
 
 	.align 2
-Cry_Cresselia::
-	.incbin "sound/direct_sound_samples/cry_cresselia.bin"
+Cry_Bonded_Serperior::
+	.incbin "sound/direct_sound_samples/cry_bonded_serperior.bin"
 
 	.align 2
 Cry_Manethundr::
@@ -1903,20 +1903,20 @@ Cry_Zigzagoon::
 	.incbin "sound/direct_sound_samples/cry_zigzagoon.bin"
 
 	.align 2
-Cry_Zygarde::
-	.incbin "sound/direct_sound_samples/cry_zygarde.bin"
+Cry_Lopunny::
+	.incbin "sound/direct_sound_samples/cry_lopunny.bin"
 
 	.align 2
-Cry_Yveltal::
-	.incbin "sound/direct_sound_samples/cry_yveltal.bin"
+Cry_Buneary::
+	.incbin "sound/direct_sound_samples/cry_buneary.bin"
 
 	.align 2
 Cry_Wailord::
 	.incbin "sound/direct_sound_samples/cry_wailord.bin"
 
 	.align 2
-Cry_Xerneas::
-	.incbin "sound/direct_sound_samples/cry_xerneas.bin"
+Cry_Meloetta::
+	.incbin "sound/direct_sound_samples/cry_meloetta.bin"
 
 	.align 2
 Cry_Snorunt::

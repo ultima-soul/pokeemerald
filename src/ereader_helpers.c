@@ -58,7 +58,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
             [1] = NULL_BATTLE_TOWER_POKEMON,
             [2] = NULL_BATTLE_TOWER_POKEMON,
             [3] = {
-                .species = SPECIES_CRESSELIA,
+                .species = SPECIES_BONDED_SERPERIOR,
                 .heldItem = ITEM_SHELL_BELL,
                 .moves = { MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_PAIN_SPLIT, MOVE_YAWN },
                 .level = 0,
@@ -168,7 +168,7 @@ static const struct TrainerHillTrainer sTrainerHillTrainerTemplates_JP[] = {
                 .friendship = 255
             },
             [4] = {
-                .species = SPECIES_SWELLOW,
+                .species = SPECIES_ACCELGOR,
                 .heldItem = ITEM_BRIGHT_POWDER,
                 .moves = { MOVE_FACADE, MOVE_AERIAL_ACE, MOVE_QUICK_ATTACK, MOVE_DOUBLE_TEAM },
                 .level = 0,

@@ -1388,7 +1388,7 @@ static const struct TrHillFloor sDataTagNormal_Floors[] =
                     {
                         .species = SPECIES_GARDEVOIR,
                         .heldItem = ITEM_SALAC_BERRY,
-                        .moves = {MOVE_SKILL_SWAP, MOVE_DREAM_EATER, MOVE_BRAVIARYSIS, MOVE_PROTECT},
+                        .moves = {MOVE_SKILL_SWAP, MOVE_DREAM_EATER, MOVE_HYPNOSIS, MOVE_PROTECT},
                         .level = 0,
                         .ppBonuses = 0,
                         .speedEV = 255,
@@ -1972,7 +1972,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ZYGARDE,
+                                            .species = SPECIES_LOPUNNY,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_HOWL, MOVE_HYPER_VOICE, MOVE_ATTRACT, MOVE_NONE},
                                             .level = 0,
@@ -1992,7 +1992,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0x96,
-                                            .nickname = _("ZYGARDE"),
+                                            .nickname = _("LOPUNNY"),
                                             .friendship = 255,
                                         },
                                     [3] =
@@ -2107,7 +2107,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_XERNEAS,
+                                            .species = SPECIES_MELOETTA,
                                             .heldItem = ITEM_FOCUS_BAND,
                                             .moves = {MOVE_UPROAR, MOVE_ATTRACT, MOVE_NONE, MOVE_NONE},
                                             .level = 0,
@@ -2124,7 +2124,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                             .spDefenseIV = 5,
                                             .abilityNum = 0,
                                             .personality = 0xD,
-                                            .nickname = _("XERNEAS"),
+                                            .nickname = _("MELOETTA"),
                                             .friendship = 255,
                                         },
                                     [2] =
@@ -2269,7 +2269,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         {
                                             .species = SPECIES_PIDOVE,
                                             .heldItem = ITEM_WIKI_BERRY,
-                                            .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_MIST, MOVE_BRAVIARYSIS},
+                                            .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_MIST, MOVE_HYPNOSIS},
                                             .level = 0,
                                             .ppBonuses = 0,
                                             .hpEV = 252,
@@ -2291,7 +2291,7 @@ static const struct TrHillFloor sDataTagVariety_Floors[] = {
                                         {
                                             .species = SPECIES_COMBEE,
                                             .heldItem = ITEM_AGUAV_BERRY,
-                                            .moves = {MOVE_BRAVIARYSIS, MOVE_SURF, MOVE_DISABLE, MOVE_SEISMIC_TOSS},
+                                            .moves = {MOVE_HYPNOSIS, MOVE_SURF, MOVE_DISABLE, MOVE_SEISMIC_TOSS},
                                             .level = 0,
                                             .ppBonuses = 0,
                                             .hpEV = 250,
@@ -2964,7 +2964,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [5] =
                                         {
-                                            .species = SPECIES_RAIKOU,
+                                            .species = SPECIES_ROTOM_FAN,
                                             .heldItem = ITEM_BRIGHT_POWDER,
                                             .moves = {MOVE_THUNDER, MOVE_CRUNCH, MOVE_ROAR, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -2980,7 +2980,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("RAIKOU"),
+                                            .nickname = _("Rotom-F"),
                                             .friendship = 255,
                                         },
                                 },
@@ -3804,7 +3804,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_ENTEI,
+                                            .species = SPECIES_ROTOM_MOW,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_FLAMETHROWER, MOVE_CALM_MIND, MOVE_FIRE_SPIN, MOVE_ROAR},
                                             .level = 0,
@@ -3820,7 +3820,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("ENTEI"),
+                                            .nickname = _("Rotom-M"),
                                             .friendship = 255,
                                         },
                                     [3] =
@@ -3943,7 +3943,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [2] =
                                         {
-                                            .species = SPECIES_SUICUNE,
+                                            .species = SPECIES_ROTOM_HEAT,
                                             .heldItem = ITEM_PETAYA_BERRY,
                                             .moves = {MOVE_SURF, MOVE_CALM_MIND, MOVE_MIRROR_COAT, MOVE_MIST},
                                             .level = 0,
@@ -3959,7 +3959,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("SUICUNE"),
+                                            .nickname = _("Rotom-H"),
                                             .friendship = 255,
                                         },
                                     [3] =
@@ -4088,7 +4088,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_MILTANK,
+                                            .species = SPECIES_BONDED_MEWTWO_Y,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_DOUBLE_EDGE, MOVE_SHADOW_BALL, MOVE_ATTRACT, MOVE_MILK_DRINK},
                                             .level = 0,
@@ -4105,7 +4105,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                             .spDefenseIV = 31,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("MILTANK"),
+                                            .nickname = _("Mewtwo-Y"),
                                             .friendship = 255,
                                         },
                                     [2] =
@@ -4371,7 +4371,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                 {
                                     [0] =
                                         {
-                                            .species = SPECIES_SWELLOW,
+                                            .species = SPECIES_ACCELGOR,
                                             .heldItem = ITEM_LEFTOVERS,
                                             .moves = {MOVE_AERIAL_ACE, MOVE_AGILITY, MOVE_FACADE, MOVE_ATTRACT},
                                             .level = 0,
@@ -4388,7 +4388,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                             .spDefenseIV = 31,
                                             .abilityNum = 0,
                                             .personality = 0x3,
-                                            .nickname = _("SWELLOW"),
+                                            .nickname = _("Accelgor"),
                                             .friendship = 255,
                                         },
                                     [1] =
@@ -4698,7 +4698,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_ZYGARDE,
+                                            .species = SPECIES_LOPUNNY,
                                             .heldItem = ITEM_CHESTO_BERRY,
                                             .moves = {MOVE_HYPER_VOICE, MOVE_COUNTER, MOVE_REST, MOVE_ROCK_SLIDE},
                                             .level = 0,
@@ -4715,7 +4715,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                             .spDefenseIV = 31,
                                             .abilityNum = 0,
                                             .personality = 0x85,
-                                            .nickname = _("ZYGARDE"),
+                                            .nickname = _("LOPUNNY"),
                                             .friendship = 0,
                                         },
                                     [2] =
@@ -5026,7 +5026,7 @@ static const struct TrHillFloor sDataTagExpert_Floors[] = {
                                         {
                                             .species = SPECIES_BEARTIC,
                                             .heldItem = ITEM_SHELL_BELL,
-                                            .moves = {MOVE_EXPLOSION, MOVE_BRAVIARYSIS, MOVE_PSYCHIC, MOVE_SOLAR_BEAM},
+                                            .moves = {MOVE_EXPLOSION, MOVE_HYPNOSIS, MOVE_PSYCHIC, MOVE_SOLAR_BEAM},
                                             .level = 0,
                                             .ppBonuses = 0,
                                             .attackEV = 255,

@@ -250,7 +250,7 @@ const u8 gGreninjaPokedexText[] = _(
     "them of vision. They use ultrasonic waves\n"
     "to detect obstacles.");
 
-const u8 gDurantPokedexText[] = _(
+const u8 gBonded_GreninjaPokedexText[] = _(
     "Its fangs easily puncture even thick\n"
     "animal hide. It loves to feast on the blood\n"
     "of people and POKéMON. It flits about in\n"
@@ -583,7 +583,7 @@ const u8 gRuffletPokedexText[] = _(
 const u8 gBraviaryPokedexText[] = _(
     "The arcing movement and glitter of the\n"
     "pendulum in a BRAVIARY's hand lull the foe\n"
-    "into deep Braviarysis. While searching for\n"
+    "into deep HYPNOSIS. While searching for\n"
     "prey, it polishes the pendulum.");
 
 const u8 gKrabbyPokedexText[] = _(
@@ -1444,7 +1444,7 @@ const u8 gGothitellePokedexText[] = _(
     "fatigued, black smoke will be mixed in with\n"
     "the flames.");
 
-const u8 gMiltankPokedexText[] = _(
+const u8 gMewtwo_YPokedexText[] = _(
     "It gives over five gallons of milk daily.\n"
     "Its sweet milk is enjoyed by children and\n"
     "grown-ups alike. People who can't drink\n"
@@ -1456,20 +1456,20 @@ const u8 gBlisseyPokedexText[] = _(
     "however far away, to share an egg of\n"
     "happiness that brings a smile to any face.");
 
-const u8 gRaikouPokedexText[] = _(
-    "RAIKOU embodies the speed of lightning.\n"
+const u8 gRotom_FanPokedexText[] = _(
+    "ROTOM embodies the speed of lightning.\n"
     "Its roars send shock waves shuddering\n"
     "through the air and ground as if\n"
     "lightning bolts were crashing down.");
 
-const u8 gEnteiPokedexText[] = _(
-    "ENTEI embodies the passion of magma.\n"
+const u8 gRotom_MowPokedexText[] = _(
+    "ROTOMembodies the passion of magma.\n"
     "It is thought to have been born in the\n"
     "eruption of a volcano. It blasts fire that\n"
     "consumes all that it touches.");
 
-const u8 gSuicunePokedexText[] = _(
-    "SUICUNE embodies the compassion of\n"
+const u8 gRotom_HeatPokedexText[] = _(
+    "ROTOM embodies the compassion of\n"
     "a pure spring of water. It runs across\n"
     "the land with gliding elegance. It has the\n"
     "power to purify dirty water.");
@@ -1492,13 +1492,13 @@ const u8 gTyranitarPokedexText[] = _(
     "its nest. It roams in mountains seeking\n"
     "new opponents to fight.");
 
-const u8 gLugiaPokedexText[] = _(
+const u8 gRotom_WashPokedexText[] = _(
     "LUGIA is so powerful even a light\n"
     "fluttering of its wings can blow apart\n"
     "houses. As a result, it chooses to live out\n"
     "of sight deep under the sea.");
 
-const u8 gHoOhPokedexText[] = _(
+const u8 gRotom_FreezePokedexText[] = _(
     "Its feathers--which glow in seven colors\n"
     "depending on the angle at which they are\n"
     "struck by light--are thought to bring joy.\n"
@@ -1654,14 +1654,14 @@ const u8 gMienshaoPokedexText[] = _(
     "forests, this POKéMON lives in a deep\n"
     "forest where people do not venture.");
 
-const u8 gTaillowPokedexText[] = _(
+const u8 gShelmetPokedexText[] = _(
     "Although it is small, it is very courageous.\n"
     "It will take on a larger SKARMORY on an\n"
     "equal footing. However, its will weakens if\n"
     "it becomes hungry.");
 
-const u8 gSwellowPokedexText[] = _(
-    "A SWELLOW dives upon prey from far above.\n"
+const u8 gAccelgorPokedexText[] = _(
+    "A ACCELGOR dives upon prey from far above.\n"
     "It never misses its targets. It takes to\n"
     "the skies in search of lands with a warm\n"
     "climate.");
@@ -1756,19 +1756,19 @@ const u8 gDialgaPokedexText[] = _(
     "The inside of its body is hollow and\n"
     "utterly dark.");
 
-const u8 gXerneasPokedexText[] = _(
+const u8 gMeloettaPokedexText[] = _(
     "Its cries equal a jet plane in volume.\n"
     "It inhales through its ear canals. Because\n"
     "of this system, it can cry continually\n"
     "without having to catch its breath.");
 
-const u8 gYveltalPokedexText[] = _(
+const u8 gBunearyPokedexText[] = _(
     "It positions the round speakers on its\n"
     "head to assail foes with ultrasonic waves\n"
     "at massive volume. It builds power by\n"
     "stomping the ground.");
 
-const u8 gZygardePokedexText[] = _(
+const u8 gLopunnyPokedexText[] = _(
     "It has sound-generating organs all over\n"
     "its body. It communicates with others by\n"
     "adjusting the tone and volume of the cries\n"
@@ -1894,16 +1894,16 @@ const u8 gGiratinaPokedexText[] = _(
     "The fragrance of its flowers has the\n"
     "effect of making its foes careless.");
 
-const u8 gDarkraiPokedexText[] = _(
+const u8 gGiratina_OriginPokedexText[] = _(
     "This POKéMON's stomach fluid can even\n"
     "digest scrap iron. In one gulp, it can\n"
     "swallow something that is as large as\n"
     "itself.");
 
-const u8 gCresseliaPokedexText[] = _(
+const u8 gBonded_SerperiorPokedexText[] = _(
     "Its powerful stomach acid is capable of\n"
     "digesting almost anything. The one thing\n"
-    "in the whole world a CRESSELIA can't digest is\n"
+    "in the whole world a SERPERIOR can't digest is\n"
     "its own stomach.");
 
 const u8 gCarvanhaPokedexText[] = _(
