@@ -1179,11 +1179,11 @@
 	.byte 0xe5
 	.endm
 
-	.macro doALOLAN_MAROWAKchangeanimation
+	.macro docastformchangeanimation
 	.byte 0xe6
 	.endm
 
-	.macro tryALOLAN_MAROWAKdatachange
+	.macro trycastformdatachange
 	.byte 0xe7
 	.endm
 
