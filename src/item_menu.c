@@ -424,11 +424,11 @@ const struct WindowTemplate gUnknown_086141AC[] =
 // .text
 
 struct ListBuffer1 {
-    struct ListMenuItem subBuffers[65];
+    struct ListMenuItem subBuffers[129];
 };
 
 struct ListBuffer2 {
-    s8 name[65][24];
+    s8 name[129][24];
 };
 
 struct TempWallyStruct {
@@ -791,7 +791,7 @@ void GetItemName(s8 *dest, u16 itemId)
             }
             else
             {
-                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
+                ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 3);
                 StringExpandPlaceholders(dest, gText_UnkF908Var1Clear7Var2);
             }
             break;
@@ -1905,7 +1905,7 @@ void DisplaySellItemAskString(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
 
-    if (ItemId_GetPrice(gSpecialVar_ItemId) == 0)
+    if (ItemId_GetPrice(gSpecialVar_ItemId) == 0 || ItemId_GetImportance(gSpecialVar_ItemId) == 1)
     {
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem);

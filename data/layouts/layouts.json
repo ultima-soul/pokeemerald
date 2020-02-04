@@ -458,7 +458,7 @@
             "name": "Route130_MirageIsland_Layout",
             "primary_tileset": "gTileset_general_fall",
             "secondary_tileset": "gTileset_Petalburg",
-            "width": 23
+            "width": 24
         },
         {
             "blockdata_filepath": "data/layouts/Route131/map.bin",

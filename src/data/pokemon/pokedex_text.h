@@ -58,7 +58,7 @@ const u8 gBlastoisePokedexText[] = _(
     "water can precisely nail tin cans from\n"
     "a distance of over 160 feet.");
 
-const u8 gPokedexText[] = _(
+const u8 gSnivyPokedexText[] = _(
     "Its voracious appetite compels it to\n"
     "devour leaves bigger than itself without\n"
     "hesitation. It releases a terribly strong\n"
@@ -112,14 +112,14 @@ const u8 gPidgeotPokedexText[] = _(
     "by the beautiful feathers on its head that\n"
     "they choose PIDGEOT as their POKéMON.");
 
-const u8 gRattataPokedexText[] = _(
-    "A RATTATA is cautious in the extreme.\n"
+const u8 gAlolan_VulpixPokedexText[] = _(
+    "A VULPIX is cautious in the extreme.\n"
     "Even while it is asleep, it constantly\n"
     "moves its ears and listens for danger.\n"
     "It will make its nest anywhere.");
 
-const u8 gRaticatePokedexText[] = _(
-    "A RATICATE's sturdy fangs grow steadily.\n"
+const u8 gAlolan_NinetalesPokedexText[] = _(
+    "A NINETALES's sturdy fangs grow steadily.\n"
     "To keep them ground down, it gnaws on\n"
     "rocks and logs. It may even chew on the\n"
     "walls of houses.");

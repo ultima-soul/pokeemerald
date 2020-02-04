@@ -1971,9 +1971,9 @@ static u8 CanMonLearnTMTutor(struct Pokemon *mon, u16 item, u8 tutor)
     if (GetMonData(mon, MON_DATA_IS_EGG))
         return CANNOT_LEARN_MOVE_IS_EGG;
 
-    if (item >= ITEM_TM01_FOCUS_PUNCH)
+    if (item >= ITEM_TM01_WORK_UP)
     {
-        if (CanMonLearnTMHM(mon, item - ITEM_TM01_FOCUS_PUNCH))
+        if (CanMonLearnTMHM(mon, item - ITEM_TM01_WORK_UP))
             move = ItemIdToBattleMoveId(item);
         else
             return CANNOT_LEARN_MOVE;
@@ -4721,7 +4721,7 @@ void ItemUseCB_PPUp(u8 taskId, TaskFunc task)
 
 u16 ItemIdToBattleMoveId(u16 item)
 {
-    u16 tmNumber = item - ITEM_TM01_FOCUS_PUNCH;
+    u16 tmNumber = item - ITEM_TM01_WORK_UP;
     return sTMHMMoves[tmNumber];
 }
 

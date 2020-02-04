@@ -21,11 +21,12 @@ PetalburgCity_Conversation_Derek::
 	return
 
 PetalburgCity_Conversation_Kate::
+	load_field_pic 5, 200, 83, VAR_0x8009
 	load_field_pic 3, 40, 83, VAR_0x8008
 	goto_if_unset FLAG_MET_RIVAL_MOM, Beta_EventScript_Give_Starter_Kit
 	msgbox Beta_Teala_Text MSGBOX_NPC	
-	destroy_field_pic 3, VAR_0x8008
 	destroy_field_pic 5, VAR_0x8009
+	destroy_field_pic 3, VAR_0x8008
 	return
 		
 Beta_EventScript_Give_Starter_Kit:: @ 827004D	
@@ -35,7 +36,13 @@ Beta_EventScript_Give_Starter_Kit:: @ 827004D
 	setflag FLAG_RECEIVED_POKENAV
 	setflag FLAG_MET_RIVAL_MOM
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	special ChooseStarter
+	@special ChooseStarter
+	givemon SPECIES_BONDED_BLAZIKEN, 50, ITEM_CHARCOAL
+	givemon SPECIES_BONDED_METAGROSS, 50, ITEM_LEFTOVERS
+	givemon SPECIES_MIGHTYENA, 50, ITEM_BLACK_GLASSES
+	givemon SPECIES_BONDED_PIDGEOT, 50, ITEM_SHARP_BEAK
+	givemon SPECIES_FROSLASS, 50, ITEM_NEVER_MELT_ICE
+	givemon SPECIES_RESHIRAM, 50, ITEM_DRAGON_FANG
 	return
 	
 Deneb_Academy_Lukas:: @ 81DC3FD

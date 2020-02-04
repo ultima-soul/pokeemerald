@@ -1503,8 +1503,8 @@ const u32 gItemIconPalette_GeniusWing[] = INCBIN_U32("graphics/items/icon_palett
 const u32 gItemIcon_CleverWing[] = INCBIN_U32("graphics/items/icons/clever_wing.4bpp.lz");
 const u32 gItemIconPalette_CleverWing[] = INCBIN_U32("graphics/items/icon_palettes/clever_wing.gbapal.lz");
 
-const u32 gItemIcon_SwiftWing[] = INCBIN_U32("graphics/items/icons/swift_wing.4bpp.lz");
-const u32 gItemIconPalette_SwiftWing[] = INCBIN_U32("graphics/items/icon_palettes/swift_wing.gbapal.lz");
+const u32 gItemIcon_BondedStone[] = INCBIN_U32("graphics/items/icons/bonded_stone.4bpp.lz");
+const u32 gItemIconPalette_BondedStone[] = INCBIN_U32("graphics/items/icon_palettes/bonded_stone.gbapal.lz");
 
-const u32 gItemIcon_PrettyWing[] = INCBIN_U32("graphics/items/icons/pretty_wing.4bpp.lz");
-const u32 gItemIconPalette_PrettyWing[] = INCBIN_U32("graphics/items/icon_palettes/pretty_wing.gbapal.lz");
+const u32 gItemIcon_SteelStone[] = INCBIN_U32("graphics/items/icons/steel_stone.4bpp.lz");
+const u32 gItemIconPalette_SteelStone[] = INCBIN_U32("graphics/items/icon_palettes/steel_stone.gbapal.lz");

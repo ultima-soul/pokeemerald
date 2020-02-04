@@ -1760,6 +1760,255 @@ static const u8 sTM50Desc[] = _(
     "attack, but sharply\n"
     "lowers SP. ATK.");
 
+static const u8 sTM51Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM52Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM53Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM54Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM55Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM56Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM57Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM58Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM59Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM60Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM61Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM62Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM63Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM64Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM65Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM66Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM67Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM68Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM69Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM70Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM71Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM72Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM73Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM74Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM75Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM76Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM77Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM78Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM79Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM80Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM81Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM82Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM83Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM84Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM85Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM86Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM87Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM88Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM89Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM90Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM91Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM92Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM93Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM94Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM95Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM96Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM97Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM98Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM99Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
+
+static const u8 sTM00Desc[] = _(
+    "Enables full-power\n"
+    "attack, but sharply\n"
+    "lowers SP. ATK.");
 
 static const u8 sHM01Desc[] = _(
     "Attacks the foe\n"
@@ -2779,12 +3028,12 @@ static const u8 sCleverWingDesc[] = _(
     "the base SP. DEF.\n"
     "of a POKéMON.");
 
-static const u8 sSwiftWingDesc[] = _(
+static const u8 sBondedStoneDesc[] = _(
     "An item that raises\n"
     "the base SPEED of\n"
     "a POKéMON.");
 
-static const u8 sPrettyWingDesc[] = _(
+static const u8 sSteelStoneDesc[] = _(
     "A beautiful yet\n"
     "plain feather that\n"
     "does nothing.");

@@ -95,12 +95,12 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x87,
         .y_offset = 0x7
     },
-    [SPECIES_RATTATA] =
+    [SPECIES_VULPIX_A] =
     {
         .size = 0x87,
         .y_offset = 0x7
     },
-    [SPECIES_RATICATE] =
+    [SPECIES_NINETALES_A] =
     {
         .size = 0x86,
         .y_offset = 0xa
@@ -1940,137 +1940,137 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0x36,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_B] =
+    [SPECIES_BONDED_ALTARIA] =
     {
         .size = 0x56,
         .y_offset = 0x09,
     },
-    [SPECIES_UNOWN_C] =
+    [SPECIES_BONDED_AMPHAROS] =
     {
         .size = 0x67,
         .y_offset = 0x06,
     },
-    [SPECIES_UNOWN_D] =
+    [SPECIES_BONDED_AUDINO] =
     {
         .size = 0x56,
         .y_offset = 0x08,
     },
-    [SPECIES_UNOWN_E] =
+    [SPECIES_BONDED_BEEDRILL] =
     {
         .size = 0x56,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_F] =
+    [SPECIES_BONDED_BLASTOISE] =
     {
         .size = 0x66,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_G] =
+    [SPECIES_BONDED_BLAZIKEN] =
     {
         .size = 0x57,
         .y_offset = 0x05,
     },
-    [SPECIES_UNOWN_H] =
+    [SPECIES_BONDED_CHARIZARD] =
     {
         .size = 0x66,
         .y_offset = 0x08,
     },
-    [SPECIES_UNOWN_I] =
+    [SPECIES_BONDED_GALLADE] =
     {
         .size = 0x37,
         .y_offset = 0x07,
     },
-    [SPECIES_UNOWN_J] =
+    [SPECIES_BONDED_GARCHOMP] =
     {
         .size = 0x46,
         .y_offset = 0x09,
     },
-    [SPECIES_UNOWN_K] =
+    [SPECIES_BONDED_GARDEVOIR] =
     {
         .size = 0x57,
         .y_offset = 0x07,
     },
-    [SPECIES_UNOWN_L] =
+    [SPECIES_BONDED_GENGAR] =
     {
         .size = 0x46,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_M] =
+    [SPECIES_BONDED_GLALIE] =
     {
         .size = 0x65,
         .y_offset = 0x0d,
     },
-    [SPECIES_UNOWN_N] =
+    [SPECIES_BONDED_GYARADOS] =
     {
         .size = 0x65,
         .y_offset = 0x0d,
     },
-    [SPECIES_UNOWN_O] =
+    [SPECIES_BONDED_HERACROSS] =
     {
         .size = 0x66,
         .y_offset = 0x08,
     },
-    [SPECIES_UNOWN_P] =
+    [SPECIES_BONDED_LOPUNNY] =
     {
         .size = 0x46,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_Q] =
+    [SPECIES_BONDED_LUCARIO] =
     {
         .size = 0x55,
         .y_offset = 0x0f,
     },
-    [SPECIES_UNOWN_R] =
+    [SPECIES_BONDED_METAGROSS] =
     {
         .size = 0x45,
         .y_offset = 0x0c,
     },
-    [SPECIES_UNOWN_S] =
+    [SPECIES_BONDED_PIDGEOT] =
     {
         .size = 0x57,
         .y_offset = 0x04,
     },
-    [SPECIES_UNOWN_T] =
+    [SPECIES_BONDED_PINSIR] =
     {
         .size = 0x45,
         .y_offset = 0x0d,
     },
-    [SPECIES_UNOWN_U] =
+    [SPECIES_BONDED_MEWTWO_X] =
     {
         .size = 0x65,
         .y_offset = 0x0d,
     },
-    [SPECIES_UNOWN_V] =
+    [SPECIES_BONDED_SALAMENCE] =
     {
         .size = 0x56,
         .y_offset = 0x0b,
     },
-    [SPECIES_UNOWN_W] =
+    [SPECIES_BONDED_SCEPTILE] =
     {
         .size = 0x55,
         .y_offset = 0x0d,
     },
-    [SPECIES_UNOWN_X] =
+    [SPECIES_BONDED_SCIZOR] =
     {
         .size = 0x55,
         .y_offset = 0x0f,
     },
-    [SPECIES_UNOWN_Y] =
+    [SPECIES_BONDED_STEELIX] =
     {
         .size = 0x46,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_Z] =
+    [SPECIES_BONDED_SWAMPERT] =
     {
         .size = 0x46,
         .y_offset = 0x0a,
     },
-    [SPECIES_UNOWN_EMARK] =
+    [SPECIES_BONDED_TYRANITAR] =
     {
         .size = 0x37,
         .y_offset = 0x06,
     },
-    [SPECIES_UNOWN_QMARK] =
+    [SPECIES_BONDED_VENUSAUR] =
     {
         .size = 0x47,
         .y_offset = 0x06,

@@ -94,7 +94,7 @@ u16 MailSpeciesToSpecies(u16 mailSpecies, u16 *buffer)
 {
     u16 result;
 
-    if (mailSpecies >= 30000 && mailSpecies < (30000 + UNOWN_FORM_COUNT))
+    if (mailSpecies >= 30000 && mailSpecies < (30000 + BONDED_BLASTOISEORM_COUNT))
     {
         result = SPECIES_FLABEBE;
         *buffer = mailSpecies - 30000;

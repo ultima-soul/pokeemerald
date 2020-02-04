@@ -18,6 +18,9 @@ PetalburgCity_Mart_Pokemart_Basic: @ 8207D8C
 	.2byte ITEM_ORAN_BERRY
 	.2byte ITEM_PECHA_BERRY		
 	.2byte ITEM_CHERI_BERRY		
+	.2byte ITEM_STEEL_STONE		
+	.2byte ITEM_BONDED_STONE		
+	.2byte ITEM_TM35		
 	.2byte ITEM_NONE
 	release
 	end

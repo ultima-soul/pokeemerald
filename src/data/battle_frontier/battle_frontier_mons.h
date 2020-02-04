@@ -239,7 +239,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_LONELY
     },
     [34] = {
-        .species = SPECIES_RATTATA,
+        .species = SPECIES_VULPIX_A,
         .moves = {MOVE_HYPER_FANG, MOVE_PURSUIT, MOVE_QUICK_ATTACK, MOVE_SWAGGER},
         .itemTableId = BATTLE_FRONTIER_ITEM_KINGS_ROCK,
         .evSpread = F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -1380,7 +1380,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_QUIRKY
     },
     [197] = {
-        .species = SPECIES_RATICATE,
+        .species = SPECIES_NINETALES,
         .moves = {MOVE_ENDEAVOR, MOVE_PURSUIT, MOVE_SCARY_FACE, MOVE_QUICK_ATTACK},
         .itemTableId = BATTLE_FRONTIER_ITEM_SILK_SCARF,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK | F_EV_SPREAD_HP,
@@ -2115,7 +2115,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_QUIET
     },
     [302] = {
-        .species = SPECIES_RATICATE,
+        .species = SPECIES_NINETALES,
         .moves = {MOVE_SUPER_FANG, MOVE_HYPER_FANG, MOVE_SHADOW_BALL, MOVE_SCARY_FACE},
         .itemTableId = BATTLE_FRONTIER_ITEM_FOCUS_BAND,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,

@@ -93,7 +93,7 @@ void LoadSpecialPokePic(const struct CompressedSpriteSheet *src, void *dest, s32
         if (i == 0)
             i = SPECIES_FLABEBE;
         else
-            i += SPECIES_UNOWN_B - 1;
+            i += SPECIES_BONDED_ALTARIA - 1;
 
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[i].data, dest);
@@ -514,7 +514,7 @@ void LoadSpecialPokePic_2(const struct CompressedSpriteSheet *src, void *dest, s
         if (i == 0)
             i = SPECIES_FLABEBE;
         else
-            i += SPECIES_UNOWN_B - 1;
+            i += SPECIES_BONDED_ALTARIA - 1;
 
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[i].data, dest);
@@ -572,7 +572,7 @@ void LoadSpecialPokePic_DontHandleBonded_Alakazam(const struct CompressedSpriteS
         if (i == 0)
             i = SPECIES_FLABEBE;
         else
-            i += SPECIES_UNOWN_B - 1;
+            i += SPECIES_BONDED_ALTARIA - 1;
 
         if (!isFrontPic)
             LZ77UnCompWram(gMonBackPicTable[i].data, dest);

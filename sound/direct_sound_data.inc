@@ -423,7 +423,7 @@ Cry_Blastoise::
 	.incbin "sound/direct_sound_samples/cry_blastoise.bin"
 
 	.align 2
-Cry_::
+Cry_Snivy::
 	.incbin "sound/direct_sound_samples/cry_snivy.bin"
 
 	.align 2
@@ -459,12 +459,12 @@ Cry_Pidgeot::
 	.incbin "sound/direct_sound_samples/cry_pidgeot.bin"
 
 	.align 2
-Cry_Rattata::
-	.incbin "sound/direct_sound_samples/cry_rattata.bin"
+Cry_Alolan_Vulpix::
+	.incbin "sound/direct_sound_samples/cry_alolan_vulpix.bin"
 
 	.align 2
-Cry_Raticate::
-	.incbin "sound/direct_sound_samples/cry_raticate.bin"
+Cry_Alolan_Ninetales::
+	.incbin "sound/direct_sound_samples/cry_alolan_ninetales.bin"
 
 	.align 2
 Cry_Noibat::

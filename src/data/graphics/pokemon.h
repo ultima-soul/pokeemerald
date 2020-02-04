@@ -106,17 +106,17 @@ const u32 gMonBackPic_Pidgeot[] = INCBIN_U32("graphics/pokemon/pidgeot/back.4bpp
 const u32 gMonShinyPalette_Pidgeot[] = INCBIN_U32("graphics/pokemon/pidgeot/shiny.gbapal.lz");
 const u8 gMonIcon_Pidgeot[] = INCBIN_U8("graphics/pokemon/pidgeot/icon.4bpp");
 
-const u32 gMonStillFrontPic_Rattata[] = INCBIN_U32("graphics/pokemon/rattata/front.4bpp.lz");
-const u32 gMonPalette_Rattata[] = INCBIN_U32("graphics/pokemon/rattata/normal.gbapal.lz");
-const u32 gMonBackPic_Rattata[] = INCBIN_U32("graphics/pokemon/rattata/back.4bpp.lz");
-const u32 gMonShinyPalette_Rattata[] = INCBIN_U32("graphics/pokemon/rattata/shiny.gbapal.lz");
-const u8 gMonIcon_Rattata[] = INCBIN_U8("graphics/pokemon/rattata/icon.4bpp");
+const u32 gMonStillFrontPic_Alolan_Vulpix[] = INCBIN_U32("graphics/pokemon/alolan_vulpix/front.4bpp.lz");
+const u32 gMonPalette_Alolan_Vulpix[] = INCBIN_U32("graphics/pokemon/alolan_vulpix/normal.gbapal.lz");
+const u32 gMonBackPic_Alolan_Vulpix[] = INCBIN_U32("graphics/pokemon/alolan_vulpix/back.4bpp.lz");
+const u32 gMonShinyPalette_Alolan_Vulpix[] = INCBIN_U32("graphics/pokemon/alolan_vulpix/shiny.gbapal.lz");
+const u8 gMonIcon_Alolan_Vulpix[] = INCBIN_U8("graphics/pokemon/alolan_vulpix/icon.4bpp");
 
-const u32 gMonStillFrontPic_Raticate[] = INCBIN_U32("graphics/pokemon/raticate/front.4bpp.lz");
-const u32 gMonPalette_Raticate[] = INCBIN_U32("graphics/pokemon/raticate/normal.gbapal.lz");
-const u32 gMonBackPic_Raticate[] = INCBIN_U32("graphics/pokemon/raticate/back.4bpp.lz");
-const u32 gMonShinyPalette_Raticate[] = INCBIN_U32("graphics/pokemon/raticate/shiny.gbapal.lz");
-const u8 gMonIcon_Raticate[] = INCBIN_U8("graphics/pokemon/raticate/icon.4bpp");
+const u32 gMonStillFrontPic_Alolan_Ninetales[] = INCBIN_U32("graphics/pokemon/alolan_ninetales/front.4bpp.lz");
+const u32 gMonPalette_Alolan_Ninetales[] = INCBIN_U32("graphics/pokemon/alolan_ninetales/normal.gbapal.lz");
+const u32 gMonBackPic_Alolan_Ninetales[] = INCBIN_U32("graphics/pokemon/alolan_ninetales/back.4bpp.lz");
+const u32 gMonShinyPalette_Alolan_Ninetales[] = INCBIN_U32("graphics/pokemon/alolan_ninetales/shiny.gbapal.lz");
+const u8 gMonIcon_Alolan_Ninetales[] = INCBIN_U8("graphics/pokemon/alolan_ninetales/icon.4bpp");
 
 const u32 gMonStillFrontPic_Noibat[] = INCBIN_U32("graphics/pokemon/noibat/front.4bpp.lz");
 const u32 gMonPalette_Noibat[] = INCBIN_U32("graphics/pokemon/noibat/normal.gbapal.lz");

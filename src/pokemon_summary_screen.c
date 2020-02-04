@@ -34,6 +34,7 @@
 #include "region_map.h"
 #include "scanline_effect.h"
 #include "sound.h"
+#include "species.h"
 #include "sprite.h"
 #include "string_util.h"
 #include "strings.h"
@@ -1498,16 +1499,16 @@ void ShowPokemonSummaryScreen(u8 mode, void *mons, u8 monIndex, u8 maxMonIndex, 
     case PSS_MODE_NORMAL:
     case PSS_MODE_BOX:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = 2;
+        sMonSummaryScreen->maxPageIndex = 3;
         break;
     case PSS_MODE_UNK1:
         sMonSummaryScreen->minPageIndex = 0;
-        sMonSummaryScreen->maxPageIndex = 2;
+        sMonSummaryScreen->maxPageIndex = 3;
         sMonSummaryScreen->unk40C8 = TRUE;
         break;
     case PSS_MODE_SELECT_MOVE:
         sMonSummaryScreen->minPageIndex = 2;
-        sMonSummaryScreen->maxPageIndex = 2;
+        sMonSummaryScreen->maxPageIndex = 3;
         sMonSummaryScreen->lockMonFlag = TRUE;
         break;
     }
@@ -3296,6 +3297,19 @@ static void PrintNotEggInfo(void)
         else
         {
             SummaryScreen_PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER, gStringVar1, 2, 1, 0, 7);
+            SetDexNumberColor(TRUE);
+        }
+    }
+    else if (summary->species <= SPECIES_BONDED_ALTARIA || summary->species2 <= SPECIES_BONDED_ALTARIA)
+    {
+        if (!IsMonShiny(mon))
+        {
+            SummaryScreen_PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER, gText_Number2, 2, 1, 0, 0);
+            SetDexNumberColor(FALSE);
+        }
+        else
+        {
+            SummaryScreen_PrintTextOnWindow(PSS_LABEL_WINDOW_PORTRAIT_DEX_NUMBER, gText_Number2, 2, 1, 0, 7);
             SetDexNumberColor(TRUE);
         }
     }

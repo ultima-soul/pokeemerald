@@ -125,7 +125,7 @@ const struct PokedexEntry gPokedexEntries[] =
         .categoryName = _("WORM"),
         .height = 3,
         .weight = 29,
-        .description = gPokedexText,
+        .description = gSnivyPokedexText,
         .pokemonScale = 549,
         .pokemonOffset = 22,
         .trainerScale = 256,
@@ -228,24 +228,24 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_RATTATA] =
+    [NATIONAL_DEX_VULPIX_A] =
     {
         .categoryName = _("MOUSE"),
         .height = 3,
         .weight = 35,
-        .description = gRattataPokedexText,
+        .description = gAlolan_VulpixPokedexText,
         .pokemonScale = 481,
         .pokemonOffset = 21,
         .trainerScale = 256,
         .trainerOffset = 0,
     },
 
-    [NATIONAL_DEX_RATICATE] =
+    [NATIONAL_DEX_NINETALES_A] =
     {
         .categoryName = _("MOUSE"),
         .height = 7,
         .weight = 185,
-        .description = gRaticatePokedexText,
+        .description = gAlolan_NinetalesPokedexText,
         .pokemonScale = 459,
         .pokemonOffset = 18,
         .trainerScale = 256,
@@ -4643,4 +4643,327 @@ const struct PokedexEntry gPokedexEntries[] =
         .trainerScale = 290,
         .trainerOffset = 2,
     },
+    [NATIONAL_DEX_BONDED_ALTARIA] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_AMPHAROS] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_AUDINO] = 
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_BEEDRILL] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_BLASTOISE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_BLAZIKEN] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_CHARIZARD] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GALLADE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GARCHOMP] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GARDEVOIR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GENGAR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GLALIE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_GYARADOS] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_HERACROSS] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_LOPUNNY] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_LUCARIO] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_METAGROSS] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_PIDGEOT] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_PINSIR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_MEWTWO_X] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_SALAMENCE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_SCEPTILE] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_SCIZOR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_STEELIX] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_SWAMPERT] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_TYRANITAR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    },
+
+    [NATIONAL_DEX_BONDED_VENUSAUR] =
+    {
+        .categoryName = _("DNA"),
+        .height = 17,
+        .weight = 608,
+        .description = gBonded_AlakazamPokedexText,
+        .pokemonScale = 256,
+        .pokemonOffset = 0,
+        .trainerScale = 290,
+        .trainerOffset = 2,
+    }
 };

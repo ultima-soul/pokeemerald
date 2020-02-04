@@ -255,7 +255,7 @@
 #define MAX_TOTAL_EVS 510
 #define EV_ITEM_RAISE_LIMIT 100
 
-#define UNOWN_FORM_COUNT 28 //Remove
+#define BONDED_BLASTOISEORM_COUNT 28 //Remove
 
 // Battle move flags
 #define FLAG_MAKES_CONTACT          0x1
@@ -299,12 +299,22 @@
 #define EVO_LEVEL_ATK_GT_DEF 0x0008 // Pokémon reaches the specified level with attack > defense
 #define EVO_LEVEL_ATK_EQ_DEF 0x0009 // Pokémon reaches the specified level with attack = defense
 #define EVO_LEVEL_ATK_LT_DEF 0x000a // Pokémon reaches the specified level with attack < defense
-#define EVO_LEVEL_LILLIGANT    0x000b // Pokémon reaches the specified level with a Silcoon personality value
-#define EVO_LEVEL_WHIMSICOTT    0x000c // Pokémon reaches the specified level with a Cascoon personality value
-#define EVO_LEVEL_AURORUS    0x000d // Pokémon reaches the specified level (special value for Ninjask)
-#define EVO_LEVEL_DIALGA   0x000e // Pokémon reaches the specified level (special value for Shedinja)
-#define EVO_BEAUTY           0x000f // Pokémon levels up with beauty ≥ specified value
+#define EVO_BONDED           0x000b // Specified item is used when friendship is 220
+#define EVO_LEVEL_FEMALE     0x000c // Pokémon reaches the specified level with a Cascoon personality value
+#define EVO_LEVEL_MALE       0x000d // Pokémon reaches the specified level (special value for Ninjask)
+#define EVO_BEAUTY           0x000e // Pokémon levels up with beauty ≥ specified value
+#define EVO_MOVE             0x000f // Pokémon levels up, knows specified move
+#define EVO_MOVE_TYPE        0x0010 // Pokémon levels up, knows move with specified type
+#define EVO_ITEM_MALE        0x0011 // specified item is used on a male Pokémon
+#define EVO_ITEM_FEMALE      0x0012 // specified item is used on a female Pokémon
+#define EVO_LEVEL_NIGHT      0x0013 // Pokémon reaches the specified level, is night
+#define EVO_LEVEL_DAY        0x0014 // Pokémon reaches the specified level, is day
+#define EVO_LEVEL_DUSK       0x0015 // Pokémon reaches the specified level, is dusk (5-6 P.M)
+#define EVO_ITEM_HOLD_DAY    0x0016 // Pokémon levels up, holds specified item at day
+#define EVO_ITEM_HOLD_NIGHT  0x0017 // Pokémon levels up, holds specified item at night
+#define EVO_SPECIFIC_MON_IN_PARTY  0x0018 // Pokémon levels up with a specified Pokémon in party
+#define EVO_LEVEL_SPECIFIC_MON_TYPE_IN_PARTY 0x0019 // Pokémon levels up with beauty ≥ specified value
 
-#define EVOS_PER_MON 5
+#define EVOS_PER_MON 8
 
 #endif // GUARD_CONSTANTS_POKEMON_H

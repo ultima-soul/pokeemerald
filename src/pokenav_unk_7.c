@@ -550,7 +550,7 @@ u32 sub_81CE700(s32 state)
 u8 *sub_81CE738(u8 *dst, u16 num)
 {
     u8 *txtPtr = ConvertIntToDecimalStringN(dst, num, STR_CONV_MODE_RIGHT_ALIGN, 4);
-    txtPtr = StringCopy(txtPtr, gText_Number2);
+    txtPtr = StringCopy(txtPtr, gText_Number);
 
     return txtPtr;
 }
@@ -585,7 +585,7 @@ bool32 sub_81CE754(u8 a0, u16 a1, bool8 a2)
             text[2] = 8;
             text[3] = 0;
             text[4] = 9;
-            StringCopy(text + 5, gText_Number2);
+            StringCopy(text + 5, gText_Number);
             AddTextPrinterParameterized(structPtr->unk1821, 1, text, 4, 1, 0, NULL);
             ConvertIntToDecimalStringN(text + 5, sub_81CDD48(), STR_CONV_MODE_RIGHT_ALIGN, 4);
             AddTextPrinterParameterized(structPtr->unk1821, 1, text, 28, 1, 0, NULL);
