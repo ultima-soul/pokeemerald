@@ -4062,10 +4062,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM03_WATER_PULSE] =
+    [ITEM_TM03_PSYSHOCK] =
     {
         .name = _("TM03"),
-        .itemId = ITEM_TM03_WATER_PULSE,
+        .itemId = ITEM_TM03_PSYSHOCK,
         .price = 3000,
         .description = sTM03Desc,
         .importance = 1,
@@ -4140,10 +4140,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM09_BULLET_SEED] =
+    [ITEM_TM09_VENOSHOCK] =
     {
         .name = _("TM09"),
-        .itemId = ITEM_TM09_BULLET_SEED,
+        .itemId = ITEM_TM09_VENOSHOCK,
         .price = 3000,
         .description = sTM09Desc,
         .importance = 1,
@@ -4270,10 +4270,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM19_GIGA_DRAIN] =
+    [ITEM_TM19_ROOST] =
     {
         .name = _("TM19"),
-        .itemId = ITEM_TM19_GIGA_DRAIN,
+        .itemId = ITEM_TM19_ROOST,
         .price = 3000,
         .description = sTM19Desc,
         .importance = 1,
@@ -4309,10 +4309,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM22_SOLARBEAM] =
+    [ITEM_TM22_SOLAR_BEAM] =
     {
         .name = _("TM22"),
-        .itemId = ITEM_TM22_SOLARBEAM,
+        .itemId = ITEM_TM22_SOLAR_BEAM,
         .price = 3000,
         .description = sTM22Desc,
         .importance = 1,
@@ -4322,10 +4322,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM23_IRON_TAIL] =
+    [ITEM_TM23_SMACK_DOWN] =
     {
         .name = _("TM23"),
-        .itemId = ITEM_TM23_IRON_TAIL,
+        .itemId = ITEM_TM23_SMACK_DOWN,
         .price = 3000,
         .description = sTM23Desc,
         .importance = 1,
@@ -4387,10 +4387,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM28_DIG] =
+    [ITEM_TM28_LEECH_LIFE] =
     {
         .name = _("TM28"),
-        .itemId = ITEM_TM28_DIG,
+        .itemId = ITEM_TM28_LEECH_LIFE,
         .price = 2000,
         .description = sTM28Desc,
         .importance = 1,
@@ -4465,10 +4465,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM34_SHOCK_WAVE] =
+    [ITEM_TM34_SLUDGE_WAVE] =
     {
         .name = _("TM34"),
-        .itemId = ITEM_TM34_SHOCK_WAVE,
+        .itemId = ITEM_TM34_SLUDGE_WAVE,
         .price = 3000,
         .description = sTM34Desc,
         .importance = 1,
@@ -4582,10 +4582,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM43_SECRET_POWER] =
+    [ITEM_TM43_FLAME_CHARGE] =
     {
         .name = _("TM43"),
-        .itemId = ITEM_TM43_SECRET_POWER,
+        .itemId = ITEM_TM43_FLAME_CHARGE,
         .price = 3000,
         .description = sTM43Desc,
         .importance = 1,
@@ -4634,10 +4634,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM47_STEEL_WING] =
+    [ITEM_TM47_LOW_SWEEP] =
     {
         .name = _("TM47"),
-        .itemId = ITEM_TM47_STEEL_WING,
+        .itemId = ITEM_TM47_LOW_SWEEP,
         .price = 3000,
         .description = sTM47Desc,
         .importance = 1,
@@ -4647,10 +4647,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM48_SKILL_SWAP] =
+    [ITEM_TM48_ROUND] =
     {
         .name = _("TM48"),
-        .itemId = ITEM_TM48_SKILL_SWAP,
+        .itemId = ITEM_TM48_ROUND,
         .price = 3000,
         .description = sTM48Desc,
         .importance = 1,
@@ -4660,10 +4660,10 @@ const struct Item gItems[] =
         .secondaryId = 0,
     },
 
-    [ITEM_TM49_SNATCH] =
+    [ITEM_TM49_ECHOED_VOICE] =
     {
         .name = _("TM49"),
-        .itemId = ITEM_TM49_SNATCH,
+        .itemId = ITEM_TM49_ECHOED_VOICE,
         .price = 3000,
         .description = sTM49Desc,
         .importance = 1,

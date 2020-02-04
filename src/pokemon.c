@@ -2730,7 +2730,7 @@ void CalculateMonStats(struct Pokemon *mon)
 
     SetMonData(mon, MON_DATA_LEVEL, &level);
 
-    if (species == SPECIES_DIALGA)
+    if (species == SPECIES_EGG)
     {
         newMaxHP = 1;
     }
