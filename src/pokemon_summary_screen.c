@@ -205,7 +205,7 @@ static void PssScrollRightEnd(u8 taskId);
 static void PssScrollLeft(u8 taskId);
 static void PssScrollLeftEnd(u8 taskId);
 static void CheckExperienceProgressBar(void);
-static void sub_81C0E48(u8 taskId);
+static void Create_DetailedMoves_Graphics(u8 taskId);
 static void HandleInput_MoveSelect(u8 taskId);
 static bool8 sub_81C1040(void);
 static void Handle_Move_Swap_Arrows(s16* a, s8 b, u8* c);
@@ -215,7 +215,7 @@ static void sub_81C12E4(u8 taskId);
 static void sub_81C13B0(u8 taskId, bool8 b);
 static void SwapMonMoves(struct Pokemon *mon, u8 moveIndex1, u8 moveIndex2);
 static void SwapBoxMonMoves(struct BoxPokemon *mon, u8 moveIndex1, u8 moveIndex2);
-static void sub_81C171C(u8 taskId);
+static void Init_ReplaceMovePage(u8 taskId);
 static void HandleReplaceMoveInput(u8 taskId);
 static bool8 CanReplaceMove(void);
 static void ShowHMMovesCantBeForgottenWindow(u8 a);
@@ -1661,7 +1661,7 @@ static bool8 SummaryScreen_LoadGraphics(void)
         if (sMonSummaryScreen->mode != PSS_MODE_SELECT_MOVE)
             CreateTask(HandleInput, 0);
         else
-            CreateTask(sub_81C171C, 0);
+            CreateTask(Init_ReplaceMovePage, 0);
         gMain.state++;
         break;
     case 23:
@@ -1950,7 +1950,7 @@ static void HandleInput(u8 taskId)
                 else
                 {
                     PlaySE(SE_SELECT);
-                    sub_81C0E48(taskId);
+                    Create_DetailedMoves_Graphics(taskId);
                 }
             }
         }
@@ -2272,7 +2272,7 @@ static void CheckExperienceProgressBar(void)
         DrawHPProgressBar(&sMonSummaryScreen->currentMon);
 }
 
-static void sub_81C0E48(u8 taskId)
+static void Create_DetailedMoves_Graphics(u8 taskId)
 {
     u16 move;
     u8 i;
@@ -2610,10 +2610,13 @@ static void SwapBoxMonMoves(struct BoxPokemon *mon, u8 moveIndex1, u8 moveIndex2
     summary->ppBonuses = ppBonuses;
 }
 
-static void sub_81C171C(u8 taskId)
+static void Init_ReplaceMovePage(u8 taskId)
 {
     SetNewMoveTypeIcon();
     CreateRedFrame(8);
+    LoadSpritePalette(&sSpritePal_SplitIcons);
+    LoadSpriteSheet(&sSpriteSheet_SplitIcons);
+    sMonSummaryScreen->splitIconSpriteId = CreateSprite(&sSpriteTemplate_SplitIcons, 216, 65, 0);
     gTasks[taskId].func = HandleReplaceMoveInput;
 }
 
@@ -4521,7 +4524,6 @@ static void SetContestMoveTypeIcons(void)
 static void SetNewMoveTypeIcon(void)
 {
     u8 i;
-    
     if (sMonSummaryScreen->mode == PSS_MODE_SELECT_MOVE)
     {
         struct PokeSummary *summary = &sMonSummaryScreen->summary;
