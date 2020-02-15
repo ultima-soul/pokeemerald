@@ -1235,7 +1235,7 @@
                                         | TMHM(HM07_WATERFALL)
                                         | TMHM(HM08_DIVE)),
 
-    [SPECIES_VESPIQUEEN]     = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
+    [SPECIES_VESPIQUEN]     = TMHM_LEARNSET(TMHM(TM01_FOCUS_PUNCH)
                                         | TMHM(TM03_WATER_PULSE)
                                         | TMHM(TM04_CALM_MIND)
                                         | TMHM(TM06_TOXIC)
@@ -11155,7 +11155,7 @@ static const u8 sCombeeTMHMLearnset[] =
     0xFF,
 };
 
-static const u8 sVespiqueenTMHMLearnset[] =
+static const u8 sVespiquenTMHMLearnset[] =
 {
     TMHM(TM06_TOXIC),
     TMHM(TM09_VENOSHOCK),
@@ -22900,7 +22900,7 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_TYRUNT] = sTyruntTMHMLearnset,
     [SPECIES_TYRANTRUM] = sTyrantrumTMHMLearnset,
     [SPECIES_COMBEE] = sCombeeTMHMLearnset,
-    [SPECIES_VESPIQUEEN] = sVespiqueenTMHMLearnset,
+    [SPECIES_VESPIQUEN] = sVespiquenTMHMLearnset,
     [SPECIES_PURRLOIN] = sPurrloinTMHMLearnset,
     [SPECIES_LIEPARD] = sLiepardTMHMLearnset,
     [SPECIES_GROWLITHE] = sGrowlitheTMHMLearnset,

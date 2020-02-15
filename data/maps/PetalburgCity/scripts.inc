@@ -1,6 +1,103 @@
 PetalburgCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PetalburgCity_OnTransition
 	.byte 0
 
+	@VAR_PETALBURG_CITY_STATE 
+	@1: Post-lesson and first Pokemon
+	@2: Right before recevieng first Pokemon
+	@3: Late game? Senior students return?
+
+PetalburgCity_OnTransition::
+	setflag FLAG_VISITED_PETALBURG_CITY
+	call Common_EventScript_SetupRivalGfxId
+	compare VAR_PETALBURG_CITY_STATE, 2
+	call_if_eq EventScript_First_Lesson
+	end
+
+EventScript_First_Lesson::
+	setobjectxyperm 4, 18, 36
+	setobjectxyperm 3, 13, 36
+	setobjectxyperm 2, 16, 36
+	setobjectxyperm 1, 15, 36
+	setobjectmovementtype 1, MOVEMENT_TYPE_JOG_IN_PLACE_RIGHT
+	setobjectmovementtype 2, MOVEMENT_TYPE_JOG_IN_PLACE_LEFT
+	end
+
+Mart_Clerk_EventScript::
+    setflag FLAG_BADGE01_GET
+    setflag FLAG_BADGE02_GET
+    setflag FLAG_BADGE03_GET
+    setflag FLAG_BADGE04_GET
+    setflag FLAG_BADGE05_GET
+    setflag FLAG_BADGE06_GET
+    setflag FLAG_BADGE07_GET
+    setflag FLAG_BADGE08_GET
+    setflag FLAG_BADGE09_GET
+    setflag FLAG_BADGE10_GET
+	msgbox Deneb_MartClerk_message, MSGBOX_NPC
+	closemessage
+	end
+
+EventScript_Lesson_Trigger1::
+	msgbox DenebAcademy_FirstLesson_Hey
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement EVENT_OBJ_ID_PLAYER, student_walk_down
+	setobjectxyperm 3, 27, 31
+	setobjectxyperm 4, 27, 32
+	setobjectxyperm 5, 28, 32
+	setobjectxyperm 6, 27, 32
+	goto EventScript_GoToRoute1
+	end
+
+EventScript_Lesson_Trigger2::
+	msgbox DenebAcademy_FirstLesson_Hey
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement EVENT_OBJ_ID_PLAYER, student_walk_up
+	setobjectxyperm 3, 27, 31
+	setobjectxyperm 4, 27, 32
+	setobjectxyperm 5, 28, 31
+	setobjectxyperm 6, 27, 31
+	goto EventScript_GoToRoute1
+	end
+
+EventScript_Lesson_Trigger3::
+	msgbox DenebAcademy_FirstLesson_Hey
+	closemessage
+	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement EVENT_OBJ_ID_PLAYER, student_walk_up_up
+	setobjectxyperm 3, 27, 31
+	setobjectxyperm 4, 27, 32
+	setobjectxyperm 5, 28, 31
+	setobjectxyperm 6, 27, 31
+	goto EventScript_GoToRoute1
+	end
+
+EventScript_GoToRoute1::
+	applymovement EVENT_OBJ_ID_PLAYER, student_turns_left
+	waitmovement 0
+	applymovement 3, students_walk_right
+	applymovement 4, students_walk_right
+	applymovement 5, students_walk_right
+	applymovement 6, rival_walk_right
+	waitmovement 0
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Teala_Lesson_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Teala_Lesson_Kate
+	setvar VAR_ROUTE101_STATE, 0
+	closemessage
+	warp MAP_ROUTE101, 255, 10, 30
+	waitstate
+	releaseall
+	end
+	
+	
 Teala_EventScript::
 	faceplayer	
 	checkplayergender
@@ -14,7 +111,6 @@ Teala_EventScript::
 PetalburgCity_Conversation_Derek::
 	load_field_pic 5, 200, 83, VAR_0x8009
 	load_field_pic 1, 40, 83, VAR_0x8008
-	goto_if_unset FLAG_MET_RIVAL_MOM, Beta_EventScript_Give_Starter_Kit
 	msgbox Beta_Teala_Text MSGBOX_NPC	
 	destroy_field_pic 5, VAR_0x8009
 	destroy_field_pic 1, VAR_0x8008
@@ -23,32 +119,31 @@ PetalburgCity_Conversation_Derek::
 PetalburgCity_Conversation_Kate::
 	load_field_pic 5, 200, 83, VAR_0x8009
 	load_field_pic 3, 40, 83, VAR_0x8008
-	goto_if_unset FLAG_MET_RIVAL_MOM, Beta_EventScript_Give_Starter_Kit
 	msgbox Beta_Teala_Text MSGBOX_NPC	
 	destroy_field_pic 5, VAR_0x8009
 	destroy_field_pic 3, VAR_0x8008
 	return
 		
-Beta_EventScript_Give_Starter_Kit:: @ 827004D	
-	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_SYS_POKENAV_GET
-	setflag FLAG_SYS_POKEDEX_GET
-	setflag FLAG_RECEIVED_POKENAV
-	setflag FLAG_MET_RIVAL_MOM
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	@special ChooseStarter
-	givemon SPECIES_BONDED_BLAZIKEN, 50, ITEM_CHARCOAL
-	givemon SPECIES_BONDED_METAGROSS, 50, ITEM_LEFTOVERS
-	givemon SPECIES_MIGHTYENA, 50, ITEM_BLACK_GLASSES
-	givemon SPECIES_BONDED_PIDGEOT, 50, ITEM_SHARP_BEAK
-	givemon SPECIES_FROSLASS, 50, ITEM_NEVER_MELT_ICE
-	givemon SPECIES_RESHIRAM, 50, ITEM_DRAGON_FANG
+Teala_Lesson_Derek::
+	load_field_pic 5, 200, 83, VAR_0x8009
+	load_field_pic 1, 40, 83, VAR_0x8008
+	msgbox DenebAcademy_Teala_Lesson_Intro	
+	destroy_field_pic 5, VAR_0x8009
+	destroy_field_pic 1, VAR_0x8008
 	return
+
+Teala_Lesson_Kate::
+	load_field_pic 5, 200, 83, VAR_0x8009
+	load_field_pic 3, 40, 83, VAR_0x8008
+	msgbox DenebAcademy_Teala_Lesson_Intro	
+	destroy_field_pic 5, VAR_0x8009
+	destroy_field_pic 3, VAR_0x8008
+	return	
 	
 Deneb_Academy_Lukas:: @ 81DC3FD
 	faceplayer
 	msgbox Beta_Lukas_Message, MSGBOX_NPC
-	applymovement 4, turn_left
+	applymovement 4, student_turns_left
 	closemessage
 	end
 
@@ -59,8 +154,49 @@ Deneb_Academy_Carly:: @ 81DC3FD
 	closemessage
 	end	
 
-turn_left: 
+MovementScript_Left_2:
+	walk_left
+	walk_left
+	step_end
+
+student_turns_left: 
 	face_left
+	step_end
+
+student_walk_down:
+	walk_down
+	face_left
+	step_end	
+		
+student_walk_up:
+	walk_up
+	face_left
+	step_end	
+	
+student_walk_up_up:
+	walk_up
+	walk_up
+	face_left
+	step_end
+
+students_walk_right:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+	
+rival_walk_right:
+	delay_16
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 	
 turn_right:
@@ -70,6 +206,11 @@ turn_right:
 Beta_Starter_kit_message:
 	.string "Take a starting kit for the beta.\p"
 
+Deneb_MartClerk_message:
+	.string "The Cafe is closed.\p"
+	.string "Don't you have a class to go to as\n"
+	.string "well?$"
+
 Beta_Lukas_Message:
 	.string "Can't you see I'm busy?$"
 	
@@ -78,5 +219,13 @@ Beta_Carly_Message:
 	.string "We can talk afterwards.$"
 	
 Beta_Teala_Text:
-	.string "Please take care {PLAYER}\n"
-	.string "I am rooting for you.$"
+	.string "Please head towards Route 1.\n"
+	.string "Next lesson will take place there.$"
+
+DenebAcademy_FirstLesson_Hey:
+	.string "{PLAYER}!$"
+	
+DenebAcademy_Teala_Lesson_Intro:
+	.string "Seems like we are all ready to go to\n"
+	.string "Route 1.\p"
+	.string "Please follow me, and don't run off$"

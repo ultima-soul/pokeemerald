@@ -1734,7 +1734,7 @@ const struct BaseStats gBaseStats[] =
         .noFlip = TRUE,
     },
 
-    [SPECIES_VESPIQUEEN] =
+    [SPECIES_VESPIQUEN] =
     {
         .baseHP = 70,
         .baseAttack = 80,

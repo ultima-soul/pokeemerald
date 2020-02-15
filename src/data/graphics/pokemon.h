@@ -322,11 +322,11 @@ const u32 gMonBackPic_Combee[] = INCBIN_U32("graphics/pokemon/combee/back.4bpp.l
 const u32 gMonShinyPalette_Combee[] = INCBIN_U32("graphics/pokemon/combee/shiny.gbapal.lz");
 const u8 gMonIcon_Combee[] = INCBIN_U8("graphics/pokemon/combee/icon.4bpp");
 
-const u32 gMonStillFrontPic_Vespiqueen[] = INCBIN_U32("graphics/pokemon/vespiqueen/front.4bpp.lz");
-const u32 gMonPalette_Vespiqueen[] = INCBIN_U32("graphics/pokemon/vespiqueen/normal.gbapal.lz");
-const u32 gMonBackPic_Vespiqueen[] = INCBIN_U32("graphics/pokemon/vespiqueen/back.4bpp.lz");
-const u32 gMonShinyPalette_Vespiqueen[] = INCBIN_U32("graphics/pokemon/vespiqueen/shiny.gbapal.lz");
-const u8 gMonIcon_Vespiqueen[] = INCBIN_U8("graphics/pokemon/vespiqueen/icon.4bpp");
+const u32 gMonStillFrontPic_Vespiquen[] = INCBIN_U32("graphics/pokemon/vespiqueen/front.4bpp.lz");
+const u32 gMonPalette_Vespiquen[] = INCBIN_U32("graphics/pokemon/vespiqueen/normal.gbapal.lz");
+const u32 gMonBackPic_Vespiquen[] = INCBIN_U32("graphics/pokemon/vespiqueen/back.4bpp.lz");
+const u32 gMonShinyPalette_Vespiquen[] = INCBIN_U32("graphics/pokemon/vespiqueen/shiny.gbapal.lz");
+const u8 gMonIcon_Vespiquen[] = INCBIN_U8("graphics/pokemon/vespiqueen/icon.4bpp");
 
 const u32 gMonStillFrontPic_Purrloin[] = INCBIN_U32("graphics/pokemon/purrloin/front.4bpp.lz");
 const u32 gMonPalette_Purrloin[] = INCBIN_U32("graphics/pokemon/purrloin/normal.gbapal.lz");

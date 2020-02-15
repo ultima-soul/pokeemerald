@@ -609,8 +609,8 @@ const u16 gEasyChatWordsByLetter_G[] = {
     EC_POKEMON(DRILLBUR),
     EC_POKEMON2(DRILLBUR),
     -1, 2, // Doubled pokemon species name
-    EC_POKEMON(VESPIQUEEN),
-    EC_POKEMON2(VESPIQUEEN),
+    EC_POKEMON(VESPIQUEN),
+    EC_POKEMON2(VESPIQUEN),
     -1, 2, // Doubled pokemon species name
     EC_POKEMON(MEOWSTIC_F),
     EC_POKEMON2(MEOWSTIC_F),

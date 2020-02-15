@@ -87,15 +87,15 @@
             "y": 13
         },
         {
-            "dest_map": "MAP_METEOR_FALLS_1F_1R",
-            "dest_warp_id": 5,
+            "dest_map": "MAP_METEOR_FALLS_B1F_1R",
+            "dest_warp_id": 0,
             "elevation": 0,
             "x": 15,
             "y": 29
         },
         {
-            "dest_map": "MAP_METEOR_FALLS_1F_1R",
-            "dest_warp_id": 4,
+            "dest_map": "MAP_METEOR_FALLS_B1F_1R",
+            "dest_warp_id": 1,
             "elevation": 0,
             "x": 9,
             "y": 5

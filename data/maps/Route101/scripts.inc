@@ -4,298 +4,382 @@ Route101_MapScripts:: @ 81EBCBA
 	.byte 0
 
 Route101_OnTransition: @ 81EBCC5
-	call ProfBirch_EventScript_UpdateLocation
+	call Common_EventScript_SetupRivalGfxId
 	end
 
 Route101_OnFrame: @ 81EBCCB
 	map_script_2 VAR_ROUTE101_STATE, 0, Route101_EventScript_HideMapNamePopup
+	map_script_2 VAR_ROUTE101_STATE, 0, Route_1_Lesson
 	.2byte 0
 
-Route101_EventScript_HideMapNamePopup:: @ 81EBCD5
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	setvar VAR_ROUTE101_STATE, 1
+Route101_EventScript_HideMapNamePopup:: @ 81E7E4B
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	return
+
+Route_1_Lesson::
+	lockall
+	load_field_pic 5, 200, 83, VAR_0x8009
+	msgbox Route_1_Lesson_Message MSGBOX_NPC	
+	destroy_field_pic 5, VAR_0x8009
+	msgbox Route_1_Skip_lesson MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq Route_1_Begin_Lesson
+	compare VAR_RESULT, NO
+	goto_if_eq Route_1_After_Lesson
 	end
 
-Route101_EventScript_StartBirchRescue:: @ 81EBCDE
-	lockall
-	playbgm MUS_EVENT0, 1
-	msgbox Route101_Text_HelpMe, MSGBOX_DEFAULT
+Route_1_Begin_Lesson::
+	load_field_pic 5, 200, 83, VAR_0x8009
+	msgbox Route_1_Lesson_Start, MSGBOX_NPC
+	destroy_field_pic 5, VAR_0x8009
+	applymovement 1, Teala_Into_Grass 	
+	waitmovement 0
+	special StartWallyTutorialBattle
+	waitstate
+	applymovement 1, Teala_Out_Of_Grass 	
+	msgbox Route_1_Lesson_Finished, MSGBOX_NPC
+	goto Route_1_After_Lesson
+	end
+
+Route_1_After_Lesson::	
+	applymovement 2, Rival_Looks_Left
+	applymovement 255, Player_Looks_Right
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Teala_Lesson_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Teala_Lesson_Kate
+	applymovement 1, Teala_To_player
+	msgbox Teala_Present_Task, MSGBOX_NPC
+	applymovement 255 Common_Movement_ExclamationMark
+	applymovement 2, Common_Movement_ExclamationMark
+	applymovement 255, Face_Teala
+	applymovement 2, Face_Teala
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_About_To_Receive_Pokemon_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_About_To_Receive_Pokemon_Kate
+	applymovement 2, Jumping_In_Excitement
+	waitmovement 0
+	applymovement 255, Player_Looks_Right
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Player_Choose_Starter_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Player_Choose_Starter_Kate
+	special ChooseStarter
+	waitstate
+	switch VAR_STARTER_MON
+	case 0, Route_1_Rival_Gets_Snivy
+	case 1, Route_1_Rival_Gets_Torchic
+	case 2, Route_1_Rival_Gets_Froakie
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Teala_Objective_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Teala_Objective_Kate
 	closemessage
-	setobjectxy 2, 0, 15
-	setobjectxy 4, 0, 16
-	applymovement EVENT_OBJ_ID_PLAYER, Route101_Movement_EnterScene
-	applymovement 2, Route101_Movement_BirchRunAway1
-	applymovement 4, Route101_Movement_PoochyenaChase1
+	applymovement 1, Teala_Leaves
 	waitmovement 0
-	applymovement 4, Route101_Movement_PoochyenaChaseInCircles
-	applymovement 2, Route101_Movement_BirchRunInCircles
-	waitmovement 0
-	applymovement 2, Common_Movement_WalkInPlaceFastestRight
-	waitmovement 0
-	applymovement 4, Route101_Movement_PoochyenaFaceBirch
-	applymovement 2, Route101_Movement_BirchFacePoochyena
-	waitmovement 0
-	msgbox Route101_Text_PleaseHelp, MSGBOX_DEFAULT
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Wait_Bridge_Derek
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Wait_Bridge_Kate
 	closemessage
+	applymovement 2, Rival_Runs_Bridge
+	removeobject 2
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
 	setvar VAR_ROUTE101_STATE, 2
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	releaseall
 	end
+	
+Route_1_Teala_Lesson_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Route_1_Rival_Text, MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Teala_Lesson_Kate::
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Route_1_Rival_Text, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
 
-Route101_EventScript_PreventExitSouth:: @ 81EBD4E
-	lockall
-	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
-	closemessage
-	applymovement EVENT_OBJ_ID_PLAYER, Route101_Movement_PreventExitSouth
-	waitmovement 0
-	releaseall
-	end
+Route_1_About_To_Receive_Pokemon_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 3, 80, 83, VAR_0x8009
+	load_field_pic 5, 200, 83, VAR_0x800A
+	msgbox Route_1_Receiving_Pokemon_Derek, MSGBOX_NPC
+	destroy_field_pic 5, VAR_0x800A
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 3, VAR_0x8009
+	return
 
-Route101_EventScript_PreventExitWest:: @ 81EBD64
-	lockall
-	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
-	closemessage
-	applymovement EVENT_OBJ_ID_PLAYER, Route101_Movement_PreventExitWest
-	waitmovement 0
-	releaseall
-	end
+Route_1_About_To_Receive_Pokemon_Kate::
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 1, 80, 83, VAR_0x8009
+	load_field_pic 5, 200, 83, VAR_0x800A
+	msgbox Route_1_Receiving_Pokemon_Kate, MSGBOX_NPC
+	destroy_field_pic 5, VAR_0x800A
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 1, VAR_0x8009
+	return
 
-Route101_EventScript_PreventExitNorth:: @ 81EBD7A
-	lockall
-	msgbox Route101_Text_DontLeaveMe, MSGBOX_DEFAULT
-	closemessage
-	applymovement EVENT_OBJ_ID_PLAYER, Route101_Movement_PreventExitNorth
-	waitmovement 0
-	releaseall
-	end
+Route_1_Player_Choose_Starter_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Gives_First_Choice, MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Player_Choose_Starter_Kate::
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Gives_First_Choice, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
 
-Route101_Movement_PreventExitSouth: @ 81EBD90
+Route_1_Rival_Gets_Snivy::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Derek_Gets_Snivy
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Kate_Gets_Snivy
+	return
+	
+Route_1_Rival_Gets_Torchic::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Derek_Gets_Torchic
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Kate_Gets_Torchic
+	return
+
+Route_1_Rival_Gets_Froakie::
+	checkplayergender
+	compare VAR_RESULT, MALE
+	goto_if_eq Route_1_Derek_Gets_Froakie
+	compare VAR_RESULT, FEMALE
+	goto_if_eq Route_1_Kate_Gets_Froakie
+	return
+
+Route_1_Derek_Gets_Snivy::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Snivy_Text MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Kate_Gets_Snivy::	
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Snivy_Text, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+
+Route_1_Derek_Gets_Torchic::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Torchic_Text MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Kate_Gets_Torchic::	
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Torchic_Text, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Derek_Gets_Froakie::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Froakie_Text MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Kate_Gets_Froakie::	
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Picks_Froakie_Text, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return	
+
+Route_1_Teala_Objective_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 3, 80, 83, VAR_0x8009
+	load_field_pic 5, 200, 83, VAR_0x800A
+	msgbox Route_1_Objective_Text, MSGBOX_NPC
+	destroy_field_pic 5, VAR_0x800A
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 3, VAR_0x8009
+	return
+
+Route_1_Teala_Objective_Kate::
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 1, 80, 83, VAR_0x8009
+	load_field_pic 5, 200, 83, VAR_0x800A
+	msgbox Route_1_Objective_Text, MSGBOX_NPC
+	destroy_field_pic 5, VAR_0x800A
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 1, VAR_0x8009
+	return
+
+Route_1_Wait_Bridge_Derek::
+	load_field_pic 1, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Goes_Bridge MSGBOX_NPC
+	destroy_field_pic 1, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Route_1_Wait_Bridge_Kate::
+	load_field_pic 3, 40, 83, VAR_0x8008
+	load_field_pic 4, 200, 83, VAR_0x8009
+	msgbox Rival_Goes_Bridge, MSGBOX_NPC
+	destroy_field_pic 3, VAR_0x8008
+	destroy_field_pic 4, VAR_0x8009
+	return
+	
+Teala_Into_Grass:
+	walk_up
 	walk_up
 	step_end
-
-Route101_Movement_PreventExitWest: @ 81EBD92
-	walk_right
-	step_end
-
-Route101_Movement_PreventExitNorth: @ 81EBD94
+	
+Teala_Out_Of_Grass:
+	walk_down
 	walk_down
 	step_end
 
-Route101_Movement_PoochyenaChaseInCircles: @ 81EBD96
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
+Rival_Looks_Left:
+	face_left
 	step_end
 
-Route101_Movement_PoochyenaChase1: @ 81EBDB5
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
+Player_Looks_Right:
+	face_right
 	step_end
 
-@ Leftover data? This command is unused.
+Teala_To_player:
+	walk_down
 	step_end
 
-Route101_Movement_PoochyenaFaceBirch: @ 81EBDBD
-	walk_in_place_fast_left
-	walk_in_place_fast_left
-	walk_in_place_fast_left
-	walk_in_place_fast_left
+Face_Teala:
+	face_up
 	step_end
 
-Route101_Movement_EnterScene: @ 81EBDC2
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_in_place_fastest_left
+Jumping_In_Excitement:
+	jump_up
+	face_left
 	step_end
 
-Route101_Movement_BirchRunInCircles: @ 81EBDC8
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	walk_fast_up
-	walk_fast_up
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_left
-	walk_fast_left
-	walk_fast_left
-	step_end
-
-Route101_Movement_BirchRunAway1: @ 81EBDE7
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	step_end
-
-@ Leftover data? This command is unused.
-	step_end
-
-Route101_Movement_BirchFacePoochyena: @ 81EBDEF
-	walk_in_place_fast_right
-	walk_in_place_fast_right
-	walk_in_place_fast_right
-	walk_in_place_fast_right
-	step_end
-
-Route101_Movement_Unused1: @ 81EBDF4
-	walk_up
-	walk_up
-	step_end
-
-Route101_Movement_Unused2: @ 81EBDF7
-	walk_up
+Teala_Leaves:
 	walk_left
-	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
 	step_end
 
-Route101_EventScript_Youngster:: @ 81EBDFB
-	msgbox Route101_Text_TakeTiredPokemonToPokeCenter, MSGBOX_NPC
-	end
-
-Route101_EventScript_Boy:: @ 81EBE04
-	msgbox Route101_Text_WildPokemonInTallGrass, MSGBOX_NPC
-	end
-
-Route101_EventScript_RouteSign:: @ 81EBE0D
-	msgbox Route101_Text_RouteSign, MSGBOX_SIGN
-	end
-
-Route101_EventScript_BirchsBag:: @ 81EBE16
-	lock
-	faceplayer
-	setflag FLAG_SYS_POKEMON_GET
-	setflag FLAG_RESCUED_BIRCH
-	fadescreen 1
-	removeobject 4
-	setobjectxy EVENT_OBJ_ID_PLAYER, 6, 13
-	applymovement EVENT_OBJ_ID_PLAYER, Common_Movement_WalkInPlaceFastestLeft
-	waitmovement 0
-	special ChooseStarter
-	waitstate
-	applymovement 2, Route101_Movement_BirchApproachPlayer
-	waitmovement 0
-	msgbox Route101_Text_YouSavedMe, MSGBOX_DEFAULT
-	special HealPlayerParty
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
-	clearflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH
-	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
-	setvar VAR_BIRCH_LAB_STATE, 2
-	setvar VAR_ROUTE101_STATE, 3
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
-	checkplayergender
-	compare VAR_RESULT, MALE
-	call_if_eq Route101_EventScript_HideMayInBedroom
-	compare VAR_RESULT, FEMALE
-	call_if_eq Route101_EventScript_HideBrendanInBedroom
-	warp MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB, 255, 6, 5
-	waitstate
-	release
-	end
-
-Route101_EventScript_HideMayInBedroom:: @ 81EBE85
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_BEDROOM
-	return
-
-Route101_EventScript_HideBrendanInBedroom:: @ 81EBE89
-	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_BEDROOM
-	return
-
-Route101_Movement_BirchApproachPlayer: @ 81EBE8D
-	walk_right
+Rival_Runs_Bridge:
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
 	step_end
+	
+Route_1_Lesson_Message:
+	.string "Today's lesson will be about catching\n"
+	.string "your first Pokémon.\p"
+	.string "If you don't know how to please pay\n"
+	.string "attention!\p"
 
-Route101_Text_HelpMe: @ 81EBE8F
-	.string "H-help me!$"
+Route_1_Skip_lesson:
+	.string "Skip Teala's lesson?$"
 
-Route101_Text_PleaseHelp: @ 81EBE9A
-	.string "Hello! You over there!\n"
-	.string "Please! Help!\p"
-	.string "In my BAG!\n"
-	.string "There's a POKé BALL!$"
+Route_1_Lesson_Start:
+	.string "Alright. Observe, students!"
 
-Route101_Text_DontLeaveMe: @ 81EBEDF
-	.string "Wh-Where are you going?!\n"
-	.string "Don't leave me like this!$"
+Route_1_Lesson_Finished:
+	.string "And that is how you catch a\n"
+	.string "Pokémon.$"
 
-Route101_Text_YouSavedMe: @ 81EBF12
-	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+Route_1_Rival_Text:
+	.string "I can't wait to catch my first Pokémon.\p"
+	.string "{PLAYER} Do you have any idea which kind\n"
+	.string "of Pokémon you want to get first?$"
 
-Route101_Text_TakeTiredPokemonToPokeCenter: @ 81EBFDD
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+Teala_Present_Task:
+	.string "Actually. I wanted to talk to you both.$"
 
-Route101_Text_WildPokemonInTallGrass: @ 81EC04A
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+Route_1_Receiving_Pokemon_Derek:
+	.string "I talked to my good friend:\n"
+	.string "Professor Hazel from Zaurak City.\p"
+	.string "She is looking for two trainers to\n"
+	.string "help her with one of her studies.\p"
+	.string "I was thinking you'd be ideal for\n"
+	.string "the study.\p"
+	.string "Derek: No way. We are going to be\n"
+	.string "helping a professor?.\p"
+	.string "Teala: Yes. She even gave me some\n"
+	.string "rare Pokémon for you to choose as\p"
+	.string "your first partner.$"
+	
+Route_1_Receiving_Pokemon_Kate:
+	.string "I talked to my good friend:\n"
+	.string "Professor Hazel from Zaurak City.\p"
+	.string "She is looking for two trainers to\n"
+	.string "help her with one of her studies.\p"
+	.string "I was thinking you'd be ideal for\n"
+	.string "the study.\p"
+	.string "Kate: No way. We are going to be\n"
+	.string "helping a professor?.\p"
+	.string "Teala: Yes. She even gave me some\n"
+	.string "rare Pokémon for you to choose as\p"
+	.string "your first partner.$"	
+	
+Rival_Gives_First_Choice:
+	.string "You should pick a Pokémon\n"
+	.string "First. I can wait.$"
+	
+Rival_Picks_Snivy_Text:
+	.string "Then I will take Snivy.$"
 
-Route101_Text_RouteSign: @ 81EC0C8
-	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+Rival_Picks_Torchic_Text:
+	.string "Then I will take Torchic.$"
 
+Rival_Picks_Froakie_Text:
+	.string "Then I will take Froakie.$"
+	
+Route_1_Objective_Text:
+	.string "Zaurak City is to the north.\p"
+	.string "Just across the bridge. Meet with\n"
+	.string "Hazel and she'll brief you on the\p"
+	.string "details of her study. Good luck\n"
+	.string "To you both. I'm rooting for you.$"
+
+Rival_Goes_Bridge:
+	.string "I'll be waiting for you at Zaurak Bridge.\n"
+	.string "This is so exciting! Our first Pokémon!\p"
+	.string "I can't wait to go on this adventure!$"
+	

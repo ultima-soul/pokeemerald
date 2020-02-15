@@ -567,7 +567,9 @@
         "PetalburgCity_House2",
         "PetalburgCity_PokemonCenter_1F",
         "PetalburgCity_PokemonCenter_2F",
-        "PetalburgCity_Mart"
+        "PetalburgCity_Mart",
+        "PetalburgCity_House",
+        "PetalburgCity_House3"
     ],
     "gMapGroup9": [
         "SlateportCity_SternsShipyard_1F",

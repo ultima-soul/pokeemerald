@@ -323,7 +323,7 @@ FallarborTown_BattleTentLobby_Text_200382: @ 8200382
 	.string "TENT in FALLARBOR TOWN.\p"
 	.string "I think it's fantastic how TRAINERS\n"
 	.string "try to win with all their faith in\l"
-	.string "their POKéMON.$"
+	.string "their Pokémon.$"
 
 FallarborTown_BattleTentLobby_Text_20045A: @ 820045A
 	.string "I heard something about some tent,\n"

@@ -275,7 +275,7 @@ const struct MonCoords gMonFrontPicCoords[] =
         .size = 0x56,
         .y_offset = 0x10,
     },
-    [SPECIES_VESPIQUEEN] =
+    [SPECIES_VESPIQUEN] =
     {
         .size = 0x78,
         .y_offset = 0x4,

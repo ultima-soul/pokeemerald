@@ -4,7 +4,7 @@ gText_Birch_Welcome:: @ 82C897B
 
 gText_Birch_Pokemon:: @ 82C89FB
 	.string "This region is inhabited by:\n"
-    .string "Creatures known as POKéMON.\p"
+    .string "Creatures known as Pokémon.\p"
     .string "$"
 
 gText_Birch_MainSpeech:: @ 82C8A1F

@@ -3020,7 +3020,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                         },
                                     [1] =
                                         {
-                                            .species = SPECIES_VESPIQUEEN,
+                                            .species = SPECIES_VESPIQUEN,
                                             .heldItem = ITEM_LAX_INCENSE,
                                             .moves = {MOVE_SURF, MOVE_PSYBEAM, MOVE_BRICK_BREAK, MOVE_RAIN_DANCE},
                                             .level = 0,
@@ -3036,7 +3036,7 @@ static const struct TrHillFloor sDataTagUnique_Floors[] = {
                                             .spDefenseIV = 15,
                                             .abilityNum = 0,
                                             .personality = 0xF,
-                                            .nickname = _("VESPIQUEEN"),
+                                            .nickname = _("VESPIQUEN"),
                                             .friendship = 255,
                                         },
                                     [2] =

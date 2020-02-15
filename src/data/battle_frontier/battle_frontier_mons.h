@@ -2927,7 +2927,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_ADAMANT
     },
     [418] = {
-        .species = SPECIES_VESPIQUEEN,
+        .species = SPECIES_VESPIQUEN,
         .moves = {MOVE_HYDRO_PUMP, MOVE_DIG, MOVE_BRICK_BREAK, MOVE_LIGHT_SCREEN},
         .itemTableId = BATTLE_FRONTIER_ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
@@ -3599,7 +3599,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_ADAMANT
     },
     [514] = {
-        .species = SPECIES_VESPIQUEEN,
+        .species = SPECIES_VESPIQUEN,
         .moves = {MOVE_CROSS_CHOP, MOVE_SURF, MOVE_SWAGGER, MOVE_PSYCH_UP},
         .itemTableId = BATTLE_FRONTIER_ITEM_LUM_BERRY,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,
@@ -4271,7 +4271,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_ADAMANT
     },
     [610] = {
-        .species = SPECIES_VESPIQUEEN,
+        .species = SPECIES_VESPIQUEN,
         .moves = {MOVE_HYDRO_PUMP, MOVE_CROSS_CHOP, MOVE_BLIZZARD, MOVE_PROTECT},
         .itemTableId = BATTLE_FRONTIER_ITEM_SHELL_BELL,
         .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_ATTACK,
@@ -4943,7 +4943,7 @@ const struct FacilityMon gBattleFrontierMons[] =
         .nature = NATURE_ADAMANT
     },
     [706] = {
-        .species = SPECIES_VESPIQUEEN,
+        .species = SPECIES_VESPIQUEN,
         .moves = {MOVE_SURF, MOVE_CROSS_CHOP, MOVE_ICE_BEAM, MOVE_AERIAL_ACE},
         .itemTableId = BATTLE_FRONTIER_ITEM_SCOPE_LENS,
         .evSpread = F_EV_SPREAD_SPEED | F_EV_SPREAD_ATTACK,

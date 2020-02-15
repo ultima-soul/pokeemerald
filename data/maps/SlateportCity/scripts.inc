@@ -35,11 +35,7 @@ ZaurakCity_Fat_Man::
 		end
 	
 ZaurakCity_Rival_Text_First_Battle:
-	.string "Ready to head inside {PLAYER}?\p"
-	.string "Zaurak City?\p"
-	.string "Before we go to see Professor\n"
-	.string "Hazel. How about a friendly\p"
-	.string "Battle?$"
+	.string "Ready to head inside {PLAYER}?$"
 		
 ZaurakCity_Fat_Man_Text:	
 	.string "He is fast asleep.$"

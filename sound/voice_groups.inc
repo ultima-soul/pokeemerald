@@ -14093,7 +14093,7 @@ gCryTable:: @ 869DCF4
 	cry Cry_Tyrunt  @ 869DF58
 	cry Cry_Tyrantrum  @ 869DF64
 	cry Cry_Combee  @ 869DF70
-	cry Cry_Vespiqueen  @ 869DF7C
+	cry Cry_Vespiquen  @ 869DF7C
 	cry Cry_Purrloin  @ 869DF88
 	cry Cry_Liepard  @ 869DF94
 	cry Cry_Growlithe  @ 869DFA0

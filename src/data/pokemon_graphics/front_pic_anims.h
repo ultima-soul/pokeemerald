@@ -557,7 +557,7 @@ static const union AnimCmd sAnim_COMBEE_1[] =
     ANIMCMD_END,
 };
 
-static const union AnimCmd sAnim_VESPIQUEEN_1[] =
+static const union AnimCmd sAnim_VESPIQUEN_1[] =
 {
     ANIMCMD_FRAME(0, 30),
     ANIMCMD_FRAME(1, 30),
@@ -3934,9 +3934,9 @@ static const union AnimCmd *const sAnims_COMBEE[] ={
     sAnim_COMBEE_1,
 };
 
-static const union AnimCmd *const sAnims_VESPIQUEEN[] ={
+static const union AnimCmd *const sAnims_VESPIQUEN[] ={
     sAnim_GeneralFrame0,
-    sAnim_VESPIQUEEN_1,
+    sAnim_VESPIQUEN_1,
 };
 
 static const union AnimCmd *const sAnims_PURRLOIN[] ={
@@ -5808,7 +5808,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD(TYRUNT),
     ANIM_CMD(TYRANTRUM),
     ANIM_CMD(COMBEE),
-    ANIM_CMD(VESPIQUEEN),
+    ANIM_CMD(VESPIQUEN),
     ANIM_CMD(PURRLOIN),
     ANIM_CMD(LIEPARD),
     ANIM_CMD(GROWLITHE),

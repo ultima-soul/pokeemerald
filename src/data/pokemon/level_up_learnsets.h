@@ -1019,7 +1019,7 @@ static const struct LevelUpMove sCombeeLevelUpLearnset[] = {
     LEVEL_UP_END
 };
 
-static const struct LevelUpMove sVespiqueenLevelUpLearnset[] = {
+static const struct LevelUpMove sVespiquenLevelUpLearnset[] = {
     // LEVEL_UP_MOVE( 0, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_STRUGGLE_BUG),

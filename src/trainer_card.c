@@ -58,7 +58,7 @@ struct TrainerCardData
     u8 var_E;
     u8 var_F;
     bool8 hasTrades;
-    u8 badgeCount[8];
+    u8 badgeCount[10];
     u8 var_19[4][0xD];
     u8 var_4D[0x46];
     u8 var_93[0x46];
@@ -82,7 +82,7 @@ struct TrainerCardData
     u16 var_598[0x4B0 / 2];
     u16 var_A48[0x4B0 / 2];
     u16 var_EF8[0x4B0 / 2];
-    u8 var_13A8[0x400];
+    u8 var_13A8[0x500];
     u8 var_17A8[0x200];
     u8 var_19A8[0x2300];
     u16 var_3CA8[0x2000 / 2];
@@ -804,7 +804,7 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
-    for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag <= FLAG_BADGE08_GET; badgeFlag++, i++)
+    for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag <= FLAG_BADGE10_GET; badgeFlag++, i++)
     {
         if (FlagGet(badgeFlag))
             sData->badgeCount[i]++;
@@ -1383,7 +1383,7 @@ static u8 SetCardBgsAndPals(void)
     switch (sData->bgPalLoadState)
     {
     case 0:
-        LoadBgTiles(3, sData->var_13A8, 1024, 0);
+        LoadBgTiles(3, sData->var_13A8, 1280, 0);
         break;
     case 1:
         LoadBgTiles(0, sData->var_19A8, 6144, 0);

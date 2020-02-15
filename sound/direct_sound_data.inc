@@ -603,7 +603,7 @@ Cry_Combee::
 	.incbin "sound/direct_sound_samples/cry_combee.bin"
 
 	.align 2
-Cry_Vespiqueen::
+Cry_Vespiquen::
 	.incbin "sound/direct_sound_samples/cry_vespiqueen.bin"
 
 	.align 2
