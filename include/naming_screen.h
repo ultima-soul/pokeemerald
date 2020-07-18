@@ -61,7 +61,8 @@ struct NamingScreenData {
  /*0x1E28*/ const struct NamingScreenTemplate *template;
  /*0x1E2C*/ u8 templateNum;
  /*0x1E30*/ u8 *destBuffer;
- /*0x1E34*/ u16 monSpecies;
+ /*0x1E34*/ u16 monSpecies:11;
+ /*0x1E35*/ u16 monFormId:5;
  /*0x1E36*/ u16 monGender;
  /*0x1E38*/ u32 monPersonality;
  /*0x1E3C*/ MainCallback returnCallback;
@@ -88,6 +89,6 @@ enum
     INPUT_STATE_2,
 };
 
-void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback);
+void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback, u8 monFormId);
 
 #endif // GUARD_NAMING_SCREEN_H

@@ -127,7 +127,7 @@ static void PrintContestantMonName(u8);
 static void PrintContestantMonNameWithColor(u8, u8);
 static u8 sub_80DB0C4(void);
 static u8 sub_80DB120(void);
-static u8 sub_80DB174(u16, u32, u32, u32);
+static u8 sub_80DB174(u16, u32, u32, u32, u8 formId);
 static void PrintContestMoveDescription(u16);
 static u16 SanitizeSpecies(u16);
 static void ContestClearGeneralTextWindow(void);
@@ -1624,7 +1624,8 @@ static void sub_80D8B38(u8 taskId)
             gContestMons[eContest.unk19215].species,
             gContestMons[eContest.unk19215].otId,
             gContestMons[eContest.unk19215].personality,
-            eContest.unk19215);
+            eContest.unk19215,
+            gContestMons[eContest.unk19215].formId);
         gSprites[spriteId].pos2.x = 120;
         gSprites[spriteId].callback = sub_80DA134;
         gTasks[taskId].data[2] = spriteId;
@@ -2941,18 +2942,17 @@ static u8 sub_80DB120(void)
     return spriteId;
 }
 
-static u8 sub_80DB174(u16 species, u32 otId, u32 personality, u32 index)
+static u8 sub_80DB174(u16 species, u32 otId, u32 personality, u32 index, u8 formId)
 {
     u8 spriteId;
+    u16 formSpeciesId;
     species = SanitizeSpecies(species);
+    formSpeciesId = GetFormSpeciesId(species, formId);
 
-    if (index == gContestPlayerMonIndex)
-        HandleLoadSpecialPokePic_2(gMonBackPicTable + species, gMonSpritesGfxPtr->sprites[0], species, personality);
-    else
-        HandleLoadSpecialPokePic_DontHandleDeoxys(gMonBackPicTable + species, gMonSpritesGfxPtr->sprites[0], species, personality);
+    HandleLoadSpecialPokePic_DontHandleDeoxys(gMonBackPicTable + formSpeciesId, gMonSpritesGfxPtr->sprites[0], formSpeciesId, personality);
 
-    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(species, otId, personality), 0x120, 0x20);
-    SetMultiuseSpriteTemplateToPokemon(species, 0);
+    LoadCompressedPalette(GetMonSpritePalFromSpeciesAndPersonality(formSpeciesId, otId, personality), 0x120, 0x20);
+    SetMultiuseSpriteTemplateToPokemon(species, 0, formId);
 
     spriteId = CreateSprite(&gMultiuseSpriteTemplate, 0x70, GetBattlerSpriteFinal_Y(2, species, FALSE), 30);
     gSprites[spriteId].oam.paletteNum = 2;

@@ -223,7 +223,7 @@ static void VBlankCB_NamingScreen(void);
 static void sub_80E501C(void);
 static bool8 IsLetter(u8);
 
-void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback)
+void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGender, u32 monPersonality, MainCallback returnCallback, u8 monFormId)
 {
     gNamingScreenData = Alloc(sizeof(struct NamingScreenData));
     if (!gNamingScreenData)
@@ -234,6 +234,7 @@ void DoNamingScreen(u8 templateNum, u8 *destBuffer, u16 monSpecies, u16 monGende
     {
         gNamingScreenData->templateNum = templateNum;
         gNamingScreenData->monSpecies = monSpecies;
+        gNamingScreenData->monFormId = monFormId;
         gNamingScreenData->monGender = monGender;
         gNamingScreenData->monPersonality = monPersonality;
         gNamingScreenData->destBuffer = destBuffer;
@@ -1190,7 +1191,7 @@ static void NamingScreen_CreateMonIcon(void)
     u8 spriteId;
 
     LoadMonIconPalettes();
-    spriteId = CreateMonIcon(gNamingScreenData->monSpecies, SpriteCallbackDummy, 0x38, 0x28, 0, gNamingScreenData->monPersonality, 1);
+    spriteId = CreateMonIcon(gNamingScreenData->monSpecies, SpriteCallbackDummy, 0x38, 0x28, 0, gNamingScreenData->monPersonality, 1, gNamingScreenData->monFormId);
     gSprites[spriteId].oam.priority = 3;
 }
 
@@ -1829,22 +1830,22 @@ static bool8 IsLetter(u8 character)
 
 static void sub_80E5074(void)
 {
-    DoNamingScreen(0, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu);
+    DoNamingScreen(0, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu, 0);
 }
 
 static void sub_80E509C(void)
 {
-    DoNamingScreen(1, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu);
+    DoNamingScreen(1, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu, 0);
 }
 
 static void sub_80E50C4(void)
 {
-    DoNamingScreen(2, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu);
+    DoNamingScreen(2, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu, 0);
 }
 
 static void sub_80E50EC(void)
 {
-    DoNamingScreen(3, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu);
+    DoNamingScreen(3, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldWithOpenMenu, 0);
 }
 
 //--------------------------------------------------

@@ -46,7 +46,7 @@ static void Task_StarterChoose6(u8 taskId);
 static void Task_MoveStarterChooseCursor(u8 taskId);
 static void sub_8134668(u8 taskId);
 static void CreateStarterPokemonLabel(u8 selection);
-static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y);
+static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y, u8 formId);
 void sub_81346DC(struct Sprite *sprite);
 void sub_813473C(struct Sprite *sprite);
 void StarterPokemonSpriteCallback(struct Sprite *sprite);
@@ -124,11 +124,13 @@ static const u8 sStarterLabelCoords[][2] =
     {8, 4},
 };
 
-static const u16 sStarterMon[STARTER_MON_COUNT] =
+#define STARTER(species, formeId) (((species) << 5) | (formeId))
+
+static const u16 sStarterMon[STARTER_MON_COUNT][2] =
 {
-    SPECIES_TREECKO,
-    SPECIES_TORCHIC,
-    SPECIES_MUDKIP,
+    {SPECIES_TREECKO, 0},
+    {SPECIES_TORCHIC, 0},
+    {SPECIES_MUDKIP, 0},
 };
 
 static const struct BgTemplate gUnknown_085B1E00[3] =
@@ -362,11 +364,11 @@ static const struct SpriteTemplate gUnknown_085B1F40 =
 };
 
 // .text
-u16 GetStarterPokemon(u16 chosenStarterId)
+u16 GetStarterPokemon(u16 chosenStarterId, bool8 wantFormId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId];
+    return sStarterMon[chosenStarterId][wantFormId];
 }
 
 static void VblankCB_StarterChoose(void)
@@ -506,7 +508,7 @@ static void Task_StarterChoose2(u8 taskId)
         gTasks[taskId].tCircleSpriteId = spriteId;
 
         // Create Pokemon sprite
-        spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection), sPokeballCoords[selection][0], sPokeballCoords[selection][1]);
+        spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), sPokeballCoords[selection][0], sPokeballCoords[selection][1], GetStarterPokemon(gTasks[taskId].tStarterSelection, TRUE));
         gSprites[spriteId].affineAnims = &gUnknown_085B1ED0;
         gSprites[spriteId].callback = StarterPokemonSpriteCallback;
 
@@ -537,7 +539,7 @@ static void Task_StarterChoose3(u8 taskId)
 
 static void Task_StarterChoose4(u8 taskId)
 {
-    PlayCry1(GetStarterPokemon(gTasks[taskId].tStarterSelection), 0);
+    PlayCry1(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), 0); // handle forms
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized(0, 1, gText_ConfirmStarterChoice, 0, 1, 0, NULL);
     ScheduleBgCopyTilemapToVram(0);
@@ -585,7 +587,7 @@ static void CreateStarterPokemonLabel(u8 selection)
     s32 width;
     u8 labelLeft, labelRight, labelTop, labelBottom;
 
-    u16 species = GetStarterPokemon(selection);
+    u16 species = GetStarterPokemon(selection, FALSE); // handle forms?
     CopyMonCategoryText(SpeciesToNationalPokedexNum(species), categoryText);
     speciesName = gSpeciesNames[species];
 
@@ -636,11 +638,11 @@ static void sub_8134668(u8 taskId)
     gTasks[taskId].func = Task_StarterChoose2;
 }
 
-static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y)
+static u8 CreatePokemonFrontSprite(u16 species, u8 x, u8 y, u8 formId)
 {
     u8 spriteId;
 
-    spriteId = CreatePicSprite2(species, SHINY_ODDS, 0, 1, x, y, 0xE, 0xFFFF);
+    spriteId = CreatePicSprite2(species, SHINY_ODDS, 0, 1, x, y, 0xE, 0xFFFF, formId);
     gSprites[spriteId].oam.priority = 0;
     return spriteId;
 }

@@ -1690,7 +1690,7 @@ static void CreateFrontierFactorySelectableMons(u8 firstMonId)
                                              gFacilityTrainerMons[monSetId].nature,
                                              ivs,
                                              gFacilityTrainerMons[monSetId].evSpread,
-                                             otId);
+                                             otId, 0); // handle forms
         happiness = 0;
         for (j = 0; j < MAX_MON_MOVES; j++)
             SetMonMoveAvoidReturn(&sFactorySelectScreen->mons[i + firstMonId].monData, gFacilityTrainerMons[monSetId].moves[j], j);
@@ -1720,7 +1720,7 @@ static void CreateTentFactorySelectableMons(u8 firstMonId)
                                              gFacilityTrainerMons[monSetId].nature,
                                              ivs,
                                              gFacilityTrainerMons[monSetId].evSpread,
-                                             otId);
+                                             otId, 0); // handle forms
         happiness = 0;
         for (j = 0; j < MAX_MON_MOVES; j++)
             SetMonMoveAvoidReturn(&sFactorySelectScreen->mons[i + firstMonId].monData, gFacilityTrainerMons[monSetId].moves[j], j);

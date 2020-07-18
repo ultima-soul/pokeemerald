@@ -2534,7 +2534,7 @@ static void CreateDomeOpponentMon(u8 monPartyId, u16 tournamentTrainerId, u8 tou
                                          level,
                                          gFacilityTrainerMons[DOME_MONS[tournamentTrainerId][tournamentMonId]].nature,
                                          fixedIv,
-                                         gFacilityTrainerMons[DOME_MONS[tournamentTrainerId][tournamentMonId]].evSpread, otId);
+                                         gFacilityTrainerMons[DOME_MONS[tournamentTrainerId][tournamentMonId]].evSpread, otId, 0); // handle forms
 
     friendship = MAX_FRIENDSHIP;
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -4513,7 +4513,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                                                                   SpriteCb_MonIcon,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else if (trainerId == TRAINER_FRONTIER_BRAIN)
@@ -4522,7 +4522,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                                                                   SpriteCb_MonIcon,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else
@@ -4531,7 +4531,7 @@ static void DisplayTrainerInfoOnCard(u8 flags, u8 trainerTourneyId)
                                                                   SpriteCb_MonIcon,
                                                                   x | sInfoTrainerMonX[i],
                                                                   y + sInfoTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
 
@@ -5002,7 +5002,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else if (trainerIds[0] == TRAINER_FRONTIER_BRAIN)
@@ -5011,7 +5011,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
         else
@@ -5020,7 +5020,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sLeftTrainerMonX[i],
                                                                   y + sLeftTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[2 + i + arrId]].oam.priority = 0;
         }
 
@@ -5042,7 +5042,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
         else if (trainerIds[1] == TRAINER_FRONTIER_BRAIN)
@@ -5051,7 +5051,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
         else
@@ -5060,7 +5060,7 @@ static void DisplayMatchInfoOnCard(u8 flags, u8 matchNo)
                                                                   SpriteCb_MonIcon,
                                                                   x | sRightTrainerMonX[i],
                                                                   y + sRightTrainerMonY[i],
-                                                                  0, 0, TRUE);
+                                                                  0, 0, TRUE, 0); // handle forms
             gSprites[sInfoCard->spriteIds[5 + i + arrId]].oam.priority = 0;
         }
 

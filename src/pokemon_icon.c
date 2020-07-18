@@ -1982,17 +1982,17 @@ const u16 sSpriteImageSizes[3][4] =
     },
 };
 
-u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleDeoxys)
+u8 CreateMonIcon(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 subpriority, u32 personality, bool32 handleDeoxys, u8 formId)
 {
     u8 spriteId;
     struct MonIconSpriteTemplate iconTemplate =
     {
         .oam = &sMonIconOamData,
-        .image = GetMonIconPtr(species, personality, handleDeoxys),
+        .image = GetMonIconPtr(species, personality, handleDeoxys, formId),
         .anims = sMonIconAnims,
         .affineAnims = sMonIconAffineAnims,
         .callback = callback,
-        .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[species],
+        .paletteTag = POKE_ICON_BASE_PAL_TAG + gMonIconPaletteIndices[GetFormSpeciesId(species, formId)],
     };
 
     if (species > NUM_SPECIES)
@@ -2026,7 +2026,7 @@ u8 sub_80D2D78(u16 species, void (*callback)(struct Sprite *), s16 x, s16 y, u8 
     return spriteId;
 }
 
-u16 GetIconSpecies(u16 species, u32 personality)
+u16 GetIconSpecies(u16 species, u32 personality, u8 formId)
 {
     u16 result;
 
@@ -2039,7 +2039,7 @@ u16 GetIconSpecies(u16 species, u32 personality)
         if (species > NUM_SPECIES)
             result = 260;
         else
-            result = species;
+            result = GetFormSpeciesId(species, formId);
     }
 
     return result;
@@ -2067,13 +2067,13 @@ u16 sub_80D2E84(u16 species)
         if (species > NUM_SPECIES)
             species = 0;
 
-        return GetIconSpecies(species, 0);
+        return GetIconSpecies(species, 0, 0); // handle forms 
     }
 }
 
-const u8 *GetMonIconPtr(u16 species, u32 personality, bool32 handleDeoxys)
+const u8 *GetMonIconPtr(u16 species, u32 personality, bool32 handleDeoxys, u8 formId)
 {
-    return GetMonIconTiles(GetIconSpecies(species, personality), handleDeoxys);
+    return GetMonIconTiles(GetIconSpecies(species, personality, formId), handleDeoxys);
 }
 
 void FreeAndDestroyMonIconSprite(struct Sprite *sprite)
@@ -2138,10 +2138,6 @@ void SpriteCB_MonIcon(struct Sprite *sprite)
 const u8* GetMonIconTiles(u16 species, bool32 handleDeoxys)
 {
     const u8* iconSprite = gMonIconTable[species];
-    if (species == SPECIES_DEOXYS && handleDeoxys == TRUE)
-    {
-        iconSprite = (const u8*)(0x400 + (u32)iconSprite); // use the specific Deoxys form icon (Speed in this case)
-    }
     return iconSprite;
 }
 
@@ -2162,11 +2158,11 @@ void sub_80D304C(u16 offset)
     }
 }
 
-u8 GetValidMonIconPalIndex(u16 species)
+u8 GetValidMonIconPalIndex(u16 species, u8 formId)
 {
     if (species > NUM_SPECIES)
         species = 260;
-    return gMonIconPaletteIndices[species];
+    return gMonIconPaletteIndices[GetFormSpeciesId(species, formId)];
 }
 
 u8 GetMonIconPaletteIndexFromSpecies(u16 species)
@@ -2174,11 +2170,11 @@ u8 GetMonIconPaletteIndexFromSpecies(u16 species)
     return gMonIconPaletteIndices[species];
 }
 
-const u16* GetValidMonIconPalettePtr(u16 species)
+const u16* GetValidMonIconPalettePtr(u16 species, u8 formId)
 {
     if (species > NUM_SPECIES)
         species = 260;
-    return gMonIconPaletteTable[gMonIconPaletteIndices[species]].data;
+    return gMonIconPaletteTable[gMonIconPaletteIndices[GetFormSpeciesId(species, formId)]].data;
 }
 
 u8 UpdateMonIconFrame(struct Sprite *sprite)

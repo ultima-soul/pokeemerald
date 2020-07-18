@@ -332,6 +332,8 @@ void ShowContestEntryMonPic(void)
     u8 spriteId;
     u8 taskId;
     u8 left, top;
+    u8 formId;
+    u16 formSpeciesId;
 
     if (FindTaskIdByFunc(Task_ShowContestEntryMonPic) == 0xFF)
     {
@@ -339,30 +341,29 @@ void ShowContestEntryMonPic(void)
         left = 10;
         top = 3;
         species = gContestMons[gSpecialVar_0x8006].species;
+        formId = gContestMons[gSpecialVar_0x8006].formId;
+        formSpeciesId = GetFormSpeciesId(species, formId);
         personality = gContestMons[gSpecialVar_0x8006].personality;
         otId = gContestMons[gSpecialVar_0x8006].otId;
         taskId = CreateTask(Task_ShowContestEntryMonPic, 0x50);
         gTasks[taskId].data[0] = 0;
         gTasks[taskId].data[1] = species;
-        if (gSpecialVar_0x8006 == gContestPlayerMonIndex)
-            HandleLoadSpecialPokePic_2(&gMonFrontPicTable[species], gMonSpritesGfxPtr->sprites[1], species, personality);
-        else
-            HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species], gMonSpritesGfxPtr->sprites[1], species, personality);
+        HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[formSpeciesId], gMonSpritesGfxPtr->sprites[1], formSpeciesId, personality);
 
-        palette = GetMonSpritePalStructFromOtIdPersonality(species, otId, personality);
+        palette = GetMonSpritePalStructFromOtIdPersonality(formSpeciesId, otId, personality);
         LoadCompressedSpritePalette(palette);
-        SetMultiuseSpriteTemplateToPokemon(species, 1);
+        SetMultiuseSpriteTemplateToPokemon(species, 1, formId);
         gMultiuseSpriteTemplate.paletteTag = palette->tag;
         spriteId = CreateSprite(&gMultiuseSpriteTemplate, (left + 1) * 8 + 32, (top * 8) + 40, 0);
 
         if (gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK)
         {
             if (!(gLinkContestFlags & LINK_CONTEST_FLAG_HAS_RS_PLAYER))
-                DoMonFrontSpriteAnimation(&gSprites[spriteId], species, FALSE, 0);
+                DoMonFrontSpriteAnimation(&gSprites[spriteId], formSpeciesId, FALSE, 0);
         }
         else
         {
-            DoMonFrontSpriteAnimation(&gSprites[spriteId], species, FALSE, 0);
+            DoMonFrontSpriteAnimation(&gSprites[spriteId], formSpeciesId, FALSE, 0);
         }
 
         gTasks[taskId].data[2] = spriteId;
@@ -562,14 +563,14 @@ void HealPlayerParty(void)
     }
 }
 
-u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 unused1, u32 unused2, u8 unused3)
+u8 ScriptGiveMon(u16 species, u8 level, u16 item, u8 formId, u32 unused2, u8 unused3)
 {
     u16 nationalDexNum;
     int sentToPc;
     u8 heldItem[2];
     struct Pokemon mon;
 
-    CreateMon(&mon, species, level, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(&mon, species, level, 32, 0, 0, OT_ID_PLAYER_ID, 0, formId);
     heldItem[0] = item;
     heldItem[1] = item >> 8;
     SetMonData(&mon, MON_DATA_HELD_ITEM, heldItem);
@@ -642,7 +643,7 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
     u8 heldItem[2];
 
     ZeroEnemyPartyMons();
-    CreateMon(&gEnemyParty[0], species, level, 32, 0, 0, OT_ID_PLAYER_ID, 0);
+    CreateMon(&gEnemyParty[0], species, level, 32, 0, 0, OT_ID_PLAYER_ID, 0, 0); // handle forms
     if (item)
     {
         heldItem[0] = item;

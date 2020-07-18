@@ -506,6 +506,8 @@ void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
 {
     u32 monsPersonality, currentPersonality, otId;
     u16 species;
+    u8 formId;
+    u16 formSpeciesId;
     u8 position;
     u16 paletteOffset;
     const void *lzPaletteData;
@@ -516,25 +518,29 @@ void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     {
         species = GetMonData(mon, MON_DATA_SPECIES);
         currentPersonality = monsPersonality;
+        formId = GetMonData(mon, MON_DATA_FORM_ID);
+        formSpeciesId = GetFormSpeciesId(species, formId);
     }
     else
     {
         species = gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies;
         currentPersonality = gTransformedPersonalities[battlerId];
+        formId = 0; // handle forms
+        formSpeciesId = GetFormSpeciesId(species, formId);
     }
 
     otId = GetMonData(mon, MON_DATA_OT_ID);
     position = GetBattlerPosition(battlerId);
-    HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[species],
+    HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonFrontPicTable[formSpeciesId],
                                               gMonSpritesGfxPtr->sprites[position],
-                                              species, currentPersonality);
+                                              formSpeciesId, currentPersonality);
 
     paletteOffset = 0x100 + battlerId * 16;
 
     if (gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies == SPECIES_NONE)
         lzPaletteData = GetMonFrontSpritePal(mon);
     else
-        lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(species, otId, monsPersonality);
+        lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(formSpeciesId, otId, monsPersonality);
 
     LZDecompressWram(lzPaletteData, gDecompressionBuffer);
     LoadPalette(gDecompressionBuffer, paletteOffset, 0x20);
@@ -562,6 +568,8 @@ void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     u8 position;
     u16 paletteOffset;
     const void *lzPaletteData;
+    u8 formId;
+    u16 formSpeciesId;
 
     monsPersonality = GetMonData(mon, MON_DATA_PERSONALITY);
 
@@ -569,35 +577,28 @@ void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     {
         species = GetMonData(mon, MON_DATA_SPECIES);
         currentPersonality = monsPersonality;
+        formId = GetMonData(mon, MON_DATA_FORM_ID);
+        formSpeciesId = GetFormSpeciesId(species, formId);
     }
     else
     {
         species = gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies;
         currentPersonality = gTransformedPersonalities[battlerId];
+        formSpeciesId = species; // handle forms
     }
 
     otId = GetMonData(mon, MON_DATA_OT_ID);
     position = GetBattlerPosition(battlerId);
-
-    if (sub_80688F8(1, battlerId) == 1 || gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies != SPECIES_NONE)
-    {
-        HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[species],
-                                                  gMonSpritesGfxPtr->sprites[position],
-                                                  species, currentPersonality);
-    }
-    else
-    {
-        HandleLoadSpecialPokePic(&gMonBackPicTable[species],
-                                gMonSpritesGfxPtr->sprites[position],
-                                species, currentPersonality);
-    }
+    HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[formSpeciesId],
+                                              gMonSpritesGfxPtr->sprites[position],
+                                              formSpeciesId, currentPersonality);
 
     paletteOffset = 0x100 + battlerId * 16;
 
     if (gBattleSpritesDataPtr->battlerData[battlerId].transformSpecies == SPECIES_NONE)
         lzPaletteData = GetMonFrontSpritePal(mon);
     else
-        lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(species, otId, monsPersonality);
+        lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(formSpeciesId, otId, monsPersonality);
 
     LZDecompressWram(lzPaletteData, gDecompressionBuffer);
     LoadPalette(gDecompressionBuffer, paletteOffset, 0x20);
@@ -629,7 +630,7 @@ void nullsub_24(u16 species)
 void DecompressTrainerFrontPic(u16 frontPicId, u8 battlerId)
 {
     u8 position = GetBattlerPosition(battlerId);
-    DecompressPicFromTable_2(&gTrainerFrontPicTable[frontPicId],
+    DecompressPicFromTable_DontHandleDeoxys(&gTrainerFrontPicTable[frontPicId],
                              gMonSpritesGfxPtr->sprites[position],
                              SPECIES_NONE);
     LoadCompressedSpritePalette(&gTrainerFrontPicPaletteTable[frontPicId]);
@@ -638,7 +639,7 @@ void DecompressTrainerFrontPic(u16 frontPicId, u8 battlerId)
 void DecompressTrainerBackPic(u16 backPicId, u8 battlerId)
 {
     u8 position = GetBattlerPosition(battlerId);
-    DecompressPicFromTable_2(&gTrainerBackPicTable[backPicId],
+    DecompressPicFromTable_DontHandleDeoxys(&gTrainerBackPicTable[backPicId],
                              gMonSpritesGfxPtr->sprites[position],
                              SPECIES_NONE);
     LoadCompressedPalette(gTrainerBackPicPaletteTable[backPicId].data,
