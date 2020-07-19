@@ -124,12 +124,10 @@ static const u8 sStarterLabelCoords[][2] =
     {8, 4},
 };
 
-#define STARTER(species, formeId) (((species) << 5) | (formeId))
-
 static const u16 sStarterMon[STARTER_MON_COUNT][2] =
 {
-    {SPECIES_TREECKO, 0},
-    {SPECIES_TORCHIC, 0},
+    {SPECIES_ROCKRUFF, 0},
+    {SPECIES_ROCKRUFF, 1},
     {SPECIES_MUDKIP, 0},
 };
 

@@ -5224,17 +5224,18 @@ static void TryEvolvePokemon(void)
             if (gLeveledUpInBattle & gBitTable[i])
             {
                 u16 species;
+                u8 formId;
                 u8 levelUpBits = gLeveledUpInBattle;
 
                 levelUpBits &= ~(gBitTable[i]);
                 gLeveledUpInBattle = levelUpBits;
 
-                species = GetEvolutionTargetSpecies(&gPlayerParty[i], 0, levelUpBits);
+                species = GetEvolutionTargetSpecies(&gPlayerParty[i], 0, levelUpBits, &formId);
                 if (species != SPECIES_NONE)
                 {
                     FreeAllWindowBuffers();
                     gBattleMainFunc = WaitForEvoSceneToFinish;
-                    EvolutionScene(&gPlayerParty[i], species, TRUE, i);
+                    EvolutionScene(&gPlayerParty[i], species, TRUE, i, formId);
                     return;
                 }
             }

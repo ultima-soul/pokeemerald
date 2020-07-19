@@ -65,6 +65,7 @@ static void sub_806E6CC(u8 taskId);
 static bool8 ShouldGetStatBadgeBoost(u16 flagId, u8 battlerId);
 static u16 GiveMoveToBoxMon(struct BoxPokemon *boxMon, u16 move);
 static bool8 ShouldSkipFriendshipChange(void);
+u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId);
 
 // EWRAM vars
 EWRAM_DATA static u8 sLearningMoveTableID = 0;
@@ -5312,11 +5313,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         // Evolution stone
                     case 7:
                         {
-                            u16 targetSpecies = GetEvolutionTargetSpecies(mon, 2, item);
+                            u8 targetFormId;
+                            u16 targetSpecies = GetEvolutionTargetSpecies(mon, 2, item, &targetFormId);
 
                             if (targetSpecies != SPECIES_NONE)
                             {
-                                BeginEvolutionScene(mon, targetSpecies, 0, partyIndex);
+                                BeginEvolutionScene(mon, targetSpecies, 0, partyIndex, targetFormId);
                                 return FALSE;
                             }
                         }
@@ -5677,11 +5679,13 @@ u8 GetNatureFromPersonality(u32 personality)
     return personality % 25;
 }
 
-u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
+u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem, u8 *targetFormId)
 {
     int i, j;
     u16 targetSpecies = 0;
     u16 species = GetMonData(mon, MON_DATA_SPECIES, 0);
+    u8 formId = GetMonData(mon, MON_DATA_FORM_ID, 0);
+    u16 formSpeciesId = GetFormSpeciesId(species, formId);
     u16 heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
     u32 personality = GetMonData(mon, MON_DATA_PERSONALITY, 0);
     u8 level;
@@ -5689,6 +5693,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     u8 beauty = GetMonData(mon, MON_DATA_BEAUTY, 0);
     u16 upperPersonality = personality >> 16;
     u8 holdEffect;
+    *targetFormId = 0;
 
     if (heldItem == ITEM_ENIGMA_BERRY)
         holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
@@ -5706,108 +5711,162 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
 
         for (i = 0; i < EVOS_PER_MON; i++)
         {
-            switch (gEvolutionTable[species][i].method)
+            switch (gEvolutionTable[formSpeciesId][i].method)
             {
             case EVO_FRIENDSHIP:
                 if (friendship >= 220)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_FRIENDSHIP_DAY:
                 RtcCalcLocalTime();
                 if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && friendship >= 220)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && gEvolutionTable[species][i].param <= level)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && gEvolutionTable[formSpeciesId][i].param <= level)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_FRIENDSHIP_NIGHT:
                 RtcCalcLocalTime();
                 if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && friendship >= 220)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && gEvolutionTable[species][i].param <= level)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && gEvolutionTable[formSpeciesId][i].param <= level)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_ITEM_HOLD_NIGHT:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && heldItem == gEvolutionTable[species][i].param)
+                if (gLocalTime.hours >= 0 && gLocalTime.hours < 12 && heldItem == gEvolutionTable[formSpeciesId][i].param)
                 {
                     heldItem = 0;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                 }
                 break;
             case EVO_ITEM_HOLD_DAY:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && heldItem == gEvolutionTable[species][i].param)
+                if (gLocalTime.hours >= 12 && gLocalTime.hours < 24 && heldItem == gEvolutionTable[formSpeciesId][i].param)
                 {
                     heldItem = 0;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                 }
                 break;
             case EVO_LEVEL_DUSK:
                 RtcCalcLocalTime();
-                if (gLocalTime.hours >= 17 && gLocalTime.hours < 18 && gEvolutionTable[species][i].param <= level)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gLocalTime.hours >= 17 && gLocalTime.hours < 18 && gEvolutionTable[formSpeciesId][i].param <= level)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL:
-                if (gEvolutionTable[species][i].param <= level)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_FEMALE:
-                if (gEvolutionTable[species][i].param <= level && GetMonGender(mon) == MON_FEMALE)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level && GetMonGender(mon) == MON_FEMALE)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_MALE:
-                if (gEvolutionTable[species][i].param <= level && GetMonGender(mon) == MON_MALE)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level && GetMonGender(mon) == MON_MALE)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_ATK_GT_DEF:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
                     if (GetMonData(mon, MON_DATA_ATK, 0) > GetMonData(mon, MON_DATA_DEF, 0))
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    {
+                        *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                        targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                    }
                 break;
             case EVO_LEVEL_ATK_EQ_DEF:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
                     if (GetMonData(mon, MON_DATA_ATK, 0) == GetMonData(mon, MON_DATA_DEF, 0))
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    {
+                        *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                        targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                    }
                 break;
             case EVO_LEVEL_ATK_LT_DEF:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
                     if (GetMonData(mon, MON_DATA_ATK, 0) < GetMonData(mon, MON_DATA_DEF, 0))
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    {
+                        *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                        targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                    }
                 break;
             case EVO_LEVEL_SILCOON:
-                if (gEvolutionTable[species][i].param <= level && (upperPersonality % 10) <= 4)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level && (upperPersonality % 10) <= 4)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_CASCOON:
-                if (gEvolutionTable[species][i].param <= level && (upperPersonality % 10) > 4)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level && (upperPersonality % 10) > 4)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_LEVEL_NINJASK:
-                if (gEvolutionTable[species][i].param <= level)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_BEAUTY:
-                if (gEvolutionTable[species][i].param <= beauty)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param <= beauty)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_MOVE:
-                if (MonKnowsMove(mon, gEvolutionTable[species][i].param))
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (MonKnowsMove(mon, gEvolutionTable[formSpeciesId][i].param))
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_MOVE_TYPE:
                 for (j = 0; j < 4; j++)
                 {
-                    if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[species][i].param)
+                    if (gBattleMoves[GetMonData(mon, MON_DATA_MOVE1 + j, NULL)].type == gEvolutionTable[formSpeciesId][i].param)
                     {
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                        *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                        targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                         break;
                     }
                 }
@@ -5815,23 +5874,27 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
             case EVO_SPECIFIC_MON_IN_PARTY:
                 for (j = 0; j < PARTY_SIZE; j++)
                 {
-                    if (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL) == gEvolutionTable[species][i].param)
+                    if (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL) == gEvolutionTable[formSpeciesId][i].param)
                     {
-                        targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                        *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                        targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                         break;
                     }
                 }
                 break;
             case EVO_LEVEL_DARK_TYPE_MON_IN_PARTY:
-                if (gEvolutionTable[species][i].param <= level)
+                if (gEvolutionTable[formSpeciesId][i].param <= level)
                 {
                     for (j = 0; j < PARTY_SIZE; j++)
                     {
                         u16 species = GetMonData(&gPlayerParty[j], MON_DATA_SPECIES, NULL);
-                        if (gBaseStats[species].type1 == TYPE_DARK
-                            || gBaseStats[species].type2 == TYPE_DARK)
+                        u16 formId = GetMonData(&gPlayerParty[j], MON_DATA_FORM_ID, NULL);
+                        u16 formSpeciesId = GetFormSpeciesId(species, formId);
+                        if (gBaseStats[formSpeciesId].type1 == TYPE_DARK
+                            || gBaseStats[formSpeciesId].type2 == TYPE_DARK)
                         {
-                            targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                            *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                            targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                             break;
                         }
                     }
@@ -5840,11 +5903,17 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
             case EVO_LEVEL_RAIN:
                 j = GetCurrentWeather();
                 if (j == WEATHER_RAIN || j == WEATHER_RAIN_THUNDERSTORM || j == WEATHER_DOWNPOUR)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_MAP:
-                if (gMapHeader.regionMapSectionId == gEvolutionTable[species][i].param)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gMapHeader.regionMapSectionId == gEvolutionTable[formSpeciesId][i].param)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             }
         }
@@ -5852,17 +5921,19 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     case 1:
         for (i = 0; i < EVOS_PER_MON; i++)
         {
-            switch (gEvolutionTable[species][i].method)
+            switch (gEvolutionTable[formSpeciesId][i].method)
             {
             case EVO_TRADE:
-                targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                 break;
             case EVO_TRADE_ITEM:
-                if (gEvolutionTable[species][i].param == heldItem)
+                if (gEvolutionTable[formSpeciesId][i].param == heldItem)
                 {
                     heldItem = 0;
                     SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
                 }
                 break;
             }
@@ -5872,19 +5943,28 @@ u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem)
     case 3:
         for (i = 0; i < EVOS_PER_MON; i++)
         {
-            switch (gEvolutionTable[species][i].method)
+            switch (gEvolutionTable[formSpeciesId][i].method)
             {
             case EVO_ITEM:
-                if (gEvolutionTable[species][i].param == evolutionItem)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (gEvolutionTable[formSpeciesId][i].param == evolutionItem)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_ITEM_FEMALE:
-                if (GetMonGender(mon) == MON_FEMALE && gEvolutionTable[species][i].param == evolutionItem)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (GetMonGender(mon) == MON_FEMALE && gEvolutionTable[formSpeciesId][i].param == evolutionItem)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             case EVO_ITEM_MALE:
-                if (GetMonGender(mon) == MON_MALE && gEvolutionTable[species][i].param == evolutionItem)
-                    targetSpecies = gEvolutionTable[species][i].targetSpecies;
+                if (GetMonGender(mon) == MON_MALE && gEvolutionTable[formSpeciesId][i].param == evolutionItem)
+                {
+                    *targetFormId = GetFormIdFromFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies);
+                    targetSpecies = GetFormSpeciesId(gEvolutionTable[formSpeciesId][i].targetSpecies, 0); // Get base species
+                }
                 break;
             }
         }
@@ -7388,5 +7468,20 @@ u8 *sub_806F4F8(u8 id, u8 arg1)
 
 u16 GetFormSpeciesId(u16 baseSpeciesId, u8 formId)
 {
-	return gFormSpeciesIdTables[baseSpeciesId][formId];
+    if(gFormSpeciesIdTables[baseSpeciesId] != NULL)
+        return gFormSpeciesIdTables[baseSpeciesId][formId];
+    else
+        return baseSpeciesId;
+}
+
+u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
+{
+    u8 targetFormId;
+
+    for (targetFormId = 0; targetFormId < ARRAY_COUNT(gFormSpeciesIdTables[formSpeciesId]); targetFormId++)
+    {
+        if (formSpeciesId == gFormSpeciesIdTables[formSpeciesId][targetFormId])
+            break;
+    }
+    return targetFormId;
 }

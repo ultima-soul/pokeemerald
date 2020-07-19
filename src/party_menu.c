@@ -897,6 +897,7 @@ static void DisplayPartyPokemonDataForBattlePyramidHeldItem(u8 slot)
 // Returns TRUE if teaching move or cant evolve with item (i.e. description data is shown), FALSE otherwise
 static bool8 DisplayPartyPokemonDataForMoveTutorOrEvolutionItem(u8 slot)
 {
+    u8 targetFormId;
     struct Pokemon *currentPokemon = &gPlayerParty[slot];
     u16 item = gSpecialVar_ItemId;
 
@@ -918,7 +919,7 @@ static bool8 DisplayPartyPokemonDataForMoveTutorOrEvolutionItem(u8 slot)
             DisplayPartyPokemonDataToTeachMove(slot, item, 0);
             break;
         case 2: // Evolution stone
-            if (!GetMonData(currentPokemon, MON_DATA_IS_EGG) && GetEvolutionTargetSpecies(currentPokemon, 3, item) != SPECIES_NONE)
+            if (!GetMonData(currentPokemon, MON_DATA_IS_EGG) && GetEvolutionTargetSpecies(currentPokemon, 3, item, &targetFormId) != SPECIES_NONE)
                 return FALSE;
             DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NO_USE);
             break;
@@ -5019,14 +5020,15 @@ static void Task_TryLearningNextMove(u8 taskId)
 
 static void PartyMenuTryEvolution(u8 taskId)
 {
+    u8 targetFormId;
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
-    u16 targetSpecies = GetEvolutionTargetSpecies(mon, 0, 0);
+    u16 targetSpecies = GetEvolutionTargetSpecies(mon, 0, 0, &targetFormId);
 
     if (targetSpecies != SPECIES_NONE)
     {
         FreePartyPointers();
         gCB2_AfterEvolution = gPartyMenu.exitCallback;
-        BeginEvolutionScene(mon, targetSpecies, 1, gPartyMenu.slotId);
+        BeginEvolutionScene(mon, targetSpecies, 1, gPartyMenu.slotId, targetFormId);
         DestroyTask(taskId);
     }
     else
