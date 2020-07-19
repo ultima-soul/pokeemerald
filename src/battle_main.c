@@ -3081,7 +3081,7 @@ static void BattleStartClearSetData(void)
     gBattleStruct->runTries = 0;
     gBattleStruct->safariGoNearCounter = 0;
     gBattleStruct->safariPkblThrowCounter = 0;
-    *(&gBattleStruct->safariCatchFactor) = gBaseStats[GetMonData(&gEnemyParty[0], MON_DATA_SPECIES)].catchRate * 100 / 1275;
+    *(&gBattleStruct->safariCatchFactor) = gBaseStats[GetFormSpeciesId(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES), GetMonData(&gEnemyParty[0], MON_DATA_FORM_ID))].catchRate * 100 / 1275;
     gBattleStruct->safariEscapeFactor = 3;
     gBattleStruct->wildVictorySong = 0;
     gBattleStruct->moneyMultiplier = 1;
@@ -3316,8 +3316,8 @@ void FaintClearSetData(void)
 
     gBattleResources->flags->flags[gActiveBattler] = 0;
 
-    gBattleMons[gActiveBattler].type1 = gBaseStats[gBattleMons[gActiveBattler].species].type1;
-    gBattleMons[gActiveBattler].type2 = gBaseStats[gBattleMons[gActiveBattler].species].type2;
+    gBattleMons[gActiveBattler].type1 = gBaseStats[GetFormSpeciesId(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].formId)].type1;
+    gBattleMons[gActiveBattler].type2 = gBaseStats[GetFormSpeciesId(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].formId)].type2;
 
     ClearBattlerMoveHistory(gActiveBattler);
     ClearBattlerAbilityHistory(gActiveBattler);
@@ -3379,12 +3379,13 @@ static void BattleIntroDrawTrainersOrMonsSprites(void)
         else
         {
             u16* hpOnSwitchout;
-            u16 formSpeciesId = GetFormSpeciesId(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].formId);
+            u16 formSpeciesId;
 
             ptr = (u8 *)&gBattleMons[gActiveBattler];
             for (i = 0; i < sizeof(struct BattlePokemon); i++)
                 ptr[i] = gBattleBufferB[gActiveBattler][4 + i];
 
+            formSpeciesId = GetFormSpeciesId(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].formId);
             gBattleMons[gActiveBattler].type1 = gBaseStats[formSpeciesId].type1;
             gBattleMons[gActiveBattler].type2 = gBaseStats[formSpeciesId].type2;
             gBattleMons[gActiveBattler].ability = GetAbilityBySpecies(gBattleMons[gActiveBattler].species, gBattleMons[gActiveBattler].abilityNum, gBattleMons[gActiveBattler].formId);
