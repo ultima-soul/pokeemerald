@@ -646,7 +646,7 @@ static void Task_EvolutionScene(u8 taskID)
     case 2: // wait for string, animate mon(and play its cry)
         if (!IsTextPrinterActive(0))
         {
-            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, gTasks[taskID].tPreEvoSpecies);
+            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, GetFormSpeciesId(gTasks[taskID].tPreEvoSpecies, gTasks[taskID].tPreEvoFormId));
             gTasks[taskID].tState++;
         }
         break;
@@ -727,7 +727,7 @@ static void Task_EvolutionScene(u8 taskID)
     case 13: // animate mon
         if (!gPaletteFade.active)
         {
-            EvoScene_DoMonAnimation(sEvoStructPtr->postEvoSpriteID, gTasks[taskID].tPostEvoSpecies);
+            EvoScene_DoMonAnimation(sEvoStructPtr->postEvoSpriteID, GetFormSpeciesId(gTasks[taskID].tPostEvoSpecies,gTasks[taskID].tPostEvoFormId));
             gTasks[taskID].tState++;
         }
         break;
@@ -811,7 +811,7 @@ static void Task_EvolutionScene(u8 taskID)
     case 18: // animate pokemon trying to evolve again, evolution has been stopped
         if (!gPaletteFade.active)
         {
-            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, gTasks[taskID].tPreEvoSpecies);
+            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, GetFormSpeciesId(gTasks[taskID].tPreEvoSpecies, gTasks[taskID].tPreEvoFormId));
             gTasks[taskID].tState++;
         }
         break;
@@ -1015,7 +1015,7 @@ static void Task_TradeEvolutionScene(u8 taskID)
     case 1:
         if (!IsTextPrinterActive(0))
         {
-            PlayCry1(gTasks[taskID].tPreEvoSpecies, 0);
+            PlayCry1(GetFormSpeciesId(gTasks[taskID].tPreEvoSpecies, gTasks[taskID].tPreEvoFormId), 0);
             gTasks[taskID].tState++;
         }
         break;
@@ -1090,7 +1090,7 @@ static void Task_TradeEvolutionScene(u8 taskID)
         if (IsSEPlaying())
         {
             Free(sEvoMovingBgPtr);
-            EvoScene_DoMonAnimation(sEvoStructPtr->postEvoSpriteID, gTasks[taskID].tPostEvoSpecies);
+            EvoScene_DoMonAnimation(sEvoStructPtr->postEvoSpriteID, GetFormSpeciesId(gTasks[taskID].tPostEvoSpecies, gTasks[taskID].tPostEvoFormId));
             memcpy(&gPlttBufferUnfaded[0x20], sEvoStructPtr->savedPalette, 0x60);
             gTasks[taskID].tState++;
         }
@@ -1160,7 +1160,7 @@ static void Task_TradeEvolutionScene(u8 taskID)
     case 16:
         if (!gPaletteFade.active)
         {
-            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, gTasks[taskID].tPreEvoSpecies);
+            EvoScene_DoMonAnimation(sEvoStructPtr->preEvoSpriteID, GetFormSpeciesId(gTasks[taskID].tPreEvoSpecies, gTasks[taskID].tPreEvoFormId));
             gTasks[taskID].tState++;
         }
         break;
