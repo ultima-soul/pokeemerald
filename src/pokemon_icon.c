@@ -845,7 +845,6 @@ const u8 *const gMonIconTable[] =
 	[SPECIES_ZERAORA] = gMonIcon_Zeraora,
 	[SPECIES_MELTAN] = gMonIcon_Meltan,
 	[SPECIES_MELMETAL] = gMonIcon_Melmetal,
-    [SPECIES_EGG] = gMonIcon_Egg,
     [SPECIES_MEGA_VENUSAUR] = gMonIcon_MegaVenusaur,
     [SPECIES_MEGA_CHARIZARD_X] = gMonIcon_MegaCharizardX,
     [SPECIES_MEGA_CHARIZARD_Y] = gMonIcon_MegaCharizardY,
@@ -886,9 +885,6 @@ const u8 *const gMonIconTable[] =
     [SPECIES_MEGA_METAGROSS] = gMonIcon_MegaMetagross,
     [SPECIES_MEGA_LATIAS] = gMonIcon_MegaLatias,
     [SPECIES_MEGA_LATIOS] = gMonIcon_MegaLatios,
-    [SPECIES_PRIMAL_KYOGRE] = gMonIcon_PrimalKyogre,
-    [SPECIES_PRIMAL_GROUDON] = gMonIcon_PrimalGroudon,
-    [SPECIES_MEGA_RAYQUAZA] = gMonIcon_MegaRayquaza,
     [SPECIES_MEGA_LOPUNNY] = gMonIcon_MegaLopunny,
     [SPECIES_MEGA_GARCHOMP] = gMonIcon_MegaGarchomp,
     [SPECIES_MEGA_LUCARIO] = gMonIcon_MegaLucario,
@@ -896,6 +892,9 @@ const u8 *const gMonIconTable[] =
     [SPECIES_MEGA_GALLADE] = gMonIcon_MegaGallade,
     [SPECIES_MEGA_AUDINO] = gMonIcon_MegaAudino,
     [SPECIES_MEGA_DIANCIE] = gMonIcon_MegaDiancie,
+    [SPECIES_MEGA_RAYQUAZA] = gMonIcon_MegaRayquaza,
+    [SPECIES_PRIMAL_KYOGRE] = gMonIcon_PrimalKyogre,
+    [SPECIES_PRIMAL_GROUDON] = gMonIcon_PrimalGroudon,
     [SPECIES_ALOLAN_RATTATA] = gMonIcon_AlolanRattata,
     [SPECIES_ALOLAN_RATICATE] = gMonIcon_AlolanRaticate,
     [SPECIES_ALOLAN_RAICHU] = gMonIcon_AlolanRaichu,
@@ -957,7 +956,7 @@ const u8 *const gMonIconTable[] =
     [SPECIES_UNOWN_Z] = gMonIcon_UnownZ,
     [SPECIES_UNOWN_EMARK] = gMonIcon_UnownExclamationMark,
     [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
-
+    [SPECIES_EGG] = gMonIcon_Egg,
 };
 
 const u8 gMonIconPaletteIndices[] =
