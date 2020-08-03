@@ -8404,6 +8404,18 @@ static const union AnimCmd sAnim_LYCANROC_DUSK_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_ZYGARDE_10_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_ZYGARDE_COMPLETE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd *const sAnims_NONE[] ={
     sAnim_GeneralFrame0,
     sAnim_NONE_1,
@@ -13104,6 +13116,16 @@ static const union AnimCmd *const sAnims_LYCANROC_DUSK[] ={
     sAnim_LYCANROC_DUSK_1,
 };
 
+static const union AnimCmd *const sAnims_ZYGARDE_10[] ={
+    sAnim_GeneralFrame0,
+    sAnim_ZYGARDE_10_1,
+};
+
+static const union AnimCmd *const sAnims_ZYGARDE_COMPLETE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_ZYGARDE_COMPLETE_1,
+};
+
 #define ANIM_CMD(name)             [SPECIES_##name] = sAnims_##name
 #define ANIM_CMD_FULL(name, anims) [SPECIES_##name] = anims
 
@@ -14136,10 +14158,10 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     ANIM_CMD_FULL(GOURGEIST_LARGE, sAnims_GOURGEIST),
     ANIM_CMD_FULL(GOURGEIST_SUPER, sAnims_GOURGEIST),
     ANIM_CMD_FULL(XERNEAS_ACTIVE, sAnims_XERNEAS),
-    ANIM_CMD_FULL(ZYGARDE_10, sAnims_ZYGARDE),
-    ANIM_CMD_FULL(ZYGARDE_10_POWER_CONSTRUCT, sAnims_ZYGARDE),
+    ANIM_CMD(ZYGARDE_10),
+    ANIM_CMD_FULL(ZYGARDE_10_POWER_CONSTRUCT, sAnims_ZYGARDE_10),
     ANIM_CMD_FULL(ZYGARDE_50_POWER_CONSTRUCT, sAnims_ZYGARDE),
-    ANIM_CMD_FULL(ZYGARDE_COMPLETE, sAnims_ZYGARDE),
+    ANIM_CMD(ZYGARDE_COMPLETE),
     ANIM_CMD(HOOPA_UNBOUND),
     ANIM_CMD_FULL(ORICORIO_POM_POM, sAnims_ORICORIO),
     ANIM_CMD_FULL(ORICORIO_PA_U, sAnims_ORICORIO),

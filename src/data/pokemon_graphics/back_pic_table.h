@@ -881,7 +881,7 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
     SPECIES_SPRITE(ALOLAN_MUK, gMonBackPic_AlolanMuk),
     SPECIES_SPRITE(ALOLAN_EXEGGUTOR, gMonBackPic_AlolanExeggutor),
     SPECIES_SPRITE(ALOLAN_MAROWAK, gMonBackPic_AlolanMarowak),
-    
+
     SPECIES_SPRITE(PIKACHU_COSPLAY, gMonBackPic_PikachuCosplay),
     SPECIES_SPRITE(PIKACHU_ROCK_STAR, gMonBackPic_PikachuRockStar),
     SPECIES_SPRITE(PIKACHU_BELLE, gMonBackPic_PikachuBelle),
@@ -1066,10 +1066,10 @@ const struct CompressedSpriteSheet gMonBackPicTable[] =
 
     SPECIES_SPRITE(XERNEAS_ACTIVE, gMonBackPic_XerneasActive),
 
-    SPECIES_SPRITE(ZYGARDE_10, gMonBackPic_Zygarde),
-    SPECIES_SPRITE(ZYGARDE_10_POWER_CONSTRUCT, gMonBackPic_Zygarde),
+    SPECIES_SPRITE(ZYGARDE_10, gMonBackPic_Zygarde10),
+    SPECIES_SPRITE(ZYGARDE_10_POWER_CONSTRUCT, gMonBackPic_Zygarde10),
     SPECIES_SPRITE(ZYGARDE_50_POWER_CONSTRUCT, gMonBackPic_Zygarde),
-    SPECIES_SPRITE(ZYGARDE_COMPLETE, gMonBackPic_Zygarde),
+    SPECIES_SPRITE(ZYGARDE_COMPLETE, gMonBackPic_ZygardeComplete),
 
     SPECIES_SPRITE(HOOPA_UNBOUND, gMonBackPic_HoopaUnbound),
 

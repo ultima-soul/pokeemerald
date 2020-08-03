@@ -1382,7 +1382,7 @@ const struct SpindaSpot gSpindaSpotGraphics[] =
 
 #include "data/pokemon/item_effects.h"
 
-const s8 gNatureStatTable[][NUM_EV_STATS] =
+const s8 gNatureStatTable[NUM_NATURES][NUM_NATURE_STATS] =
 {
     // Atk Def Spd Sp.Atk Sp.Def
     {    0,  0,  0,     0,     0}, // Hardy
@@ -5671,12 +5671,12 @@ u8 *UseStatIncreaseItem(u16 itemId)
 
 u8 GetNature(struct Pokemon *mon)
 {
-    return GetMonData(mon, MON_DATA_PERSONALITY, 0) % 25;
+    return GetMonData(mon, MON_DATA_PERSONALITY, 0) % NUM_NATURES;
 }
 
 u8 GetNatureFromPersonality(u32 personality)
 {
-    return personality % 25;
+    return personality % NUM_NATURES;
 }
 
 u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem, u8 *targetFormId)
@@ -6211,7 +6211,7 @@ u8 GetTrainerEncounterMusicId(u16 trainerOpponentId)
 u16 ModifyStatByNature(u8 nature, u16 n, u8 statIndex)
 {
     // Dont modify HP, Accuracy, or Evasion by nature
-    if (statIndex <= STAT_HP || statIndex > NUM_EV_STATS)
+    if (statIndex <= STAT_HP || statIndex > NUM_NATURE_STATS)
     {
         // Should just be "return n", but it wouldn't match without this.
         u16 retVal = n;
@@ -6300,7 +6300,7 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies, u8 defeatedFormId)
     u16 totalEVs = 0;
     u16 heldItem;
     u8 holdEffect;
-    int i;
+    int i, multiplier;
     u16 defeatedFormSpeciesId = GetFormSpeciesId(defeatedSpecies, defeatedFormId);
 
     for (i = 0; i < NUM_STATS; i++)
@@ -6311,43 +6311,37 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies, u8 defeatedFormId)
 
     for (i = 0; i < NUM_STATS; i++)
     {
-        u8 hasHadPokerus;
-        int multiplier;
-
         if (totalEVs >= MAX_TOTAL_EVS)
             break;
-
-        hasHadPokerus = CheckPartyHasHadPokerus(mon, 0);
-
-        if (hasHadPokerus)
+        
+        if (CheckPartyHasHadPokerus(mon, 0))
             multiplier = 2;
         else
             multiplier = 1;
 
         switch (i)
         {
-        case 0:
+        case STAT_HP:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_HP * multiplier;
             break;
-        case 1:
+        case STAT_ATK:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_Attack * multiplier;
             break;
-        case 2:
+        case STAT_DEF:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_Defense * multiplier;
             break;
-        case 3:
+        case STAT_SPEED:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_Speed * multiplier;
             break;
-        case 4:
+        case STAT_SPATK:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_SpAttack * multiplier;
             break;
-        case 5:
+        case STAT_SPDEF:
             evIncrease = gBaseStats[defeatedFormSpeciesId].evYield_SpDefense * multiplier;
             break;
         }
 
         heldItem = GetMonData(mon, MON_DATA_HELD_ITEM, 0);
-
         if (heldItem == ITEM_ENIGMA_BERRY)
         {
             if (gMain.inBattle)
@@ -6888,13 +6882,13 @@ bool8 IsMonSpriteNotFlipped(u16 formSpeciesId)
 s8 GetMonFlavorRelation(struct Pokemon *mon, u8 flavor)
 {
     u8 nature = GetNature(mon);
-    return gPokeblockFlavorCompatibilityTable[nature * 5 + flavor];
+    return gPokeblockFlavorCompatibilityTable[nature * FLAVOR_COUNT + flavor];
 }
 
 s8 GetFlavorRelationByPersonality(u32 personality, u8 flavor)
 {
     u8 nature = GetNatureFromPersonality(personality);
-    return gPokeblockFlavorCompatibilityTable[nature * 5 + flavor];
+    return gPokeblockFlavorCompatibilityTable[nature * FLAVOR_COUNT + flavor];
 }
 
 bool8 IsTradedMon(struct Pokemon *mon)

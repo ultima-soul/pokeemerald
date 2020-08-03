@@ -1067,10 +1067,10 @@ gCryTable:: @ 869DCF4
     @ Xerneas
 	cry_not Cry_Xerneas
     @ Zygarde
+	cry_not Cry_Zygarde_10
+	cry_not Cry_Zygarde_10
 	cry_not Cry_Zygarde
-	cry_not Cry_Zygarde
-	cry_not Cry_Zygarde
-	cry_not Cry_Zygarde
+	cry_not Cry_Zygarde_Complete
     @ Hoopa
 	cry_not Cry_Hoopa_Unbound
     @ Oricorio
@@ -2193,10 +2193,10 @@ gCryTable2:: @ 869EF24
     @ Xerneas
 	cry2_not Cry_Xerneas
     @ Zygarde
+	cry2_not Cry_Zygarde_10
+	cry2_not Cry_Zygarde_10
 	cry2_not Cry_Zygarde
-	cry2_not Cry_Zygarde
-	cry2_not Cry_Zygarde
-	cry2_not Cry_Zygarde
+	cry2_not Cry_Zygarde_Complete
     @ Hoopa
 	cry2_not Cry_Hoopa_Unbound
     @ Oricorio

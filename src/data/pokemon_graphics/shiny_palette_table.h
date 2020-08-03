@@ -1066,10 +1066,10 @@ const struct CompressedSpritePalette gMonShinyPaletteTable[] =
 
     SPECIES_SHINY_PAL(XERNEAS_ACTIVE, gMonShinyPalette_XerneasActive),
 
-    SPECIES_SHINY_PAL(ZYGARDE_10, gMonShinyPalette_Zygarde),
-    SPECIES_SHINY_PAL(ZYGARDE_10_POWER_CONSTRUCT, gMonShinyPalette_Zygarde),
+    SPECIES_SHINY_PAL(ZYGARDE_10, gMonShinyPalette_Zygarde10),
+    SPECIES_SHINY_PAL(ZYGARDE_10_POWER_CONSTRUCT, gMonShinyPalette_Zygarde10),
     SPECIES_SHINY_PAL(ZYGARDE_50_POWER_CONSTRUCT, gMonShinyPalette_Zygarde),
-    SPECIES_SHINY_PAL(ZYGARDE_COMPLETE, gMonShinyPalette_Zygarde),
+    SPECIES_SHINY_PAL(ZYGARDE_COMPLETE, gMonShinyPalette_ZygardeComplete),
 
     SPECIES_SHINY_PAL(HOOPA_UNBOUND, gMonShinyPalette_HoopaUnbound),
 

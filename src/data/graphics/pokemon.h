@@ -918,6 +918,8 @@ const u32 gMonFrontPic_GourgeistSmall[] = INCBIN_U32("graphics/pokemon/gourgeist
 const u32 gMonFrontPic_GourgeistLarge[] = INCBIN_U32("graphics/pokemon/gourgeist/large/front.4bpp.lz");
 const u32 gMonFrontPic_GourgeistSuper[] = INCBIN_U32("graphics/pokemon/gourgeist/super/front.4bpp.lz");
 const u32 gMonFrontPic_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/front.4bpp.lz");
+const u32 gMonFrontPic_Zygarde10[] = INCBIN_U32("graphics/pokemon/zygarde/10_percent/front.4bpp.lz");
+const u32 gMonFrontPic_ZygardeComplete[] = INCBIN_U32("graphics/pokemon/zygarde/complete/front.4bpp.lz");
 const u32 gMonFrontPic_HoopaUnbound[] = INCBIN_U32("graphics/pokemon/hoopa/unbound/front.4bpp.lz");
 const u32 gMonFrontPic_OricorioPomPom[] = INCBIN_U32("graphics/pokemon/oricorio/pom_pom/front.4bpp.lz");
 const u32 gMonFrontPic_OricorioPau[] = INCBIN_U32("graphics/pokemon/oricorio/pa_u/front.4bpp.lz");
@@ -1853,6 +1855,8 @@ const u32 gMonBackPic_GourgeistSmall[] = INCBIN_U32("graphics/pokemon/gourgeist/
 const u32 gMonBackPic_GourgeistLarge[] = INCBIN_U32("graphics/pokemon/gourgeist/large/back.4bpp.lz");
 const u32 gMonBackPic_GourgeistSuper[] = INCBIN_U32("graphics/pokemon/gourgeist/super/back.4bpp.lz");
 const u32 gMonBackPic_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/back.4bpp.lz");
+const u32 gMonBackPic_Zygarde10[] = INCBIN_U32("graphics/pokemon/zygarde/10_percent/back.4bpp.lz");
+const u32 gMonBackPic_ZygardeComplete[] = INCBIN_U32("graphics/pokemon/zygarde/complete/back.4bpp.lz");
 const u32 gMonBackPic_HoopaUnbound[] = INCBIN_U32("graphics/pokemon/hoopa/unbound/back.4bpp.lz");
 const u32 gMonBackPic_OricorioPomPom[] = INCBIN_U32("graphics/pokemon/oricorio/pom_pom/back.4bpp.lz");
 const u32 gMonBackPic_OricorioPau[] = INCBIN_U32("graphics/pokemon/oricorio/pa_u/back.4bpp.lz");
@@ -2790,6 +2794,8 @@ const u32 gMonPalette_FurfrouPharaohTrim[] = INCBIN_U32("graphics/pokemon/furfro
 const u32 gMonPalette_MeowsticFemale[] = INCBIN_U32("graphics/pokemon/meowstic/female/normal.gbapal.lz");
 const u32 gMonPalette_AegislashBlade[] = INCBIN_U32("graphics/pokemon/aegislash/blade/normal.gbapal.lz");
 const u32 gMonPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/normal.gbapal.lz");
+const u32 gMonPalette_Zygarde10[] = INCBIN_U32("graphics/pokemon/zygarde/10_percent/normal.gbapal.lz");
+const u32 gMonPalette_ZygardeComplete[] = INCBIN_U32("graphics/pokemon/zygarde/complete/normal.gbapal.lz");
 const u32 gMonPalette_HoopaUnbound[] = INCBIN_U32("graphics/pokemon/hoopa/unbound/normal.gbapal.lz");
 const u32 gMonPalette_OricorioPomPom[] = INCBIN_U32("graphics/pokemon/oricorio/pom_pom/normal.gbapal.lz");
 const u32 gMonPalette_OricorioPau[] = INCBIN_U32("graphics/pokemon/oricorio/pa_u/normal.gbapal.lz");
@@ -3751,6 +3757,8 @@ const u32 gMonShinyPalette_FurfrouPharaohTrim[] = INCBIN_U32("graphics/pokemon/f
 const u32 gMonShinyPalette_MeowsticFemale[] = INCBIN_U32("graphics/pokemon/meowstic/female/shiny.gbapal.lz");
 const u32 gMonShinyPalette_AegislashBlade[] = INCBIN_U32("graphics/pokemon/aegislash/blade/shiny.gbapal.lz");
 const u32 gMonShinyPalette_XerneasActive[] = INCBIN_U32("graphics/pokemon/xerneas/active/shiny.gbapal.lz");
+const u32 gMonShinyPalette_Zygarde10[] = INCBIN_U32("graphics/pokemon/zygarde/10_percent/shiny.gbapal.lz");
+const u32 gMonShinyPalette_ZygardeComplete[] = INCBIN_U32("graphics/pokemon/zygarde/complete/shiny.gbapal.lz");
 const u32 gMonShinyPalette_HoopaUnbound[] = INCBIN_U32("graphics/pokemon/hoopa/unbound/shiny.gbapal.lz");
 const u32 gMonShinyPalette_OricorioPomPom[] = INCBIN_U32("graphics/pokemon/oricorio/pom_pom/shiny.gbapal.lz");
 const u32 gMonShinyPalette_OricorioPau[] = INCBIN_U32("graphics/pokemon/oricorio/pa_u/shiny.gbapal.lz");
@@ -4055,6 +4063,7 @@ const u32 gMonFrontPic_AlolanMarowak[] = INCBIN_U32("graphics/pokemon/alolan_mar
 const u32 gMonBackPic_AlolanMarowak[] = INCBIN_U32("graphics/pokemon/alolan_marowak/back.4bpp.lz");
 const u32 gMonPalette_AlolanMarowak[] = INCBIN_U32("graphics/pokemon/alolan_marowak/normal.gbapal.lz");
 const u32 gMonShinyPalette_AlolanMarowak[] = INCBIN_U32("graphics/pokemon/alolan_marowak/shiny.gbapal.lz");
+
 
 const u8 gMonIcon_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/icon.4bpp");
 const u8 gMonIcon_Bulbasaur[] = INCBIN_U8("graphics/pokemon/bulbasaur/icon.4bpp");
@@ -4952,7 +4961,6 @@ const u8 gMonIcon_MegaGallade[] = INCBIN_U8("graphics/pokemon/mega_gallade/icon.
 const u8 gMonIcon_MegaAudino[] = INCBIN_U8("graphics/pokemon/mega_audino/icon.4bpp");
 const u8 gMonIcon_MegaDiancie[] = INCBIN_U8("graphics/pokemon/mega_diancie/icon.4bpp");
 
-
 const u8 gMonIcon_MegaRayquaza[] = INCBIN_U8("graphics/pokemon/mega_rayquaza/icon.4bpp");
 const u8 gMonIcon_PrimalKyogre[] = INCBIN_U8("graphics/pokemon/primal_kyogre/icon.4bpp");
 const u8 gMonIcon_PrimalGroudon[] = INCBIN_U8("graphics/pokemon/primal_groudon/icon.4bpp");
@@ -4976,7 +4984,6 @@ const u8 gMonIcon_AlolanMuk[] = INCBIN_U8("graphics/pokemon/alolan_muk/icon.4bpp
 const u8 gMonIcon_AlolanExeggutor[] = INCBIN_U8("graphics/pokemon/alolan_exeggutor/icon.4bpp");
 const u8 gMonIcon_AlolanMarowak[] = INCBIN_U8("graphics/pokemon/alolan_marowak/icon.4bpp");
 
-
 const u8 gMonIcon_ShayminSky[] = INCBIN_U8("graphics/pokemon/shaymin/sky/icon.4bpp");
 const u8 gMonIcon_GiratinaOrigin[] = INCBIN_U8("graphics/pokemon/giratina/origin/icon.4bpp");
 const u8 gMonIcon_DarmanitanZen[] = INCBIN_U8("graphics/pokemon/darmanitan/zen_mode/icon.4bpp");
@@ -4993,6 +5000,8 @@ const u8 gMonIcon_KyuremWhite[] = INCBIN_U8("graphics/pokemon/kyurem/white/icon.
 const u8 gMonIcon_MimikyuBusted[] = INCBIN_U8("graphics/pokemon/mimikyu/busted/icon.4bpp");
 const u8 gMonIcon_LycanrocMidnight[] = INCBIN_U8("graphics/pokemon/lycanroc/midnight/icon.4bpp");
 const u8 gMonIcon_LycanrocDusk[] = INCBIN_U8("graphics/pokemon/lycanroc/dusk/icon.4bpp");
+const u8 gMonIcon_Zygarde10[] = INCBIN_U8("graphics/pokemon/zygarde/10_percent/icon.4bpp");
+const u8 gMonIcon_ZygardeComplete[] = INCBIN_U8("graphics/pokemon/zygarde/complete/icon.4bpp");
 
 const u8 gMonFootprint_QuestionMark[] = INCBIN_U8("graphics/pokemon/question_mark/footprint.1bpp");
 const u8 gMonFootprint_Bulbasaur[] = INCBIN_U8("graphics/pokemon/bulbasaur/footprint.1bpp");

@@ -956,6 +956,10 @@ const u8 *const gMonIconTable[] =
     [SPECIES_UNOWN_Z] = gMonIcon_UnownZ,
     [SPECIES_UNOWN_EMARK] = gMonIcon_UnownExclamationMark,
     [SPECIES_UNOWN_QMARK] = gMonIcon_UnownQuestionMark,
+    [SPECIES_ZYGARDE_10] = gMonIcon_Zygarde10,
+    [SPECIES_ZYGARDE_10_POWER_CONSTRUCT] = gMonIcon_Zygarde10,
+    [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] = gMonIcon_Zygarde,
+    [SPECIES_ZYGARDE_COMPLETE] = gMonIcon_ZygardeComplete,
     [SPECIES_EGG] = gMonIcon_Egg,
 };
 
@@ -1865,6 +1869,10 @@ const u8 gMonIconPaletteIndices[] =
     [SPECIES_LYCANROC_MIDNIGHT] = 0,
     [SPECIES_LYCANROC_DUSK] = 0,
     [SPECIES_UNOWN_B ... SPECIES_UNOWN_QMARK] = 0,
+    [SPECIES_ZYGARDE_10] = 1,
+    [SPECIES_ZYGARDE_10_POWER_CONSTRUCT] = 1,
+    [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] = 1,
+    [SPECIES_ZYGARDE_COMPLETE] = 1,
     [SPECIES_EGG] = 1,
 };
 
