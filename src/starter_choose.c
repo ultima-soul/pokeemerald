@@ -534,7 +534,7 @@ static void Task_WaitForStarterSprite(u8 taskId)
 
 static void Task_AskConfirmStarter(u8 taskId)
 {
-    PlayCry1(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), 0); // handle forms
+    PlayCry1(GetFormSpeciesId(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), GetStarterPokemon(gTasks[taskId].tStarterSelection, TRUE)), 0);
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized(0, 1, gText_ConfirmStarterChoice, 0, 1, 0, NULL);
     ScheduleBgCopyTilemapToVram(0);

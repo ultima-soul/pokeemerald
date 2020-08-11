@@ -863,24 +863,24 @@ gCryTable:: @ 869DCF4
 	cry_not Cry_Primal_Kyogre
 	cry_not Cry_Primal_Groudon
 	@ Alolan Forms
-	cry Cry_Alolan_Rattata
-	cry Cry_Alolan_Raticate
-	cry Cry_Alolan_Raichu
-	cry Cry_Alolan_Sandshrew
-	cry Cry_Alolan_Sandslash
-	cry Cry_Alolan_Vulpix
-	cry Cry_Alolan_Ninetales
-	cry Cry_Alolan_Diglett
-	cry Cry_Alolan_Dugtrio
-	cry Cry_Alolan_Meowth
-	cry Cry_Alolan_Persian
-	cry Cry_Alolan_Geodude
-	cry Cry_Alolan_Graveler
-	cry Cry_Alolan_Golem
-	cry Cry_Alolan_Grimer
-	cry Cry_Alolan_Muk
-	cry Cry_Alolan_Exeggutor
-	cry Cry_Alolan_Marowak
+	cry Cry_Rattata
+	cry Cry_Raticate
+	cry Cry_Raichu
+	cry Cry_Sandshrew
+	cry Cry_Sandslash
+	cry Cry_Vulpix
+	cry Cry_Ninetales
+	cry Cry_Diglett
+	cry Cry_Dugtrio
+	cry Cry_Meowth
+	cry Cry_Persian
+	cry Cry_Geodude
+	cry Cry_Graveler
+	cry Cry_Golem
+	cry Cry_Grimer
+	cry Cry_Muk
+	cry Cry_Exeggutor
+	cry Cry_Marowak
     @ Misc Forms
     @ Cosplay Pikachu
 	cry Cry_Pikachu  @ 869DE14
@@ -936,11 +936,11 @@ gCryTable:: @ 869DCF4
 	cry Cry_Deoxys
 	cry Cry_Deoxys
     @ Burmy
-	cry_not Cry_Burmy_Sandy
-	cry_not Cry_Burmy_Trash
+	cry_not Cry_Burmy
+	cry_not Cry_Burmy
     @ Wormadam
-	cry_not Cry_Wormadam_Sandy
-	cry_not Cry_Wormadam_Trash
+	cry_not Cry_Wormadam
+	cry_not Cry_Wormadam
     @ Cherrim
 	cry_not Cry_Cherrim
     @ Shellos
@@ -948,13 +948,13 @@ gCryTable:: @ 869DCF4
     @ Gastrodon
 	cry_not Cry_Gastrodon
     @ Rotom
-	cry_not Cry_Rotom_Heat
-	cry_not Cry_Rotom_Wash
-	cry_not Cry_Rotom_Frost
-	cry_not Cry_Rotom_Fan
-	cry_not Cry_Rotom_Mow
+	cry_not Cry_Rotom
+	cry_not Cry_Rotom
+	cry_not Cry_Rotom
+	cry_not Cry_Rotom
+	cry_not Cry_Rotom
     @ Giratina
-	cry_not Cry_Giratina_Origin
+	cry_not Cry_Giratina
     @ Shaymin
 	cry_not Cry_Shaymin_Sky
     @ Arceus
@@ -978,7 +978,7 @@ gCryTable:: @ 869DCF4
     @ Basculin
 	cry_not Cry_Basculin
     @ Darmanitan
-	cry_not Cry_Darmanitan_Zen
+	cry_not Cry_Darmanitan
     @ Deerling
 	cry_not Cry_Deerling
 	cry_not Cry_Deerling
@@ -997,7 +997,7 @@ gCryTable:: @ 869DCF4
     @ Keldeo
 	cry_not Cry_Keldeo
     @ Meloetta
-	cry_not Cry_Meloetta_Pirouette
+	cry_not Cry_Meloetta
     @ Genesect
 	cry_not Cry_Genesect
 	cry_not Cry_Genesect
@@ -1036,7 +1036,7 @@ gCryTable:: @ 869DCF4
 	cry_not Cry_Floette
 	cry_not Cry_Floette
 	cry_not Cry_Floette
-	cry_not Cry_Floette
+	cry_not Cry_Floette_Eternal_Flower
     @ Florges
 	cry_not Cry_Florges
 	cry_not Cry_Florges
@@ -1053,17 +1053,17 @@ gCryTable:: @ 869DCF4
 	cry_not Cry_Furfrou
 	cry_not Cry_Furfrou
     @ Meowstic
-	cry_not Cry_Meowstic_F
+	cry_not Cry_Meowstic
 	@ Aegislash
-	cry_not Cry_Aegislash_Blade
+	cry_not Cry_Aegislash
     @ Pumpkaboo
 	cry_not Cry_Pumpkaboo
 	cry_not Cry_Pumpkaboo
-	cry_not Cry_Pumpkaboo
+	cry_not Cry_Pumpkaboo_Super
     @ Gourgeist
 	cry_not Cry_Gourgeist
 	cry_not Cry_Gourgeist
-	cry_not Cry_Gourgeist
+	cry_not Cry_Gourgeist_Super
     @ Xerneas
 	cry_not Cry_Xerneas
     @ Zygarde
@@ -1074,9 +1074,9 @@ gCryTable:: @ 869DCF4
     @ Hoopa
 	cry_not Cry_Hoopa_Unbound
     @ Oricorio
-	cry_not Cry_Oricorio
-	cry_not Cry_Oricorio
-	cry_not Cry_Oricorio
+	cry_not Cry_Oricorio_Pom_Pom
+	cry_not Cry_Oricorio_Pa_u
+	cry_not Cry_Oricorio_Sensu
     @ Rockruff
 	cry_not Cry_Rockruff
     @ Lycanroc
@@ -1109,19 +1109,19 @@ gCryTable:: @ 869DCF4
 	cry_not Cry_Minior
 	cry_not Cry_Minior
 	cry_not Cry_Minior
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
-	cry_not Cry_Minior_Core
+	cry_not Cry_Minior
+	cry_not Cry_Minior
+	cry_not Cry_Minior
+	cry_not Cry_Minior
+	cry_not Cry_Minior
+	cry_not Cry_Minior
+	cry_not Cry_Minior
     @ Mimikyu
-	cry_not Cry_Mimikyu_Busted
+	cry_not Cry_Mimikyu
     @ Necrozma
-	cry_not Cry_Necrozma
-	cry_not Cry_Necrozma
-	cry_not Cry_Necrozma
+	cry_not Cry_Necrozma_Dusk_Mane
+	cry_not Cry_Necrozma_Dawn_Wings
+	cry_not Cry_Necrozma_Ultra
     @ Magearna
 	cry_not Cry_Magearna
 
@@ -1989,24 +1989,24 @@ gCryTable2:: @ 869EF24
 	cry2_not Cry_Primal_Kyogre
 	cry2_not Cry_Primal_Groudon
 	@ Alolan Forms
-	cry2 Cry_Alolan_Rattata
-	cry2 Cry_Alolan_Raticate
-	cry2 Cry_Alolan_Raichu
-	cry2 Cry_Alolan_Sandshrew
-	cry2 Cry_Alolan_Sandslash
-	cry2 Cry_Alolan_Vulpix
-	cry2 Cry_Alolan_Ninetales
-	cry2 Cry_Alolan_Diglett
-	cry2 Cry_Alolan_Dugtrio
-	cry2 Cry_Alolan_Meowth
-	cry2 Cry_Alolan_Persian
-	cry2 Cry_Alolan_Geodude
-	cry2 Cry_Alolan_Graveler
-	cry2 Cry_Alolan_Golem
-	cry2 Cry_Alolan_Grimer
-	cry2 Cry_Alolan_Muk
-	cry2 Cry_Alolan_Exeggutor
-	cry2 Cry_Alolan_Marowak
+	cry2 Cry_Rattata
+	cry2 Cry_Raticate
+	cry2 Cry_Raichu
+	cry2 Cry_Sandshrew
+	cry2 Cry_Sandslash
+	cry2 Cry_Vulpix
+	cry2 Cry_Ninetales
+	cry2 Cry_Diglett
+	cry2 Cry_Dugtrio
+	cry2 Cry_Meowth
+	cry2 Cry_Persian
+	cry2 Cry_Geodude
+	cry2 Cry_Graveler
+	cry2 Cry_Golem
+	cry2 Cry_Grimer
+	cry2 Cry_Muk
+	cry2 Cry_Exeggutor
+	cry2 Cry_Marowak
     @ Misc Forms
     @ Cosplay Pikachu
 	cry2 Cry_Pikachu  @ 869DE14
@@ -2062,11 +2062,11 @@ gCryTable2:: @ 869EF24
 	cry2 Cry_Deoxys
 	cry2 Cry_Deoxys
     @ Burmy
-	cry2_not Cry_Burmy_Sandy
-	cry2_not Cry_Burmy_Trash
+	cry2_not Cry_Burmy
+	cry2_not Cry_Burmy
     @ Wormadam
-	cry2_not Cry_Wormadam_Sandy
-	cry2_not Cry_Wormadam_Trash
+	cry2_not Cry_Wormadam
+	cry2_not Cry_Wormadam
     @ Cherrim
 	cry2_not Cry_Cherrim
     @ Shellos
@@ -2074,13 +2074,13 @@ gCryTable2:: @ 869EF24
     @ Gastrodon
 	cry2_not Cry_Gastrodon
     @ Rotom
-	cry2_not Cry_Rotom_Heat
-	cry2_not Cry_Rotom_Wash
-	cry2_not Cry_Rotom_Frost
-	cry2_not Cry_Rotom_Fan
-	cry2_not Cry_Rotom_Mow
+	cry2_not Cry_Rotom
+	cry2_not Cry_Rotom
+	cry2_not Cry_Rotom
+	cry2_not Cry_Rotom
+	cry2_not Cry_Rotom
     @ Giratina
-	cry2_not Cry_Giratina_Origin
+	cry2_not Cry_Giratina
     @ Shaymin
 	cry2_not Cry_Shaymin_Sky
     @ Arceus
@@ -2104,7 +2104,7 @@ gCryTable2:: @ 869EF24
     @ Basculin
 	cry2_not Cry_Basculin
     @ Darmanitan
-	cry2_not Cry_Darmanitan_Zen
+	cry2_not Cry_Darmanitan
     @ Deerling
 	cry2_not Cry_Deerling
 	cry2_not Cry_Deerling
@@ -2123,7 +2123,7 @@ gCryTable2:: @ 869EF24
     @ Keldeo
 	cry2_not Cry_Keldeo
     @ Meloetta
-	cry2_not Cry_Meloetta_Pirouette
+	cry2_not Cry_Meloetta
     @ Genesect
 	cry2_not Cry_Genesect
 	cry2_not Cry_Genesect
@@ -2162,7 +2162,7 @@ gCryTable2:: @ 869EF24
 	cry2_not Cry_Floette
 	cry2_not Cry_Floette
 	cry2_not Cry_Floette
-	cry2_not Cry_Floette
+	cry2_not Cry_Floette_Eternal_Flower
     @ Florges
 	cry2_not Cry_Florges
 	cry2_not Cry_Florges
@@ -2179,17 +2179,17 @@ gCryTable2:: @ 869EF24
 	cry2_not Cry_Furfrou
 	cry2_not Cry_Furfrou
     @ Meowstic
-	cry2_not Cry_Meowstic_F
+	cry2_not Cry_Meowstic
 	@ Aegislash
-	cry2_not Cry_Aegislash_Blade
+	cry2_not Cry_Aegislash
     @ Pumpkaboo
 	cry2_not Cry_Pumpkaboo
 	cry2_not Cry_Pumpkaboo
-	cry2_not Cry_Pumpkaboo
+	cry2_not Cry_Pumpkaboo_Super
     @ Gourgeist
 	cry2_not Cry_Gourgeist
 	cry2_not Cry_Gourgeist
-	cry2_not Cry_Gourgeist
+	cry2_not Cry_Gourgeist_Super
     @ Xerneas
 	cry2_not Cry_Xerneas
     @ Zygarde
@@ -2200,9 +2200,9 @@ gCryTable2:: @ 869EF24
     @ Hoopa
 	cry2_not Cry_Hoopa_Unbound
     @ Oricorio
-	cry2_not Cry_Oricorio
-	cry2_not Cry_Oricorio
-	cry2_not Cry_Oricorio
+	cry2_not Cry_Oricorio_Pom_Pom
+	cry2_not Cry_Oricorio_Pa_u
+	cry2_not Cry_Oricorio_Sensu
     @ Rockruff
 	cry2_not Cry_Rockruff
     @ Lycanroc
@@ -2235,18 +2235,18 @@ gCryTable2:: @ 869EF24
 	cry2_not Cry_Minior
 	cry2_not Cry_Minior
 	cry2_not Cry_Minior
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
-	cry2_not Cry_Minior_Core
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
+	cry2_not Cry_Minior
     @ Mimikyu
-	cry2_not Cry_Mimikyu_Busted
+	cry2_not Cry_Mimikyu
     @ Necrozma
-	cry2_not Cry_Necrozma
-	cry2_not Cry_Necrozma
-	cry2_not Cry_Necrozma
+	cry2_not Cry_Necrozma_Dusk_Mane
+	cry2_not Cry_Necrozma_Dawn_Wings
+	cry2_not Cry_Necrozma_Ultra
     @ Magearna
 	cry2_not Cry_Magearna

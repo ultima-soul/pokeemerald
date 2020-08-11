@@ -559,6 +559,7 @@ static u32 GetOpponentMonData(u8 monId, u8 *dst)
     {
     case REQUEST_ALL_BATTLE:
         battleMon.species = GetMonData(&gEnemyParty[monId], MON_DATA_SPECIES);
+        battleMon.formId = GetMonData(&gEnemyParty[monId], MON_DATA_FORM_ID);
         battleMon.item = GetMonData(&gEnemyParty[monId], MON_DATA_HELD_ITEM);
         for (size = 0; size < MAX_MON_MOVES; size++)
         {
@@ -898,8 +899,10 @@ static void SetOpponentMonData(u8 monId)
         {
             u8 iv;
             u16 species = battlePokemon->species;
+            u8 formId = battlePokemon->formId;
 
             SetMonData(&gEnemyParty[monId], MON_DATA_SPECIES, &species);
+            SetMonData(&gEnemyParty[monId], MON_DATA_FORM_ID, &formId);
             SetMonData(&gEnemyParty[monId], MON_DATA_HELD_ITEM, &battlePokemon->item);
             for (i = 0; i < MAX_MON_MOVES; i++)
             {
@@ -1129,7 +1132,7 @@ static void OpponentHandleLoadMonSprite(void)
 
     gSprites[gBattlerSpriteIds[gActiveBattler]].pos2.x = -240;
     gSprites[gBattlerSpriteIds[gActiveBattler]].data[0] = gActiveBattler;
-    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = species;
+    gSprites[gBattlerSpriteIds[gActiveBattler]].data[2] = GetFormSpeciesId(species, formId);
     gSprites[gBattlerSpriteIds[gActiveBattler]].oam.paletteNum = gActiveBattler;
     StartSpriteAnim(&gSprites[gBattlerSpriteIds[gActiveBattler]], gBattleMonForms[gActiveBattler]);
 
@@ -1831,8 +1834,9 @@ static void OpponentHandlePlayFanfareOrBGM(void)
 static void OpponentHandleFaintingCry(void)
 {
     u16 species = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_SPECIES);
+    u8 formId = GetMonData(&gEnemyParty[gBattlerPartyIndexes[gActiveBattler]], MON_DATA_FORM_ID);
 
-    PlayCry3(species, 25, 5);
+    PlayCry3(GetFormSpeciesId(species, formId), 25, 5);
     OpponentBufferExecCompleted();
 }
 

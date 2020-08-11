@@ -744,7 +744,7 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
     if (gMain.inBattle)
     {
         struct Pokemon *mon;
-        u16 species;
+        u16 formSpeciesId;
         s8 pan;
         u16 wantedCryCase;
         u8 taskId;
@@ -760,7 +760,7 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
             pan = -25;
         }
 
-        species = GetMonData(mon, MON_DATA_SPECIES);
+        formSpeciesId = GetFormSpeciesId(GetMonData(mon, MON_DATA_SPECIES), GetMonData(mon, MON_DATA_FORM_ID));
         if ((battlerId == GetBattlerAtPosition(B_POSITION_PLAYER_LEFT) || battlerId == GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT))
          && IsDoubleBattle() && gBattleSpritesDataPtr->animationData->field_9_x1)
         {
@@ -785,7 +785,7 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
         gBattleSpritesDataPtr->healthBoxesData[battlerId].field_1_x40 = 1;
 
         taskId = CreateTask(Task_PlayCryWhenReleasedFromBall, 3);
-        gTasks[taskId].tCryTaskSpecies = species;
+        gTasks[taskId].tCryTaskSpecies = formSpeciesId;
         gTasks[taskId].tCryTaskPan = pan;
         gTasks[taskId].tCryTaskWantedCry = wantedCryCase;
         gTasks[taskId].tCryTaskBattler = battlerId;
