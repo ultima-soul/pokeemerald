@@ -681,7 +681,7 @@ static void CB2_EggHatch_1(void)
             gender = GetMonGender(&gPlayerParty[sEggHatchData->eggPartyID]);
             personality = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_PERSONALITY, 0);
             formId = GetMonData(&gPlayerParty[sEggHatchData->eggPartyID], MON_DATA_FORM_ID);
-            DoNamingScreen(3, gStringVar3, species, gender, personality, EggHatchSetMonNickname, formId);
+            DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar3, species, gender, personality, EggHatchSetMonNickname, formId);
             break;
         case 1:
         case -1:

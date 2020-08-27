@@ -246,9 +246,9 @@ static bool8 SendLinkData(const void *linkData, u32 size)
     }
 }
 
-static void sub_80771AC(u8 a0)
+static void RequestLinkData(u8 type)
 {
-    sub_800A4D8(a0);
+    SendBlockRequest(type);
 }
 
 static bool32 sub_80771BC(void)
@@ -295,9 +295,9 @@ static bool32 IsWirelessTrade(void)
         return FALSE;
 }
 
-static void sub_8077288(u8 unused)
+static void SetTradeLinkStandbyCallback(u8 unused)
 {
-    sub_800ADF8();
+    SetLinkStandbyCallback();
 }
 
 static bool32 _IsLinkTaskFinished(void)
@@ -445,7 +445,7 @@ static void CB2_CreateTradeMenu(void)
             if (gWirelessCommType)
             {
                 sub_801048C(TRUE);
-                sub_800ADF8();
+                SetLinkStandbyCallback();
             }
         }
         break;
@@ -829,7 +829,7 @@ static void LinkTradeWaitForFade(void)
         }
         else
         {
-            sub_800ABF4(32);
+            SetCloseLinkCallbackAndType(32);
             sTradeMenuData->tradeMenuFunc = TRADEMENUFUNC_START_LINK_TRADE;
         }
     }
@@ -987,7 +987,7 @@ static bool8 BufferTradeParties(void)
     case 3:
         if (id == 0)
         {
-            sub_80771AC(1);
+            RequestLinkData(1);
         }
         sTradeMenuData->bufferPartyState++;
         break;
@@ -1006,7 +1006,7 @@ static bool8 BufferTradeParties(void)
     case 7:
         if (id == 0)
         {
-            sub_80771AC(1);
+            RequestLinkData(1);
         }
         sTradeMenuData->bufferPartyState++;
         break;
@@ -1025,7 +1025,7 @@ static bool8 BufferTradeParties(void)
     case 11:
         if (id == 0)
         {
-            sub_80771AC(1);
+            RequestLinkData(1);
         }
         sTradeMenuData->bufferPartyState++;
         break;
@@ -1044,7 +1044,7 @@ static bool8 BufferTradeParties(void)
     case 15:
         if (id == 0)
         {
-            sub_80771AC(3);
+            RequestLinkData(3);
         }
         sTradeMenuData->bufferPartyState++;
         break;
@@ -1063,7 +1063,7 @@ static bool8 BufferTradeParties(void)
     case 19:
         if (id == 0)
         {
-            sub_80771AC(4);
+            RequestLinkData(4);
         }
         sTradeMenuData->bufferPartyState++;
         break;
@@ -1656,11 +1656,11 @@ static void CancelTrade_1(void)
     {
         if (gWirelessCommType)
         {
-            sub_800ADF8();
+            SetLinkStandbyCallback();
         }
         else
         {
-            sub_800ABF4(12);
+            SetCloseLinkCallbackAndType(12);
         }
 
         sTradeMenuData->tradeMenuFunc = TRADEMENUFUNC_CANCEL_TRADE_2;
@@ -1696,7 +1696,7 @@ static void LinkTradeWaitForQueue(void)
 {
     if (!sub_801048C(FALSE) && GetNumQueuedActions() == 0)
     {
-        sub_800ADF8();
+        SetLinkStandbyCallback();
         sTradeMenuData->tradeMenuFunc = TRADEMENUFUNC_START_LINK_TRADE;
     }
 }
@@ -4576,7 +4576,7 @@ static void CB2_SaveAndEndTrade(void)
         DrawTextOnTradeWindow(0, gStringVar4, 0);
         break;
     case 1:
-        sub_8077288(0);
+        SetTradeLinkStandbyCallback(0);
         gMain.state = 100;
         sTradeData->timer = 0;
         break;
@@ -4654,7 +4654,7 @@ static void CB2_SaveAndEndTrade(void)
     case 41:
         if (sTradeData->timer == 0)
         {
-            sub_8077288(1);
+            SetTradeLinkStandbyCallback(1);
             gMain.state = 42;
         }
         else
@@ -4673,7 +4673,7 @@ static void CB2_SaveAndEndTrade(void)
         if (++sTradeData->timer > 60)
         {
             gMain.state++;
-            sub_8077288(2);
+            SetTradeLinkStandbyCallback(2);
         }
         break;
     case 6:
@@ -4695,11 +4695,11 @@ static void CB2_SaveAndEndTrade(void)
         {
             if (gWirelessCommType && gMain.savedCallback == CB2_StartCreateTradeMenu)
             {
-                sub_8077288(3);
+                SetTradeLinkStandbyCallback(3);
             }
             else
             {
-                sub_800AC34();
+                SetCloseLinkCallback();
             }
             gMain.state++;
         }
@@ -4912,7 +4912,7 @@ static void CB2_SaveAndEndWirelessTrade(void)
         DrawTextOnTradeWindow(0, gStringVar4, 0);
         break;
     case 1:
-        sub_8077288(0);
+        SetTradeLinkStandbyCallback(0);
         gMain.state = 2;
         sTradeData->timer = 0;
         break;
@@ -4960,7 +4960,7 @@ static void CB2_SaveAndEndWirelessTrade(void)
     case 7:
         if (sTradeData->timer == 0)
         {
-            sub_8077288(1);
+            SetTradeLinkStandbyCallback(1);
             gMain.state = 8;
         }
         else
@@ -4979,7 +4979,7 @@ static void CB2_SaveAndEndWirelessTrade(void)
         if (++sTradeData->timer > 60)
         {
             gMain.state++;
-            sub_8077288(2);
+            SetTradeLinkStandbyCallback(2);
         }
         break;
     case 10:
@@ -4993,7 +4993,7 @@ static void CB2_SaveAndEndWirelessTrade(void)
     case 11:
         if (!gPaletteFade.active && IsBGMStopped() == TRUE)
         {
-            sub_8077288(3);
+            SetTradeLinkStandbyCallback(3);
             gMain.state = 12;
         }
         break;
