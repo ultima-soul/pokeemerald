@@ -7472,12 +7472,15 @@ u16 GetFormSpeciesId(u16 baseSpeciesId, u8 formId)
 
 u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
 {
-    u8 targetFormId;
-
-    for (targetFormId = 0; targetFormId < ARRAY_COUNT(gFormSpeciesIdTables[formSpeciesId]); targetFormId++)
+    u8 targetFormId = 0;
+    
+    if (gFormSpeciesIdTables[formSpeciesId] != NULL)
     {
-        if (formSpeciesId == gFormSpeciesIdTables[formSpeciesId][targetFormId])
-            break;
+        for (targetFormId = 0; targetFormId < ARRAY_COUNT(gFormSpeciesIdTables[formSpeciesId]); targetFormId++)
+        {
+            if (formSpeciesId == gFormSpeciesIdTables[formSpeciesId][targetFormId])
+                break;
+        }
     }
     return targetFormId;
 }
