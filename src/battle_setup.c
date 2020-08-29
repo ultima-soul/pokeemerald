@@ -920,12 +920,10 @@ void ChooseStarter(void)
 static void CB2_GiveStarter(void)
 {
     u16 starterMon;
-    u8 formId;
 
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
-    starterMon = GetStarterPokemon(gSpecialVar_Result, FALSE);
-    formId = GetStarterPokemon(gSpecialVar_Result, TRUE);
-    ScriptGiveMon(starterMon, 5, ITEM_NONE, formId, 0, 0);
+    starterMon = GetStarterPokemon(gSpecialVar_Result);
+    ScriptGiveMon(starterMon, 5, ITEM_NONE, 0, 0, 0);
     ResetTasks();
     PlayBattleBGM();
     SetMainCallback2(CB2_StartFirstBattle);

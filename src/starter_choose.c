@@ -116,11 +116,11 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-static const u16 sStarterMon[STARTER_MON_COUNT][2] =
+static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    {SPECIES_TREECKO, 0},
-    {SPECIES_TORCHIC, 0},
-    {SPECIES_MUDKIP, 0},
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_MUDKIP,
 };
 
 static const struct BgTemplate sBgTemplates[3] =
@@ -354,11 +354,11 @@ static const struct SpriteTemplate sSpriteTemplate_StarterCircle =
 };
 
 // .text
-u16 GetStarterPokemon(u16 chosenStarterId, bool8 wantFormId)
+u16 GetStarterPokemon(u16 chosenStarterId)
 {
     if (chosenStarterId > STARTER_MON_COUNT)
         chosenStarterId = 0;
-    return sStarterMon[chosenStarterId][wantFormId];
+    return sStarterMon[chosenStarterId];
 }
 
 static void VblankCB_StarterChoose(void)
@@ -495,6 +495,8 @@ static void Task_HandleStarterChooseInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         u8 spriteId;
+        u8 formId = GetFormIdFromFormSpeciesId(GetStarterPokemon(gTasks[taskId].tStarterSelection));
+        u16 baseSpecies = GetFormSpeciesId(GetStarterPokemon(gTasks[taskId].tStarterSelection), 0);
 
         ClearStarterLabel();
 
@@ -503,7 +505,7 @@ static void Task_HandleStarterChooseInput(u8 taskId)
         gTasks[taskId].tCircleSpriteId = spriteId;
 
         // Create Pokemon sprite
-        spriteId = CreatePokemonFrontSprite(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), sPokeballCoords[selection][0], sPokeballCoords[selection][1], GetStarterPokemon(gTasks[taskId].tStarterSelection, TRUE));
+        spriteId = CreatePokemonFrontSprite(baseSpecies, sPokeballCoords[selection][0], sPokeballCoords[selection][1], formId);
         gSprites[spriteId].affineAnims = &sAffineAnims_StarterPokemon;
         gSprites[spriteId].callback = SpriteCB_StarterPokemon;
 
@@ -534,7 +536,7 @@ static void Task_WaitForStarterSprite(u8 taskId)
 
 static void Task_AskConfirmStarter(u8 taskId)
 {
-    PlayCry1(GetFormSpeciesId(GetStarterPokemon(gTasks[taskId].tStarterSelection, FALSE), GetStarterPokemon(gTasks[taskId].tStarterSelection, TRUE)), 0);
+    PlayCry1(GetStarterPokemon(gTasks[taskId].tStarterSelection), 0);
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized(0, 1, gText_ConfirmStarterChoice, 0, 1, 0, NULL);
     ScheduleBgCopyTilemapToVram(0);
@@ -582,7 +584,7 @@ static void CreateStarterPokemonLabel(u8 selection)
     s32 width;
     u8 labelLeft, labelRight, labelTop, labelBottom;
 
-    u16 species = GetStarterPokemon(selection, FALSE); // handle forms?
+    u16 species = GetStarterPokemon(selection); // handle forms?
     CopyMonCategoryText(SpeciesToNationalPokedexNum(species), categoryText);
     speciesName = gSpeciesNames[species];
 
