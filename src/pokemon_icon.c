@@ -4,7 +4,6 @@
 #include "palette.h"
 #include "pokemon_icon.h"
 #include "sprite.h"
-#include "constants/species.h"
 
 #define POKE_ICON_BASE_PAL_TAG 56000
 
@@ -947,6 +946,9 @@ const u8 *const gMonIconTable[] =
     [SPECIES_CASTFORM_SUNNY] = gMonIcon_CastformSunny,
     [SPECIES_CASTFORM_RAINY] = gMonIcon_CastformRainy,
     [SPECIES_CASTFORM_SNOWY] = gMonIcon_CastformSnowy,
+    [SPECIES_DEOXYS_ATTACK] = gMonIcon_DeoxysAttack,
+    [SPECIES_DEOXYS_DEFENSE] = gMonIcon_DeoxysDefense,
+    [SPECIES_DEOXYS_SPEED] = gMonIcon_DeoxysSpeed,
     [SPECIES_BURMY_SANDY_CLOAK] = gMonIcon_BurmySandyCloak,
     [SPECIES_BURMY_TRASH_CLOAK] = gMonIcon_BurmyTrashCloak,
     [SPECIES_WORMADAM_SANDY_CLOAK] = gMonIcon_WormadamSandyCloak,

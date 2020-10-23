@@ -3,6 +3,7 @@
 
 #include "constants/pokemon.h"
 #include "sprite.h"
+#include "constants/region_map_sections.h"
 
 struct PokemonSubstruct0
 {
@@ -124,12 +125,12 @@ struct Pokemon
 
 struct Unknown_806F160_Struct
 {
-    u8 field_0_0:4;
-    u8 field_0_1:4;
-    u8 field_1;
-    u8 magic;
-    u8 field_3_0:4;
-    u8 field_3_1:4;
+    u32 field_0_0:4;
+    u32 field_0_1:4;
+    u32 field_1:8;
+    u16 magic:8;
+    u32 size:4;
+    u16 field_3_1:4;
     void *bytes;
     u8 **byteArrays;
     struct SpriteTemplate *templates;
@@ -348,7 +349,7 @@ u8 GetItemEffectParamOffset(u16 itemId, u8 effectByte, u8 effectBit);
 u8 *UseStatIncreaseItem(u16 itemId);
 u8 GetNature(struct Pokemon *mon);
 u8 GetNatureFromPersonality(u32 personality);
-u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem, u8 *targetFormId);
+u16 GetEvolutionTargetSpecies(struct Pokemon *mon, u8 type, u16 evolutionItem, u16 tradePartnerSpecies, u8 *targetFormId);
 u16 HoennPokedexNumToSpecies(u16 hoennNum);
 u16 NationalPokedexNumToSpecies(u16 nationalNum);
 u16 NationalToHoennOrder(u16 nationalNum);
